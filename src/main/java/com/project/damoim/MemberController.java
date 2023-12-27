@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class MemberController {
 
+    // 회원 가입 양식 요청
+    @GetMapping("/sign-up")
+    public String signUp() {
+//        log.info("/memberssign-up GET : forwarding to sign-up.jsp");
+        return "members/sign-up";
+    }
+
     @GetMapping("/sign-in")
     public String signIn() {
         return "members/sign-in";

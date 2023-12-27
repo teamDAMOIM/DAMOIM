@@ -168,7 +168,6 @@ footer .inner-footer img {
 
 .sign-section .container .wrap {
     width: 100%;
-    height: 400px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -183,7 +182,7 @@ footer .inner-footer img {
     background: rgba(163,160,237,1.0);
 }
 
-.sign-section .container .wrap .login-wrap {
+.sign-section .container .wrap .sign-wrap {
     width: 50%;
     background: rgba(255,255,255,1.0);
 
