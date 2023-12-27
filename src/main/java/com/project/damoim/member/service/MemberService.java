@@ -14,8 +14,6 @@ public class MemberService {
     private final MemberMapper mapper;
 
     public boolean getMember(Member member) throws Exception{
-
-
         try {
             boolean flag = mapper.save(member);
             return flag;

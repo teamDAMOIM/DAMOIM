@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,13 +25,18 @@ public class MemberController {
         return "/members/sign-up";
     }
     @PostMapping("/sign-up")
-    public String signUp(SignUpRequestDTO dto){
+    public String signUp(SignUpRequestDTO dto, Model model){
         try {
-            memberService.getMember(dto.isEntity());
-            return "/members/sign-in";
+            boolean member = memberService.getMember(dto.isEntity());
+            if (member){
+                model.addAttribute("t", member);
+                return "/members/sign-in";
+            }
+            log.debug("{}", member);
         } catch (Exception e) {
             log.warn(e.getMessage());
-            return "/members/sign-up";
         }
+
+        return "/members/sign-up";
     }
 }
