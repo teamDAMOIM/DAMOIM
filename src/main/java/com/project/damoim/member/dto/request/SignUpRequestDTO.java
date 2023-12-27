@@ -32,11 +32,12 @@ public class SignUpRequestDTO {
 
 
     public Member isEntity(){
-        Member.builder()
+        return Member.builder()
                 .memberId(this.id)
                 .memberPassword(this.pw)
                 .memberName(this.un)
-                .memberPhone(this.nn)
+                .memberPhone(this.ph)
+                .memberNickname(this.nn)
                 .memberAddress(ad)
                 .build();
     }
