@@ -19,30 +19,30 @@
                         <h3 class="mb-4">Sign Up</h3>
                     </div>
                 </div>
-                <form action="/members/sign-up" class="signup-form">
+                <form action="/members/sign-up" class="signup-form" method="post">
                     <div class="form-group mb-3">
                         <label class="label">UserID</label>
-                        <input type="text" class="form-control" placeholder="UserId" required>
+                        <input type="text" class="form-control" placeholder="UserId" name="id">
                     </div>
                     <div class="form-group mb-3">
                         <label class="label">Password</label>
-                        <input type="password" class="form-control" placeholder="Password" required>
+                        <input type="password" class="form-control" placeholder="Password" required name="pw">
                     </div>
                     <div class="form-group mb-3">
                         <label class="label">UserName</label>
-                        <input type="text" class="form-control" placeholder="UserName" required>
+                        <input type="text" class="form-control" placeholder="UserName" required name="un">
                     </div>
                     <div class="form-group mb-3">
                         <label class="label">NickName</label>
-                        <input type="text" class="form-control" placeholder="NickName" required>
+                        <input type="text" class="form-control" placeholder="NickName" required name="nn">
                     </div>
                     <div class="form-group mb-3">
                         <label class="label">Phone</label>
-                        <input type="text" class="form-control" placeholder="Phone" required>
+                        <input type="text" class="form-control" placeholder="Phone" required name="ph">
                     </div>
                     <div class="form-group mb-3">
-                        <label class="label">Email</label>
-                        <input type="text" class="form-control" placeholder="Email" required>
+                        <label class="label">Address</label>
+                        <input type="text" class="form-control" placeholder="Address" required name="ad">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
@@ -52,6 +52,5 @@
         </div>
     </div>
 </section>
-
 </body>
 </html>

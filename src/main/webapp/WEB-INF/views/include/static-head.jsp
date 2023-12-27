@@ -21,7 +21,8 @@
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
 <!-- bootstrap css -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dis
+t/css/bootstrap.min.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="/assets/css/main.css">

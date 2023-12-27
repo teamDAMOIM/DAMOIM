@@ -24,8 +24,8 @@
             <li><a href="#">Contact</a></li>        <%-- 신청 --%>
 
             <c:if test="${empty login}">
-                <li><a href="/members/sign-up">Sign Up</a></li>
                 <li><a href="/members/sign-in">Sign In</a></li>
+                <li><a href="/members/sign-up">Sign Up</a></li>
             </c:if>
 
             <c:if test="${not empty login}">
