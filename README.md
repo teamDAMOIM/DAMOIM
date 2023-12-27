@@ -6,7 +6,6 @@
 
 ---
 - 장소와 취미가 맞는 사람들의 모임을 커뮤니케이션 공간을 제공하는 서비스입니다.
-
 <br>
 
 ### 개발 멤버
@@ -19,8 +18,11 @@
     유가령     front
     박소영     front
 
-### skill
 
+### 🛎️ 개발 기간
+- 2023/12/26 ~ 2024/01/03
+
+### skill
 
 -### front <br>
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=black)
