@@ -5,10 +5,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@Transactional
+@Rollback
 class MemberMapperTest {
     @Autowired
     MemberMapper memberMapper;
@@ -31,5 +35,16 @@ class MemberMapperTest {
         Member member = memberMapper.findOne(id);
         //then
         assertEquals("12", member.getMemberPassword());
+    }
+
+    @Test
+    @DisplayName("id 12를 삭제하면 삭제되어야 한다.")
+    void deleteTest() {
+        //given
+        String id = "12";
+        //when
+        boolean delete = memberMapper.delete(id);
+        //then
+        assertTrue(delete);
     }
 }

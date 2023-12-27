@@ -11,6 +11,12 @@
             (#{memberId}, #{memberPassword}, #{memberName}, #{memberPhone}, #{memberNickname}, #{memberAddress})
     </insert>
 
+    <delete id="delete">
+        DELETE
+        FROM tb_member
+        WHERE member_id = #{memberId}
+    </delete>
+
     <select id="findOne" resultType="com.project.damoim.member.entity.Member">
         SELECT
             member_id, member_password, member_name,
