@@ -26,6 +26,7 @@ public class MemberController {
     @PostMapping("/sign-up")
     public String signUp(SignUpRequestDTO dto){
         try {
+            log.debug("{}", dto);
             memberService.getMember(dto.isEntity());
             return "/members/sign-in";
         } catch (Exception e) {
