@@ -7,7 +7,7 @@
             <img src="/assets/img/Damoim.png" alt="로고이미지">
         </h1>
         <h2 class="intro-text">
-
+            name
         </h2>
         <a href="#" class="menu-open">
             <span class="lnr lnr-menu"></span>

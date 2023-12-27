@@ -10,5 +10,7 @@
 <body>
     <%@ include file="include/header.jsp"%>
     <h1>안녕</h1>
+
+    <%@ include file="include/footer.jsp"%>
 </body>
 </html>
