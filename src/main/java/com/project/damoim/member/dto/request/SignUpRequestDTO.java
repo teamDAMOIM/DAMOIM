@@ -2,10 +2,12 @@ package com.project.damoim.member.dto.request;
 
 import com.project.damoim.member.entity.Member;
 import lombok.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.beans.Encoder;
 
 @Setter @Getter @ToString
 @EqualsAndHashCode
@@ -31,10 +33,10 @@ public class SignUpRequestDTO {
     private String ad;
 
 
-    public Member isEntity(){
+    public Member isEntity(PasswordEncoder encoder){
         return Member.builder()
                 .memberId(this.id)
-                .memberPassword(this.pw)
+                .memberPassword(encoder.encode(this.pw))
                 .memberName(this.un)
                 .memberPhone(this.ph)
                 .memberNickname(this.nn)
