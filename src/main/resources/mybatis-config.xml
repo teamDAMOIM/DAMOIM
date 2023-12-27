@@ -2,6 +2,7 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
     <settings>
       <!-- 카멜 케이스 VO 매핑 -->
@@ -9,5 +10,6 @@
     </settings>
     <mappers>
         <mapper resource="mappers/MemberMapper.xml" />
-    </mappers>
+     </mappers>
+
 </configuration>
