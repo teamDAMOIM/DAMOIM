@@ -9,6 +9,7 @@ CREATE TABLE tb_post(
     post_date DATE DEFAULT CURRENT_TIMESTAMP,
     member_id VARCHAR(255),
 
+
     CONSTRAINT pk_post
                     PRIMARY KEY (post_no),
     CONSTRAINT fk_id
