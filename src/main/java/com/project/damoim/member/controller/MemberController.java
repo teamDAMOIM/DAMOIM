@@ -27,12 +27,18 @@ public class MemberController {
     @PostMapping("/sign-up")
     public String signUp(SignUpRequestDTO dto, Model model){
         try {
+<<<<<<< HEAD
             boolean member = memberService.getMember(dto.isEntity());
             if (member){
                 model.addAttribute("t", member);
                 return "/members/sign-in";
             }
             log.debug("{}", member);
+=======
+            log.debug("{}", dto);
+            memberService.getMember(dto.isEntity());
+            return "/members/sign-in";
+>>>>>>> 9e60ab7fd8ef1c0976521debc2c0feb184a79165
         } catch (Exception e) {
             log.warn(e.getMessage());
         }
