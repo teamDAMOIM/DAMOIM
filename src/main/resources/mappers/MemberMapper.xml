@@ -22,6 +22,7 @@
             member_id, member_password, member_name,
             member_phone, member_nickname, member_address
         FROM tb_member
+        WHERE member_id = #{memberId}
     </select>
 
     <select id="isDuplicate" resultType="boolean">

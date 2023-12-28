@@ -34,6 +34,7 @@ public class MemberService {
     // 로그인 검증 처리
     public LoginResult authenticate(LoginRequestDTO dto){
         Member member = mapper.findOne(dto.getId());
+        log.debug("{}", member);
 
         if(member == null){
             log.info("아이디가 존재하지 않습니다");

@@ -30,7 +30,7 @@ public class SignUpRequestDTO {
 
     private String startph; // ex) 010,011,013
     private String ph; // 중간 번호
-    private String ps; // 마지막 번호
+    private String pp; // 마지막 번호
     @NotBlank
     private String ad;
 
@@ -40,7 +40,7 @@ public class SignUpRequestDTO {
                 .memberId(this.id)
                 .memberPassword(encoder.encode(this.pw))
                 .memberName(this.un)
-                .memberPhone(startph + "-" + this.ph + "-" + this.ps)
+                .memberPhone(startph + "-" + this.ph + "-" + this.pp)
                 .memberNickname(this.nn)
                 .memberAddress(ad)
                 .build();

@@ -68,10 +68,12 @@ public class MemberController {
     }
 
     @PostMapping("/sign-in")
-    public String signIn(LoginRequestDTO dto){
+    public String signIn(LoginRequestDTO dto, Model model){
         LoginResult authenticate = memberService.authenticate(dto);
         log.debug("{}", authenticate);
 
-        return "/index";
+        model.addAttribute("m", dto);
+
+        return "redirect:/";
     }
 }
