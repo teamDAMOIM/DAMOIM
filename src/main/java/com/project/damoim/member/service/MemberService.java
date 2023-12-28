@@ -1,6 +1,7 @@
 package com.project.damoim.member.service;
 
 
+import com.project.damoim.member.dto.request.LoginRequestDTO;
 import com.project.damoim.member.dto.request.SignUpRequestDTO;
 import com.project.damoim.member.entity.Member;
 import com.project.damoim.member.repository.MemberMapper;
@@ -16,7 +17,9 @@ public class MemberService {
     private final MemberMapper mapper;
     private final PasswordEncoder encoder;
 
-    public boolean getMember(SignUpRequestDTO dto) throws Exception{
+
+    // 회원가입 처리
+    public boolean saveMember(SignUpRequestDTO dto) throws Exception{
         try {
             boolean flag = mapper.save(dto.isEntity(encoder));
             return flag;
@@ -25,5 +28,25 @@ public class MemberService {
             log.warn(e.getMessage());
             return false;
         }
+    }
+
+
+    // 로그인 검증 처리
+    public LoginResult authenticate(LoginRequestDTO dto){
+        Member member = mapper.findOne(dto.getId());
+
+        if(member == null){
+            log.info("아이디가 존재하지 않습니다");
+            return LoginResult.NO_ID;
+        }
+
+        String inputPw = dto.getPw();
+        String realPw = member.getMemberPassword();
+
+        if (!encoder.matches(inputPw, realPw)){
+            return LoginResult.NO_PW;
+        }
+
+        return LoginResult.SUCCESS;
     }
 }

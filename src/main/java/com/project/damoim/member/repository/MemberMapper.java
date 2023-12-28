@@ -16,5 +16,8 @@ public interface MemberMapper {
     Member findOne(String memberId);
 
     // 중복 체크 만들 예정
+    // type : email, id
+    // keyword : 중복 값 체크
+    boolean isDuplicate(String type, String keyword);
 
 }

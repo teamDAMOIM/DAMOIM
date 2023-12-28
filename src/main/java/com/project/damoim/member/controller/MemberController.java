@@ -30,7 +30,6 @@ public class MemberController {
         return "/members/sign-up";
     }
 
-
     /*
         dto를 읽고 확인 체크
      */
@@ -44,20 +43,29 @@ public class MemberController {
 
         // 입력값 검증에 걸리면 회원가입창을 다시 띄우기
         if (result.hasErrors()){
-            return "redirect:/";
+            return "redirect:/members/sign-up";
         }
 
         try { // 회원가입에 문제없이 통과하면
-            boolean member = memberService.getMember(dto);
+            boolean member = memberService.saveMember(dto);
+
+            model.addAttribute("t", member);
+            log.debug("{}", member);
+
             if (member){
                 return "/members/sign-in";
             }
-            model.addAttribute("t", member);
-            log.debug("{}", member);
+
         } catch (Exception e) {
             log.warn(e.getMessage());
         }
 
         return "/members/sign-up";
+    }
+
+    // 로그인 창 띄우기
+    @GetMapping("/sign-in")
+    public String signIn(){
+        return "/members/sign-in";
     }
 }

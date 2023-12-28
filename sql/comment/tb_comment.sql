@@ -3,7 +3,7 @@
 CREATE TABLE tb_comment(
     comment_no INT auto_increment,
     comment_content VARCHAR(255) NOT NULL,
-    comment_date DATE default current_timestamp,
+    comment_date DATETIME default current_timestamp,
     comment_username VARCHAR(10) NOT NULL,
     post_no INT,
     member_id VARCHAR(255),

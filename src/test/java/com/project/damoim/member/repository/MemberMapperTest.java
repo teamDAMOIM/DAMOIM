@@ -47,4 +47,16 @@ class MemberMapperTest {
         //then
         assertTrue(delete);
     }
+    
+    @Test
+    @DisplayName("회원 아이디가 jj3713이면 중복 체크가 되어야 한다")
+    void isDuplicateTest() {
+        //given
+        String acc = "jj3713";
+        //when
+        boolean flag = memberMapper.isDuplicate("memberId", acc);
+        //then
+        assertTrue(flag);
+    }
+    
 }

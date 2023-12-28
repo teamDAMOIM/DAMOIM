@@ -23,4 +23,18 @@
             member_phone, member_nickname, member_address
         FROM tb_member
     </select>
+
+    <select id="isDuplicate" resultType="boolean">
+
+        SELECT COUNT(*)
+        FROM tb_member
+        <if test="type == 'memberId'">
+            WHERE member_id = #{keyword}
+        </if>
+        <if test="type == 'memberEmail'">
+            WHERE member_email = #{keyword}
+        </if>
+
+    </select>
+
 </mapper>

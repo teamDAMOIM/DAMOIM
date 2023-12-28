@@ -6,8 +6,8 @@ CREATE TABLE tb_recruit(
     recruit_title VARCHAR(255) NOT NULL,
     recruit_content VARCHAR(3000) NOT NULL,
     recruit_category VARCHAR(255),
-    recruit_startdate DATE DEFAULT current_timestamp,
-    recruit_enddate DATE,
+    recruit_startdate DATETIME DEFAULT current_timestamp,
+    recruit_enddate DATETIME,
     recruit_addrass VARCHAR(255),
     recruit_count INT,
     recruit_max INT(10),
@@ -16,3 +16,7 @@ CREATE TABLE tb_recruit(
     CONSTRAINT pk_rno
             PRIMARY KEY (recruit_no)
 );
+
+ALTER TABLE tb_recruit
+MODIFY recruit_startdate DATETIME
+;
