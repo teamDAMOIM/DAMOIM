@@ -1,0 +1,128 @@
+
+
+/* home */
+#home-DAMOIM{
+    margin-left: 18%;
+    width: 82%;
+    background: #ffefef;
+    margin-top: 300px;
+
+    position: relative;
+}
+
+/* 지도 보기, 모집 */
+#home-DAMOIM .map-view-search{
+    width: 100%; background: #FFD98D; height: 60vh;
+
+    display: flex;
+    flex-flow: row nowrap; align-items: start;
+    justify-content: center;
+
+    padding-top: 60px;
+
+}
+
+/* 장소 검색, 상세 보기 모음*/
+#home-DAMOIM .map-view-search .dateil-place{
+    display: flex;
+    flex-flow: column wrap;
+    width: 30%;
+
+}
+
+/* 장소 검색창 */
+#home-DAMOIM .map-view-search .dateil-place .google-it-place{
+    background: #fff; padding: 1em;
+    border-radius: 50px;
+
+    margin-bottom: 30px;
+
+    display: flex; flex-flow: row nowrap;
+    align-content: center;
+
+}
+
+/* 장소 검색창 input */
+#home-DAMOIM .map-view-search .dateil-place .google-it-place input
+, #home-DAMOIM .map-view-search .dateil-place .google-it-place input:focus{
+    border-width: 0;
+    width: 80%;
+    margin-left: 0.5em;
+    outline: none;
+
+    font-size: 20px;
+}
+
+/* 장소 보기 */
+#home-DAMOIM .map-view-search .dateil-place .view-place{
+    background: #fff;
+    padding: 1.2em 0;
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-flow: row wrap; justify-content: start;
+
+}
+
+/* 장소 이미지 */
+#home-DAMOIM .map-view-search .dateil-place .view-place img{
+    width: 100%; height: 20vh; margin: 1em 0;
+    background: #aaa;
+}
+
+#home-DAMOIM .map-view-search .dateil-place .view-place .pinfo{
+    margin-left: 1.2em;
+}
+
+#home-DAMOIM .map-view-search .dateil-place .view-place .place-detail input{
+    align-items: center;
+}
+
+/* 지도 보기 */
+#home-DAMOIM .map-view-search .view-map{
+    background: #aaa;
+    border-radius: 20px;
+    width: 50%; height: 50vh;
+    margin-left: 30px;
+    /* margin-top: 50px; */
+}
+
+
+/* 사이드 메뉴 */
+.side-menu{
+    opacity: 0.5;
+    background: #aaa;
+    height: 100vh; width: 18%;
+    margin-top: 30px;
+    margin-right: 30px;
+
+    position: fixed; left: 0; top: 100px;
+}
+
+.side-menu .my-activities .myinfo-activity{
+    padding: 1.5em;
+}
+
+/* 나의 활동들 */
+.side-menu .my-activities .one-activity{
+    padding: 1.2em;
+
+    display: flex; align-items: center;
+}
+
+.side-menu .my-activities .one-activity .activity-img{
+    margin-right: 15px;
+    border-radius: 10px;
+    background: #FFD98D;
+    width: 45px; height: 45px;
+}
+
+.side-menu .my-activities .one-activity .activity-name{
+
+}
+
+.side-menu .my-activities .myinfo-activity
+, .side-menu .my-activities .one-activity{
+    border-bottom: 1px solid #494949;
+}
