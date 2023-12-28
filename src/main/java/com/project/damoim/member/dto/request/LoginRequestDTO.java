@@ -12,7 +12,7 @@ import lombok.*;
 public class LoginRequestDTO {
     private String id;
     private String pw;
-    private boolean isAutomatic;
+    private boolean autoLogin;
 
 
     public Member isEntity(){

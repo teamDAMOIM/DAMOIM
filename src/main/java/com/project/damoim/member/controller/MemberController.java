@@ -1,7 +1,9 @@
 package com.project.damoim.member.controller;
 
 
+import com.project.damoim.member.dto.request.LoginRequestDTO;
 import com.project.damoim.member.dto.request.SignUpRequestDTO;
+import com.project.damoim.member.service.LoginResult;
 import com.project.damoim.member.service.MemberService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -40,21 +42,17 @@ public class MemberController {
             Model model,
             BindingResult result
     ){
-
         // 입력값 검증에 걸리면 회원가입창을 다시 띄우기
-        if (result.hasErrors()){
-            return "redirect:/members/sign-up";
+        if (result.hasErrors()) {
+            return "/";
         }
-
         try { // 회원가입에 문제없이 통과하면
             boolean member = memberService.saveMember(dto);
-
-            model.addAttribute("t", member);
-            log.debug("{}", member);
 
             if (member){
                 return "/members/sign-in";
             }
+            log.debug("{}", member);
 
         } catch (Exception e) {
             log.warn(e.getMessage());
@@ -67,5 +65,13 @@ public class MemberController {
     @GetMapping("/sign-in")
     public String signIn(){
         return "/members/sign-in";
+    }
+
+    @PostMapping("/sign-in")
+    public String signIn(LoginRequestDTO dto){
+        LoginResult authenticate = memberService.authenticate(dto);
+        log.debug("{}", authenticate);
+
+        return "/index";
     }
 }

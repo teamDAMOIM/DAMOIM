@@ -29,7 +29,6 @@ public class SignUpRequestDTO {
     private String nn;
 
     private String startph; // ex) 010,011,013
-    @NotBlank
     private String ph; // 중간 번호
     private String ps; // 마지막 번호
     @NotBlank
