@@ -15,6 +15,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/members")
@@ -39,7 +40,6 @@ public class MemberController {
     public String signUp(
             @Validated
             SignUpRequestDTO dto,
-            Model model,
             BindingResult result
     ){
         // 입력값 검증에 걸리면 회원가입창을 다시 띄우기
@@ -68,12 +68,17 @@ public class MemberController {
     }
 
     @PostMapping("/sign-in")
-    public String signIn(LoginRequestDTO dto, Model model){
+    public String signIn(LoginRequestDTO dto,
+                         RedirectAttributes ra){
         LoginResult authenticate = memberService.authenticate(dto);
         log.debug("{}", authenticate);
 
-        model.addAttribute("m", dto);
+        ra.addFlashAttribute("result", authenticate);
 
-        return "redirect:/";
+        if(authenticate == LoginResult.SUCCESS){ // 성공
+            return "redirect:/";
+        }
+
+        return "redirect:/members/sign-in";
     }
 }

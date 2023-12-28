@@ -51,6 +51,14 @@
         </div>
     </div>
 </section>
+<script>
+    const serverMessage = '${result}';
 
+    if(serverMessage === 'NO_ID'){
+        alert('회원가입 하세요.')
+    }else if (serverMessage === 'NO_PW'){
+        alert('비밀번호가 잘못 되었습니다.')
+    }
+</script>
 </body>
 </html>

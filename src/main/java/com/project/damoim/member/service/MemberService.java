@@ -50,4 +50,9 @@ public class MemberService {
 
         return LoginResult.SUCCESS;
     }
+
+    // 아이디 비밀번호 중복 검사 서비스
+    public boolean checkDuplicateValue(String type, String keyword){
+        return mapper.isDuplicate(type, keyword);
+    }
 }
