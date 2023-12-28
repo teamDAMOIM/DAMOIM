@@ -17,7 +17,7 @@ import java.beans.Encoder;
 public class SignUpRequestDTO {
 
     @NotBlank
-    @Size(min = 4, max = 14)
+    @Size(min = 4, max = 15)
     private String id;
     @NotBlank
     @Size(min = 8) // 비밀번호 8글자 이상 만들기

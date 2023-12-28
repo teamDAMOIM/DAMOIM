@@ -7,7 +7,7 @@
             <a href="/xxx"><img src="/assets/img/Damoim.png" alt="로고이미지"></a>
         </h1>
         <h2 class="intro-text">
-            ${m.nickName}
+            ${m.memberNickname}
         </h2>
         <a href="#" class="menu-open">
             <span class="lnr lnr-menu"></span>

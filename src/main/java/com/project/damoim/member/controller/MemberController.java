@@ -3,18 +3,18 @@ package com.project.damoim.member.controller;
 
 import com.project.damoim.member.dto.request.LoginRequestDTO;
 import com.project.damoim.member.dto.request.SignUpRequestDTO;
+import com.project.damoim.member.entity.Member;
 import com.project.damoim.member.service.LoginResult;
 import com.project.damoim.member.service.MemberService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -72,13 +72,25 @@ public class MemberController {
                          RedirectAttributes ra){
         LoginResult authenticate = memberService.authenticate(dto);
         log.debug("{}", authenticate);
+        Member member = memberService.getMember(dto.getId());
 
         ra.addFlashAttribute("result", authenticate);
 
+
         if(authenticate == LoginResult.SUCCESS){ // 성공
+            ra.addFlashAttribute("m", member);
             return "redirect:/";
         }
 
         return "redirect:/members/sign-in";
+    }
+
+    @GetMapping("/check")
+    @ResponseBody
+    public ResponseEntity check(String type, String keyword){
+        boolean flag = memberService.checkDuplicateValue(type, keyword);
+        return ResponseEntity
+                .ok()
+                .body(flag);
     }
 }
