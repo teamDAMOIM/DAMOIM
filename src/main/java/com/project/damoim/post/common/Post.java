@@ -17,7 +17,7 @@ public class Post {
 
     public Post() {
         this.pageNo = 1;
-        this.amount = 6;
+        this.amount = 20;
     }
 
 
