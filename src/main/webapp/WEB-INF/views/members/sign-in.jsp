@@ -26,14 +26,14 @@
                         <h3 class="mb-4">Sign In</h3>
                     </div>
                 </div>
-                <form action="/members/sign-in" class="signin-form">
+                <form action="/members/sign-in" class="signin-form" method="post">
                     <div class="form-group mb-3">
                         <label class="label">UserID</label>
-                        <input type="text" class="form-control" placeholder="Userid" required>
+                        <input type="text" class="form-control" placeholder="Userid" name="id" required>
                     </div>
                     <div class="form-group mb-3">
                         <label class="label">Password</label>
-                        <input type="password" class="form-control" placeholder="Password" required>
+                        <input type="password" class="form-control" placeholder="Password" name="pw" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
