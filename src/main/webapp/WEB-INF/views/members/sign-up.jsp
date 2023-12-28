@@ -39,13 +39,13 @@
                     <div class="form-group mb-3 form-ph">
                         <label class="ph-label">Phone</label>
                         <div class="row-ph">
-                            <select name="startph" id="ph" class="form-control ph1" style="appearance: auto">
+                            <select name="startph" class="form-control ph1" style="appearance: auto">
                                 <option value="010">010</option>
                                 <option value="011">011</option>
                                 <option value="012">012</option>
                             </select>_
                             <input type="number" class="form-control ph2" required name="ph" maxlength="4">_
-                            <input type="number" class="form-control ph3" required name="ph" maxlength="4">
+                            <input type="number" class="form-control ph3" required name="pp" maxlength="4">
                         </div>
                     </div>
                     <div class="form-group mb-3">
@@ -60,5 +60,6 @@
         </div>
     </div>
 </section>
+
 </body>
 </html>
