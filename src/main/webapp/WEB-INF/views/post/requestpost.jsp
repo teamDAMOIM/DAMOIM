@@ -11,7 +11,7 @@
 <%@ include file="../include/header.jsp"%>
 <div class="requestpost">
     <div class="main-title-wrap">
-        <h1 class="main-title">자유게시판</h1>
+        <h1 class="main-title">신청게시판</h1>
         <div class="button-wrap">
             <%--            <c:if test="${login != null}">--%>
             <button class="add-btn btn">글 쓰기</button>
@@ -44,7 +44,7 @@
                         <td class="tit">${rp.title}</td>
                         <td class="nm">${rp.name}</td>
                         <td class="dt">${rp.date}</td>
-                        <td class="vc">${rp.requestcount}</td>
+                        <td class="rc">${rp.requestcount}</td>
                     </tr>
                 </c:forEach>
                 </tbody>

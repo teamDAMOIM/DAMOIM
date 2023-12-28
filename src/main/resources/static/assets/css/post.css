@@ -37,3 +37,16 @@
 .requestpost .board-bottom {
     padding: 30px 0;
 }
+
+.newpost .board-bottom .bbul,
+.requestpost .board-bottom .bbul {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.newpost .board-bottom .bbul .page-link,
+.requestpost .board-bottom .bbul .page-link {
+    padding: 6px 18px;
+    color: #000;
+}
+
