@@ -36,9 +36,17 @@
                         <label class="label">NickName</label>
                         <input type="text" class="form-control" placeholder="NickName" required name="nn">
                     </div>
-                    <div class="form-group mb-3">
-                        <label class="label">Phone</label>
-                        <input type="text" class="form-control" placeholder="Phone" required name="ph">
+                    <div class="form-group mb-3 form-ph">
+                        <label class="ph-label">Phone</label>
+                        <div class="row-ph">
+                            <select name="startph" id="ph" class="form-control ph1" style="appearance: auto">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="012">012</option>
+                            </select>_
+                            <input type="number" class="form-control ph2" required name="ph" maxlength="4">_
+                            <input type="number" class="form-control ph3" required name="ph" maxlength="4">
+                        </div>
                     </div>
                     <div class="form-group mb-3">
                         <label class="label">Address</label>
