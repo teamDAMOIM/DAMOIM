@@ -58,6 +58,8 @@
         alert('회원가입 하세요.')
     }else if (serverMessage === 'NO_PW'){
         alert('비밀번호가 잘못 되었습니다.')
+    }else if(serverMessage === 'SUCCESS') {
+        alert('로그인 성공하셨습니다.')
     }
 </script>
 </body>

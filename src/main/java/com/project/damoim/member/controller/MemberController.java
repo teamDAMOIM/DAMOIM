@@ -17,6 +17,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/members")
 @Slf4j
@@ -69,22 +74,36 @@ public class MemberController {
 
     @PostMapping("/sign-in")
     public String signIn(LoginRequestDTO dto,
-                         RedirectAttributes ra){
+                         RedirectAttributes ra,
+                         HttpSession session){
         LoginResult authenticate = memberService.authenticate(dto);
         log.debug("{}", authenticate);
-        Member member = memberService.getMember(dto.getId());
 
         ra.addFlashAttribute("result", authenticate);
 
 
         if(authenticate == LoginResult.SUCCESS){ // 성공
-            ra.addFlashAttribute("m", member);
+
+            // 세션 받아오기
+            memberService.LoginState(session, dto.getId());
+
             return "redirect:/";
         }
 
         return "redirect:/members/sign-in";
     }
 
+
+
+    // 로그아웃 처리
+    @GetMapping("/sign-out")
+    public String signOut(HttpServletRequest request){
+        HttpSession session = request.getSession();
+
+        session.removeAttribute("login");
+        session.invalidate();
+        return "redirect:/";
+    }
 
     /*
         회원가입 비동기 처리

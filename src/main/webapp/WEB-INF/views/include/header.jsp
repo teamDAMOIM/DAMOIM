@@ -6,9 +6,16 @@
         <h1 class="logo">
             <a href="/xxx"><img src="/assets/img/Damoim.png" alt="로고이미지"></a>
         </h1>
-        <h2 class="intro-text">
-            ${m.memberNickname}
-        </h2>
+        <c:if test="${login == null}">
+            <a class="intro-text" href="/members/sign-in">
+                로그인하러 가세요 !
+            </a>
+        </c:if>
+        <c:if test="${login != null}">
+            <h2 class="intro-text">
+                ${login.nickName}
+            </h2>
+        </c:if>
         <a href="#" class="menu-open">
             <span class="lnr lnr-menu"></span>
         </a>
@@ -29,7 +36,7 @@
             </c:if>
 
             <c:if test="${not empty login}">
-                <li><a href="#">My Page</a></li>
+                <li><a href="/members/sign-out">My Page</a></li>
                 <li><a href="/members/sign-out">Sign Out</a></li>
             </c:if>
 

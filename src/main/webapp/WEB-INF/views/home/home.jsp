@@ -31,7 +31,7 @@
         </div>
 
         <!-- 구글 지도 -->
-        <div class="view-map">
+        <div class="map">
             여기에 지도 띄울거임
             <img src="#" alt="#">
         </div>
