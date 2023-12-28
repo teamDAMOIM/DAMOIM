@@ -4,10 +4,10 @@
 <header>
     <div class="inner-header">
         <h1 class="logo">
-            <img src="/assets/img/Damoim.png" alt="로고이미지">
+            <a href="/xxx"><img src="/assets/img/Damoim.png" alt="로고이미지"></a>
         </h1>
         <h2 class="intro-text">
-            name
+            ${m.nickName}
         </h2>
         <a href="#" class="menu-open">
             <span class="lnr lnr-menu"></span>
@@ -20,8 +20,8 @@
         </a>
         <ul>
             <li><a href="/xxx">Home</a></li>   <%-- 메인 --%>
-            <li><a href="#">Board</a></li> <%-- 게시판 --%>
-            <li><a href="#">Contact</a></li>        <%-- 신청 --%>
+            <li><a href="/post/post">Board</a></li> <%-- 자유게시판 --%>
+            <li><a href="/post/requestpost">Request Board</a></li> <%-- 신청게시판 --%>
 
             <c:if test="${empty login}">
                 <li><a href="/members/sign-in">Sign In</a></li>

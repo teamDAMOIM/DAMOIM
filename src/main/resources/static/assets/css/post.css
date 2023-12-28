@@ -1,3 +1,39 @@
-.newpost {
+.newpost, .requestpost {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     padding-top: 200px;
+}
+.newpost .main-title-wrap,
+.requestpost .main-title-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.newpost .main-title-wrap .main-title,
+.requestpost .main-title-wrap .main-title {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.newpost .main-title-wrap .button-wrap,
+.requestpost .main-title-wrap .button-wrap {
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    padding: 20px 0;
+}
+.newpost .main-title-wrap .button-wrap .btn,
+.requestpost .main-title-wrap .button-wrap .btn {
+    width: 80px;
+    background: #3c2e5b;
+    color: #fff;
+    border-radius: 5px 5px;
+}
+
+.newpost .board-bottom,
+.requestpost .board-bottom {
+    padding: 30px 0;
 }
