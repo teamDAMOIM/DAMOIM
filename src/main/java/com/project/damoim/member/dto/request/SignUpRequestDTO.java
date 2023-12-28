@@ -27,8 +27,11 @@ public class SignUpRequestDTO {
     private String un;
     @NotBlank
     private String nn;
+
+    private String startph; // ex) 010,011,013
     @NotBlank
-    private String ph;
+    private String ph; // 중간 번호
+    private String ps; // 마지막 번호
     @NotBlank
     private String ad;
 
@@ -38,7 +41,7 @@ public class SignUpRequestDTO {
                 .memberId(this.id)
                 .memberPassword(encoder.encode(this.pw))
                 .memberName(this.un)
-                .memberPhone(this.ph)
+                .memberPhone(startph + "-" + this.ph + "-" + this.ps)
                 .memberNickname(this.nn)
                 .memberAddress(ad)
                 .build();
