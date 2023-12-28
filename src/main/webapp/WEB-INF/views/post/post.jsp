@@ -9,11 +9,11 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp"%>
-    <div class="newboard">
+    <div class="newpost">
         <div class="post-area">
             <a href="#">글쓰기</a>
         </div>
-        <form action="/board/post" class="boardlist">
+        <form action="/post/post" class="postlist">
             <div class="container">
                 <table class="table" id="post-table">
                     <colgroup>
@@ -33,15 +33,15 @@
                     </tr>
                     </thead>
                     <tbody>
-<%--                    <c:forEach var="p" items="${plist}">--%>
-<%--                        <tr>--%>
-<%--                            <td class="num">${p.tnum}</td>--%>
-<%--                            <td class="tit">${p.title}</td>--%>
-<%--                            <td class="nm">${p.name}</td>--%>
-<%--                            <td class="dt">${p.date}</td>--%>
-<%--                            <td class="vc">${p.viewcount}</td>--%>
-<%--                        </tr>--%>
-<%--                    </c:forEach>--%>
+                    <c:forEach var="p" items="${plist}">
+                        <tr>
+                            <td class="num">${p.tnum}</td>
+                            <td class="tit">${p.title}</td>
+                            <td class="nm">${p.name}</td>
+                            <td class="dt">${p.date}</td>
+                            <td class="vc">${p.viewcount}</td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
