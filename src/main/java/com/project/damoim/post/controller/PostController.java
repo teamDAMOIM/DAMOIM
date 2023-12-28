@@ -16,4 +16,9 @@ public class PostController {
     public String post(){
         return "/post/post";
     }
+
+    @GetMapping("/requestpost")
+    public String requestpost(){
+        return "/post/requestpost";
+    }
 }

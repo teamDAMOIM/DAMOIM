@@ -10,18 +10,23 @@
 <body>
 <%@ include file="../include/header.jsp"%>
     <div class="newpost">
-        <div class="post-area">
-            <a href="#">글쓰기</a>
+        <div class="main-title-wrap">
+            <h1 class="main-title">자유게시판</h1>
+            <div class="button-wrap">
+<%--            <c:if test="${login != null}">--%>
+                <button class="add-btn btn">글 쓰기</button>
+<%--            </c:if>--%>
+            </div>
         </div>
         <form action="/post/post" class="postlist">
             <div class="container">
                 <table class="table" id="post-table">
                     <colgroup>
-                        <col class="size01" data-alias="number">
-                        <col class="size02" data-alias="title">
-                        <col class="size03" data-alias="name">
-                        <col class="size04" data-alias="date">
-                        <col class="size05" data-alias="viewcount">
+                        <col style="width: 9%;" class="size01" data-alias="number">
+                        <col style="width: 65%;" class="size02" data-alias="title">
+                        <col style="width: 7%;" class="size03" data-alias="name">
+                        <col style="width: 12%;" class="size04" data-alias="date">
+                        <col style="width: 7%;" class="size05" data-alias="viewcount">
                     </colgroup>
                     <thead>
                     <tr>
@@ -35,7 +40,7 @@
                     <tbody>
                     <c:forEach var="p" items="${plist}">
                         <tr>
-                            <td class="num">${p.tnum}</td>
+                            <td class="num">${p.num}</td>
                             <td class="tit">${p.title}</td>
                             <td class="nm">${p.name}</td>
                             <td class="dt">${p.date}</td>
