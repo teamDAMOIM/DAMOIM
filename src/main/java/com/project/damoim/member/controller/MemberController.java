@@ -85,6 +85,10 @@ public class MemberController {
         return "redirect:/members/sign-in";
     }
 
+
+    /*
+        회원가입 비동기 처리
+     */
     @GetMapping("/check")
     @ResponseBody
     public ResponseEntity check(String type, String keyword){

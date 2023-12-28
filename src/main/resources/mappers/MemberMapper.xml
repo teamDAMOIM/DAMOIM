@@ -32,8 +32,8 @@
         <if test="type == 'memberId'">
             WHERE member_id = #{keyword}
         </if>
-        <if test="type == 'memberEmail'">
-            WHERE member_email = #{keyword}
+        <if test="type == 'memberNickname'">
+            WHERE member_nickname = #{keyword}
         </if>
 
     </select>
