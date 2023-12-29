@@ -1,0 +1,42 @@
+/* 사이드 메뉴 */
+.side-menu{
+    background: #aaa;
+    height: 60vh; width: 200px;
+    /* min-width: 200px; */
+
+    position: fixed; left: 0; bottom: 20%;
+}
+
+/* 나의 활동 리스트 */
+.side-menu ul{
+    padding-left: 0; margin-bottom: 0;
+}
+
+/* 타이틀 "나의 활동" - 꾸지면 바꾸등가 */
+.side-menu .my-activities .activity-title{
+    padding: 1.5em;
+
+}
+
+/* 나의 활동 li */
+.side-menu .my-activities .one-activity{
+    padding: 1.2em;
+
+    display: flex; align-items: center;
+}
+
+.side-menu .my-activities .one-activity .activity-img{
+    margin-right: 15px;
+    border-radius: 10px;
+    background: #FFD98D;
+    width: 45px; height: 45px;
+}
+
+.side-menu .my-activities .one-activity .activity-name{
+
+}
+
+.side-menu .my-activities .activity-title
+, .side-menu .my-activities .one-activity{
+    border-bottom: 1px solid #494949;
+}

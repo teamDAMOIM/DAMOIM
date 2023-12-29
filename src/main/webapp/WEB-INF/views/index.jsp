@@ -11,6 +11,7 @@
     <%@ include file="include/header.jsp"%>
 
     <%@ include file="home/home.jsp"%>
+    <%@ include file="home/side-menubar.jsp"%>
 
     <%@ include file="include/footer.jsp"%>
 </body>

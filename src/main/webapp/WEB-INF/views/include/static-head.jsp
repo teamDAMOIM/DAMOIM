@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/post.css">
 <link rel="stylesheet" href="/assets/css/mainHome.css">
+<link rel="stylesheet" href="/assets/css/side-menubar.css">
 
 
 <!-- bootstrap js -->
@@ -34,3 +35,4 @@
 
 <!-- side menu event js -->
 <script src="/assets/js/side-menu.js" defer></script>
+
