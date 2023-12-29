@@ -23,7 +23,16 @@
     width: 80%;
     display: flex;
     justify-content: right;
-    padding: 20px 0;
+    padding: 20px;
+
+}
+
+.newpost .main-title-wrap .button-wrap .add-btn {
+    width: fit-content;
+
+}
+.newpost .main-title-wrap .button-wrap .add-btn:hover {
+    background: rgba(197, 160, 255, 0.7);
 }
 .newpost .main-title-wrap .button-wrap .btn,
 .requestpost .main-title-wrap .button-wrap .btn {

@@ -38,4 +38,17 @@
 
     </select>
 
+    <update id="madeSessionAutoLogin">
+        UPDATE tb_member
+        SET session_id = #{sessionId}, auto_date = #{autoDate}
+        WHERE member_id = #{memberId}
+    </update>
+
+    <select id="findMemberByCookie" resultType="com.project.damoim.member.entity.Member">
+        SELECT
+            member_id, member_name, auto_date
+        FROM tb_member
+        WHERE session_id = #{sessionId}
+    </select>
+
 </mapper>

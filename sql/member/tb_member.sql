@@ -17,4 +17,16 @@ CREATE TABLE tb_member(
 );
 
 -- password encoding을 위한 데이터 삭제
+<<<<<<< HEAD
 # delete from tb_member;
+=======
+delete from tb_member;
+
+ALTER TABLE tb_member
+ADD session_id VARCHAR(255)
+;
+
+ALTER TABLE tb_member
+ADD auto_date DATETIME DEFAULT current_timestamp
+;
+>>>>>>> 8656ed79cb77931867bf4d97cd9a4d4111331255

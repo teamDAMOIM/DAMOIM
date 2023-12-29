@@ -30,4 +30,15 @@ public class PostController {
     public String requestpost(){
         return "/post/requestpost";
     }
+<<<<<<< HEAD
 }
+=======
+
+    // 글쓰기 화면요청 (/post/write : GET)
+    @GetMapping("/write")
+    public String write() {
+
+        return "/post/write";
+    }
+}
+>>>>>>> 8656ed79cb77931867bf4d97cd9a4d4111331255

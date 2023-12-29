@@ -1,6 +1,7 @@
 package com.project.damoim.member.controller;
 
 
+import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.member.dto.request.LoginRequestDTO;
 import com.project.damoim.member.dto.request.SignUpRequestDTO;
 import com.project.damoim.member.entity.Member;
@@ -79,15 +80,15 @@ public class MemberController {
     @PostMapping("/sign-in")
     public String signIn(LoginRequestDTO dto,
                          RedirectAttributes ra,
-                         HttpSession session){
-        LoginResult authenticate = memberService.authenticate(dto);
-        log.debug("{}", authenticate);
+                         HttpSession session,
+                         HttpServletResponse response){
+        LoginResult authenticate = memberService.authenticate(dto, session, response);
+        log.info("{}", dto);
 
         ra.addFlashAttribute("result", authenticate);
 
 
         if(authenticate == LoginResult.SUCCESS){ // 성공
-
             // 세션 받아오기
             memberService.LoginState(session, dto.getId());
 
@@ -101,12 +102,20 @@ public class MemberController {
 
     // 로그아웃 처리
     @GetMapping("/sign-out")
-    public String signOut(HttpServletRequest request){
+    public String signOut(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession();
 
-        session.removeAttribute("login");
-        session.invalidate();
-        return "redirect:/";
+        if(session.getAttribute("login") != null){
+
+            if(LoginUtiles.isAutoLogin(request)){
+                memberService.autoOut(request, response);
+            }
+
+            session.removeAttribute("login");
+            session.invalidate();
+            return "redirect:/";
+        }
+        return "redirect:/members/sign-in";
     }
 
     /*
