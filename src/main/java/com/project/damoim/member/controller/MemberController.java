@@ -68,7 +68,11 @@ public class MemberController {
 
     // 로그인 창 띄우기
     @GetMapping("/sign-in")
-    public String signIn(){
+    public String signIn(HttpSession session){
+
+        if (session.getAttribute("login") != null){
+            return "redirect:/";
+        }
         return "/members/sign-in";
     }
 

@@ -26,8 +26,8 @@
             <span class="lnr lnr-cross"></span>
         </a>
         <ul>
-            <li><a href="/xxx">Home</a></li>   <%-- 메인 --%>
-            <li><a href="/post/post">Board</a></li> <%-- 자유게시판 --%>
+            <li><a href="/">Home</a></li>   <%-- 메인 --%>
+            <li><a href="/post">Board</a></li> <%-- 자유게시판 --%>
             <li><a href="/post/requestpost">Request Board</a></li> <%-- 신청게시판 --%>
 
             <c:if test="${empty login}">

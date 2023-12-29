@@ -1,3 +1,6 @@
+
+
+
 -- tb_post 테이블 생성
 CREATE TABLE tb_post(
     post_no INT auto_increment,

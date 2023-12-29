@@ -17,4 +17,4 @@ CREATE TABLE tb_member(
 );
 
 -- password encoding을 위한 데이터 삭제
-delete from tb_member;
+# delete from tb_member;
