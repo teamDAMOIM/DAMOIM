@@ -1,0 +1,47 @@
+.write-section {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 200px;
+
+    font-family: 'IBM Plex Sans';
+    font-weight: 400;
+}
+.write-section .form-container form {
+    width: 650px;
+    height: 800px;
+    background: rgba(222, 244, 255, 0.66);
+    text-align: center;
+    padding: 60px 45px;
+    box-shadow: rgba(73, 73, 73, 0.68) 2px 3px 5px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: column;
+
+}
+
+.write-section .form-container label {
+    font-size: 20px;
+}
+.write-section .form-container .pd {
+    margin: 10px;
+}
+.write-section .form-container .put {
+    padding: 5px;
+    /*border: 1px solid #131f33;*/
+    border: none;
+    /*border-radius: 5px;*/
+    background: #fff;
+}
+
+.write-section .form-container button {
+    margin: 10px;
+    width: 60px;
+    height: 30px;
+    background: #c4c4c4;
+
+}
+
