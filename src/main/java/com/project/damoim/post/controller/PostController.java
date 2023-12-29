@@ -18,27 +18,23 @@ import java.util.List;
 public class PostController {
 
     private final PostService service;
+
     @GetMapping("")
-    public String post(Model model){
+    public String post(Model model) {
         List<Post> postList = service.getPostList();
-        model.addAttribute("p", postList);
+        model.addAttribute("pList", postList);
+
 
         return "/post/post";
     }
 
     @GetMapping("/requestpost")
-    public String requestpost(){
+    public String requestpost() {
         return "/post/requestpost";
     }
-<<<<<<< HEAD
-}
-=======
 
-    // 글쓰기 화면요청 (/post/write : GET)
     @GetMapping("/write")
-    public String write() {
-
+    public String write(){
         return "/post/write";
     }
 }
->>>>>>> 8656ed79cb77931867bf4d97cd9a4d4111331255

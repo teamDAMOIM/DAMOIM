@@ -14,7 +14,7 @@
             <h1 class="main-title">자유게시판</h1>
             <div class="button-wrap">
 <%--            <c:if test="${login != null}">--%>
-                <button class="add-btn btn">글 쓰기</button>
+                <a class="add-btn btn" href="/post/write">글 쓰기</a>
 <%--            </c:if>--%>
             </div>
         </div>
@@ -38,13 +38,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="p" items="${plist}">
+                    <c:forEach var="p" items="${pList}">
                         <tr>
-                            <td class="num">${p.num}</td>
-                            <td class="tit">${p.title}</td>
-                            <td class="nm">${p.name}</td>
-                            <td class="dt">${p.date}</td>
-                            <td class="vc">${p.viewcount}</td>
+                            <td class="num">${p.postNo}</td>
+                            <td class="tit">${p.postTitle}</td>
+                            <td class="nm">${p.memberId}</td>
+                            <td class="dt">${p.postDate}</td>
+                            <td class="vc">${p.postViewCount}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

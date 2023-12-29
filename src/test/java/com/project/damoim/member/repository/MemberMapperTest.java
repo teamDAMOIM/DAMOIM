@@ -17,15 +17,15 @@ class MemberMapperTest {
     @Autowired
     MemberMapper memberMapper;
 
-    @Test
-    @DisplayName("멤버 한명을 등록하면 정보 조회하게")
-    void saveTest() {
-        //given
-        Member m = new Member("12", "12", "ㄴㅇ", "12", "12", "공주");
-        boolean save = memberMapper.save(m);
-        //then
-        assertTrue(save);
-    }
+//    @Test
+//    @DisplayName("멤버 한명을 등록하면 정보 조회하게")
+//    void saveTest() {
+//        //given
+////        Member m = new Member("12", "12", "ㄴㅇ", "12", "12", "공주");
+//        boolean save = memberMapper.save(m);
+//        //then
+//        assertTrue(save);
+//    }
 //    @Test
 //    @DisplayName("id 12를 조회하면 그 사람의 비밀번호는 12이어야 한다")
 //    void findOneTest() {

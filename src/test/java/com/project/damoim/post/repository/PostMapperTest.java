@@ -25,7 +25,7 @@ class PostMapperTest {
                     .postTitle("이ㅏㅏ" + i)
                     .postContent("이이이" + i)
                     .postViewCount(0)
-                    .memberId("asdfh")
+                    .memberId("grape111")
                     .build();
 
             boolean save = mapper.save(p);

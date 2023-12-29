@@ -27,11 +27,9 @@
         </a>
         <ul>
             <li><a href="/">Home</a></li>   <%-- 메인 --%>
-<<<<<<< HEAD
+
             <li><a href="/post">Board</a></li> <%-- 자유게시판 --%>
-=======
-            <li><a href="/post/post">Board</a></li> <%-- 자유게시판 --%>
->>>>>>> 8656ed79cb77931867bf4d97cd9a4d4111331255
+
             <li><a href="/post/requestpost">Request Board</a></li> <%-- 신청게시판 --%>
 
             <c:if test="${empty login}">
