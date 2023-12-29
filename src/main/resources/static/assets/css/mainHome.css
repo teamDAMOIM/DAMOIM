@@ -1,29 +1,46 @@
-
+ul{
+    padding-left: 0; margin-bottom: 0;
+}
 
 /* home */
 #home-DAMOIM{
-    margin-left: 18%;
-    width: 82%;
+    /*margin-left: 18%;*/
+    width: 100%;
+
     background: #ffefef;
-    margin-top: 300px;
+    margin-top: 20%;
 
     position: relative;
+
+    overflow: scroll;
+
+}
+
+@media (max-width: 1000px) {
+    body {
+        width: 1200px;
+    }
 }
 
 /* 지도 보기, 모집 */
 #home-DAMOIM .map-view-search{
-    width: 100%; background: #FFD98D; height: 60vh;
+    width: 100%-200px;
+    background: #FFD98D;
+    /*height: 70vh;*/
 
     display: flex;
-    flex-flow: row nowrap; align-items: start;
+    flex-flow: row nowrap;
+    /* align-content: start; */
     justify-content: center;
 
-    padding-top: 60px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 200px;
 
 }
 
 /* 장소 검색, 상세 보기 모음*/
-#home-DAMOIM .map-view-search .dateil-place{
+#home-DAMOIM .map-view-search .detail-place{
     display: flex;
     flex-flow: column wrap;
     width: 30%;
@@ -31,22 +48,25 @@
 }
 
 /* 장소 검색창 */
-#home-DAMOIM .map-view-search .dateil-place .google-it-place{
-    background: #fff; padding: 1em;
+#home-DAMOIM .map-view-search .detail-place .google-it-place{
+    background: #fff; padding: 0.8em;
     border-radius: 50px;
 
-    margin-bottom: 30px;
+    margin-bottom: 15%;
 
     display: flex; flex-flow: row nowrap;
     align-content: center;
+}
 
+#home-DAMOIM .map-view-search .detail-place .google-it-place img{
+    width: 3vh; height: 3vh;
 }
 
 /* 장소 검색창 input */
-#home-DAMOIM .map-view-search .dateil-place .google-it-place input
-, #home-DAMOIM .map-view-search .dateil-place .google-it-place input:focus{
+#home-DAMOIM .map-view-search .detail-place .google-it-place input
+, #home-DAMOIM .map-view-search .detail-place .google-it-place input:focus{
     border-width: 0;
-    width: 80%;
+    width: 80%; height: 3vh;
     margin-left: 0.5em;
     outline: none;
 
@@ -54,28 +74,29 @@
 }
 
 /* 장소 보기 */
-#home-DAMOIM .map-view-search .dateil-place .view-place{
-    background: #fff;
+#home-DAMOIM .map-view-search .detail-place .view-place{
+    background: #ffefef;
+    height: 50vh;
     padding: 1.2em 0;
 
     border-radius: 20px;
 
     display: flex;
-    flex-flow: row wrap; justify-content: start;
+    flex-flow: row wrap; justify-content: center;
 
 }
 
 /* 장소 이미지 */
-#home-DAMOIM .map-view-search .dateil-place .view-place img{
+#home-DAMOIM .map-view-search .detail-place .view-place img{
     width: 100%; height: 20vh; margin: 1em 0;
     background: #aaa;
 }
 
-#home-DAMOIM .map-view-search .dateil-place .view-place .pinfo{
+#home-DAMOIM .map-view-search .detail-place .view-place .pinfo{
     margin-left: 1.2em;
 }
 
-#home-DAMOIM .map-view-search .dateil-place .view-place .place-detail input{
+#home-DAMOIM .map-view-search .detail-place .view-place .place-detail input{
     align-items: center;
 }
 
@@ -83,46 +104,53 @@
 #home-DAMOIM .map-view-search .view-map{
     background: #aaa;
     border-radius: 20px;
-    width: 50%; height: 50vh;
-    margin-left: 30px;
+    width: 40%; height: 70vh;
+    margin-left: 5%;
+    /*margin-top: 50px; margin-bottom: 50px;*/
     /* margin-top: 50px; */
 }
 
+/* 자유 게시판, 모집 게시판 블록 */
+.board-black{
+    margin-top: 20%; background: #FFD98D;
+    padding-top: 5%; padding-bottom: 5%;
 
-/* 사이드 메뉴 */
-.side-menu{
-    opacity: 0.5;
-    background: #aaa;
-    height: 100vh; width: 18%;
-    margin-top: 30px;
-    margin-right: 30px;
-
-    position: fixed; left: 0; top: 100px;
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-evenly;
 }
 
-.side-menu .my-activities .myinfo-activity{
-    padding: 1.5em;
-}
-
-/* 나의 활동들 */
-.side-menu .my-activities .one-activity{
-    padding: 1.2em;
-
-    display: flex; align-items: center;
-}
-
-.side-menu .my-activities .one-activity .activity-img{
-    margin-right: 15px;
+/* 자유, 모집 게시판 창 */
+.board-black .free-board-BEST
+, .board-black .recruitment-board {
+    border: 2px solid #aaa;
     border-radius: 10px;
-    background: #FFD98D;
-    width: 45px; height: 45px;
+
+    padding-bottom: 20px;
+    height: 70vh;
 }
 
-.side-menu .my-activities .one-activity .activity-name{
+.board-black .free-board-BEST .board-title-free
+, .board-black .recruitment-board .board-title-recruitment{
+    padding: 30px 90px;
+    border-bottom: 2px solid #aaa;
+
+    font-size: 30px;
+}
+
+.board-black .free-board-BEST ul
+, .board-black .recruitment-board .one-board{
 
 }
 
-.side-menu .my-activities .myinfo-activity
-, .side-menu .my-activities .one-activity{
-    border-bottom: 1px solid #494949;
+/* 게시판 li */
+.board-black .free-board-BEST .one-board
+, .board-black .recruitment-board .one-board{
+
+    padding: 20px 30px;
+    border-bottom: 1px solid #7d7d7d;
+
+    font-size: 20px;
+
+    display: flex; flex-flow: row nowrap; justify-content: space-between;
+
 }

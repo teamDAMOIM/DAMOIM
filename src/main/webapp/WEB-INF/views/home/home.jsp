@@ -7,10 +7,11 @@
     <div class="map-view-search">
 
         <!-- 장소 검색 기능, 상세보기 -->
-        <div class="dateil-place">
+        <div class="detail-place">
             <!-- 장소 검색 -->
             <label class="google-it-place">
-                <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon">
+<%--                <img src="../assets/img/magnifierIcon.png" alt="magnifierIcon">--%>
+                    <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon">
                 <input type="text" name="searchPlace">
             </label>
 
@@ -42,20 +43,31 @@
         <div class="free-board-BEST">
             <div class="board-title-free">자유 게시판 <span>BEST</span></div>
             <ul>
-                <li class="one-board"></li>
+                <li class="one-board of">
+                    <div class="board-title sub-free">dwlsakjfdlksj</div>
+                    <div class="best-user-count">
+                        <img src="#" alt="눈알 넣을거임">
+                    </div>
+
+                </li>
             </ul>
         </div>
-        <div class="recruitment-board"></div>
+
+        <div class="recruitment-board">
+            <div class="board-title-recruitment">모집 게시판</div>
+            <ul>
+                <a href="/post">
+                    <li class="one-board or">
+                        <div class="board-title sub-recruit">dsl;kf;ldksg;l</div>
+                        <div class="check-user-count">
+                            <img src="#" alt="인원이 안채워진다면 빨강 체크,아님 초록체크">
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
 
 
     </div>
 
-
 </section>
-
-<div class="side-menu">
-    <ul class="my-activities">
-        <li class="myinfo-activity">나의 활동</li>
-        <li class="one-activity"> <div class="activity-img"></div> <div class="activity-name">나의 활동-1</div></li>
-    </ul>
-</div>
