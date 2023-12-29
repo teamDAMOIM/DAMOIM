@@ -22,4 +22,10 @@ public class PostService {
                 ;
     }
 
+
+    // 게시물 하나 보여줘
+    public Post getPost(int pno){
+        return mapper.findOne(pno);
+    }
+
 }

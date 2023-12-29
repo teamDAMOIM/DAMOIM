@@ -17,7 +17,7 @@
         <div type="text" id="date"></div>
 
         <label for="content">내용</label>
-        <div id="content" >${content}</div>
+        <div id="content" >${p.postContent}</div>
         <div class="buttons">
             <button class="list-btn" type="button"
 <%--            onclick="window.location.href='/psot/post?pageNo=${p.pageNo}&amount=${p.amount}&type=${p.type}&keyword=${p.keyword}'" --%>

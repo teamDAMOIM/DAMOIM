@@ -37,4 +37,13 @@ public class PostController {
     public String write(){
         return "/post/write";
     }
+
+    @GetMapping("/detail")
+    public String detail(int pno, Model model){
+        log.debug("{}", pno);
+
+        Post post = service.getPost(pno);
+        model.addAttribute("p", post);
+        return "/post/post-detail";
+    }
 }

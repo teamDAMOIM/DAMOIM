@@ -16,7 +16,7 @@
             <label for="content" class="pd">내용</label>
             <textarea id="content" class="pd put" name="content" maxlength="800" required style="resize: none;" rows="30" cols="80"></textarea>
             <div class="buttons pd">
-                <button class="list-btn" type="button" onclick="window.location.href='/post/post'">목록</button>
+                <button class="list-btn" type="button" onclick="window.location.href='/post'">목록</button>
                 <button type="submit">글쓰기</button>
             </div>
         </form>
