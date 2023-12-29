@@ -10,12 +10,14 @@
 <body>
 <%@ include file="../include/header.jsp"%>
     <div id="wrap" class="form-container">
-        <div class="title" id="title" name="title"></div>
-        <label for="writer">작성자</label>
-        <div type="text" id="writer" name="writer"></div>
+        <div class="title" id="title"></div>
+        <label for="writer">작성자: </label>
+        <div type="text" id="writer"></div>
+        <label for="date">작성일자: </label>
+        <div type="text" id="date"></div>
 
         <label for="content">내용</label>
-        <div id="content">${content}</div>
+        <div id="content" >${content}</div>
         <div class="buttons">
             <button class="list-btn" type="button"
 <%--            onclick="window.location.href='/psot/post?pageNo=${p.pageNo}&amount=${p.amount}&type=${p.type}&keyword=${p.keyword}'" --%>
@@ -23,6 +25,7 @@
                     목록
             </button>
         </div>
+<%--    댓글    --%>
     </div>
 <%@ include file="../include/footer.jsp"%>
 </body>
