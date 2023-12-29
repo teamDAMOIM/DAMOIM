@@ -1,6 +1,8 @@
 package com.project.damoim.member.service;
 
 
+import com.project.damoim.Util.LoginUtiles;
+import com.project.damoim.member.dto.request.AutoLoginDTO;
 import com.project.damoim.member.dto.request.LoginRequestDTO;
 import com.project.damoim.member.dto.request.SignUpRequestDTO;
 import com.project.damoim.member.dto.response.LoginSessionDTO;
@@ -10,8 +12,13 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.WebUtils;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
 
 @Service
 @Slf4j
@@ -35,7 +42,11 @@ public class MemberService {
 
 
     // 로그인 검증 처리
-    public LoginResult authenticate(LoginRequestDTO dto){
+    public LoginResult authenticate(
+            LoginRequestDTO dto
+            , HttpSession session
+            , HttpServletResponse response
+    ){
         Member member = mapper.findOne(dto.getId());
         log.debug("{}", member);
 
@@ -50,6 +61,26 @@ public class MemberService {
         if (!encoder.matches(inputPw, realPw)){
             return LoginResult.NO_PW;
         }
+
+        if (dto.isAutoLogin()){
+            Cookie cookie = new Cookie("auto", session.getId());
+
+            int limitTime = 60 * 60 * 24 * 90;
+            cookie.setPath("/");
+            cookie.setMaxAge(limitTime);
+
+            response.addCookie(cookie);
+
+            mapper.madeSessionAutoLogin(
+                    AutoLoginDTO.builder()
+                            .sessionId(session.getId())
+                            .autoDate(LocalDateTime.now().plusDays(90))
+                            .memberId(dto.getId())
+                            .build()
+            );
+        }
+
+
 
         return LoginResult.SUCCESS;
     }
@@ -76,5 +107,22 @@ public class MemberService {
 
         session.setAttribute("login", dto);
         session.setMaxInactiveInterval(60 * 60); // 1시간
+    }
+
+    public void autoOut(HttpServletRequest request, HttpServletResponse response) {
+        Cookie c = WebUtils.getCookie(request, LoginUtiles.AutoLogin);
+
+        if (c != null){
+            c.setMaxAge(0);
+            c.setPath("/");
+
+            mapper.madeSessionAutoLogin(
+                    AutoLoginDTO.builder()
+                            .sessionId(null)
+                            .autoDate(LocalDateTime.now())
+                            .memberId(LoginUtiles.LoginUserId(request.getSession()))
+                            .build()
+            );
+        }
     }
 }

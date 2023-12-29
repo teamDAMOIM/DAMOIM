@@ -1,5 +1,6 @@
 package com.project.damoim.member.repository;
 
+import com.project.damoim.member.dto.request.AutoLoginDTO;
 import com.project.damoim.member.entity.Member;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -19,5 +20,10 @@ public interface MemberMapper {
     // type : email, id
     // keyword : 중복 값 체크
     boolean isDuplicate(String type, String keyword);
+
+    void madeSessionAutoLogin(AutoLoginDTO dto);
+
+    //세션 아이디 쿠기
+    Member findMemberByCookie(String sessionId);
 
 }

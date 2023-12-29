@@ -18,3 +18,11 @@ CREATE TABLE tb_member(
 
 -- password encoding을 위한 데이터 삭제
 delete from tb_member;
+
+ALTER TABLE tb_member
+ADD session_id VARCHAR(255)
+;
+
+ALTER TABLE tb_member
+ADD auto_date DATETIME DEFAULT current_timestamp
+;

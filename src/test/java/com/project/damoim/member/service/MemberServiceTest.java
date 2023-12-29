@@ -25,7 +25,7 @@ class MemberServiceTest {
                 .pw("zkxm2421")
                 .build();
         //when
-        LoginResult authenticate = service.authenticate(dto);
+        LoginResult authenticate = service.authenticate(dto, null, null);
 
         //then
         assertEquals(LoginResult.SUCCESS, authenticate);

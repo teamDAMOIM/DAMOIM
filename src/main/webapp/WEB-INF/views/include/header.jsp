@@ -4,7 +4,7 @@
 <header>
     <div class="inner-header">
         <h1 class="logo">
-            <a href="/xxx"><img src="/assets/img/Damoim.png" alt="로고이미지"></a>
+            <a href="/"><img src="/assets/img/Damoim.png" alt="로고이미지"></a>
         </h1>
         <c:if test="${login == null}">
             <a class="intro-text" href="/members/sign-in">
@@ -26,7 +26,7 @@
             <span class="lnr lnr-cross"></span>
         </a>
         <ul>
-            <li><a href="/xxx">Home</a></li>   <%-- 메인 --%>
+            <li><a href="/">Home</a></li>   <%-- 메인 --%>
             <li><a href="/post/post">Board</a></li> <%-- 자유게시판 --%>
             <li><a href="/post/requestpost">Request Board</a></li> <%-- 신청게시판 --%>
 
@@ -36,7 +36,6 @@
             </c:if>
 
             <c:if test="${not empty login}">
-                <li><a href="/members/sign-out">My Page</a></li>
                 <li><a href="/members/sign-out">Sign Out</a></li>
             </c:if>
 

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class MainController {
-    @GetMapping("/xxx")
+    @GetMapping("/")
     public String mainView(){
         return "index";
     }
