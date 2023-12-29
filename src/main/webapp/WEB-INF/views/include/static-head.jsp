@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/post.css">
 <link rel="stylesheet" href="/assets/css/mainHome.css">
+<link rel="stylesheet" href="/assets/css/write.css">
 
 
 <!-- bootstrap js -->
