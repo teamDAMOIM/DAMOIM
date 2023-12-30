@@ -1,5 +1,6 @@
 package com.project.damoim.post.repository;
 
+import com.project.damoim.post.common.Page;
 import com.project.damoim.post.entity.Post;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class PostMapperTest {

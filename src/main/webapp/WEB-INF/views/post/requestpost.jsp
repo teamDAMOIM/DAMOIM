@@ -40,8 +40,8 @@
                 <tbody>
                 <c:forEach var="rp" items="${rplist}">
                     <tr>
-                        <td class="num">${rp.tnum}</td>
-                        <td class="tit">${rp.title}</td>
+                        <td class="num">${rp.rpno}</td>
+                        <td class="tit"><a href="/post/detail?pno=${rp.pno}">${rp.title}</a></td>
                         <td class="nm">${rp.name}</td>
                         <td class="dt">${rp.date}</td>
                         <td class="rc">${rp.requestcount}</td>

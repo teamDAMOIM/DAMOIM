@@ -1,8 +1,11 @@
 /* 사이드 메뉴 */
 .side-menu{
-    background: #aaa;
+    /*background: #aaa;*/
+    background: rgba(155,155,155,0.7);
     height: 60vh; width: 200px;
     /* min-width: 200px; */
+    font-family: 'IBM Plex Sans';
+    font-weight: 700;
 
     position: fixed; left: 0; bottom: 20%;
 }
