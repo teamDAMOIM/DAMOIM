@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,8 +48,8 @@ public class PostService {
     }
 
     // 게시물 저장 처리
-    public void savePost(PostRequestDTO dto){
-        Post post = dto.isEntity();
+    public void savePost(PostRequestDTO dto, HttpSession session){
+        Post post = dto.isEntity(session);
         mapper.save(post);
     }
 
