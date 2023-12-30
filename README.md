@@ -1,45 +1,38 @@
-# 🙋‍ 다모임 프로젝트
+# 다모임 프로젝트 🚀
 
-<br>
+## 프로젝트 개요
 
-### 프로젝트 개요 🔥
+다모임 프로젝트는 장소와 취미가 맞는 사람들의 모임을 위한 커뮤니케이션 플랫폼을 제공하는 서비스입니다.
 
----
-- 장소와 취미가 맞는 사람들의 모임을 커뮤니케이션 공간을 제공하는 서비스입니다.
-<br>
+## 개발 멤버
 
-### 개발 멤버
+- **오영석 (PM & Back-end 개발자)**
+  - GitHub: [oyoungsekk](https://github.com/oyoungsekk)
 
----
+- **정범준 (Back-end 개발자)**
+  - GitHub: [benjaminjung](https://github.com/benjaminjung)
 
-    개발자     담당      github
-    오영석   PM & back
-    정범준     back
-    유가령     front
-    박소영     front
+- **유가령 (Front-end 개발자)**
+  - GitHub: [galyr](https://github.com/galyr)
 
+- **박소영 (Front-end 개발자)**
+  - GitHub: [soyoung0203](https://github.com/soyoung0203)
 
-### 🛎️ 개발 기간
-- 2023/12/26 ~ 2024/01/03
+## 개발 기간
 
-### skill
+2023/12/26 ~ 2024/01/03
 
--### front <br>
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=black)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=black)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+## 기술 스택
 
--### back <br>
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=black)
-![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=black)
+### Front-end
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=black)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=black)
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
--### tool <br>
-![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+### Back-end
+- ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+- ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=black)
+- ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=black)
 
-<br>
-<br>
-<br>
-
-    
-
+### Tool
+- ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
