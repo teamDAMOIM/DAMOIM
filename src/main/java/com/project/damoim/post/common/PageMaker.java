@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Getter @ToString
 @EqualsAndHashCode
-public class PageMaker {
+public class PageMaker{
 
     // 페이지 첫번호랑 끝번호 (1~10, 11~20)
     private int begin, end, finalPage;  // finalPage : 보정된 end

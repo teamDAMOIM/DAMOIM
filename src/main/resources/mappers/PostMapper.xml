@@ -42,4 +42,10 @@
         WHERE post_no = #{postNo}
     </update>
 
+    <select id="postMaxCount" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_post;
+    </select>
+
+
 </mapper>

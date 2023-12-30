@@ -27,5 +27,5 @@ public interface PostMapper {
     void updateViewCount(int postNo);
 
     // 총 게시물 수 구하기
-//    int count();
+    int postMaxCount();
 }

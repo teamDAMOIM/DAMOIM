@@ -2,6 +2,7 @@ package com.project.damoim.post.controller;
 
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.post.common.Page;
+import com.project.damoim.post.common.PageMaker;
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
 import com.project.damoim.post.dto.response.PostResponseDTO;
@@ -12,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,6 +31,9 @@ public class PostController {
     @GetMapping("")
     public String post(Page page, Model model) {
         List<PostListRequestDTO> postList = service.getPostList(page);
+        int totalCount = service.totalPostCount();
+        PageMaker pageMaker = new PageMaker(page, totalCount);
+        model.addAttribute("maker",pageMaker);
         model.addAttribute("pList", postList);
 
 

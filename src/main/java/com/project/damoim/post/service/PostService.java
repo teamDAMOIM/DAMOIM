@@ -62,4 +62,8 @@ public class PostService {
         mapper.save(post);
     }
 
+    public int totalPostCount(){
+        return mapper.postMaxCount();
+    }
+
 }
