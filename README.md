@@ -34,5 +34,9 @@
 - ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=black)
 - ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=black)
 
-### Tool
-- ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+## 개발 환경
+- **Java 11**
+- **Spring Boot 2.7.17**
+- **MariaDB**
+- **IntelliJ IDEA**
+
