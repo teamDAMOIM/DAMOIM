@@ -1,5 +1,6 @@
 package com.project.damoim.post.service;
 
+import com.project.damoim.post.common.Page;
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
 import com.project.damoim.post.dto.request.PostSortRequestDTO;
@@ -21,8 +22,8 @@ public class PostService {
 
     private final PostMapper mapper;
 
-    public List<PostListRequestDTO> getPostList(){
-        return mapper.findAll().stream()
+    public List<PostListRequestDTO> getPostList(Page page){
+        return mapper.findAll(page).stream()
                 .map(post -> new PostListRequestDTO(post))
                 .collect(Collectors.toList())
                 ;

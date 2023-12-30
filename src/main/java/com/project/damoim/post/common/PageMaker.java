@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Getter @ToString
 @EqualsAndHashCode
-public class PostMaker {
+public class PageMaker {
 
     // 페이지 첫번호랑 끝번호 (1~10, 11~20)
     private int begin, end, finalPage;  // finalPage : 보정된 end
@@ -16,13 +16,13 @@ public class PostMaker {
 
 
     // 현재 페이지 정보
-    private Post page;
+    private Page page;
 
     // 총 게시물 수
     private int totalCount;
     private int amount;
 
-    public PostMaker(Post page, int totalCount) {
+    public PageMaker(Page page, int totalCount) {
         this.page = page;
         this.totalCount = totalCount;
 

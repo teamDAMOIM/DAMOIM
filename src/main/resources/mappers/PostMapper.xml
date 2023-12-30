@@ -5,8 +5,11 @@
 <mapper namespace="com.project.damoim.post.repository.PostMapper">
 
     <select id="findAll" resultType="com.project.damoim.post.entity.Post">
-        SELECT * FROM tb_post
+        SELECT
+        *
+        FROM tb_post
         ORDER BY post_no DESC
+        LIMIT #{pageStart}, #{amount}
     </select>
 
     <select id="postSort" resultType="com.project.damoim.post.entity.Post">

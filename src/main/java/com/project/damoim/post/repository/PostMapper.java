@@ -1,5 +1,6 @@
 package com.project.damoim.post.repository;
 
+import com.project.damoim.post.common.Page;
 import com.project.damoim.post.entity.Post;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface PostMapper {
     // 목록 조회
-    List<Post> findAll();
+    List<Post> findAll(Page page);
 
     // 조회수 정렬 처리
     List<Post> postSort();
