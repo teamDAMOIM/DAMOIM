@@ -10,7 +10,7 @@
   - GitHub: [oyg9731](https://github.com/oyg9731)
 
 - **정범준 (Back-end 개발자)**
-  - GitHub: [bumjun2](https://github.com/bumjun2)
+  - GitHub: [bumjun2](https://github.com/bumjun2)
 
 - **유가령 (Front-end 개발자)**
   - GitHub: [YOOGARYUNG](https://github.com/YOOGARYUNG)
