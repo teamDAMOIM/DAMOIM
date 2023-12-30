@@ -1,6 +1,7 @@
 package com.project.damoim.post.controller;
 
 import com.project.damoim.post.dto.request.PostListRequestDTO;
+import com.project.damoim.post.dto.request.PostRequestDTO;
 import com.project.damoim.post.dto.response.PostResponseDTO;
 import com.project.damoim.post.entity.Post;
 import com.project.damoim.post.service.PostService;
@@ -43,8 +44,9 @@ public class PostController {
     }
 
     @PostMapping("/write")
-    public String write(){
-
+    public String write(PostRequestDTO dto){
+        service.savePost(dto);
+        return "redirect:/post";
     }
 
     @GetMapping("/detail")

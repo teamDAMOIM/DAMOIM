@@ -1,6 +1,7 @@
 package com.project.damoim.post.service;
 
 import com.project.damoim.post.dto.request.PostListRequestDTO;
+import com.project.damoim.post.dto.request.PostRequestDTO;
 import com.project.damoim.post.dto.response.PostResponseDTO;
 import com.project.damoim.post.entity.Post;
 import com.project.damoim.post.repository.PostMapper;
@@ -43,6 +44,12 @@ public class PostService {
     // 게시물 상세보기로 들어오면 조회수 처리
     public void upViewCount(int pno){
         mapper.updateViewCount(pno);
+    }
+
+    // 게시물 저장 처리
+    public void savePost(PostRequestDTO dto){
+        Post post = dto.isEntity();
+        mapper.save(post);
     }
 
 }
