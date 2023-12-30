@@ -15,5 +15,6 @@ public class PostResponseDTO {
     private String title;
     private String content;
     private LocalDateTime date;
+    private String mid;
 
 }

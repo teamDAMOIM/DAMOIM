@@ -37,6 +37,7 @@ public class PostService {
                 .title(p.getPostTitle())
                 .content(p.getPostContent())
                 .date(p.getPostDate())
+                .mid(p.getMemberId())
                 .build();
 
 

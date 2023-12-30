@@ -10,11 +10,11 @@
 <body>
 <%@ include file="../include/header.jsp"%>
     <div id="wrap" class="form-container">
-        <div class="title" id="title"></div>
+        <div class="title" id="title">${p.title}</div>
         <label for="writer">작성자: </label>
-        <div type="text" id="writer"></div>
+        <div type="text" id="writer">${p.mid}</div>
         <label for="date">작성일자: </label>
-        <div type="text" id="date"></div>
+        <div type="text" id="date">${p.date}</div>
 
         <label for="content">내용</label>
         <div id="content" >${p.content}</div>
