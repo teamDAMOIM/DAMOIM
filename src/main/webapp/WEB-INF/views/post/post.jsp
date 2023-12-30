@@ -30,7 +30,6 @@
             </colgroup>
             <thead>
             <tr>
-                <a href="">sadfsadf</a>
                 <th class="text-center">번호</th>
                 <th class="text-center">제목</th>
                 <th class="text-center">이름</th>

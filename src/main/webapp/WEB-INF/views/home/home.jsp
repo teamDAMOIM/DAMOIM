@@ -58,9 +58,9 @@
         <div class="recruitment-board">
             <div class="board-title-recruitment">모집 게시판</div>
             <ul>
-                <a href="/post">
+                <a href="/">
                     <li class="one-board or">
-                        <div class="board-title sub-recruit">dsl;kf;ldksg;l</div>
+                        <div class="board-title sub-recruit"></div>
                         <div class="check-user-count">
                             <img src="#" alt="인원이 안채워진다면 빨강 체크,아님 초록체크">
                         </div>
