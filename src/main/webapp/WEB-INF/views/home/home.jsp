@@ -34,9 +34,10 @@
         <!-- 구글 지도 -->
         <div class="map">
             여기에 지도 띄울거임
-            <img src="#" alt="#">
+            <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>
         </div>
     </div>
+
 
     <div class="board-black">
 

@@ -40,11 +40,10 @@ public class PostService {
         Post p = mapper.findOne(pno);
 
 
-
         return PostResponseDTO.builder()
                 .title(p.getPostTitle())
                 .content(p.getPostContent())
-                .date(p.getPostDate())
+                .date(p.getPostDate().toString())
                 .mid(p.getMemberId())
                 .build();
 

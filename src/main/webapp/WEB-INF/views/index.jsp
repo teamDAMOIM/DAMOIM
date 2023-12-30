@@ -6,13 +6,11 @@
     <meta charset="UTF-8">
     <title>Web study</title>
     <%@ include file="include/static-head.jsp" %>
-    <script
-            async
-            defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCIXMTOQG3VQPWySeGS7HKwvfrRWTrrB8&callback=initMap"
-    ></script>
+
+
 </head>
 <body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7LCcErx4-uaTP0zFhBenCn9qwTsZsfmY&callback=initMap" async defer></script>
     <%@ include file="include/header.jsp"%>
     <%@ include file="home/home.jsp"%>
     <%@ include file="home/side-menubar.jsp"%>
@@ -20,9 +18,14 @@
 
     <%@ include file="include/footer.jsp"%>
 <script>
+    
     function initMap() {
-        // 지도 초기화 코드
-        console.log('지도 초기화!');
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        })
+
+        console.log('Map object:', map);
     }
 </script>
 </body>
