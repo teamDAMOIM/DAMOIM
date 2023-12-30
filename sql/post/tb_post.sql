@@ -18,3 +18,13 @@ CREATE TABLE tb_post(
                     REFERENCES tb_member (member_id)
                     ON DELETE CASCADE
 );
+
+
+
+-- 임시로 게시판 생성
+-- member_id부분에 본인 member테이블에 있는 아이디 값 넣으삼
+INSERT INTO tb_post
+    (post_title, post_content, post_view_count, member_id)
+VALUES
+    ('재밌는 코딩 시간', '정 말 재 밌어 ?', 0, 'jj3713')
+;

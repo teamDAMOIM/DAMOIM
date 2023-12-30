@@ -1,5 +1,7 @@
 package com.project.damoim.post.controller;
 
+import com.project.damoim.post.dto.request.PostListRequestDTO;
+import com.project.damoim.post.dto.response.PostResponseDTO;
 import com.project.damoim.post.entity.Post;
 import com.project.damoim.post.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -7,8 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -21,7 +25,7 @@ public class PostController {
 
     @GetMapping("")
     public String post(Model model) {
-        List<Post> postList = service.getPostList();
+        List<PostListRequestDTO> postList = service.getPostList();
         model.addAttribute("pList", postList);
 
 
@@ -38,12 +42,28 @@ public class PostController {
         return "/post/write";
     }
 
+    @PostMapping("/write")
+    public String write(){
+
+    }
+
     @GetMapping("/detail")
-    public String detail(int pno, Model model){
+    public String detail(
+            int pno,
+            Model model,
+            HttpSession session
+    ){
         log.debug("{}", pno);
 
-        Post post = service.getPost(pno);
+
+        // js에 포스트 entity 전달 과정
+        PostResponseDTO post = service.getPost(pno);
+
         model.addAttribute("p", post);
+
+        service.upViewCount(pno);
+
+
         return "/post/post-detail";
     }
 }

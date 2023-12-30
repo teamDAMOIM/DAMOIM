@@ -43,11 +43,11 @@
 
                 <tr id="table">
 
-                    <td class="num">${p.postNo}</td>
-                    <td class="tit"><a href="/post/detail?pno=${p.postNo}">${p.postTitle}</a></td>
-                    <td class="nm">${p.memberId}</td>
-                    <td class="dt">${p.postDate}</td>
-                    <td class="vc">${p.postViewCount}</td>
+                    <td class="num">${p.pno}</td>
+                    <td class="tit"><a href="/post/detail?pno=${p.pno}">${p.title}</a></td>
+                    <td class="nm">${p.name}</td>
+                    <td class="dt">${p.date}</td>
+                    <td class="vc">${p.view}</td>
 
                 </tr>
 

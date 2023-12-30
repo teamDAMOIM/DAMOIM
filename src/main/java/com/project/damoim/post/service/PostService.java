@@ -1,5 +1,7 @@
 package com.project.damoim.post.service;
 
+import com.project.damoim.post.dto.request.PostListRequestDTO;
+import com.project.damoim.post.dto.response.PostResponseDTO;
 import com.project.damoim.post.entity.Post;
 import com.project.damoim.post.repository.PostMapper;
 import lombok.RequiredArgsConstructor;
@@ -16,16 +18,31 @@ public class PostService {
 
     private final PostMapper mapper;
 
-    public List<Post> getPostList(){
+    public List<PostListRequestDTO> getPostList(){
         return mapper.findAll().stream()
+                .map(post -> new PostListRequestDTO(post))
                 .collect(Collectors.toList())
                 ;
     }
 
-
     // 게시물 하나 보여줘
-    public Post getPost(int pno){
-        return mapper.findOne(pno);
+    public PostResponseDTO getPost(int pno){
+        Post p = mapper.findOne(pno);
+
+
+
+        return PostResponseDTO.builder()
+                .title(p.getPostTitle())
+                .content(p.getPostContent())
+                .date(p.getPostDate())
+                .build();
+
+
+    }
+
+    // 게시물 상세보기로 들어오면 조회수 처리
+    public void upViewCount(int pno){
+        mapper.updateViewCount(pno);
     }
 
 }
