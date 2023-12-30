@@ -7,16 +7,16 @@
 ## 개발 멤버
 
 - **오영석 (PM & Back-end 개발자)**
-  - GitHub: [oyoungsekk](https://github.com/oyoungsekk)
+  - GitHub: [oyg9731](https://github.com/oyg9731)
 
 - **정범준 (Back-end 개발자)**
   - GitHub: [bumjun2](https://github.com/bumjun2)
 
 - **유가령 (Front-end 개발자)**
-  - GitHub: [galyr](https://github.com/galyr)
+  - GitHub: [YOOGARYUNG](https://github.com/YOOGARYUNG)
 
 - **박소영 (Front-end 개발자)**
-  - GitHub: [soyoung0203](https://github.com/soyoung0203)
+  - GitHub: [YoungHeeSo](https://github.com/YoungHeeSo)
 
 ## 개발 기간
 
