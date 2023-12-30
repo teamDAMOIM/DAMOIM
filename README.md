@@ -10,7 +10,7 @@
   - GitHub: [oyoungsekk](https://github.com/oyoungsekk)
 
 - **정범준 (Back-end 개발자)**
-  - GitHub: [benjaminjung](https://github.com/benjaminjung)
+  - GitHub: [benjaminjung](https://github.com/bumjun2)
 
 - **유가령 (Front-end 개발자)**
   - GitHub: [galyr](https://github.com/galyr)
@@ -20,7 +20,7 @@
 
 ## 개발 기간
 
-2023/12/26 ~ 2024/01/03
+2023/12/26 ~ 2024/01/03 
 
 ## 기술 스택
 
