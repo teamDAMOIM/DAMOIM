@@ -30,7 +30,10 @@
 <link rel="stylesheet" href="/assets/css/write.css">
 <link rel="stylesheet" href="/assets/css/side-menubar.css">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 <link rel="stylesheet" href="/assets/css/post-detail.css">
