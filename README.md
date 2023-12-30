@@ -10,7 +10,7 @@
   - GitHub: [oyoungsekk](https://github.com/oyoungsekk)
 
 - **정범준 (Back-end 개발자)**
-  - GitHub: [benjaminjung](https://github.com/bumjun2)
+  - GitHub: [bumjun2](https://github.com/bumjun2)
 
 - **유가령 (Front-end 개발자)**
   - GitHub: [galyr](https://github.com/galyr)
