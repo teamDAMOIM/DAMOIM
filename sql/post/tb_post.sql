@@ -28,3 +28,11 @@ INSERT INTO tb_post
 VALUES
     ('재밌는 코딩 시간', '정 말 재 밌어 ?', 0, 'jj3713')
 ;
+
+-- 베스트 게시판 정렬 검사
+SELECT
+    post_title, post_view_count
+FROM tb_post
+ORDER BY post_view_count DESC
+LIMIT 0, 5
+;

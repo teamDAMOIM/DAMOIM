@@ -10,6 +10,9 @@ public interface PostMapper {
     // 목록 조회
     List<Post> findAll();
 
+    // 조회수 정렬 처리
+    List<Post> postSort();
+
     // 상세 조회
     Post findOne(int postNo);
 

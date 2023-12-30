@@ -9,6 +9,14 @@
         ORDER BY post_no DESC
     </select>
 
+    <select id="postSort" resultType="com.project.damoim.post.entity.Post">
+        SELECT
+            post_no, post_title, post_view_count
+        FROM tb_post
+        ORDER BY post_view_count DESC
+        LIMIT 0, 5
+    </select>
+
     <select id="findOne" resultType="com.project.damoim.post.entity.Post">
         SELECT * FROM tb_post
         WHERE post_no = #{postNo}

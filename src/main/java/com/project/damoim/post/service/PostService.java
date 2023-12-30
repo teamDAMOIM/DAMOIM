@@ -2,6 +2,7 @@ package com.project.damoim.post.service;
 
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
+import com.project.damoim.post.dto.request.PostSortRequestDTO;
 import com.project.damoim.post.dto.response.PostResponseDTO;
 import com.project.damoim.post.entity.Post;
 import com.project.damoim.post.repository.PostMapper;
@@ -23,6 +24,13 @@ public class PostService {
     public List<PostListRequestDTO> getPostList(){
         return mapper.findAll().stream()
                 .map(post -> new PostListRequestDTO(post))
+                .collect(Collectors.toList())
+                ;
+    }
+
+    public List<PostSortRequestDTO> getSortPostList(){
+        return mapper.postSort().stream()
+                .map(post -> new PostSortRequestDTO(post))
                 .collect(Collectors.toList())
                 ;
     }

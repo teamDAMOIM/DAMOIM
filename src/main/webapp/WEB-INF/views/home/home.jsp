@@ -42,15 +42,17 @@
 
         <div class="free-board-BEST">
             <div class="board-title-free">자유 게시판 <span>BEST</span></div>
-            <ul>
-                <li class="one-board of">
-                    <div class="board-title sub-free">dwlsakjfdlksj</div>
-                    <div class="best-user-count">
-                        <img src="#" alt="눈알 넣을거임">
-                    </div>
-
-                </li>
-            </ul>
+            <c:forEach var="p" items="${pList}">
+                <a href="/post/detail?pno=${p.pno}">
+                    <li class="one-board of">
+                        <div class="board-title sub-free>${p.title}</div>
+                        <div class="best-user-count">
+                            <img src="#" alt="눈알 넣을거임">
+                            ${p.viewCount}
+                        </div>
+                    </li>
+                </a>
+            </c:forEach>
         </div>
 
         <div class="recruitment-board">
