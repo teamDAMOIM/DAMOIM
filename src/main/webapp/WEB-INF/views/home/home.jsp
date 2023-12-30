@@ -12,7 +12,7 @@
             <label class="google-it-place">
 <%--                <img src="../assets/img/magnifierIcon.png" alt="magnifierIcon">--%>
                     <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon">
-                <input type="text" name="searchPlace">
+                <input type="text" name="searchPlace" id="inputAddress">
             </label>
 
             <!--
@@ -34,7 +34,12 @@
         <!-- 구글 지도 -->
         <div class="map">
             여기에 지도 띄울거임
-            <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>
+            <c:if test="${login == null}">
+                <div>로그인해라</div>
+            </c:if>
+            <c:if test="${login != null}">
+                <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>
+            </c:if>
         </div>
     </div>
 

@@ -15,17 +15,33 @@
     <%@ include file="home/home.jsp"%>
     <%@ include file="home/side-menubar.jsp"%>
 
-
     <%@ include file="include/footer.jsp"%>
 <script>
-    
-    function initMap() {
-        const map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        })
+    var map
 
-        console.log('Map object:', map);
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15
+        }); // 사용자 주소를 가져와서 지도의 중심을 설정
+        var userAddress = '${login.address}';
+        geocodeAddress(userAddress);
+    }
+
+    function geocodeAddress(address) {
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status === 'OK') {
+                var location = results[0].geometry.location;
+
+                // 좌표를 기반으로 지도 중심 이동
+                map.setCenter(location);
+
+
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
     }
 </script>
 </body>
