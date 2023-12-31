@@ -10,8 +10,8 @@
         <div class="detail-place">
             <!-- 장소 검색 -->
             <label class="google-it-place">
-<%--                <img src="../assets/img/magnifierIcon.png" alt="magnifierIcon">--%>
-                    <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon">
+                <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon">
+                <!-- <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon"> -->
                 <input type="text" name="searchPlace" id="inputAddress">
             </label>
 
@@ -24,58 +24,67 @@
             <div class="view-place">
                 <div class="place-title pinfo">이건 장소이름</div>
                 <img src="#" alt="첫화면, 검색한 장소가 없다면 현재 내위치">
+                <div class="place-address pinfo">여기는 주소</div>
+                <input type="button" value="모집하기" name="recruitment">
                 <div class="place-detail">
-                    <div class="place-address pinfo">여기는 주소</div>
-                    <input type="button" value="모집하기">
                 </div>
             </div>
         </div>
+<%--        </div>--%>
 
         <!-- 구글 지도 -->
-        <div class="map">
-            여기에 지도 띄울거임
+        <div class="map-view">
             <c:if test="${login == null}">
-                <div>로그인해라</div>
+                <div class="view-map">로그인해라</div>
             </c:if>
             <c:if test="${login != null}">
-                <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>
+<%--                <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>--%>
+                <div id="map"></div>
             </c:if>
         </div>
     </div>
 
 
     <div class="board-black">
-
+        <!--
+            free-board-BEST - 조회수가 가장 높은 7개를 순서대로 보여준다(내림차)
+            board-title-free - 모든 게시글들이 있는 자유 게시판 페이지으로 이동 한다
+            one-board - 이 게시글의 상세보기으로 이동한다
+         -->
         <div class="free-board-BEST">
-            <div class="board-title-free">자유 게시판 <span>BEST</span></div>
-            <c:forEach var="p" items="${pList}">
-                <a href="/post/detail?pno=${p.pno}">
-                    <li class="one-board of">
-                        <div class="board-title sub-free>${p.title}</div>
-                        <div class="best-user-count">
-                            <img src="#" alt="눈알 넣을거임">
-                            ${p.viewCount}
-                        </div>
-                    </li>
-                </a>
-            </c:forEach>
+            <a href="여기에 게시판 상세보기로 들어가는 페이지">
+                <div class="board-title-free">자유 게시판 <span>BEST</span></div>
+            </a>
+            <ul>
+                <c:forEach var="p" items="${pList}">
+                    <a href="/post/detail?pno=${p.pno}">
+                        <li class="one-board of">
+                            <div class="board-title sub-free">${p.title}</div>
+                            <div class="best-user-count"><img src="/assets/img/hit-count.png" alt="조회수">${p.viewCount}</div>
+                        </li>
+                    </a>
+                </c:forEach>
+            </ul>
         </div>
 
+        <!--
+            recruitment-board - 최신글 7개를 최신순으로 보여준다(내림차)
+            board-title-recruitment - 모든 게시글들이 있는 모집 게시판 페이지으로 이동 한다
+            one-board - 이 게시글의 상세보기으로 이동한다
+         -->
         <div class="recruitment-board">
-            <div class="board-title-recruitment">모집 게시판</div>
+            <a href="모집 게시판의 상세 페이지 URL">
+                <div class="board-title-recruitment">모집 게시판</div>
+            </a>
             <ul>
                 <a href="/recruit">
                     <li class="one-board or">
-                        <div class="board-title sub-recruit"></div>
-                        <div class="check-user-count">
-                            <img src="#" alt="인원이 안채워진다면 빨강 체크,아님 초록체크">
-                        </div>
+                        <div class="board-title sub-recruit">제목[-모집 날짜 종료]</div>
+                        <div class="check-user-count"><img src="/assets/img/red-check.png" alt="check-color">신청인원</div>
                     </li>
                 </a>
             </ul>
         </div>
-
-
     </div>
 
 </section>
