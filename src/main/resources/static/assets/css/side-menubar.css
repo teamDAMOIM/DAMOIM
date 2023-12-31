@@ -1,8 +1,12 @@
 /* 사이드 메뉴 */
 .side-menu{
-    background: #aaa;
+    /*background: #aaa;*/
+    background: rgba(255, 255, 255, 0.8);
     height: 60vh; width: 200px;
     /* min-width: 200px; */
+    font-family: 'IBM Plex Sans';
+    font-weight: 700;
+    border-radius: 0 5px 5px 0;
 
     position: fixed; left: 0; bottom: 20%;
 }
@@ -38,5 +42,5 @@
 
 .side-menu .my-activities .activity-title
 , .side-menu .my-activities .one-activity{
-    border-bottom: 1px solid #494949;
+    border-bottom: 1px solid #808080;
 }

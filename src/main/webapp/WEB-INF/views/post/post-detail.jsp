@@ -21,7 +21,7 @@
         <div class="buttons">
             <button class="list-btn" type="button"
 <%--            onclick="window.location.href='/psot/post?pageNo=${p.pageNo}&amount=${p.amount}&type=${p.type}&keyword=${p.keyword}'" --%>
-            onclick="window.location.href='/psot/post'">
+            onclick="window.location.href='/post/post'">
                     목록
             </button>
         </div>

@@ -20,7 +20,7 @@
                     <a href="/members/sign-up" class="btn btn-white btn-outline-white">Sign Up</a>
                 </div>
             </div>
-            <div class="sign-wrap p-4 p-lg-5">
+            <div class="sign-wrap p-4 p-lg-5 borderrd">
                 <div class="d-flex">
                     <div class="w-100">
                         <h3 class="mb-4">Sign In</h3>

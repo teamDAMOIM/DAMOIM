@@ -6,6 +6,11 @@ body {
     background-color: #f0f0f0;
     font-family: 'IBM Plex Sans';
     font-weight: 400;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 button {
@@ -41,7 +46,7 @@ a {
 /* header style */
 header {
     /* background: red; */
-    background: rgba(0,0,0,0.8);
+    background: rgba(70, 70, 70, 0.7);
     position: fixed;
     width: 100%;
     top: 0;
@@ -74,7 +79,7 @@ header .inner-header .logo a {
 /*}*/
 header .inner-header .intro-text {
     /* background: greenyellow; */
-    flex: 4;
+    flex: 6;
     text-transform: uppercase;
     margin: 0 auto;
     text-align: right;
@@ -82,7 +87,7 @@ header .inner-header .intro-text {
 }
 header .inner-header .menu-open {
     /* background: skyblue; */
-    flex: 1;
+    flex: 0.7;
     font-size: 20px;
     display: flex;
     justify-content: flex-end;
@@ -135,7 +140,7 @@ header .gnb ul li.active
 }
 
 footer {
-    background: rgba(0,0,0,0.8);
+    background: rgba(35, 35, 35, 0.8);
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -178,18 +183,27 @@ footer .inner-footer img {
     align-content: center;
 }
 .sign-section .container .wrap .btn {
-    background: rgba(19, 0, 69, 0.9);
+    background: rgba(155, 47, 71, 0.9);
     color: #fff;
 }
 
 .sign-section .container .wrap .text-wrap {
     width: 50%;
-    background: rgba(163,160,237,1.0);
+    background: rgb(229, 134, 151);
+    border-radius: 0 5px 5px 0;
+
 }
 
 .sign-section .container .wrap .sign-wrap {
     width: 50%;
     background: rgba(255,255,255,1.0);
+    border-radius: 5px;
+}
+
+.sign-section .container .wrap .sign-wrap.borderrd {
+    width: 50%;
+    background: rgba(255,255,255,1.0);
+    border-radius: 5px 0 0 5px;
 }
 
 .sign-section .container .wrap .sign-wrap .signup-form .row-ph {

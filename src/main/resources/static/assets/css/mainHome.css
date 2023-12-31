@@ -2,12 +2,16 @@ ul{
     padding-left: 0; margin-bottom: 0;
 }
 
+body{
+    background: linear-gradient(225deg, rgba(255,255,255,1) 0%, rgb(236, 181, 181) 100%);
+}
+
 /* home */
 #home-DAMOIM{
     /*margin-left: 18%;*/
     width: 100%;
 
-    background: #ffefef;
+    /*background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,197,197,1) 100%);*/
     margin-top: 20%;
 
     position: relative;
@@ -25,7 +29,7 @@ ul{
 /* 지도 보기, 모집 */
 #home-DAMOIM .map-view-search{
     width: 100%-200px;
-    background: #FFD98D;
+    /*background: #FFD98D;*/
     /*height: 70vh;*/
 
     display: flex;
@@ -75,7 +79,7 @@ ul{
 
 /* 장소 보기 */
 #home-DAMOIM .map-view-search .detail-place .view-place{
-    background: #ffefef;
+    /*background: #ffefef;*/
     height: 50vh;
     padding: 1.2em 0;
 
@@ -112,7 +116,7 @@ ul{
 
 /* 자유 게시판, 모집 게시판 블록 */
 .board-black{
-    margin-top: 20%; background: #FFD98D;
+    /*margin-top: 20%; background: #FFD98D;*/
     padding-top: 5%; padding-bottom: 5%;
 
     display: flex; flex-flow: row nowrap;
