@@ -30,7 +30,7 @@
 
             <li><a href="/post">Board</a></li> <%-- 자유게시판 --%>
 
-            <li><a href="/post/requestpost">Request Board</a></li> <%-- 신청게시판 --%>
+            <li><a href="/recruit">Request Board</a></li> <%-- 신청게시판 --%>
 
             <c:if test="${empty login}">
                 <li><a href="/members/sign-in">Sign In</a></li>

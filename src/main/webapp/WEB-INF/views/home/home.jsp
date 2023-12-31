@@ -64,7 +64,7 @@
         <div class="recruitment-board">
             <div class="board-title-recruitment">모집 게시판</div>
             <ul>
-                <a href="/">
+                <a href="/recruit">
                     <li class="one-board or">
                         <div class="board-title sub-recruit"></div>
                         <div class="check-user-count">
