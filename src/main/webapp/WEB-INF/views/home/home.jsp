@@ -66,8 +66,30 @@
                 </c:forEach>
             </ul>
         </div>
-
         <!--
+            recruitment-board - 최신글 7개를 최신순으로 보여준다(내림차)
+            board-title-recruitment - 모든 게시글들이 있는 모집 게시판 페이지으로 이동 한다
+            one-board - 이 게시글의 상세보기으로 이동한다
+         -->
+        <div class="recruitment-board">
+            <a href="/recruit">
+                <div class="board-title-recruitment">모집 게시판</div>
+            </a>
+            <ul>
+                <a href="/recruit">
+                    <li class="one-board or">
+                        <div class="board-title sub-recruit">제목[-모집 날짜 종료]</div>
+                        <div class="check-user-count"><img src="/assets/img/red-check.png" alt="check-color">신청인원</div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+
+<!--
             recruitment-board - 최신글 7개를 최신순으로 보여준다(내림차)
             board-title-recruitment - 모든 게시글들이 있는 모집 게시판 페이지으로 이동 한다
             one-board - 이 게시글의 상세보기으로 이동한다

@@ -17,7 +17,7 @@ public class Comment {
     private String commentContent; // 댓글 내용
     private LocalDateTime commentDate; // 댓글 작성일자시간
     private String commentUsername; // 작성자 아이디
-    private Member memberId; // 회원 아이디
-    private Post postNo; // 게시물 번호
+    private String memberId; // 회원 아이디
+    private int postNo; // 게시물 번호
 
 }

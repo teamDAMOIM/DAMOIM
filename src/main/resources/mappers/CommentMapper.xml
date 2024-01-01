@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.damoim.comment.repository.CommentMapper">
+    <select id="findComment" resultType="com.project.damoim.comment.entity.Comment">
+        SELECT
+            comment_no, comment_content, comment_date,
+            comment_username, post_no, member_id
+        FROM tb_comment
+        WHERE post_no = #{pno}
+    </select>
+
+    <insert id="save">
+        INSERT INTO tb_comment
+            (comment_content, comment_username, post_no, member_id)
+        VALUES
+            (#{commentContent}, #{commentUsername}, #{postNo}, #{memberId})
+    </insert>
+</mapper>

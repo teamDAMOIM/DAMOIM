@@ -51,6 +51,7 @@ public class PostService {
 
 
         return PostResponseDTO.builder()
+                .pno(p.getPostNo())
                 .title(p.getPostTitle())
                 .content(p.getPostContent())
                 .date(p.getPostDate().toString())

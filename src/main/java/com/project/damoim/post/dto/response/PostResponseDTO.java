@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor
 @Builder
 public class PostResponseDTO {
+    private int pno;
     private String title;
     private String content;
     private String date;

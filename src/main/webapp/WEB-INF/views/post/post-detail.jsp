@@ -28,5 +28,22 @@
 <%--    댓글    --%>
     </div>
 <%@ include file="../include/footer.jsp"%>
+
+<script>
+
+
+    function fetchGetComment(){
+        fetch("/comment/${p.pno}")
+            .then(request => request.json())
+            .then(response=>{
+                console.log(response)
+            })
+    }
+
+
+    (()=>{
+        fetchGetComment();
+    })();
+</script>
 </body>
 </html>
