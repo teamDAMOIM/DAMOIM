@@ -20,6 +20,11 @@ public class LoginUtiles {
 
     public static String LoginUserId (HttpSession session){
         LoginSessionDTO loginId = (LoginSessionDTO) session.getAttribute("login");
-        return loginId.getId();
+        if (loginId != null){
+            return loginId.getId();
+        }else {
+            return null;
+        }
+
     }
 }
