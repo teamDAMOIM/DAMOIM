@@ -1,5 +1,6 @@
 package com.project.damoim.post.service;
 
+import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.post.common.Page;
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
@@ -34,6 +35,14 @@ public class PostService {
                 .map(post -> new PostSortRequestDTO(post))
                 .collect(Collectors.toList())
                 ;
+    }
+
+    // 로그인한 사람 게시물 보여줘
+    public List<Post> getLoginPost(HttpSession session){
+
+        String loginUserId = LoginUtiles.LoginUserId(session);
+
+        return mapper.findByLoginUserPost(loginUserId);
     }
 
     // 게시물 하나 보여줘

@@ -17,6 +17,9 @@ public interface PostMapper {
     // 상세 조회
     Post findOne(int postNo);
 
+    // 로그인한 회원이 올린 포스터 확인
+    List<Post> findByLoginUserPost(String memberId);
+
     // 게시물 등록
     boolean save(Post post);
 

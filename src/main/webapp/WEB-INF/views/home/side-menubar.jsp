@@ -3,8 +3,12 @@
 
 
 <div class="side-menu">
-    <ul class="my-activities">
-        <li class="activity-title">나의 활동</li>
-        <li class="one-activity"> <div class="activity-img"></div> <div class="activity-name">나의 활동-1</div></li>
-    </ul>
+    <c:forEach var="p" items="${loginPost}">
+        <ul class="my-activities">
+                <li class="activity-title">${p.memberId}</li>
+                <li class="one-activity"> <div class="activity-img"></div> <div class="activity-name">
+                    ${p.postTitle}
+                </div></li>
+        </ul>
+    </c:forEach>
 </div>

@@ -38,8 +38,8 @@
                 <div class="view-map">로그인해라</div>
             </c:if>
             <c:if test="${login != null}">
-<%--                <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>--%>
-                <div id="map"></div>
+                <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>
+<%--                <div id="map"></div>--%>
             </c:if>
         </div>
     </div>

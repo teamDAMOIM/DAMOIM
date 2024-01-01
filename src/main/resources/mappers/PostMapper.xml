@@ -12,6 +12,15 @@
         LIMIT #{pageStart}, #{amount}
     </select>
 
+    <select id="findByLoginUserPost" resultType="com.project.damoim.post.entity.Post">
+        SELECT
+        *
+        FROM tb_post as a
+        JOIN tb_member as b
+        ON a.member_id = b.member_id
+        WHERE a.member_id = #{memberId}
+    </select>
+
     <select id="postSort" resultType="com.project.damoim.post.entity.Post">
         SELECT
             post_no, post_title, post_view_count

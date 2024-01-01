@@ -1,12 +1,10 @@
 package com.project.damoim.post.repository;
 
-import com.project.damoim.post.common.Page;
 import com.project.damoim.post.entity.Post;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -31,9 +29,20 @@ class PostMapperTest {
             boolean save = mapper.save(p);
         }
         //when
-        List<Post> all = mapper.findAll();
         //then
-        System.out.println("all = " + all);
     }
+
+
+    @Test
+    @DisplayName("jj3713회원에 게시물을 확인하면 게시물이 2개 나와야 한다")
+    void findByLoginUserPostTest() {
+        //given
+        String id = "jj3713";
+        //when
+        List<Post> pList = mapper.findByLoginUserPost(id);
+        //then
+        System.out.println("pList = " + pList);
+    }
+
 
 }
