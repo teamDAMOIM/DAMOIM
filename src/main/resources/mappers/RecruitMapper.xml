@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.damoim.recruit.repository.RecruitMapper">
+    <select id="findAll" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+        recruit_no, recruit_title, recruit_content, recruit_category, recruit_startdate
+        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, recruit_check
+        FROM tb_recruit
+    </select>
+
+    <insert id="save">
+        INSERT INTO tb_recruit
+            (recruit_title, recruit_content, recruit_category, recruit_enddate, recruit_addrass, recruit_max)
+        VALUES
+            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitEnddate}, #{recruitAddress}, #{recruitMax})
+    </insert>
+
+    <select id="findOne" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+        recruit_no, recruit_title, recruit_content, recruit_category, recruit_startdate
+        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, recruit_check
+        FROM tb_recruit
+        WHERE recruit_no = #{rno}
+    </select>
+</mapper>

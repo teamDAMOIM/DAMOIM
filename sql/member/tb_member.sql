@@ -27,11 +27,4 @@ ADD auto_date DATETIME DEFAULT current_timestamp
 ;
 
 
-SELECT
-    *
-FROM tb_member as a
-JOIN tb_post as b
-ON a.member_id =  b.member_id
-WHERE a.member_id = 'jj3713'
-;
 

@@ -20,3 +20,5 @@ CREATE TABLE tb_recruit(
 ALTER TABLE tb_recruit
 MODIFY recruit_startdate DATETIME
 ;
+
+alter table tb_recruit modify recruit_no int not null auto_increment;
