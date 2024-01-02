@@ -27,11 +27,9 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/post.css">
 <link rel="stylesheet" href="/assets/css/mainHome.css">
-<<<<<<< HEAD
 <link rel="stylesheet" href="/assets/css/write.css">
-=======
 <link rel="stylesheet" href="/assets/css/side-menubar.css">
->>>>>>> psy
+
 
 <!-- requestPost -->
 <link rel="stylesheet" href="/assets/css/requestpost-list.css">
