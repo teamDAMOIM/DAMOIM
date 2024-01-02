@@ -1,5 +1,6 @@
 package com.project.damoim.recruit.dto.response;
 
+import com.project.damoim.Util.date.DateChange;
 import com.project.damoim.recruit.entity.Category;
 import com.project.damoim.recruit.entity.Recruit;
 import lombok.*;

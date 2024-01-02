@@ -24,7 +24,7 @@ class RecruitMapperTest {
     @DisplayName("")
     void saveTest() {
         //given
-       Recruit r = Recruit.builder()
+        Recruit r = Recruit.builder()
                 .recruitTitle("www")
                 .recruitContent("asdasd")
                 .recruitEnddate(LocalDateTime.now().plusDays(30))
@@ -32,8 +32,11 @@ class RecruitMapperTest {
                 .recruitAddress("공주")
                 .recruitMax(10)
                 .build();
+        for (int i = 0; i < 30; i++) {
+            recruitMapper.save(r);
+        }
         //when
-        recruitMapper.save(r);
+
         //then
     }
 
@@ -58,4 +61,17 @@ class RecruitMapperTest {
         //then
         assertEquals("www", one.getRecruitTitle());
     }
+
+
+    @Test
+    @DisplayName("")
+    void findSortRecruitTest() {
+        //given
+
+        //when
+        List<Recruit> sortRecruit = recruitMapper.findSortRecruit();
+        //then
+        System.out.println("sortRecruit = " + sortRecruit);
+    }
+
 }

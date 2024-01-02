@@ -20,6 +20,15 @@
 <script>
     var map
 
+    const $inputAddress = document.getElementById('inputAddress');
+
+    $inputAddress.onkeydown = e => {
+        if (e.keyCode === 13){
+            geocodeAddress($inputAddress.value);
+        }
+
+    }
+
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15
@@ -38,7 +47,7 @@
                 // 좌표를 기반으로 지도 중심 이동
                 map.setCenter(location);
             } else {
-                alert("이거 뜨면 망하는거야 !!!!!!!!!");
+                alert("정확한 주소를 입력하세");
             }
         });
     }
