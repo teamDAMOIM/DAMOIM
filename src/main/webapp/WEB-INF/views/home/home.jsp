@@ -86,8 +86,6 @@
         </div>
     </div>
 
-</section>
-
 
 <!--
             recruitment-board - 최신글 7개를 최신순으로 보여준다(내림차)
