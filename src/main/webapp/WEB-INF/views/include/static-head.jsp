@@ -27,16 +27,17 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/post.css">
 <link rel="stylesheet" href="/assets/css/mainHome.css">
-<<<<<<< HEAD
 <link rel="stylesheet" href="/assets/css/write.css">
-=======
 <link rel="stylesheet" href="/assets/css/side-menubar.css">
->>>>>>> psy
+
+
+<!-- requestPost -->
+<link rel="stylesheet" href="/assets/css/requestpost-list.css">
 
 
 <!-- bootstrap js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-<!— side menu event js —>
+<!-- side menu event js -->
 <script src="/assets/js/side-menu.js" defer></script>
 
