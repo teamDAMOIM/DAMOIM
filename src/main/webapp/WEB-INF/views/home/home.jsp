@@ -52,7 +52,7 @@
             one-board - 이 게시글의 상세보기으로 이동한다
          -->
         <div class="free-board-BEST">
-            <a href="여기에 게시판 상세보기로 들어가는 페이지">
+            <a href="/post">
                 <div class="board-title-free">자유 게시판 <span>BEST</span></div>
             </a>
             <ul>
