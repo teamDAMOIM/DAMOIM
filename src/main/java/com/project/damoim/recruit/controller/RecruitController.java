@@ -1,6 +1,5 @@
 package com.project.damoim.recruit.controller;
 
-import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Recruit;
 import com.project.damoim.recruit.service.RecuritService;
@@ -36,8 +35,8 @@ public class RecruitController {
     }
 
     @PostMapping("/write")
-    public String write(RecuritRequestDTO dto){
-        service.saveRecurit(dto);
+    public String write(Recruit recruit){
+        service.saveRecurit(recruit);
         return "redirect:/recruit";
     }
 

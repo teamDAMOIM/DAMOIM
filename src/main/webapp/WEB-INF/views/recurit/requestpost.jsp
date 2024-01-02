@@ -72,7 +72,7 @@
 <script>
     const $writeBtn = document.querySelector('.add-btn');
     $writeBtn.onclick = e => {
-        const targetPageURL = '/recruit/write';
+        const targetPageURL = '/post/write';
         window.location.href = targetPageURL;
     }
 </script>

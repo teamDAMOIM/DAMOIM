@@ -77,14 +77,34 @@
             </a>
             <ul>
                 <a href="/recruit">
-                    <c:forEach var="r" items="${rList}">
-                        <li class="one-board or">
-                            <div class="board-title sub-recruit">${r.title}[-${r.endDate}]</div>
-                            <div class="check-user-count"><img src="/assets/img/red-check.png" alt="check-color">${r.maxCount}</div>
-                        </li>
-                    </c:forEach>
+                    <li class="one-board or">
+                        <div class="board-title sub-recruit">제목[-모집 날짜 종료]</div>
+                        <div class="check-user-count"><img src="/assets/img/red-check.png" alt="check-color">신청인원</div>
+                    </li>
                 </a>
             </ul>
         </div>
     </div>
+
+
+<!--
+            recruitment-board - 최신글 7개를 최신순으로 보여준다(내림차)
+            board-title-recruitment - 모든 게시글들이 있는 모집 게시판 페이지으로 이동 한다
+            one-board - 이 게시글의 상세보기으로 이동한다
+         -->
+        <div class="recruitment-board">
+            <a href="모집 게시판의 상세 페이지 URL">
+                <div class="board-title-recruitment">모집 게시판</div>
+            </a>
+            <ul>
+                <a href="/recruit">
+                    <li class="one-board or">
+                        <div class="board-title sub-recruit">제목[-모집 날짜 종료]</div>
+                        <div class="check-user-count"><img src="/assets/img/red-check.png" alt="check-color">신청인원</div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
 </section>

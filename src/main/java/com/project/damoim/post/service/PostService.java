@@ -1,7 +1,6 @@
 package com.project.damoim.post.service;
 
 import com.project.damoim.Util.LoginUtiles;
-import com.project.damoim.Util.date.DateChange;
 import com.project.damoim.post.common.Page;
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
@@ -55,7 +54,7 @@ public class PostService {
                 .pno(p.getPostNo())
                 .title(p.getPostTitle())
                 .content(p.getPostContent())
-                .date(DateChange.postDateChang(p.getPostDate()))
+                .date(p.getPostDate().toString())
                 .mid(p.getMemberId())
                 .build();
 

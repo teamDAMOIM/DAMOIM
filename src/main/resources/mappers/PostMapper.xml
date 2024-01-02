@@ -19,8 +19,6 @@
         JOIN tb_member as b
         ON a.member_id = b.member_id
         WHERE a.member_id = #{memberId}
-        ORDER BY post_date DESC
-        LIMIT 0, 3
     </select>
 
     <select id="postSort" resultType="com.project.damoim.post.entity.Post">
