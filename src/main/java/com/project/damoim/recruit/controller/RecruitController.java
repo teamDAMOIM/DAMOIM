@@ -29,9 +29,21 @@ public class RecruitController {
         return "/recurit/requestpost";
     }
 
+    @GetMapping("/write")
+    public String write(){
+        return "/recurit/requestpost-write";
+    }
+
     @PostMapping("/write")
-    public String save(Recruit recruit){
+    public String write(Recruit recruit){
         service.saveRecurit(recruit);
         return "redirect:/recruit";
+    }
+
+    @GetMapping("/detail")
+    public String detail(int rno, Model model){
+        Recruit r = service.detailRecurit(rno);
+        model.addAttribute("r", r);
+        return "/recurit/requestpost-detail";
     }
 }

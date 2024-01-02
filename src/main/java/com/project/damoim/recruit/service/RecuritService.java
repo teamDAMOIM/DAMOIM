@@ -28,4 +28,8 @@ public class RecuritService {
     public boolean saveRecurit(Recruit recruit){
         return recruitMapper.save(recruit);
     }
+
+    public Recruit detailRecurit(int rno){
+        return recruitMapper.findOne(rno);
+    }
 }
