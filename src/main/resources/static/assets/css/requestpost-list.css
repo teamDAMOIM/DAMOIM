@@ -63,9 +63,9 @@
 
         padding-top: 10px
     }
-        .user-count img{
-            width: 35px; height: 15px;
-            padding-right: 10px;
+        .user-count svg{
+            width: 20px; height: 20px;
+            /*padding-right: 10px;*/
         }
 
 
@@ -83,18 +83,23 @@
 .rp-bottom{
     height: 20%;
     background: #e8cbff;
-    padding: 1.2em;
+    /*padding: 1em;*/
 
     display: flex; flex-flow: row nowrap;
+    /*align-content: center;*/
+    justify-content: start;
 
     border-bottom-left-radius: 17px;
     border-bottom-right-radius: 17px;
+
+    font-size: 1.2em; text-align: center;
 }
-    .maxCount img{
-        width: 16px; height: 16px;
+
+    .maxCount
+    , .endDate{
+        display: flex;
+        align-items: center;
+
+        margin: auto;
     }
 
-    .endDate{
-        padding-left: 1.2em;
-
-    }
