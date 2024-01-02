@@ -14,13 +14,8 @@
     <div class="main-title-wrap">
         <h1 class="main-title">신청게시판</h1>
         <div class="button-wrap">
-            <!-- drop down menu -->
-            <select class="form-select" name="type" id="search-type" value="category">
-                <option value="exercise">운동</option>
-                <option value="wine">술</option>
-                <option value="Hobby">취미</option>
-                <option value="Study">스터디</option>
-            </select>
+
+            <%@ include file="../home/category.jsp"%>
 
             <%--            <c:if test="${login != null}">--%>
             <!-- 글 쓰기 버튼 -->
@@ -28,43 +23,25 @@
             <%--            </c:if>--%>
         </div>
     </div>
-    <form action="/post/reqestpost" class="requestlist">
-        <div class="container">
-            <table class="table" id="request-table">
-                <colgroup>
-                    <col style="width: 9%;" class="size01" data-alias="number">
-                    <col style="width: 65%;" class="size02" data-alias="title">
-                    <col style="width: 7%;" class="size03" data-alias="name">
-                    <col style="width: 12%;" class="size04" data-alias="date">
-                    <col style="width: 7%;" class="size05" data-alias="requestcount">
-                </colgroup>
-                <thead>
-                <tr>
-                    <th class="text-center">번호</th>
-                    <th class="text-center">제목</th>
-                    <th class="text-center">이름</th>
-                    <th class="text-center">작성일</th>
-                    <th class="text-center">신청수</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="r" items="${rList}">
-                    <tr>
-                        <td class="num">${r.title}</td>
-                        <td class="title">${r.content}</td>
-                        <td class="nm">${r.category}</td>
-                        <td class="dt">${r.endDate}</td>
-                        <td class="rc">${r.addrass}</td>
 
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-        </div>
-    </form>
-    <%--    <div class="board-bottom">--%>
-    <%--        &lt;%&ndash;      페이지 버튼 영역      &ndash;%&gt;--%>
-    <%--    </div>--%>
+    <div class="container">
+        <c:forEach var="r" items="${rList}">
+            <div class="rp-one">
+                <div class="rp-top">
+                    <div class="category">${r.category}</div>
+                    <div class="title">${r.title}</div>
+                    <div class="user-count"><img src="/assets/img/hit-count.png" alt="hit-count">조회수</div>
+                </div>
+                <div class="rp-center">
+                    <div class="content">${r.content}</div>
+                </div>
+                <div class="rp-bottom">
+                    <div class="maxCount"><img src="/assets/img/red-check.png" alt="red-check"> ${r.maxCount}</div> <!-- 모집인원 -->
+                    <div class="endDate">${r.endDate}</div> <!-- 모집 종료일 -->
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 
 <%@ include file="../include/footer.jsp"%>
@@ -74,6 +51,11 @@
     $writeBtn.onclick = e => {
         const targetPageURL = '/recruit/write';
         window.location.href = targetPageURL;
+    }
+
+    const $recruitmentDetail = document.querySelector('.rp-one');
+    $recruitmentDetail.onclick = e => {
+        window.location.href = '/recruit/detail/모집 게시글 번호';
     }
 </script>
 
