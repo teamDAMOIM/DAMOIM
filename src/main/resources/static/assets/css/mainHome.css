@@ -151,14 +151,14 @@ ul{
 }
 
 /* 지도 보기 */
-#home-DAMOIM .map-view-search .map-view{
-    background: #aaa;
-    border-radius: 20px;
-    width: 40%; height: 70vh;
-    /* margin-left: 5%; */
-    /*margin-top: 50px; margin-bottom: 50px;*/
-    /* margin-top: 50px; */
-}
+/*#home-DAMOIM .map-view-search .map-view{*/
+/*    background: #aaa;*/
+/*    border-radius: 20px;*/
+/*    width: 40%; height: 70vh;*/
+/*     margin-left: 5%; */
+/*    margin-top: 50px; margin-bottom: 50px;*/
+/*     margin-top: 50px; */
+/*}*/
 
 /* 자유 게시판, 모집 게시판 블록 */
 .board-black{

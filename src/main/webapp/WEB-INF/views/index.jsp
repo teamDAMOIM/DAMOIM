@@ -16,6 +16,7 @@
     <%@ include file="home/side-menubar.jsp"%>
 
     <%@ include file="include/footer.jsp"%>
+
 <script>
     var map
 
