@@ -71,6 +71,7 @@
      */
     const checkResultList = [false, false, false, false];
 
+
     const idPattern = /^[a-zA-Z0-9]{4,15}$/;
 
     const $inputId = document.getElementById('m-id');
@@ -136,11 +137,13 @@
            document.getElementById('namechk').innerHTML =
                '<b style="color: red">[이름은 필수 값입니다.]</b>'
            checkResultList[2] = false;
+
        } else if(!namePattern.test($inputName.value)){
            $inputName.style.borderColor = 'red';
            document.getElementById('namechk').innerHTML =
                '<b style="color: red">[한국어로 입력해주세요!!]</b>'
            checkResultList[2] = false;
+
        } else{
            $inputName.style.borderColor = 'skyblue';
            document.getElementById('namechk').innerHTML =
@@ -157,11 +160,13 @@
                document.getElementById('nickchk').innerHTML =
                    '<b style="color: red">[닉네임은 필수 값입니다.]</b>'
                checkResultList[3] = false;
+
            } else if (!nickNamePattern.test($inputNickname.value)) {
                $inputNickname.style.borderColor = 'red';
                document.getElementById('nickchk').innerHTML =
                    '<b style="color: red">[한국어로 입력해주세요!!]</b>'
                checkResultList[3] = false;
+
            } else {
                fetch("/members/check?type=memberNickname&keyword=" + $inputNickname.value)
                    .then(res => res.json())
@@ -186,7 +191,7 @@
                alert("회원가입이 완료되었습니다.");
                $form.submit();
            }else{
-               alert("입력창을 확인해주세요!!");
+               alert("입력창을확이해라!!!!");
            }
        }
 

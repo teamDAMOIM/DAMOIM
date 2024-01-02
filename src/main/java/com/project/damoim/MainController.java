@@ -30,7 +30,7 @@ public class MainController {
 
         List<Post> loginPost = postService.getLoginPost(session);
 
-        List<RecuritResponseDTO> sortRecurit = recuritService.getSortRecurit();
+        List<RecuritResponseDTO> sortRecurit = recuritService.getSortRecurit(session);
 
         model.addAttribute("pList", sortPostList);
 

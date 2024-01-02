@@ -67,9 +67,9 @@ class RecruitMapperTest {
     @DisplayName("")
     void findSortRecruitTest() {
         //given
-
+        String address = "청양";
         //when
-        List<Recruit> sortRecruit = recruitMapper.findSortRecruit();
+        List<Recruit> sortRecruit = recruitMapper.findSortRecruit(address);
         //then
         System.out.println("sortRecruit = " + sortRecruit);
     }

@@ -25,6 +25,14 @@ public class LoginUtiles {
         }else {
             return null;
         }
+    }
 
+    public static String LoginUserAddress (HttpSession session){
+        LoginSessionDTO loginId = (LoginSessionDTO) session.getAttribute("login");
+        if (loginId != null){
+            return loginId.getAddress();
+        }else {
+            return null;
+        }
     }
 }

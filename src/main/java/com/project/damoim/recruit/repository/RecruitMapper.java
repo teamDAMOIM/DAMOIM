@@ -11,7 +11,7 @@ public interface RecruitMapper {
     // 모집 게시판 전체 조회
     List<Recruit> findAll();
     // 메인창에 정렬 할 모집 게시물
-    List<Recruit> findSortRecruit();
+    List<Recruit> findSortRecruit(String address);
     // 게시물 저장
     boolean save(Recruit recruit);
     //디테일 정보 조회
