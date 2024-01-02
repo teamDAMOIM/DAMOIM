@@ -4,6 +4,7 @@ import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Recruit;
 import com.project.damoim.recruit.service.RecuritService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +16,16 @@ import java.util.List;
 @Controller
 @RequestMapping("/recruit")
 @RequiredArgsConstructor
+@Slf4j
 public class RecruitController {
     RecuritService service;
     @GetMapping("")
     public String recruit(Model model){
-        List<RecuritResponseDTO> listRecurit =  service.getListRecurit();
-        model.addAttribute("rList", listRecurit);
-        return "/post/requestpost";
+        log.info("hello recruit");
+//        List<RecuritResponseDTO> listRecurit =  service.getListRecurit();
+//        log.debug("{}", listRecurit);
+//        model.addAttribute("rList", listRecurit);
+        return "";
     }
 
     @PostMapping("/write")

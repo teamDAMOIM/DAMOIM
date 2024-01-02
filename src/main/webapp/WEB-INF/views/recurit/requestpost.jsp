@@ -48,33 +48,34 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="rp" items="${rplist}">
+                <c:forEach var="r" items="${rList}">
                     <tr>
-                        <td class="num">${rp.rpno}</td>
-                        <td class="tit"><a href="/post/detail?pno=${rp.pno}">${rp.title}</a></td>
-                        <td class="nm">${rp.name}</td>
-                        <td class="dt">${rp.date}</td>
-                        <td class="rc">${rp.requestcount}</td>
+                        <td class="num">${r.title}</td>
+                        <td class="title">${r.content}</td>
+                        <td class="nm">${r.category}</td>
+                        <td class="dt">${r.endDate}</td>
+                        <td class="rc">${r.addrass}</td>
+
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
         </div>
     </form>
-<%--    <div class="board-bottom">--%>
-<%--        &lt;%&ndash;      페이지 버튼 영역      &ndash;%&gt;--%>
-<%--    </div>--%>
+    <%--    <div class="board-bottom">--%>
+    <%--        &lt;%&ndash;      페이지 버튼 영역      &ndash;%&gt;--%>
+    <%--    </div>--%>
 </div>
 
 <%@ include file="../include/footer.jsp"%>
 
-    <script>
-        const $writeBtn = document.querySelector('.add-btn');
-        $writeBtn.onclick = e => {
-            const targetPageURL = '/post/write';
-            window.location.href = targetPageURL;
-        }
-    </script>
+<script>
+    const $writeBtn = document.querySelector('.add-btn');
+    $writeBtn.onclick = e => {
+        const targetPageURL = '/post/write';
+        window.location.href = targetPageURL;
+    }
+</script>
 
 </body>
 </html>

@@ -10,7 +10,7 @@
 <%@ include file="../include/header.jsp"%>
 <section class="write-section">
     <div class="form-container">
-        <form action="/post/write" method="post">
+        <form action="/recruit/write" method="post">
             <label for="title" class="pd">제목</label>
             <select class="form-select" name="type" id="search-type">
                 <option value="title">제목</option>

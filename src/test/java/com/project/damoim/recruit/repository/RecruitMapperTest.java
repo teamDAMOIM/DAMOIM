@@ -22,15 +22,13 @@ class RecruitMapperTest {
 
     @Test
     @DisplayName("")
-    @Transactional
-    @Rollback
     void saveTest() {
         //given
        Recruit r = Recruit.builder()
                 .recruitTitle("www")
                 .recruitContent("asdasd")
                 .recruitEnddate(LocalDateTime.now().plusDays(30))
-               .recruitCategory(Category.HEALTH)
+                .recruitCategory(Category.HEALTH)
                 .recruitAddress("공주")
                 .recruitMax(10)
                 .build();
