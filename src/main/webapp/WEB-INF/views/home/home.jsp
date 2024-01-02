@@ -30,18 +30,18 @@
                 </div>
             </div>
         </div>
-<%--        </div>--%>
 
         <!-- 구글 지도 -->
-        <div class="map-view">
+        <div class="map">
+            여기에 지도 띄울거임
             <c:if test="${login == null}">
-                <div class="view-map">로그인해라</div>
+                <div>로그인해라</div>
             </c:if>
             <c:if test="${login != null}">
                 <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>
-<%--                <div id="map"></div>--%>
             </c:if>
         </div>
+
     </div>
 
 
