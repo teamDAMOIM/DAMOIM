@@ -3,6 +3,7 @@ package com.project.damoim.post.service;
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.Util.date.DateChange;
 import com.project.damoim.post.common.Page;
+import com.project.damoim.post.common.Search;
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
 import com.project.damoim.post.dto.request.PostSortRequestDTO;
@@ -24,7 +25,7 @@ public class PostService {
 
     private final PostMapper mapper;
 
-    public List<PostListRequestDTO> getPostList(Page page){
+    public List<PostListRequestDTO> getPostList(Search page){
         return mapper.findAll(page).stream()
                 .map(post -> new PostListRequestDTO(post))
                 .collect(Collectors.toList())
@@ -73,8 +74,8 @@ public class PostService {
         mapper.save(post);
     }
 
-    public int totalPostCount(){
-        return mapper.postMaxCount();
+    public int totalPostCount(Search search){
+        return mapper.postMaxCount(search);
     }
 
 }

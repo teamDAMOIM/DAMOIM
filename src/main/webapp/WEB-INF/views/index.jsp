@@ -46,8 +46,9 @@
 
                 // 좌표를 기반으로 지도 중심 이동
                 map.setCenter(location);
+
             } else {
-                alert("정확한 주소를 입력하세");
+                alert("정확한 주소를 입력하세요");
             }
         });
     }

@@ -3,6 +3,7 @@ package com.project.damoim.post.controller;
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.post.common.Page;
 import com.project.damoim.post.common.PageMaker;
+import com.project.damoim.post.common.Search;
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
 import com.project.damoim.post.dto.response.PostResponseDTO;
@@ -29,9 +30,9 @@ public class PostController {
     private final PostService service;
 
     @GetMapping("")
-    public String post(Page page, Model model) {
+    public String post(Search page, Model model) {
         List<PostListRequestDTO> postList = service.getPostList(page);
-        int totalCount = service.totalPostCount();
+        int totalCount = service.totalPostCount(page);
         PageMaker pageMaker = new PageMaker(page, totalCount);
         model.addAttribute("maker",pageMaker);
         model.addAttribute("pList", postList);

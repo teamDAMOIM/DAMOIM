@@ -6,8 +6,15 @@
 
     <select id="findAll" resultType="com.project.damoim.post.entity.Post">
         SELECT
-        *
+            *
         FROM tb_post
+        <if test="type == 'title'">
+            WHERE post_title LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+
+        <if test="type == 'id'">
+            WHERE member_id LIKE CONCAT('%', #{keyword}, '%')
+        </if>
         ORDER BY post_no DESC
         LIMIT #{pageStart}, #{amount}
     </select>
@@ -55,7 +62,14 @@
 
     <select id="postMaxCount" resultType="int">
         SELECT COUNT(*)
-        FROM tb_post;
+        FROM tb_post
+        <if test="type == 'title'">
+            WHERE post_title LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+
+        <if test="type == 'id'">
+            WHERE member_id LIKE CONCAT('%', #{keyword}, '%')
+        </if>
     </select>
 
 
