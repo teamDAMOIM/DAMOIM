@@ -10,6 +10,15 @@
         FROM tb_recruit
     </select>
 
+    <select id="findSortRecruit" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+        recruit_no, recruit_title, recruit_content, recruit_category, recruit_startdate
+        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, recruit_check
+        FROM tb_recruit
+        ORDER BY recruit_count DESC
+        LIMIT 0, 5
+    </select>
+
     <insert id="save">
         INSERT INTO tb_recruit
             (recruit_title, recruit_content, recruit_category, recruit_enddate, recruit_addrass, recruit_max)
@@ -24,4 +33,10 @@
         FROM tb_recruit
         WHERE recruit_no = #{rno}
     </select>
+
+    <update id="viewUpCount">
+        UPDATE tb_recruit
+        SET recruit_count = recruit_count + 1
+        WHERE recruit_no = #{rno}
+    </update>
 </mapper>

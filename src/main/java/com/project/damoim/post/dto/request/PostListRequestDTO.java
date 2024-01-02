@@ -1,6 +1,7 @@
 package com.project.damoim.post.dto.request;
 
 
+import com.project.damoim.Util.date.DateChange;
 import com.project.damoim.post.dto.response.PostResponseDTO;
 import com.project.damoim.post.entity.Post;
 import lombok.*;
@@ -24,12 +25,7 @@ public class PostListRequestDTO {
         this.pno = post.getPostNo();
         this.title = post.getPostTitle();
         this.name = post.getMemberId();
-        this.date = postDateChang(post.getPostDate());
+        this.date = DateChange.postDateChang(post.getPostDate());
         this.view = post.getPostViewCount();
-    }
-    // postDate yyyy-MM-dd HH:mm
-    private String postDateChang(LocalDateTime date){
-        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        return pattern.format(date);
     }
 }

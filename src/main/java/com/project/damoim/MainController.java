@@ -5,6 +5,8 @@ import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostSortRequestDTO;
 import com.project.damoim.post.entity.Post;
 import com.project.damoim.post.service.PostService;
+import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
+import com.project.damoim.recruit.service.RecuritService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -19,17 +21,22 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class MainController {
-    private final PostService service;
+    private final PostService postService;
+    private final RecuritService recuritService;
     @GetMapping("/")
     public String mainView(HttpSession session, Model model){
 
-        List<PostSortRequestDTO> sortPostList = service.getSortPostList();
+        List<PostSortRequestDTO> sortPostList = postService.getSortPostList();
 
-        List<Post> loginPost = service.getLoginPost(session);
+        List<Post> loginPost = postService.getLoginPost(session);
+
+        List<RecuritResponseDTO> sortRecurit = recuritService.getSortRecurit();
 
         model.addAttribute("pList", sortPostList);
 
         model.addAttribute("loginPost", loginPost);
+
+        model.addAttribute("rList", sortRecurit);
         return "index";
     }
 
