@@ -18,14 +18,15 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class RecruitController {
-    RecuritService service;
+    private final RecuritService service;
+
     @GetMapping("")
     public String recruit(Model model){
         log.info("hello recruit");
-//        List<RecuritResponseDTO> listRecurit =  service.getListRecurit();
-//        log.debug("{}", listRecurit);
-//        model.addAttribute("rList", listRecurit);
-        return "";
+        List<RecuritResponseDTO> listRecurit =  service.getListRecurit();
+        log.debug("{}", listRecurit);
+        model.addAttribute("rList", listRecurit);
+        return "/recurit/requestpost";
     }
 
     @PostMapping("/write")

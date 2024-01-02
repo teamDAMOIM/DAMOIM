@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class RecuritService {
-    RecruitMapper recruitMapper;
+    private final RecruitMapper recruitMapper;
 
     public List<RecuritResponseDTO> getListRecurit(){
         return recruitMapper.findAll().stream()
