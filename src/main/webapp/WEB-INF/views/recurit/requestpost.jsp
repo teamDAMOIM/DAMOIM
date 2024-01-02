@@ -14,13 +14,8 @@
     <div class="main-title-wrap">
         <h1 class="main-title">신청게시판</h1>
         <div class="button-wrap">
-            <!-- drop down menu -->
-            <select class="form-select" name="type" id="search-type" value="category">
-                <option value="exercise">운동</option>
-                <option value="wine">술</option>
-                <option value="Hobby">취미</option>
-                <option value="Study">스터디</option>
-            </select>
+
+            <%@ include file="../home/category.jsp"%>
 
             <%--            <c:if test="${login != null}">--%>
             <!-- 글 쓰기 버튼 -->
@@ -28,43 +23,36 @@
             <%--            </c:if>--%>
         </div>
     </div>
-    <form action="/post/reqestpost" class="requestlist">
-        <div class="container">
-            <table class="table" id="request-table">
-                <colgroup>
-                    <col style="width: 9%;" class="size01" data-alias="number">
-                    <col style="width: 65%;" class="size02" data-alias="title">
-                    <col style="width: 7%;" class="size03" data-alias="name">
-                    <col style="width: 12%;" class="size04" data-alias="date">
-                    <col style="width: 7%;" class="size05" data-alias="requestcount">
-                </colgroup>
-                <thead>
-                <tr>
-                    <th class="text-center">번호</th>
-                    <th class="text-center">제목</th>
-                    <th class="text-center">이름</th>
-                    <th class="text-center">작성일</th>
-                    <th class="text-center">신청수</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="r" items="${rList}">
-                    <tr>
-                        <td class="num">${r.title}</td>
-                        <td class="title">${r.content}</td>
-                        <td class="nm">${r.category}</td>
-                        <td class="dt">${r.endDate}</td>
-                        <td class="rc">${r.addrass}</td>
 
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-        </div>
-    </form>
-    <%--    <div class="board-bottom">--%>
-    <%--        &lt;%&ndash;      페이지 버튼 영역      &ndash;%&gt;--%>
-    <%--    </div>--%>
+    <div class="container">
+        <c:forEach var="r" items="${rList}">
+            <div class="rp-one">
+                <div class="rp-top">
+                    <div class="category">${r.category}</div>
+                    <div class="title">${r.title}</div>
+                    <div class="user-count">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                        </svg>
+                        조회수
+                    </div>
+                </div>
+                <div class="rp-center">
+                    <div class="content">${r.content}</div>
+                </div>
+                <div class="rp-bottom">
+                    <div class="maxCount">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                        신청 인원/${r.maxCount}
+                    </div> <!-- 모집인원 -->
+                    <div class="endDate">${r.endDate}</div> <!-- 모집 종료일 -->
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 
 <%@ include file="../include/footer.jsp"%>
@@ -74,6 +62,11 @@
     $writeBtn.onclick = e => {
         const targetPageURL = '/recruit/write';
         window.location.href = targetPageURL;
+    }
+
+    const $recruitmentDetail = document.querySelector('.rp-one');
+    $recruitmentDetail.onclick = e => {
+        window.location.href = '/recruit/detail/모집 게시글 번호';
     }
 </script>
 
