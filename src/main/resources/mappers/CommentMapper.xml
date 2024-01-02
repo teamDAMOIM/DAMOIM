@@ -17,4 +17,11 @@
         VALUES
             (#{commentContent}, #{commentUsername}, #{postNo}, #{memberId})
     </insert>
+
+
+    <select id="commentMaxCount" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_comment
+        WHERE post_no = #{pno}
+    </select>
 </mapper>

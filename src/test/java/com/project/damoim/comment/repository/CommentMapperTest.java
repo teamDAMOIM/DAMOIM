@@ -42,6 +42,18 @@ class CommentMapperTest {
         System.out.println(comment);
     }
 
+    @Test
+    @DisplayName("")
+    void commnetMaxCountTest() {
+        //given
+        int pno = 4;
+        //when
+        int count = mapper.commentMaxCount(pno);
+        //then
+        System.out.println(count);
+    }
+
+
 
 
 }
