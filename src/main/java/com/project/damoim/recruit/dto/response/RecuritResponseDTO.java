@@ -19,6 +19,7 @@ public class RecuritResponseDTO {
     private String title;
     private String content;
     private Category category;
+    private int count;
     private LocalDateTime endDate;
     private String addrass;
     private int maxCount;
@@ -27,6 +28,7 @@ public class RecuritResponseDTO {
         this.title = recruit.getRecruitTitle();
         this.content = recruit.getRecruitContent();
         this.category = recruit.getRecruitCategory();
+        this.count = recruit.getRecruitCount();
         this.endDate = recruit.getRecruitEnddate();
         this.addrass = recruit.getRecruitAddress();
         this.maxCount = recruit.getRecruitMax();

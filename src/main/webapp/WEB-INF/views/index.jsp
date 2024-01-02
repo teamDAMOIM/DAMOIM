@@ -10,12 +10,16 @@
 
 </head>
 <body>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7LCcErx4-uaTP0zFhBenCn9qwTsZsfmY&callback=initMap" async defer></script>
+
+
     <%@ include file="include/header.jsp"%>
     <%@ include file="home/home.jsp"%>
+
     <%@ include file="home/side-menubar.jsp"%>
 
     <%@ include file="include/footer.jsp"%>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7LCcErx4-uaTP0zFhBenCn9qwTsZsfmY&callback=initMap" async defer></script>
 
 <script>
     var map
@@ -28,6 +32,8 @@
         }
 
     }
+
+
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {

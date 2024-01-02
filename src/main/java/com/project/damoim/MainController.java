@@ -25,17 +25,15 @@ public class MainController {
     private final RecuritService recuritService;
     @GetMapping("/")
     public String mainView(HttpSession session, Model model){
+        List<Post> loginPost = postService.getLoginPost(session);
 
         List<PostSortRequestDTO> sortPostList = postService.getSortPostList();
 
-        List<Post> loginPost = postService.getLoginPost(session);
 
         List<RecuritResponseDTO> sortRecurit = recuritService.getSortRecurit(session);
 
-        model.addAttribute("pList", sortPostList);
-
         model.addAttribute("loginPost", loginPost);
-
+        model.addAttribute("pList", sortPostList);
         model.addAttribute("rList", sortRecurit);
         return "index";
     }
