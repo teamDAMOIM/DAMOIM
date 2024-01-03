@@ -188,8 +188,8 @@ footer .inner-footer img {
 }
 
 .sign-section .container .wrap .text-wrap {
-    width: 50%;
-    background: rgb(229, 134, 151);
+    width: 100%;
+    /*background: rgb(229, 134, 151);*/
     border-radius: 0 5px 5px 0;
 
 }

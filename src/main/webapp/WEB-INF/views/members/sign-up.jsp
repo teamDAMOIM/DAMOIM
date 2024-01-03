@@ -13,7 +13,7 @@
 <section class="sign-section">
     <div class="container">
         <div class="wrap">
-            <div class="sign-wrap p-4 p-lg-5">
+                <div class="sign-wrap p-4 p-lg-5">
                 <div class="d-flex">
                     <div class="w-100">
                         <h3 class="mb-4">Sign Up</h3>

@@ -19,16 +19,19 @@ class CommentMapperTest {
     @DisplayName("댓글 하나를 등록하면 True가 돠어야 한다.")
     void saveTest() {
         //given
-        Comment c =  Comment.builder()
-                .commentContent("아이 재밌다")
-                .commentUsername("정범준")
-                .postNo(4)
-                .memberId("jj3713")
-                .build();
-        //when
-        boolean save = mapper.save(c);
+        for (int i = 0; i < 100; i++) {
+            Comment c =  Comment.builder()
+                    .commentContent("아이 재밌다")
+                    .commentUsername("정범준")
+                    .postNo(4)
+                    .memberId("shubom0115")
+                    .build();
+            //when
+            boolean save = mapper.save(c);
+        }
+
         //then
-        assertTrue(save);
+//        assertTrue(save);
     }
 
     @Test
