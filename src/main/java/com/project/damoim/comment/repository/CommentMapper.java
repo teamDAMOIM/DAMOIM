@@ -9,7 +9,7 @@ import java.util.List;
 public interface CommentMapper {
 
     // 포스트 번호에 맞춰 댓글 찾기
-    List<Comment> findComment(int pno);
+    List<Comment> findComment(int pno, int amount);
 
 
     // 댓글 등록

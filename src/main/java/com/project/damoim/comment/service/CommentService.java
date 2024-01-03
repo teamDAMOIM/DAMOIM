@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
 public class CommentService {
     private final CommentMapper mapper;
 
-    public List<Comment> findComment(int pno){
-        return mapper.findComment(pno).stream()
+    public List<Comment> findComment(int pno, int amount){
+        return mapper.findComment(pno, amount).stream()
                 .collect(Collectors.toList())
                 ;
     }

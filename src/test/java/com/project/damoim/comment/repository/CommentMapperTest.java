@@ -37,7 +37,7 @@ class CommentMapperTest {
         //given
         int pno = 4;
         //when
-        List<Comment> comment = mapper.findComment(pno);
+        List<Comment> comment = mapper.findComment(pno, 0);
         //then
         System.out.println(comment);
     }
