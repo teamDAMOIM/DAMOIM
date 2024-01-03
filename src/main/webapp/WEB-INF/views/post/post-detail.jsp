@@ -38,6 +38,19 @@
 <%--
             댓글 창 입니다.
 --%>
+            <div type="text" id="commentNo">${commentNo}</div>
+            <label for="commentContent">댓글</label>
+            <div type="text" id="commentContent">${commentContent}</div>
+            <label for="commentDate">날짜</label>
+            <div type="text" id="commentDate">${commentDate}</div>
+            <label for="commentUser">이름</label>
+            <div type="text" id="commentUser">${commentUser}</div>
+            <label for="commentContent">날짜</label>
+            <div type="text" id="commentContent">${commentContent}</div>
+            <%-- "memberId":"shubom0115","postNo":1
+                            ${p.name}   ${p.pno}
+            --%>
+
         </div>
 
 
