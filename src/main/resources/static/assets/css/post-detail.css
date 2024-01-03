@@ -1,3 +1,39 @@
-.form-container {
-    padding: 200px;
+.wrap {
+    margin: 200px;
+    background: #eee7e7;
 }
+
+
+.wrap .form-container {
+    padding: 50px;
+
+}
+
+.form-container .title {
+    padding-bottom: 50px;
+}
+
+.form-container .labelbox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 1.5px solid #494949;
+}
+.form-container .labelbox .column {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.form-container .labelbox .column label {
+    padding-right: 5px;
+}
+
+.content {
+    padding-top: 100px;
+}
+
+
+

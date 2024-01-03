@@ -15,6 +15,12 @@
         <if test="type == 'id'">
             WHERE member_id LIKE CONCAT('%', #{keyword}, '%')
         </if>
+
+        <if test="type == 'ti'">
+            WHERE post_title LIKE CONCAT('%', #{keyword}, '%')
+            OR member_id LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+
         ORDER BY post_no DESC
         LIMIT #{pageStart}, #{amount}
     </select>
@@ -69,6 +75,11 @@
 
         <if test="type == 'id'">
             WHERE member_id LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        
+        <if test="type == 'ti'">
+            WHERE post_title LIKE CONCAT('%', #{keyword}, '%')
+            OR member_id LIKE CONCAT('%', #{keyword}, '%')
         </if>
     </select>
 

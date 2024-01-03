@@ -3,6 +3,7 @@ package com.project.damoim.recruit.service;
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.member.dto.response.LoginSessionDTO;
 import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
+import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Recruit;
 import com.project.damoim.recruit.repository.RecruitMapper;
@@ -32,9 +33,10 @@ public class RecuritService {
         return recruitMapper.save(dto.isEntity());
     }
 
-    public Recruit detailRecurit(int rno){
+    public RecuriitDetileResponseDTO detailRecurit(int rno){
         recruitMapper.viewUpCount(rno);
-        return recruitMapper.findOne(rno);
+        Recruit recruit = recruitMapper.findOne(rno);
+        return new RecuriitDetileResponseDTO(recruit);
     }
 
     public List<RecuritResponseDTO> getSortRecurit(HttpSession session){

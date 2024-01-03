@@ -1,6 +1,7 @@
 package com.project.damoim.recruit.controller;
 
 import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
+import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Recruit;
 import com.project.damoim.recruit.service.RecuritService;
@@ -43,7 +44,7 @@ public class RecruitController {
 
     @GetMapping("/detail")
     public String detail(int rno, Model model){
-        Recruit r = service.detailRecurit(rno);
+        RecuriitDetileResponseDTO r = service.detailRecurit(rno);
         model.addAttribute("r", r);
         return "/recurit/requestpost-detail";
     }

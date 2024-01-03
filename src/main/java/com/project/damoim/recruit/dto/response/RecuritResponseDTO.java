@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 public class RecuritResponseDTO {
 
+    private int rno;
     private String title;
     private String content;
     private Category category;
@@ -25,6 +26,7 @@ public class RecuritResponseDTO {
     private int maxCount;
 
     public RecuritResponseDTO(Recruit recruit){
+        this.rno = recruit.getRecruitNo();
         this.title = recruit.getRecruitTitle();
         this.content = recruit.getRecruitContent();
         this.category = recruit.getRecruitCategory();

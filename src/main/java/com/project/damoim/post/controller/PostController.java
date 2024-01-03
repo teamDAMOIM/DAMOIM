@@ -30,7 +30,7 @@ public class PostController {
     private final PostService service;
 
     @GetMapping("")
-    public String post(Search page, Model model) {
+    public String post(@ModelAttribute("ps") Search page, Model model) {
         List<PostListRequestDTO> postList = service.getPostList(page);
         int totalCount = service.totalPostCount(page);
         PageMaker pageMaker = new PageMaker(page, totalCount);
@@ -57,7 +57,9 @@ public class PostController {
     public String detail(
             int pno,
             Model model,
-            HttpSession session
+            HttpSession session,
+            @ModelAttribute("ps") Search page
+
     ){
         log.debug("{}", pno);
 
