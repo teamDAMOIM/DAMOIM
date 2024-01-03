@@ -33,6 +33,8 @@
                     목록
             </button>
         </div>
+        <input id="commentInputValue"/>
+        <button id="addBtn">추가</button>
 <%--    댓글    --%>
         <div class="ss">
 <%--
@@ -58,42 +60,82 @@
         fetchGetComment();
     })
 
+    document.getElementById('addBtn').addEventListener('click', e=>{
+
+
+        const $inputValue = document.getElementById('commentInputValue');
+
+
+        const payload = {
+            comment : $inputValue.value,
+            username : "${login.nickName}",
+            pno : ${p.pno},
+            memberId : "${login.id}"
+        }
+
+        const requestInfo = {
+            method : 'post',
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(payload)
+        }
+
+        fetch("/comment", requestInfo)
+            .then(request => {
+                if (request.status === 200){
+                    alert("성공띠");
+                    return request.json();
+                }
+                else if(request.status === 400){
+                    alert("욕하지 마라")
+                    return request.text();
+                }
+                else {
+                    alert("실패띠");
+                    return request.text();
+                }
+            })
+            .then(response => {
+                if (response){
+                    $inputValue.value = '';
+                    fetchGetComment(amount);
+                }
+            })
+    })
+
 
     function fetchGetComment(){
         fetch("/comment/${p.pno}/amount/" + amount)
             .then(request => request.json())
             .then(response=>{
-
-                randerView(response)
+                randerView(response);
             })
     }
 
     function randerView(response) {
         let tag = '';
-        for (let r of response){
-            tag += `
-            <div class="commentbox">
-                <div type="text" id="commentNo">\${r.commentNo}</div>
-                <label for="commentContent">댓글:</label>
-                <div type="text" id="commentContent">\${r.commentContent}</div>
-                <label for="commentDate">날짜:</label>
-                <div type="text" id="commentDate">\${r.commentDate}</div>
-                <label for="commentUser">이름:</label>
-                <div type="text" id="commentUsername">\${r.commentUsername}</div>
-                <label for="commentContent">내용:</label>
-                <div type="text" id="commentContent">\${r.commentContent}</div>
-             </div>
-        `;
-            console.log(response)
-
+        for (let r of response.commentList){
+                tag += `
+                <div class="commentbox">
+                    <div type="text" id="commentNo">\${r.commentNo}</div>
+                    <label for="commentContent">댓글:</label>
+                    <div type="text" id="commentContent">\${r.commentContent}</div>
+                    <label for="commentDate">날짜:</label>
+                    <div type="text" id="commentDate">\${r.commentDate}</div>
+                    <label for="commentUser">이름:</label>
+                    <div type="text" id="commentUsername">\${r.commentUsername}</div>
+                    <label for="commentContent">내용:</label>
+                    <div type="text" id="commentContent">\${r.commentContent}</div>
+                 </div>
+            `;
             document.querySelector('.ss').innerHTML = tag;
         }
     }
 
+
     (()=>{
-
         fetchGetComment();
-
     })();
 </script>
 </body>

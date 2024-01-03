@@ -51,7 +51,6 @@ public class PostService {
     public PostResponseDTO getPost(int pno){
         Post p = mapper.findOne(pno);
 
-
         return PostResponseDTO.builder()
                 .pno(p.getPostNo())
                 .title(p.getPostTitle())

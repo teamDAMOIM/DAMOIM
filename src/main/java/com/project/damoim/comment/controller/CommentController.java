@@ -1,13 +1,18 @@
 package com.project.damoim.comment.controller;
 
+import com.project.damoim.comment.dto.request.CommentRequestDTO;
+import com.project.damoim.comment.dto.response.CommentResponseDTO;
 import com.project.damoim.comment.entity.Comment;
 import com.project.damoim.comment.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -24,7 +29,7 @@ public class CommentController {
             @PathVariable int amount
     ){
 
-        List<Comment> comment = service.findComment(pno, amount);
+        CommentResponseDTO comment = service.findComment(pno, amount);
 
         return ResponseEntity
                 .ok()
@@ -32,4 +37,24 @@ public class CommentController {
                 ;
     }
 
+    @PostMapping
+    @ResponseBody
+    public ResponseEntity<?> saveComment(
+            @Validated
+            @RequestBody CommentRequestDTO dto
+            , BindingResult result
+    ) {
+
+        if (result.hasErrors()) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(result.toString());
+        }
+
+        boolean flag = service.saveComment(dto);
+
+        return ResponseEntity
+                .ok()
+                .body(flag);
+    }
 }
