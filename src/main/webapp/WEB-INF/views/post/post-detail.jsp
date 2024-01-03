@@ -9,7 +9,7 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp"%>
-<div class="wrap">
+<div class="detail-wrap">
     <div class="form-container">
         <div class="title" id="title">${p.title}</div>
 
@@ -38,20 +38,11 @@
 <%--
             댓글 창 입니다.
 --%>
-            <div type="text" id="commentNo">${commentNo}</div>
-            <label for="commentContent">댓글</label>
-            <div type="text" id="commentContent">${commentContent}</div>
-            <label for="commentDate">날짜</label>
-            <div type="text" id="commentDate">${commentDate}</div>
-            <label for="commentUser">이름</label>
-            <div type="text" id="commentUser">${commentUser}</div>
-            <label for="commentContent">날짜</label>
-            <div type="text" id="commentContent">${commentContent}</div>
-            <%-- "memberId":"shubom0115","postNo":1
-                            ${p.name}   ${p.pno}
-            --%>
+
 
         </div>
+
+        <button class="add-btn" type="button">더보기</button>
 
 
     </div>
@@ -59,17 +50,50 @@
 <%@ include file="../include/footer.jsp"%>
 
 <script>
+
+    let amount = 3;
+
+    document.querySelector('.add-btn').addEventListener('click', e => {
+        amount += 3;
+        fetchGetComment();
+    })
+
+
     function fetchGetComment(){
-        fetch("/comment/${p.pno}")
+        fetch("/comment/${p.pno}/amount/" + amount)
             .then(request => request.json())
             .then(response=>{
-                console.log(response);
+
+                randerView(response)
             })
     }
 
+    function randerView(response) {
+        let tag = '';
+        for (let r of response){
+            tag += `
+            <div class="commentbox">
+                <div type="text" id="commentNo">\${r.commentNo}</div>
+                <label for="commentContent">댓글:</label>
+                <div type="text" id="commentContent">\${r.commentContent}</div>
+                <label for="commentDate">날짜:</label>
+                <div type="text" id="commentDate">\${r.commentDate}</div>
+                <label for="commentUser">이름:</label>
+                <div type="text" id="commentUsername">\${r.commentUsername}</div>
+                <label for="commentContent">내용:</label>
+                <div type="text" id="commentContent">\${r.commentContent}</div>
+             </div>
+        `;
+            console.log(response)
+
+            document.querySelector('.ss').innerHTML = tag;
+        }
+    }
 
     (()=>{
+
         fetchGetComment();
+
     })();
 </script>
 </body>

@@ -17,13 +17,14 @@ import java.util.List;
 public class CommentController {
     private final CommentService service;
 
-    @GetMapping("/{pno}")
+    @GetMapping("/{pno}/amount/{amount}")
     @ResponseBody
     public ResponseEntity<?> findComment(
-            @PathVariable int pno
+            @PathVariable int pno,
+            @PathVariable int amount
     ){
 
-        List<Comment> comment = service.findComment(pno);
+        List<Comment> comment = service.findComment(pno, amount);
 
         return ResponseEntity
                 .ok()

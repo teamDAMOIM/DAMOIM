@@ -18,17 +18,34 @@ class CommentMapperTest {
     @Test
     @DisplayName("댓글 하나를 등록하면 True가 돠어야 한다.")
     void saveTest() {
+<<<<<<< Updated upstream
         //given
-        Comment c =  Comment.builder()
-                .commentContent("아이 재밌다")
-                .commentUsername("정범준")
-                .postNo(4)
-                .memberId("jj3713")
-                .build();
-        //when
-        boolean save = mapper.save(c);
+        for (int i = 0; i < 100; i++) {
+            Comment c =  Comment.builder()
+                    .commentContent("아이 재밌다")
+                    .commentUsername("정범준")
+                    .postNo(4)
+                    .memberId("shubom0115")
+=======
+
+        for (int i = 0; i < 20; i++) {
+            //given
+            Comment c =  Comment.builder()
+                    .commentContent("아이 재밌다")
+                    .commentUsername("정범준")
+                    .postNo(1)
+                    .memberId("jj3713")
+>>>>>>> Stashed changes
+                    .build();
+            //when
+            boolean save = mapper.save(c);
+        }
+<<<<<<< Updated upstream
+
         //then
-        assertTrue(save);
+//        assertTrue(save);
+=======
+>>>>>>> Stashed changes
     }
 
     @Test
@@ -37,7 +54,7 @@ class CommentMapperTest {
         //given
         int pno = 4;
         //when
-        List<Comment> comment = mapper.findComment(pno);
+        List<Comment> comment = mapper.findComment(pno, 0);
         //then
         System.out.println(comment);
     }
