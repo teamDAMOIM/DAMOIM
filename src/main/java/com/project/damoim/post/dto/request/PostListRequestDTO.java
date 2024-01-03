@@ -2,6 +2,7 @@ package com.project.damoim.post.dto.request;
 
 
 import com.project.damoim.Util.date.DateChange;
+import com.project.damoim.post.common.Search;
 import com.project.damoim.post.dto.response.PostResponseDTO;
 import com.project.damoim.post.entity.Post;
 import lombok.*;
@@ -27,5 +28,6 @@ public class PostListRequestDTO {
         this.name = post.getMemberId();
         this.date = DateChange.postDateChang(post.getPostDate());
         this.view = post.getPostViewCount();
+
     }
 }

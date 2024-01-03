@@ -13,6 +13,15 @@
     <div class="main-title-wrap">
         <h1 class="main-title">자유게시판</h1>
         <div class="button-wrap">
+            <form action="/post" method="get" class="search">
+                <select class="sc-select" name="type">
+                    <option value="ti">전체</option>
+                    <option value="id">작성자</option>
+                    <option value="title">제목</option>
+                </select>
+                <input type="text" class="sc-kw" name="keyword" placeholder="검색어를 입력해주세요" value="${ps.keyword}">
+                <button class="add-btn btn" type="submit">검색</button>
+            </form>
             <%--            <c:if test="${login != null}">--%>
             <a class="add-btn btn" href="/post/write">글 쓰기</a>
             <%--            </c:if>--%>
@@ -43,7 +52,7 @@
                 <tr id="table">
 
                     <td class="num">${p.pno}</td>
-                    <td class="tit"><a href="/post/detail?pno=${p.pno}">${p.title}</a></td>
+                    <td class="tit"><a href="/post/detail?pno=${p.pno}&type=${ps.type}&keyword=${ps.keyword}">${p.title}</a></td>
                     <td class="nm">${p.name}</td>
                     <td class="dt">${p.date}</td>
                     <td class="vc">${p.view}</td>
@@ -95,5 +104,17 @@
             </div>
 </div>
 <%@ include file="../include/footer.jsp" %>
+
+<script>
+    const $opt = [...document.querySelector('.sc-select').children];
+
+    $opt.forEach($o => {
+        if ($o.value === ${p.type}){
+           $o.setAttribute('selected', 'selected');
+            console.log($o);
+        }
+    });
+
+</script>
 </body>
 </html>

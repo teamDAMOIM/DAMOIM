@@ -9,29 +9,36 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp"%>
-    <div id="wrap" class="form-container">
+<div class="wrap">
+    <div class="form-container">
         <div class="title" id="title">${p.title}</div>
-        <label for="writer">작성자: </label>
-        <div type="text" id="writer">${p.mid}</div>
-        <label for="date">작성일자: </label>
-        <div type="text" id="date">${p.date}</div>
 
-        <label for="content">내용</label>
-        <div id="content" >${p.content}</div>
+        <div class="labelbox">
+            <div class="column">
+                <label for="writer">작성자: </label>
+                <div type="text" id="writer">${p.mid}</div>
+            </div>
+            <div class="column">
+                <label for="date">작성일자: </label>
+                <div type="text" id="date">${p.date}</div>
+            </div>
+        </div>
+
+        <div class="content" id="content" >${p.content}</div>
         <div class="buttons">
             <button class="list-btn" type="button"
-<%--            onclick="window.location.href='/psot/post?pageNo=${p.pageNo}&amount=${p.amount}&type=${p.type}&keyword=${p.keyword}'" --%>
-            onclick="window.location.href='/post/post'">
+            onclick="window.location.href='/post?type=${ps.type}&keyword=${ps.keyword}'"
+<%--            onclick="window.location.href='/post'"--%>
+            >
                     목록
             </button>
         </div>
 <%--    댓글    --%>
     </div>
+</div>
 <%@ include file="../include/footer.jsp"%>
 
 <script>
-
-
     function fetchGetComment(){
         fetch("/comment/${p.pno}")
             .then(request => request.json())
