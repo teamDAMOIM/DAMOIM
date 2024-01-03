@@ -26,7 +26,6 @@
 
     <div class="container">
         <c:forEach var="r" items="${rList}">
-
             <a class="rp-one" href="/recruit/detail?rno=${r.rno}">
 <%--            <div class="rp-one" data-rno="${r.rno}">--%>
                 <div class="rp-top">

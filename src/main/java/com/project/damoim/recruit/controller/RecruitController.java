@@ -45,6 +45,7 @@ public class RecruitController {
     @GetMapping("/detail")
     public String detail(int rno, Model model){
         RecuriitDetileResponseDTO r = service.detailRecurit(rno);
+        service.upViewCount(rno);
         model.addAttribute("r", r);
         return "/recurit/requestpost-detail";
     }

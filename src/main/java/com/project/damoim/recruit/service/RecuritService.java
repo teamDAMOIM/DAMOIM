@@ -34,7 +34,6 @@ public class RecuritService {
     }
 
     public RecuriitDetileResponseDTO detailRecurit(int rno){
-        recruitMapper.viewUpCount(rno);
         Recruit recruit = recruitMapper.findOne(rno);
         return new RecuriitDetileResponseDTO(recruit);
     }
@@ -46,5 +45,9 @@ public class RecuritService {
                 .map(recruit -> new RecuritResponseDTO(recruit))
                 .collect(Collectors.toList())
                 ;
+    }
+
+    public void upViewCount(int rno){
+        recruitMapper.viewUpCount(rno);
     }
 }

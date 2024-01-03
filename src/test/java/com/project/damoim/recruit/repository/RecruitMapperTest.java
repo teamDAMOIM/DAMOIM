@@ -30,6 +30,7 @@ class RecruitMapperTest {
                 .recruitEnddate(LocalDateTime.now().plusDays(30))
                 .recruitCategory(Category.HEALTH)
                 .recruitAddress("공주")
+                .recruitCount(1)
                 .recruitMax(10)
                 .build();
         for (int i = 0; i < 30; i++) {
@@ -72,6 +73,15 @@ class RecruitMapperTest {
         List<Recruit> sortRecruit = recruitMapper.findSortRecruit(address);
         //then
         System.out.println("sortRecruit = " + sortRecruit);
+    }
+    @Test
+    @DisplayName("asdf")
+    void upViewTest() {
+        //given
+        int rno = 1;
+        //when
+        recruitMapper.viewUpCount(rno);
+        //then
     }
 
 }

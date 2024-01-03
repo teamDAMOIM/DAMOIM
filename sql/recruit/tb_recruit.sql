@@ -17,8 +17,13 @@ CREATE TABLE tb_recruit(
             PRIMARY KEY (recruit_no)
 );
 
+
 ALTER TABLE tb_recruit
 MODIFY recruit_startdate DATETIME
 ;
+
+delete from tb_recruit where recruit_no = 1;
+
+ALTER TABLE tb_recruit MODIFY recruit_count INT NOT NULL;
 
 alter table tb_recruit modify recruit_no int not null auto_increment;

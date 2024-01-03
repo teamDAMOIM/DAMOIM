@@ -26,9 +26,9 @@
 
     <insert id="save">
         INSERT INTO tb_recruit
-            (recruit_title, recruit_content, recruit_category, recruit_enddate, recruit_addrass, recruit_max)
+            (recruit_title, recruit_content, recruit_category, recruit_count, recruit_enddate, recruit_addrass, recruit_max)
         VALUES
-            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitEnddate}, #{recruitAddress}, #{recruitMax})
+            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitCount}, #{recruitEnddate}, #{recruitAddress}, #{recruitMax})
     </insert>
 
     <select id="findOne" resultType="com.project.damoim.recruit.entity.Recruit">
