@@ -50,13 +50,17 @@
 <%@ include file="../include/footer.jsp"%>
 
 <script>
+
+    let amount = 3;
+
     document.querySelector('.add-btn').addEventListener('click', e => {
-        console.log("클릭")
+        amount += 3;
+        fetchGetComment();
     })
 
 
     function fetchGetComment(){
-        fetch("/comment/${p.pno}/amount/5")
+        fetch("/comment/${p.pno}/amount/" + amount)
             .then(request => request.json())
             .then(response=>{
 
