@@ -16,7 +16,6 @@
                 <!-- <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon"> -->
                 <input type="text" name="searchPlace" id="inputAddress">
             </label>
-
             <!--
                 장소 보기
                 첫 화면은 내 현재 위치로
@@ -43,7 +42,6 @@
                 <div id="map" style="border-radius: 30px; height: 300px; width: 300px"></div>
             </c:if>
         </div>
-
     </div>
 
 
@@ -68,6 +66,7 @@
                 </c:forEach>
             </ul>
         </div>
+
         <!--
             recruitment-board - 최신글 7개를 최신순으로 보여준다(내림차)
             board-title-recruitment - 모든 게시글들이 있는 모집 게시판 페이지으로 이동 한다
@@ -78,14 +77,14 @@
                 <div class="board-title-recruitment">모집 게시판</div>
             </a>
             <ul>
-                <a href="/recruit">
-                    <c:forEach var="r" items="${rList}">
+                <c:forEach var="r" items="${rList}">
+                    <a href="/recruit/detail?rno=${r.rno}">
                         <li class="one-board or">
                             <div class="board-title sub-recruit">${r.title}[-${r.endDate}]</div>
                             <div class="check-user-count"><img src="/assets/img/red-check.png" alt="check-color">${r.maxCount}</div>
                         </li>
-                    </c:forEach>
-                </a>
+                    </a>
+                </c:forEach>
             </ul>
         </div>
     </div>

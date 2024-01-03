@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="/assets/css/post-detail.css">
 <link rel="stylesheet" href="/assets/css/write.css">
 <link rel="stylesheet" href="/assets/css/side-menubar.css">
+<link rel="stylesheet" href="/assets/css/category.css">
 
 
 <!-- requestPost -->

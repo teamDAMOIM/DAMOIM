@@ -183,7 +183,7 @@ ul{
 
     padding-bottom: 20px;
 
-    height: 70vh;
+    height: 70vh; width: 30%;
 
 }
 
@@ -191,6 +191,7 @@ ul{
 .board-black .free-board-BEST
 , .board-black .recruitment-board{
     border: 6px solid #ffffff00;
+    overflow: hidden;
     /* background: #ffffff80; */
     /* background: radial-gradient(circle, rgba(223,172,240,1) 0%, rgba(130,174,216,1) 100%); */
 
