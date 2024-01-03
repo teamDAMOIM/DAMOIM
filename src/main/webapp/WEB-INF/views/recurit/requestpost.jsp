@@ -26,7 +26,9 @@
 
     <div class="container">
         <c:forEach var="r" items="${rList}">
-            <div class="rp-one">
+
+            <a class="rp-one" href="/recruit/detail?rno=${r.rno}">
+<%--            <div class="rp-one" data-rno="${r.rno}">--%>
                 <div class="rp-top">
                     <div class="category">${r.category}</div>
                     <div class="title">${r.title}</div>
@@ -35,7 +37,7 @@
                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
                         </svg>
-                        조회수
+                        ${r.count}
                     </div>
                 </div>
                 <div class="rp-center">
@@ -50,7 +52,8 @@
                     </div> <!-- 모집인원 -->
                     <div class="endDate">${r.endDate}</div> <!-- 모집 종료일 -->
                 </div>
-            </div>
+<%--            </div>--%>
+            </a>
         </c:forEach>
     </div>
 </div>
@@ -65,8 +68,11 @@
     }
 
     const $recruitmentDetail = document.querySelector('.rp-one');
-    $recruitmentDetail.onclick = e => {
-        window.location.href = '/recruit/detail/모집 게시글 번호';
+    $recruitmentDetail.onclick = e =>{
+        const rno = e.target.closest('div.rp-one').dataset.rno;
+        console.log(rno);
+        // window.location.href= "/recruit/detail?rno=" + rno
+        window.location.href = '/recruit/detail';
     }
 </script>
 

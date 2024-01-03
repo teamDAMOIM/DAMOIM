@@ -17,8 +17,8 @@ public class RecuriitDetileResponseDTO {
     private String title;
     private String content;
     private Category category;
-    private String startDate;
-    private String endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String address;
     private int count;
     private int max;
@@ -28,8 +28,8 @@ public class RecuriitDetileResponseDTO {
         this.title = r.getRecruitTitle();
         this.content = r.getRecruitContent();
         this.category = r.getRecruitCategory();
-        this.startDate = DateChange.postDateChang(r.getRecruitStartdate());
-        this.endDate = DateChange.postDateChang(r.getRecruitEnddate());
+        this.startDate = r.getRecruitStartdate();
+        this.endDate = r.getRecruitEnddate();
         this.address = r.getRecruitAddress();
         this.count = r.getRecruitCount();
         this.max = r.getRecruitMax();
