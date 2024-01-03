@@ -20,8 +20,8 @@
                     </div>
                 </div>
                 <form action="/members/sign-up" class="signup-form" method="post" enctype="multipart/form-data">
-                    <div style="width: 200px; height: 200px; border: magenta; border-style: dashed" id="img-box" class="timg">
-                        <img src="/assets/img/Damoim.png" alt="프로필" style="width: 100px; height: 100px;">
+                    <div style="width: 200px; height: 200px; position: relative; " id="img-box" class="timg">
+                        <img src="/assets/img/basicProfile.png" alt="프로필" style="position: absolute; width: 200px; height: 200px; border: black; border-style: hidden;  border-radius: 40%;">
                     </div>
                     <input type="file" accept="image/*" style="display: none" id="img-input" name="profile">
                     <div class="form-group mb-3">

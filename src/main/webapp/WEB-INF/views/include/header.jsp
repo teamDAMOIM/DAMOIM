@@ -12,9 +12,11 @@
             </a>
         </c:if>
         <c:if test="${login != null}">
-            <img src="/local${login.profile}" alt="프사">
             <h2 class="intro-text">
-                ${login.nickName}
+                <a href="/myPage">
+                    <img src="/local${login.profile}" alt="프사">
+                    ${login.nickName}
+                </a>
             </h2>
         </c:if>
         <a href="#" class="menu-open">
