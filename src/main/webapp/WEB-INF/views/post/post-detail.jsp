@@ -34,6 +34,13 @@
             </button>
         </div>
 <%--    댓글    --%>
+        <div class="ss">
+<%--
+            댓글 창 입니다.
+--%>
+        </div>
+
+
     </div>
 </div>
 <%@ include file="../include/footer.jsp"%>
@@ -43,7 +50,7 @@
         fetch("/comment/${p.pno}")
             .then(request => request.json())
             .then(response=>{
-                console.log(response)
+                console.log(response);
             })
     }
 

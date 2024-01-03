@@ -20,3 +20,9 @@ CREATE TABLE tb_comment(
             FOREIGN KEY (member_id)
                 REFERENCES tb_member (member_id)
 );
+
+INSERT into tb_comment
+    (comment_no, comment_content, comment_username, post_no, member_id)
+values
+    (1, 'DLDLDLDLDL', '정범준', 1, 'shubom0115')
+;

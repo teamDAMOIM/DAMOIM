@@ -17,7 +17,7 @@ public class Page {
 
     public Page() {
         this.pageNo = 1;
-        this.amount = 5;
+        this.amount = 10;
     }
 
 

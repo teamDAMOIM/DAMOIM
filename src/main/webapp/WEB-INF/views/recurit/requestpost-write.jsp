@@ -12,7 +12,7 @@
     <div class="form-container">
         <form action="/recruit/write" method="post">
             <label for="title" class="pd">제목</label>
-            <select class="form-select" name="type" id="search-type">
+            <select class="select" name="type" id="search-type">
                 <option value="title">제목</option>
                 <option value="content">내용</option>
                 <option value="writer">작성자</option>
