@@ -12,6 +12,7 @@
             </a>
         </c:if>
         <c:if test="${login != null}">
+            <img src="/local${login.profile}" alt="프사">
             <h2 class="intro-text">
                 ${login.nickName}
             </h2>

@@ -19,5 +19,5 @@ public class Member {
     private String memberAddress; // 회원 주소
     private String sessionId; // 세션 아이디 값
     private LocalDateTime autoDate;
-
+    private String profileImage;
 }

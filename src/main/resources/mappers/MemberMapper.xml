@@ -6,9 +6,9 @@
     <insert id="save">
         INSERT INTO tb_member
             (member_id, member_password, member_name,
-        member_phone, member_nickname, member_address)
+        member_phone, member_nickname, member_address, profile_image)
         VALUES
-            (#{memberId}, #{memberPassword}, #{memberName}, #{memberPhone}, #{memberNickname}, #{memberAddress})
+            (#{memberId}, #{memberPassword}, #{memberName}, #{memberPhone}, #{memberNickname}, #{memberAddress}, #{profileImage})
     </insert>
 
     <delete id="delete">
@@ -20,7 +20,7 @@
     <select id="findOne" resultType="com.project.damoim.member.entity.Member">
         SELECT
             member_id, member_password, member_name,
-            member_phone, member_nickname, member_address
+            member_phone, member_nickname, member_address, profile_image
         FROM tb_member
         WHERE member_id = #{memberId}
     </select>

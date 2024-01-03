@@ -19,7 +19,11 @@
                         <h3 class="mb-4">Sign Up</h3>
                     </div>
                 </div>
-                <form action="/members/sign-up" class="signup-form" method="post">
+                <form action="/members/sign-up" class="signup-form" method="post" enctype="multipart/form-data">
+                    <div style="width: 200px; height: 200px; border: magenta; border-style: dashed" id="img-box" class="timg">
+                        <img src="/assets/img/Damoim.png" alt="프로필" style="width: 100px; height: 100px;">
+                    </div>
+                    <input type="file" accept="image/*" style="display: none" id="img-input" name="profile">
                     <div class="form-group mb-3">
                         <label class="label">UserID</label>
                         <label id="idchk"></label>
@@ -75,6 +79,8 @@
     const idPattern = /^[a-zA-Z0-9]{4,15}$/;
 
     const $inputId = document.getElementById('m-id');
+
+
 
     $inputId.onkeyup = e =>{
         if ($inputId.value.trim() === ''){
@@ -194,10 +200,27 @@
                alert("입력창을확이해라!!!!");
            }
        }
-
-
    }
+    const $imgbox = document.getElementById('img-box');
+    const $imgInput = document.getElementById('img-input');
 
+    $imgbox.onclick = e => {
+        $imgInput.click();
+    }
+
+    $imgInput.onchange = e => {
+        console.log("잘 들어 왔ㅉㅇ")
+        const fileDate = $imgInput.files[0];
+
+        const reader = new FileReader();
+
+        reader.readAsDataURL(fileDate);
+
+        reader.onloadend = e => {
+            const $img = document.querySelector('.timg img');
+            $img.setAttribute('src', reader.result);
+        }
+    }
 
 
 </script>

@@ -29,9 +29,9 @@ public class MemberService {
 
 
     // 회원가입 처리
-    public boolean saveMember(SignUpRequestDTO dto) throws Exception{
+    public boolean saveMember(SignUpRequestDTO dto, String savePath) throws Exception{
         try {
-            boolean flag = mapper.save(dto.isEntity(encoder));
+            boolean flag = mapper.save(dto.isEntity(encoder, savePath));
             return flag;
         }
         catch (Exception e){
@@ -103,6 +103,7 @@ public class MemberService {
                 .name(member.getMemberName())
                 .nickName(member.getMemberNickname())
                 .address(member.getMemberAddress())
+                .profile(member.getProfileImage())
                 .build();
 
         session.setAttribute("login", dto);

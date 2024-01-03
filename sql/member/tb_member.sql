@@ -27,4 +27,6 @@ ADD auto_date DATETIME DEFAULT current_timestamp
 ;
 
 
-
+alter table tb_member
+add profile_image VARCHAR(255)
+;

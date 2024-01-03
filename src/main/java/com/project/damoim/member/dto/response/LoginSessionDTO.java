@@ -13,4 +13,5 @@ public class LoginSessionDTO {
     private String name;
     private String nickName;
     private String address;
+    private String profile;
 }

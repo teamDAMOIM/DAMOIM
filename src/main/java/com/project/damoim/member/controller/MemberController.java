@@ -2,6 +2,7 @@ package com.project.damoim.member.controller;
 
 
 import com.project.damoim.Util.LoginUtiles;
+import com.project.damoim.Util.upload.FileUtil;
 import com.project.damoim.member.dto.request.LoginRequestDTO;
 import com.project.damoim.member.dto.request.SignUpRequestDTO;
 import com.project.damoim.member.entity.Member;
@@ -10,12 +11,14 @@ import com.project.damoim.member.service.MemberService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.Cookie;
@@ -30,6 +33,8 @@ import javax.servlet.http.HttpSession;
 public class MemberController {
 
     private final MemberService memberService;
+    @Value("${root.path}")
+    private String rootPath;
 
     /*
         회원가입 창 띄우기
@@ -48,13 +53,14 @@ public class MemberController {
             SignUpRequestDTO dto,
             BindingResult result
     ){
+
         // 입력값 검증에 걸리면 회원가입창을 다시 띄우기
         if (result.hasErrors()) {
             return "/";
         }
         try { // 회원가입에 문제없이 통과하면
-            boolean member = memberService.saveMember(dto);
-
+            String savePath = FileUtil.uploadFile(dto.getProfile(), rootPath);
+            boolean member = memberService.saveMember(dto, savePath);
             if (member){
                 return "/members/sign-in";
             }

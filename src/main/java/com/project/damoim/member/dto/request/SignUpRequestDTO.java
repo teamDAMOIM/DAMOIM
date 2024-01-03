@@ -3,6 +3,7 @@ package com.project.damoim.member.dto.request;
 import com.project.damoim.member.entity.Member;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -33,9 +34,10 @@ public class SignUpRequestDTO {
     private String pp; // 마지막 번호
     @NotBlank
     private String ad;
+    private MultipartFile profile;
 
 
-    public Member isEntity(PasswordEncoder encoder){
+    public Member isEntity(PasswordEncoder encoder, String savePath){
         return Member.builder()
                 .memberId(this.id)
                 .memberPassword(encoder.encode(this.pw))
@@ -43,6 +45,7 @@ public class SignUpRequestDTO {
                 .memberPhone(startph + "-" + this.ph + "-" + this.pp)
                 .memberNickname(this.nn)
                 .memberAddress(ad)
+                .profileImage(savePath)
                 .build();
     }
 }
