@@ -7,6 +7,7 @@ import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Slf4j
 @Setter@Getter@ToString
@@ -21,7 +22,8 @@ public class RecuritResponseDTO {
     private String content;
     private Category category;
     private int count;
-    private LocalDateTime endDate;
+//    private LocalDateTime endDate;
+    private String endDate;
     private String addrass;
     private int maxCount;
 
@@ -31,9 +33,15 @@ public class RecuritResponseDTO {
         this.content = recruit.getRecruitContent();
         this.category = recruit.getRecruitCategory();
         this.count = recruit.getRecruitCount();
-        this.endDate = recruit.getRecruitEnddate();
+//        this.endDate = recruit.getRecruitEnddate();
+        this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
         this.addrass = recruit.getRecruitAddress();
         this.maxCount = recruit.getRecruitMax();
+    }
+
+    static String makePrettierDateString(LocalDateTime endDate) {
+        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return pattern.format(endDate);
     }
 
 }

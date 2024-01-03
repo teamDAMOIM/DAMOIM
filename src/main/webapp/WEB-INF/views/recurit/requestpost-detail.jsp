@@ -13,7 +13,7 @@
 <div id="wrap" class="form-container">
     <div class="background-logo">
         <div class="logo-img">
-            <div class="title" id="title">같이 취미활동 할 사람</div>
+<%--            <div class="title" id="title">${r.title}</div>--%>
 
             <div class="top-writer">
                 <img src="/DAMOIM/assets/img/personIcon.png" alt="person-icon">
@@ -35,12 +35,10 @@
     <div id="content">${r.content}</div>
     <div class="buttons">
         <button class="check" type="button" name="check">모임신청</button>
-        <button class="list-btn" type="button" onclick="window.location.href='/recruit/'">
-        목록
-        </button>
+        <button class="list-btn" type="button" onclick="window.location.href='/recruit/'">목록</button>
     </div>
 </div>
-        <!-- onclick="window.location.href='/psot/post?pageNo=${pageNo}&amount=${p.amount}&type=${p.type}&keyword=${p.keyword}'" -->
+
 
 <%@ include file="../include/footer.jsp"%>
 </body>
