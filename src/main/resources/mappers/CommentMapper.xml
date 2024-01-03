@@ -9,6 +9,7 @@
             comment_username, post_no, member_id
         FROM tb_comment
         WHERE post_no = #{pno}
+        LIMIT 0, 20
     </select>
 
     <insert id="save">
