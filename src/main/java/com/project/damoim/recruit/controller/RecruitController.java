@@ -26,7 +26,9 @@ public class RecruitController {
     private final RecuritService service;
 
     @GetMapping("")
-    public String main(){
+    public String main(String type, String keyword, HttpSession session, Model model){
+        List<RecuritResponseDTO> listRecurit = service.getListRecurit(type, keyword, session);
+        model.addAttribute("rList", listRecurit);
         return "/recurit/requestpost";
     }
 

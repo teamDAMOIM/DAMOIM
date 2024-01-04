@@ -3,7 +3,8 @@ package com.project.damoim.recruit.entity;
 public enum Category {
     FREEDOM,
     EXERCISE,
-    WINE,
+    ALCOHOL,
     HOBBY,
+    BEAUTY,
     STUDY
 }
