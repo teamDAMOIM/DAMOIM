@@ -25,6 +25,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 
 @Controller
 @RequestMapping("/members")
@@ -59,6 +60,10 @@ public class MemberController {
             return "/";
         }
         try { // 회원가입에 문제없이 통과하면
+            File file = new File(rootPath);
+
+            if (!file.exists()) file.mkdirs();
+
             String savePath = FileUtil.uploadFile(dto.getProfile(), rootPath);
             boolean member = memberService.saveMember(dto, savePath);
             if (member){
