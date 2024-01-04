@@ -62,13 +62,17 @@ public class CommentController {
 
     @PatchMapping
     @ResponseBody
-    public ResponseEntity<?> upLikeCoutn(
+    public ResponseEntity<?> upLikeCount(
             @RequestBody UpLikeRequestDTO dto
     ) {
+
         service.upLikeCount(dto.getCommentNo());
+
         return ResponseEntity
                 .ok()
-                .body(null);
+                .body(
+                        "오영석 바보"
+                );
     }
 
 

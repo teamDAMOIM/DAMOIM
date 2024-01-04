@@ -15,9 +15,9 @@
 
     <insert id="save">
         INSERT INTO tb_comment
-            (comment_content, comment_username, post_no, member_id)
+            (comment_content, comment_username, post_no, member_id, like_count)
         VALUES
-            (#{commentContent}, #{commentUsername}, #{postNo}, #{memberId})
+            (#{commentContent}, #{commentUsername}, #{postNo}, #{memberId}, #{likeCount})
     </insert>
 
 
