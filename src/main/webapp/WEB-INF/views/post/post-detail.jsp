@@ -35,16 +35,21 @@
         </div>
         <input id="commentInputValue"/>
         <button id="addBtn">추가</button>
+        <select class="select-sorting" name="type" id="search-type">
+            <option value="asc">오름차순</option>
+            <option value="desc">내림차순</option>
+            <option value="descRd">추천순</option> <%--descRecommendation--%>
+        </select>
 <%--    댓글    --%>
         <div class="ss">
 <%--
             댓글 창 입니다.
 --%>
 
-
         </div>
 
         <button class="add-btn" type="button">더보기</button>
+
 
 
     </div>
@@ -117,17 +122,26 @@
         let tag = '';
         for (let r of response.commentList){
                 tag += `
-                <div class="commentbox">
-                    <div type="text" id="commentNo">\${r.commentNo}</div>
-                    <label for="commentContent">댓글:</label>
-                    <div type="text" id="commentContent">\${r.commentContent}</div>
-                    <label for="commentDate">날짜:</label>
-                    <div type="text" id="commentDate">\${r.commentDate}</div>
-                    <label for="commentUser">이름:</label>
-                    <div type="text" id="commentUsername">\${r.commentUsername}</div>
-                    <label for="commentContent">내용:</label>
-                    <div type="text" id="commentContent">\${r.commentContent}</div>
-                 </div>
+                <div class="bgc">
+                    <div class="commentbox">
+                        <div type="text" id="commentNo">\${r.commentNo}</div>
+                        <div class="column">
+                            <label for="commentDate">날짜:</label>
+                            <div type="text" id="commentDate">\${r.commentDate}</div>
+                        </div>
+                        <div class="column">
+                            <label for="commentUser">이름:</label>
+                            <div type="text" id="commentUsername">\${r.commentUsername}</div>
+                        </div>
+                        <div class="column">
+                            <label for="commentContent">내용:</label>
+                            <div type="text" id="commentContent">\${r.commentContent}</div>
+                        </div>
+                    </div>
+                    <div class="Recommendation">
+                        <a class="rdbtn" type="button"><span class="lnr lnr-thumbs-up"></span></a>
+                    </div>
+                </div>
             `;
             document.querySelector('.ss').innerHTML = tag;
         }
