@@ -96,6 +96,9 @@
     flex-flow: row nowrap;
 
     overflow: hidden;
+}
+
+.rp-one:hover{
     box-shadow: 7px 7px #ffd3be;
 }
 
