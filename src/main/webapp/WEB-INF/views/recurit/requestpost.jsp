@@ -108,12 +108,14 @@
 
                 </div>
                 <div class="maxCount">
+                    <!-- 지원자 수가 모집인원 수와 같다면, test문 바꿔야댐-->
                     <c:if test="${r.maxCount>10}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: #18c722" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
                     </c:if>
-                    <c:if test="${r.maxCount==10}">
+                    <!-- 지원자 수가 모집인원 수보다 작다면 -->
+                    <c:if test="${r.maxCount<=10}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: #ec1f1f" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
@@ -223,7 +225,7 @@
                     <div class="rp-content">
                         <div class="title">\${r.title}</div>
                         <div class="user-count">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
                             </svg>\${r.count}
