@@ -43,7 +43,6 @@
 }
 .buttons .list-btn {
     width: 80px;
-    height: 30px;
     background: rgba(155, 47, 71, 0.9);
     color: #fff;
     border-radius: 5px 5px;
@@ -54,7 +53,6 @@
 
 .comment-add #addBtn {
     width: 80px;
-    height: 30px;
     background: rgba(155, 47, 71, 0.9);
     color: #fff;
     border-radius: 5px 5px;
@@ -72,7 +70,8 @@
 
 }
 
-#replyData  .bgc {
+
+#replyData .bgc {
     width: 60%;
     background: #ffffff;
     display: flex;
@@ -91,7 +90,9 @@
     text-align: left;
 }
 
-#replyData  .commentbox .column {
+
+#replyData .commentbox .column {
+
     display: flex;
     gap: 5px;
 }
@@ -117,7 +118,6 @@
 }
 .c .add-btn {
     width: 80px;
-    height: 30px;
     background: rgba(155, 47, 71, 0.9);
     color: #fff;
     border-radius: 5px 5px;

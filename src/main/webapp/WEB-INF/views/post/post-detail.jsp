@@ -86,7 +86,8 @@
             comment : $inputValue.value,
             username : "${login.nickName}",
             pno : ${p.pno},
-            memberId : "${login.id}"
+            memberId : "${login.id}",
+            likeCount : 0
         }
 
         const requestInfo = {
@@ -154,7 +155,8 @@
                         </div>
                     </div>
                     <div class="Recommendation">
-                       <span class="lnr lnr-thumbs-up" id="upbtn"></span>
+
+                        <span class="lnr lnr-thumbs-up" id="upbtn" name="\${r.commentNo}"></span>
                         <span class="lnr lnr-thumbs-down"></span>
                     </div>
                 </div>
@@ -168,7 +170,8 @@
     function randerButton(maxCount){
         let element = document.querySelector('.add-btn');
 
-        if (maxCount > 3){
+
+        if (maxCount > 5){
             // 댓글이 3개 초과일때 뜸
             if (amount >= maxCount){
                 element.textContent = '간략히 보기';
@@ -185,8 +188,31 @@
 
             e.preventDefault();
 
-            if (e.target.matches('#upbtn')){
+            if (e.target.matches('#upbtn')) {
 
+                const $getNo = e.target.getAttribute('name');
+
+                console.log($getNo)
+
+                const payload = {
+                    commentNo : $getNo,
+                    memberId : '${login.id}'
+                }
+
+                const requestInfo = {
+                    method : 'PATCH',
+                    headers : {
+                        'content-type' : 'application/json'
+                    },
+                    body : JSON.stringify(payload)
+                }
+
+                fetch("/comment", requestInfo)
+                    .then(res => {
+                        if (res.status === 200) {
+                            return res.json();
+                        }
+                    })
             }
         }
 
