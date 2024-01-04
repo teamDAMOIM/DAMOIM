@@ -154,10 +154,11 @@ td button.not{
     box-shadow: 3px 3px 3px #666666;
     border-radius: 10px
 }
-div#saveDiv{
+#savediv{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
  button#save{
@@ -171,4 +172,9 @@ div#saveDiv{
 }
 button#save:active{
     box-shadow: none;
+}
+
+div #row-ph input{
+    margin-left: 10px;
+    margin-right: 10px;
 }

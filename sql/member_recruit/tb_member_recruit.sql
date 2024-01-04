@@ -10,3 +10,4 @@ CREATE TABLE tb_member_recruit(
     FOREIGN KEY (recruit_no) REFERENCES tb_recruit (recruit_no)
 );
 
+drop table tb_member_recruit;

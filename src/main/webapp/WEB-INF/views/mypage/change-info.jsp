@@ -30,77 +30,113 @@
             <tbody class="table-hover">
             <tr>
                 <td class="text-left">ID</td>
-                <td class="text-left"><input type="text" id="userId" value="ㅁㄴㅇㅁㄴㅇㅁㄴㅇ" disabled></td>
-                <td><button class="not">변경불가</button></td>
-            </tr>
-            <tr>
-                <td class="text-left">PW</td>
-                <td class="text-left"><input type="text" id="userPw" value="*********" disabled></td>
+                <td class="text-left"><input type="text" id="userId" value="${m.memberId}" disabled></td>
                 <td><button class="not">변경불가</button></td>
             </tr>
             <tr>
                 <td class="text-left">NAME</td>
-                <td class="text-left"><input type="text" id="userName" value="오욘소쿠" disabled></td>
+                <td class="text-left"><input type="text" id="userName" value="${m.memberName}" disabled></td>
                 <td><button class="not">변경불가</button></td>
             </tr>
             <tr>
                 <td class="text-left">닉네임</td>
-                <td class="text-left"><input type="text" id="userNickname" value="나는야닉네임" disabled></td>
+                <td class="text-left"><input type="text" id="userNickname" value="${m.memberNickname}" disabled></td>
                 <td><button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button></td>
             </tr>
             <tr>
                 <td class="text-left">PHONE</td>
-                <td class="text-left"><input type="text" id="userPn" value="010-8700-5640" disabled></td>
+                <td class="text-left">
+                    <div class="userPn1" style="display: flex; flex-direction: row">
+                        <select name="startph" class="userPn" style="appearance: auto" disabled>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="012">012</option>
+                        </select>_
+                        <input type="number" class="userPn" value="1234" required name="ph" maxlength="4" disabled>_
+                        <input type="number" class="userPn" value="1234" required name="pp" maxlength="4" disabled>
+                    </div>
+                </td>
                 <td><button class="change" id="pn-btn"  onclick="toggleInput2()">변경하기</button></td>
             </tr>
             <tr>
                 <td class="text-left">ADDRESS</td>
-                <td class="text-left"><input type="text" id="userAdd" value="대전" disabled></td>
+                <td class="text-left"><input type="text" id="userAdd" value="${m.memberAddress}" disabled></td>
                 <td><button class="change" id="add-btn"  onclick="toggleInput3()">변경하기</button></td>
             </tr>
             </tbody>
         </table>
         <div id="savediv">
-            <button id="save">변경사항 저장하기</button>
+            <button id="save" onclick="onSave()">변경사항 저장하기</button>
         </div>
     </div>
 </div>
 </body>
 <script>
-    function toggleInput1() {
+    let checkList = [false, false, false]
+    const $button1 = document.getElementById('nn-btn');
+    const $button2 = document.getElementById('pn-btn');
+    const $button3 = document.getElementById('add-btn');
+
+    $button1.onclick = e => {
         var inputField = document.getElementById('userNickname');
-        var button = document.getElementById('nn-btn');
-
         if (inputField.disabled) {
             inputField.disabled = false;
-            button.innerText = '저장';
+            $button1.innerText = '저장';
+            checkList[0] = true;
+            console.log(checkList);
         } else {
             inputField.disabled = true;
-            button.innerText = '변경하기';
+            $button1.innerText = '변경하기';
+            checkList[0] = false;
+            console.log(checkList);
         }
     }
-    function toggleInput2() {
-        var inputField = document.getElementById('userPn');
-        var button = document.getElementById('pn-btn');
 
-        if (inputField.disabled) {
-            inputField.disabled = false;
-            button.innerText = '저장';
-        } else {
-            inputField.disabled = true;
-            button.innerText = '변경하기';
-        }
+
+
+    $button2.onclick = e => {
+        var inputFields = document.querySelectorAll('.userPn');
+
+        inputFields.forEach(function (inputField) {
+            if (inputField.disabled) {
+                inputField.disabled = false;
+                $button2.innerText = '저장';
+                checkList[1] = true;
+                console.log(checkList);
+            } else {
+                inputField.disabled = true;
+                $button2.innerText = '변경하기';
+                checkList[1] = false;
+                console.log(checkList);
+            }
+
+        });
+
+
     }
-    function toggleInput3() {
+
+    $button3.onclick = e => {
         var inputField = document.getElementById('userAdd');
-        var button = document.getElementById('add-btn');
 
         if (inputField.disabled) {
             inputField.disabled = false;
-            button.innerText = '저장';
+            $button3.innerText = '저장';
+            checkList[2] = true;
+            console.log(checkList);
         } else {
             inputField.disabled = true;
-            button.innerText = '변경하기';
+            $button3.innerText = '변경하기';
+            checkList[2] = false;
+            console.log(checkList);
+        }
+    }
+
+    function onSave() {
+        console.log(checkList)
+        if (!checkList.includes(true)){
+            alert("성공")
+        }else {
+            alert("실패")
         }
     }
 </script>

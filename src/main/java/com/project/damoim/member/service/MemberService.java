@@ -85,7 +85,7 @@ public class MemberService {
         return LoginResult.SUCCESS;
     }
 
-    private Member getMember(String id){
+    public Member getMember(String id){
         return mapper.findOne(id);
     }
 
