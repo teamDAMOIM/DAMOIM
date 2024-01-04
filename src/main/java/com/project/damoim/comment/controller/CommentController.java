@@ -75,7 +75,7 @@ public class CommentController {
         return ResponseEntity
                 .ok()
                 .body(
-                        c.getLikeCount()
+                        c
                 );
     }
 

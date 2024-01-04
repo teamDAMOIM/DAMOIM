@@ -138,7 +138,7 @@
         if(response.maxCount != 0) {
             for (let r of response.commentList) {
                 tag += `
-                <div class="bgc">
+                <div class="bgc \${r.commentNo}">
                     <div class="commentbox">
                         <div type="text" id="commentNo">\${r.commentNo}</div>
                         <div class="column">
@@ -156,7 +156,9 @@
                     </div>
                     <div class="Recommendation">
 
-                        <span class="lnr lnr-thumbs-up" id="upbtn" name="\${r.commentNo}"></span>
+                        <span class="lnr lnr-thumbs-up" id="upbtn" name="\${r.commentNo}">
+
+                        </span>
                         <span class="lnr lnr-thumbs-down"></span>
                     </div>
                 </div>

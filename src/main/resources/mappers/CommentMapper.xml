@@ -6,7 +6,7 @@
     <select id="findComment" resultType="com.project.damoim.comment.entity.Comment">
         SELECT
             comment_no, comment_content, comment_date,
-            comment_username, post_no, member_id
+            comment_username, post_no, member_id, like_count
         FROM tb_comment
         WHERE post_no = #{pno}
         ORDER BY comment_date DESC
