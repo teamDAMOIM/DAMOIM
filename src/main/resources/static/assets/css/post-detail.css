@@ -104,11 +104,26 @@
     align-items: flex-end;
     padding: 0 20px 10px 0;
     gap: 10px;
+    text-align: center;
 }
 #replyData .lnr-thumbs-up,
 #replyData .lnr-thumbs-down {
     background: none;
     font-size: 30px;
+}
+
+#replyData .upCount,
+#replyData .downCount {
+    display: flex;
+    margin: 0;
+}
+
+#replyData .upCount p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #494949;
+    text-align: center;
+    margin: 3px 3px 0 8px;
 }
 
 .c {

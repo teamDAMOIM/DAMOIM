@@ -155,11 +155,9 @@
                         </div>
                     </div>
                     <div class="Recommendation">
+                        <span class="upCount lnr lnr-thumbs-up comment\${r.commentNo}" id="upbtn" name="\${r.commentNo}"><p>\${r.likeCount}</p></span>
 
-                        <span class="lnr lnr-thumbs-up" id="upbtn" name="\${r.commentNo}">
-
-                        </span>
-                        <span class="lnr lnr-thumbs-down"></span>
+                        <span class="lnr lnr-thumbs-down" id="downbtn"></span>
                     </div>
                 </div>
             `;
@@ -214,6 +212,13 @@
                         if (res.status === 200) {
                             return res.json();
                         }
+                    })
+                    .then(response => {
+                        let element = document.querySelector('.comment' + response.commentNo);
+                        element.innerHTML = `
+                        <p>
+                        \${response.likeCount}
+                        </p>`;
                     })
             }
         }
