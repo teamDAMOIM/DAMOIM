@@ -70,8 +70,10 @@
     justify-content: flex-end;
     align-items: flex-end;
     padding: 0 20px 10px 0;
+    gap: 10px;
 }
-.ss .lnr-thumbs-up {
+.ss .lnr-thumbs-up,
+.ss .lnr-thumbs-down {
     background: none;
     font-size: 30px;
 }

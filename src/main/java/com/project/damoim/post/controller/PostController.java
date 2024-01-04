@@ -38,7 +38,6 @@ public class PostController {
         model.addAttribute("maker",pageMaker);
         model.addAttribute("pList", postList);
 
-
         return "/post/post";
     }
 

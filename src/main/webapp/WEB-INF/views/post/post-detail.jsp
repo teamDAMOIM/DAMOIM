@@ -33,8 +33,10 @@
                     목록
             </button>
         </div>
+
         <input id="commentInputValue"/>
         <button id="addBtn">추가</button>
+
         <select class="select-sorting" name="type" id="search-type">
             <option value="asc">오름차순</option>
             <option value="desc">내림차순</option>
@@ -47,8 +49,10 @@
 --%>
 
         </div>
+        <div class="c">
+            <button class="add-btn">더보기</button>
+        </div>
 
-        <button class="add-btn" type="button">더보기</button>
 
 
 
@@ -61,7 +65,12 @@
     let amount = 3;
 
     document.querySelector('.add-btn').addEventListener('click', e => {
-        amount += 3;
+        if (document.querySelector('.add-btn').textContent === '더보기'){
+            amount += 3;
+        }else {
+            amount -= 3;
+        }
+
         fetchGetComment();
     })
 
@@ -109,12 +118,52 @@
             })
     })
 
+    // document.querySelector('.upbtn').addEventListener('click', e => {
+    //
+    //     const $getNo = document.getElementById('commentNo');
+    //
+    //     const payload = {
+    //         commentNo : $getNo
+    //     }
+    //
+    //     const requestInfo = {
+    //         method : 'patch',
+    //         headers : {
+    //             'content-type' : 'application/json'
+    //         },
+    //         body : JSON.stringify(payload)
+    //     }
+    //
+    //     fetch("/comment", requestInfo)
+    // })
+    //
+    // document.querySelector('.downbtn').addEventListener('click', e => {
+    //
+    //     const $getNo = document.getElementById('commentNo');
+    //
+    //     const payload = {
+    //         commentNo : $getNo
+    //     }
+    //
+    //     const requestInfo = {
+    //         method : 'patch',
+    //         headers : {
+    //             'content-type' : 'application/json'
+    //         },
+    //         body : JSON.stringify(payload)
+    //     }
+    //
+    //     fetch("/comment", requestInfo)
+    //
+    // })
+    //
 
     function fetchGetComment(){
         fetch("/comment/${p.pno}/amount/" + amount)
             .then(request => request.json())
             .then(response=>{
                 randerView(response);
+                randerButton(response.maxCount);
             })
     }
 
@@ -122,7 +171,7 @@
         let tag = '';
         for (let r of response.commentList){
                 tag += `
-                <div class="bgc">
+                <div class="bgc"}>
                     <div class="commentbox">
                         <div type="text" id="commentNo">\${r.commentNo}</div>
                         <div class="column">
@@ -139,12 +188,32 @@
                         </div>
                     </div>
                     <div class="Recommendation">
-                        <a class="rdbtn" type="button"><span class="lnr lnr-thumbs-up"></span></a>
+                        <a class="upbtn" type="button"><span class="lnr lnr-thumbs-up"></span></a>
+                        <a class="downbtn" type="button"><span class="lnr lnr-thumbs-down"></span></a>
                     </div>
                 </div>
             `;
             document.querySelector('.ss').innerHTML = tag;
         }
+    }
+    function randerButton(maxCount){
+
+        let element = document.querySelector('.add-btn');
+        let element2 = document.querySelector('.c');
+        if (maxCount > 3){
+            // 댓글이 3개 초과일때 뜸
+            if (amount >= maxCount){
+                element.textContent = '간략히 보기';
+            } else if (amount <= maxCount){
+                element.textContent = '더보기';
+            }
+        } else if (maxCount === 0) {
+                element.textContent = '댓글 써라 십';
+        } else {
+            // 댓글이 3개이하일때 버튼 사라짐
+            element2.textContent = '';
+        }
+
     }
 
 
