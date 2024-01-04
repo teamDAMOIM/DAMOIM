@@ -3,7 +3,7 @@
 
 .recruitment-board{
     width: 100%;
-    background: #717171;
+    background: #ffe4d6;
     padding-top: 30vh;
 }
 
@@ -73,7 +73,7 @@
 .rp-one{
     background: #ffffff;
     /*width: 25%; height: 50vh;*/
-    width: 80%; height: 15vh;
+    width: 70%; height: 13vh;
 
     padding: 10px;
     margin: 0 2% 4%;
@@ -89,44 +89,58 @@
 }
 
 .category{
-    width: 50px; height: 50px;
+    width: 10%;
 
-    /*font-size: 0.8em; font-weight: bold; color: #ffffff; text-align: center;*/
-
-
-    border-radius: 5px;
-
-    display: flex;
-    justify-content: center; align-items: center;
-
-    /*padding: 0.5em;*/
+    display: flex; align-items: center; justify-content: end;
 }
+
+    .category .category-icon{
+        height: 50px; width: 50px;
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: center; align-items: center;
+    }
 
 .rp-content{
     width: 70%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center; align-content: center;
+
+    /*background: #FFD98D;*/
 }
     .rp-content .title{
-        /*width: 70%;*/
+        width: 70%;
         font-size: 1.8em; font-weight: bold; text-align: center; color: #252525;
         /*margin: 0 auto;*/
     }
     .rp-content .user-count{
-        display: flex; align-items: center;
-        /*width: 20%;*/
-        text-align: right; color: #aaaaaa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        text-align: center; color: #aaaaaa;
 
         /*padding-top: 10px*/
     }
 
     .rp-content .endDate{
-        width: 100%; text-align: center;
-        color: #787878;
+        width: 100%;
+        display: flex; justify-content: end;
+        color: #787878; align-items: center;
     }
-.endDate{
-    display: flex; align-items: center; justify-content: center;
+
+/*.endDate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+
+.maxCount{
+    width: 20%;
+    display: flex; align-items: center;
+    justify-content: center;
 }
 
 .rp-top{

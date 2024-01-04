@@ -19,6 +19,7 @@
                 <img src="/assets/img/personIcon.png" alt="person-icon">
                 <div type="text" id="writer">작성자</div>
             </div>
+
             <!-- <label for="writer" class="top-writer"></label> -->
 
         </div>
