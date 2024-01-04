@@ -2,9 +2,11 @@ package com.project.damoim.comment.controller;
 
 import com.project.damoim.comment.dto.request.CommentRequestDTO;
 import com.project.damoim.comment.dto.request.UpLikeRequestDTO;
+import com.project.damoim.comment.dto.response.CommentLikeResponseDTO;
 import com.project.damoim.comment.dto.response.CommentResponseDTO;
 import com.project.damoim.comment.entity.Comment;
 import com.project.damoim.comment.service.CommentService;
+import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -68,10 +70,12 @@ public class CommentController {
 
         service.upLikeCount(dto.getCommentNo());
 
+        Comment c = service.getComment(dto.getCommentNo());
+
         return ResponseEntity
                 .ok()
                 .body(
-                        "오영석 바보"
+                        c.getLikeCount()
                 );
     }
 

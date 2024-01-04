@@ -13,6 +13,14 @@
         LIMIT 0, #{amount}
     </select>
 
+    <select id="findOne" resultType="com.project.damoim.comment.entity.Comment">
+        SELECT
+            comment_no, comment_content, comment_date,
+            comment_username, post_no, member_id, like_count
+        FROM tb_comment
+        WHERE comment_no = #{cno}
+    </select>
+
     <insert id="save">
         INSERT INTO tb_comment
             (comment_content, comment_username, post_no, member_id, like_count)

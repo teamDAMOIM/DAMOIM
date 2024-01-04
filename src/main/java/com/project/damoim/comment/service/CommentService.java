@@ -39,4 +39,8 @@ public class CommentService {
     public void upLikeCount(int rno){
         mapper.upLikeCount(rno);
     }
+
+    public Comment getComment(int cno){
+        return mapper.findOne(cno);
+    }
 }
