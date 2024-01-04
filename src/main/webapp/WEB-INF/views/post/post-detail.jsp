@@ -65,6 +65,7 @@
 
     let amount = 3;
 
+
     document.querySelector('.add-btn').addEventListener('click', e => {
         if (document.querySelector('.add-btn').textContent === '더보기'){
             amount += 3;
@@ -152,8 +153,8 @@
                         </div>
                     </div>
                     <div class="Recommendation">
-                        <a class="upbtn" type="button"><span class="lnr lnr-thumbs-up"></span></a>
-                        <a class="downbtn" type="button"><span class="lnr lnr-thumbs-down"></span></a>
+                       <span class="lnr lnr-thumbs-up" id="upbtn"></span>
+                        <span class="lnr lnr-thumbs-down"></span>
                     </div>
                 </div>
             `;
@@ -176,57 +177,27 @@
             // 댓글이 3개이하일때 버튼 사라짐
             element2.textContent = '';
         }
+    }
+
+    function likeUpbtn(){
+        let $element = document.querySelector('.ss');
+
+        $element.onclick = e => {
+
+            e.preventDefault();
+
+            if (e.target.matches('#upbtn')){
+                console.log('asdfasdf');
+            }
+        }
 
     }
 
-    const a = document.querySelector('.ss').children;
-    console.log(a);
-        // document.querySelector('.upbtn').addEventListener('click', e => {
-        //
-        //     const $getNo = document.getElementById('commentNo');
-        //
-        //
-        //     const payload = {
-        //         commentNo : $getNo
-        //     }
-        //
-        //     const requestInfo = {
-        //         method : 'patch',
-        //         headers : {
-        //             'content-type' : 'application/json'
-        //         },
-        //         body : JSON.stringify(payload)
-        //     }
-        //
-        //     fetch("/comment", requestInfo)
-        //
-        // })
 
-        // document.querySelector('.downbtn').addEventListener('click', e => {
-        //
-        //     const $getNo = document.getElementById('commentNo');
-        //
-        //     const payload = {
-        //         commentNo : $getNo
-        //     }
-        //
-        //     const requestInfo = {
-        //         method : 'patch',
-        //         headers : {
-        //             'content-type' : 'application/json'
-        //         },
-        //         body : JSON.stringify(payload)
-        //     }
-        //
-        //     fetch("/comment", requestInfo)
-        //
-        // })
-        //
-
-
-            (()=>{
-        fetchGetComment();
-    })();
+       (()=>{
+            fetchGetComment();
+            likeUpbtn();
+        })();
 </script>
 </body>
 </html>
