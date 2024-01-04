@@ -26,3 +26,7 @@ INSERT into tb_comment
 values
     ('DLDLDLDLDL', '정범준', 2, 'shubom0115')
 ;
+
+ALTER TABLE tb_comment
+    ADD like_count int not null
+;

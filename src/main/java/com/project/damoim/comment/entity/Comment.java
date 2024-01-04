@@ -19,4 +19,5 @@ public class Comment {
     private String commentUsername; // 작성자 아이디
     private String memberId; // 회원 아이디
     private int postNo; // 게시물 번호
+    private int likeCount;
 }

@@ -15,9 +15,9 @@
 
     <insert id="save">
         INSERT INTO tb_comment
-            (comment_content, comment_username, post_no, member_id)
+            (comment_content, comment_username, post_no, member_id, like_count)
         VALUES
-            (#{commentContent}, #{commentUsername}, #{postNo}, #{memberId})
+            (#{commentContent}, #{commentUsername}, #{postNo}, #{memberId}, #{likeCount})
     </insert>
 
 
@@ -26,4 +26,27 @@
         FROM tb_comment
         WHERE post_no = #{pno}
     </select>
+
+    <update id="upLikeCount">
+        UPDATE tb_comment
+        SET like_count = like_count + 1
+        WHERE comment_no = #{cno}
+    </update>
+
+    <insert id="upLikeMember">
+        insert into tb_like
+            (comment_no, member_id)
+        VALUES
+            (#{cno}, #{memberId})
+    </insert>
+
+    <select id="upLikeCheck" resultType="boolean">
+        SELECT
+            COUNT(*)
+        FROM tb_like
+        WHERE member_id = #{memberId}
+    </select>
+
+
+
 </mapper>
