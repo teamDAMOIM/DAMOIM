@@ -1,11 +1,13 @@
 package com.project.damoim.recruit.dto.response;
 
+import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.Util.date.DateChange;
 import com.project.damoim.recruit.entity.Category;
 import com.project.damoim.recruit.entity.Recruit;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -26,8 +28,9 @@ public class RecuritResponseDTO {
     private String endDate;
     private String addrass;
     private int maxCount;
+    private String memberId;
 
-    public RecuritResponseDTO(Recruit recruit){
+    public RecuritResponseDTO(Recruit recruit, HttpSession session){
         this.rno = recruit.getRecruitNo();
         this.title = recruit.getRecruitTitle();
         this.content = recruit.getRecruitContent();
@@ -37,6 +40,7 @@ public class RecuritResponseDTO {
         this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
         this.addrass = recruit.getRecruitAddress();
         this.maxCount = recruit.getRecruitMax();
+        this.memberId = LoginUtiles.LoginUserId(session);
     }
 
     static String makePrettierDateString(LocalDateTime endDate) {

@@ -25,15 +25,16 @@ class RecruitMapperTest {
     void saveTest() {
         //given
         Recruit r = Recruit.builder()
-                .recruitTitle("www")
-                .recruitContent("asdasd")
+                .recruitTitle("zzzzz")
+                .recruitContent("zzzzz")
                 .recruitEnddate(LocalDateTime.now().plusDays(30))
-                .recruitCategory(Category.HEALTH)
+                .recruitCategory(Category.STUDY)
                 .recruitAddress("공주")
                 .recruitCount(1)
                 .recruitMax(10)
+                .memberId("jj3713")
                 .build();
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             recruitMapper.save(r);
         }
         //when
@@ -47,9 +48,8 @@ class RecruitMapperTest {
         //given
 
         //when
-        List<Recruit> all = recruitMapper.findAll();
+
         //then
-        System.out.println("recruitMapper = " + all);
     }
 
     @Test
