@@ -1,18 +1,21 @@
 package com.project.damoim.recruit.controller;
 
+import com.project.damoim.post.common.Search;
+import com.project.damoim.recruit.common.RecruitSearch;
 import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
 import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
+import com.project.damoim.recruit.entity.Category;
 import com.project.damoim.recruit.entity.Recruit;
 import com.project.damoim.recruit.service.RecuritService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -23,10 +26,8 @@ public class RecruitController {
     private final RecuritService service;
 
     @GetMapping("")
-    public String recruit(Model model){
-        log.info("hello recruit");
-        List<RecuritResponseDTO> listRecurit =  service.getListRecurit();
-        log.debug("{}", listRecurit);
+    public String main(String type, String keyword, HttpSession session, Model model){
+        List<RecuritResponseDTO> listRecurit = service.getListRecurit(type, keyword, session);
         model.addAttribute("rList", listRecurit);
         return "/recurit/requestpost";
     }
@@ -48,5 +49,21 @@ public class RecruitController {
         service.upViewCount(rno);
         model.addAttribute("r", r);
         return "/recurit/requestpost-detail";
+    }
+
+    @ResponseBody
+    @GetMapping("/type/{type}/keyword/{keyword}")
+    public ResponseEntity<?> findRecruit(
+            @PathVariable String type,
+            @PathVariable String keyword,
+            HttpSession session
+    ){
+        List<RecuritResponseDTO> listRecurit = service.getListRecurit(type, keyword, session);
+
+
+        return ResponseEntity
+                .ok()
+                .body(listRecurit)
+                ;
     }
 }

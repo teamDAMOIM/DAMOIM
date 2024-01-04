@@ -8,8 +8,28 @@
             recruit_no, recruit_title, recruit_content,
         recruit_category, recruit_startdate
             , recruit_enddate, recruit_addrass, recruit_count,
-        recruit_max, recruit_check
+        recruit_max, recruit_check, member_id
         FROM tb_recruit
+        <if test="type == 'EXERCISE'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'WINE'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'HOBBY'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'STUDY'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'FREEDOM'">
+            WHERE recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+
     </select>
 
     <select id="findSortRecruit" resultType="com.project.damoim.recruit.entity.Recruit">
@@ -17,7 +37,7 @@
             recruit_no, recruit_title, recruit_content,
             recruit_category, recruit_startdate ,
             recruit_enddate, recruit_addrass,
-            recruit_count, recruit_max, recruit_check
+            recruit_count, recruit_max, recruit_check, member_id
         FROM tb_recruit
         WHERE recruit_addrass LIKE CONCAT('%', #{address}, '%')
         ORDER BY recruit_count DESC
@@ -26,15 +46,15 @@
 
     <insert id="save">
         INSERT INTO tb_recruit
-            (recruit_title, recruit_content, recruit_category, recruit_count, recruit_enddate, recruit_addrass, recruit_max)
+            (recruit_title, recruit_content, recruit_category, recruit_count, recruit_enddate, recruit_addrass, recruit_max, member_id)
         VALUES
-            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitCount}, #{recruitEnddate}, #{recruitAddress}, #{recruitMax})
+            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitCount}, #{recruitEnddate}, #{recruitAddress}, #{recruitMax}, #{memberId})
     </insert>
 
     <select id="findOne" resultType="com.project.damoim.recruit.entity.Recruit">
         SELECT
         recruit_no, recruit_title, recruit_content, recruit_category, recruit_startdate
-        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, recruit_check
+        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, recruit_check, member_id
         FROM tb_recruit
         WHERE recruit_no = #{rno}
     </select>

@@ -15,38 +15,6 @@ class CommentMapperTest {
     @Autowired
     CommentMapper mapper;
 
-    @Test
-    @DisplayName("댓글 하나를 등록하면 True가 돠어야 한다.")
-    void saveTest() {
-<<<<<<< Updated upstream
-        //given
-        for (int i = 0; i < 100; i++) {
-            Comment c =  Comment.builder()
-                    .commentContent("아이 재밌다")
-                    .commentUsername("정범준")
-                    .postNo(4)
-                    .memberId("shubom0115")
-=======
-
-        for (int i = 0; i < 20; i++) {
-            //given
-            Comment c =  Comment.builder()
-                    .commentContent("아이 재밌다")
-                    .commentUsername("정범준")
-                    .postNo(1)
-                    .memberId("jj3713")
->>>>>>> Stashed changes
-                    .build();
-            //when
-            boolean save = mapper.save(c);
-        }
-<<<<<<< Updated upstream
-
-        //then
-//        assertTrue(save);
-=======
->>>>>>> Stashed changes
-    }
 
     @Test
     @DisplayName("포스트 4번을 조회")

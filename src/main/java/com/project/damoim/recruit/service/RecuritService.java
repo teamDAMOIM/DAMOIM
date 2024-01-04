@@ -2,6 +2,8 @@ package com.project.damoim.recruit.service;
 
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.member.dto.response.LoginSessionDTO;
+import com.project.damoim.post.common.Search;
+import com.project.damoim.recruit.common.RecruitSearch;
 import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
 import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
@@ -21,10 +23,10 @@ import java.util.stream.Collectors;
 public class RecuritService {
     private final RecruitMapper recruitMapper;
 
-    public List<RecuritResponseDTO> getListRecurit(){
+    public List<RecuritResponseDTO> getListRecurit(String type, String keyword, HttpSession session){
 
-        return recruitMapper.findAll().stream()
-                .map(recruit -> new RecuritResponseDTO(recruit))
+        return recruitMapper.findAll(type, keyword).stream()
+                .map(recruit -> new RecuritResponseDTO(recruit, session))
                 .collect(Collectors.toList())
                 ;
     }
@@ -42,7 +44,7 @@ public class RecuritService {
         String addreass = LoginUtiles.LoginUserAddress(session);
 
         return recruitMapper.findSortRecruit(addreass).stream()
-                .map(recruit -> new RecuritResponseDTO(recruit))
+                .map(recruit -> new RecuritResponseDTO(recruit, session))
                 .collect(Collectors.toList())
                 ;
     }

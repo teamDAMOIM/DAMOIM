@@ -28,6 +28,5 @@ public class PostListRequestDTO {
         this.name = post.getMemberId();
         this.date = DateChange.postDateChang(post.getPostDate());
         this.view = post.getPostViewCount();
-
     }
 }

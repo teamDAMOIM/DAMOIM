@@ -84,4 +84,7 @@
 - **MariaDB**
 - **IntelliJ IDEA**
 >>>>>>> main
+> 
+> 
+> 
 

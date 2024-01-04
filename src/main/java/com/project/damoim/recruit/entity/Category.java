@@ -1,7 +1,10 @@
 package com.project.damoim.recruit.entity;
 
 public enum Category {
-    HEALTH,
+    FREEDOM,
+    EXERCISE,
     ALCOHOL,
-    BEAUTY
+    HOBBY,
+    BEAUTY,
+    STUDY
 }

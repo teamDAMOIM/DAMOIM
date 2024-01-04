@@ -1,14 +1,17 @@
 .detail-wrap {
     background: #eee7e7;
+    font-weight: 600;
 }
 
 
 .detail-wrap .form-container {
+    text-align: center;
     padding: 200px;
 
 }
 
 .form-container .title {
+    font-size: 2.1rem;
     padding-bottom: 50px;
 }
 
@@ -33,15 +36,46 @@
 .content {
     padding-top: 100px;
 }
-
-.ss {
-
-    padding: 20px;
+.buttons {
+    padding: 60px;
 }
 
-.commentbox {
-    background: #ffffff;
+.ss {
+    /*background: #ffffff;*/
+    padding: 10px;
     margin: 20px;
+
+}
+
+.ss .bgc {
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.ss .commentbox {
+    width: 60%;
+    margin: 20px;
+    text-align: left;
+}
+
+.ss .commentbox .column {
+    display: flex;
+}
+.ss .Recommendation {
+    width: 40%;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 20px 10px 0;
+    gap: 10px;
+}
+.ss .lnr-thumbs-up,
+.ss .lnr-thumbs-down {
+    background: none;
+    font-size: 30px;
 }
 
 

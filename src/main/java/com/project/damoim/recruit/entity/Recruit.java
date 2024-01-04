@@ -23,5 +23,6 @@ public class Recruit {
     private int recruitCount; // 모집 참여자 카운트
     private int recruitMax; // 최대 모집자 수
     private boolean recruitCheck; // 모집 참여 여부
+    private String memberId;
 
 }
