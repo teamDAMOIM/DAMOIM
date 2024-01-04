@@ -25,14 +25,14 @@ class RecruitMapperTest {
     void saveTest() {
         //given
         Recruit r = Recruit.builder()
-                .recruitTitle("zzzzz")
+                .recruitTitle("ww")
                 .recruitContent("zzzzz")
                 .recruitEnddate(LocalDateTime.now().plusDays(30))
                 .recruitCategory(Category.STUDY)
                 .recruitAddress("공주")
                 .recruitCount(1)
                 .recruitMax(10)
-                .memberId("jj3713")
+                .memberId("sss1234")
                 .build();
         for (int i = 0; i < 10; i++) {
             recruitMapper.save(r);

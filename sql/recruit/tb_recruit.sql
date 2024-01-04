@@ -12,9 +12,14 @@ CREATE TABLE tb_recruit(
     recruit_count INT,
     recruit_max INT(10),
     recruit_check INT,
+    member_id varchar(255),
 
     CONSTRAINT pk_rno
-            PRIMARY KEY (recruit_no)
+            PRIMARY KEY (recruit_no),
+
+    CONSTRAINT foreign key fk_mid
+               (member_id) references tb_member (member_id)
+
 );
 
 
@@ -27,3 +32,5 @@ delete from tb_recruit where recruit_no = 1;
 ALTER TABLE tb_recruit MODIFY recruit_count INT NOT NULL;
 
 alter table tb_recruit modify recruit_no int not null auto_increment;
+
+drop table tb_recruit;

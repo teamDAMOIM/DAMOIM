@@ -37,6 +37,11 @@ a {
     text-decoration: none;
 }
 
+a:hover
+, a:focus{
+    color: inherit;
+}
+
 
 /* common style */
 .hide {
