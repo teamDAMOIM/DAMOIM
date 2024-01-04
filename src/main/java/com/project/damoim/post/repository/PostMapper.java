@@ -32,4 +32,6 @@ public interface PostMapper {
 
     // 총 게시물 수 구하기
     int postMaxCount(Search search);
+
+    int likeUpCount(int cno);
 }

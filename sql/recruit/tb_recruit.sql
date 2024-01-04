@@ -16,10 +16,15 @@ CREATE TABLE tb_recruit(
 
     CONSTRAINT pk_rno
             PRIMARY KEY (recruit_no),
+<<<<<<< Updated upstream
 
     CONSTRAINT foreign key fk_mid
                (member_id) references tb_member (member_id)
 
+=======
+    CONSTRAINT foreign key fk_mid
+                       (member_id) references tb_member (member_id)
+>>>>>>> Stashed changes
 );
 
 

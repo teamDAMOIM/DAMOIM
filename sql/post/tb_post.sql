@@ -36,3 +36,6 @@ FROM tb_post
 ORDER BY post_view_count DESC
 LIMIT 0, 5
 ;
+
+ALTER TABLE tb_post
+ADD like_button INT;

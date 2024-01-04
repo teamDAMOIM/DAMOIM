@@ -33,15 +33,16 @@
                     목록
             </button>
         </div>
+        <div class="comment-add">
+            <input id="commentInputValue"/>
+            <button id="addBtn">추가</button>
 
-        <input id="commentInputValue"/>
-        <button id="addBtn">추가</button>
-
-        <select class="select-sorting" name="type" id="search-type">
-            <option value="asc">오름차순</option>
-            <option value="desc">내림차순</option>
-            <option value="descRd">추천순</option> <%--descRecommendation--%>
-        </select>
+            <select class="select-sorting" name="type" id="search-type">
+                <option value="asc">오름차순</option>
+                <option value="desc">내림차순</option>
+                <option value="descRd">추천순</option> <%--descRecommendation--%>
+            </select>
+        </div>
 <%--    댓글    --%>
         <div class="ss">
 <%--
@@ -50,7 +51,7 @@
 
         </div>
         <div class="c">
-            <button class="add-btn">더보기</button>
+            <button class="add-btn"></button>
         </div>
 
 
@@ -99,6 +100,7 @@
             .then(request => {
                 if (request.status === 200){
                     alert("성공띠");
+
                     return request.json();
                 }
                 else if(request.status === 400){
@@ -109,6 +111,7 @@
                     alert("실패띠");
                     return request.text();
                 }
+
             })
             .then(response => {
                 if (response){
@@ -118,45 +121,6 @@
             })
     })
 
-    // document.querySelector('.upbtn').addEventListener('click', e => {
-    //
-    //     const $getNo = document.getElementById('commentNo');
-    //
-    //     const payload = {
-    //         commentNo : $getNo
-    //     }
-    //
-    //     const requestInfo = {
-    //         method : 'patch',
-    //         headers : {
-    //             'content-type' : 'application/json'
-    //         },
-    //         body : JSON.stringify(payload)
-    //     }
-    //
-    //     fetch("/comment", requestInfo)
-    // })
-    //
-    // document.querySelector('.downbtn').addEventListener('click', e => {
-    //
-    //     const $getNo = document.getElementById('commentNo');
-    //
-    //     const payload = {
-    //         commentNo : $getNo
-    //     }
-    //
-    //     const requestInfo = {
-    //         method : 'patch',
-    //         headers : {
-    //             'content-type' : 'application/json'
-    //         },
-    //         body : JSON.stringify(payload)
-    //     }
-    //
-    //     fetch("/comment", requestInfo)
-    //
-    // })
-    //
 
     function fetchGetComment(){
         fetch("/comment/${p.pno}/amount/" + amount)
@@ -171,7 +135,7 @@
         let tag = '';
         for (let r of response.commentList){
                 tag += `
-                <div class="bgc"}>
+                <div class="bgc">
                     <div class="commentbox">
                         <div type="text" id="commentNo">\${r.commentNo}</div>
                         <div class="column">
@@ -197,7 +161,6 @@
         }
     }
     function randerButton(maxCount){
-
         let element = document.querySelector('.add-btn');
         let element2 = document.querySelector('.c');
         if (maxCount > 3){
@@ -208,7 +171,7 @@
                 element.textContent = '더보기';
             }
         } else if (maxCount === 0) {
-                element.textContent = '댓글 써라 십';
+                element2.textContent = '댓글 써라 십';
         } else {
             // 댓글이 3개이하일때 버튼 사라짐
             element2.textContent = '';
@@ -216,8 +179,52 @@
 
     }
 
+    const a = document.querySelector('.ss').children;
+    console.log(a);
+        // document.querySelector('.upbtn').addEventListener('click', e => {
+        //
+        //     const $getNo = document.getElementById('commentNo');
+        //
+        //
+        //     const payload = {
+        //         commentNo : $getNo
+        //     }
+        //
+        //     const requestInfo = {
+        //         method : 'patch',
+        //         headers : {
+        //             'content-type' : 'application/json'
+        //         },
+        //         body : JSON.stringify(payload)
+        //     }
+        //
+        //     fetch("/comment", requestInfo)
+        //
+        // })
 
-    (()=>{
+        // document.querySelector('.downbtn').addEventListener('click', e => {
+        //
+        //     const $getNo = document.getElementById('commentNo');
+        //
+        //     const payload = {
+        //         commentNo : $getNo
+        //     }
+        //
+        //     const requestInfo = {
+        //         method : 'patch',
+        //         headers : {
+        //             'content-type' : 'application/json'
+        //         },
+        //         body : JSON.stringify(payload)
+        //     }
+        //
+        //     fetch("/comment", requestInfo)
+        //
+        // })
+        //
+
+
+            (()=>{
         fetchGetComment();
     })();
 </script>

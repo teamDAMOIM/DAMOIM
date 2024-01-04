@@ -43,6 +43,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 60%;
+    background: none;
 }
 .newpost .main-title-wrap .button-wrap .search select {
     width: 100px;

@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 20px;
     border-bottom: 1.5px solid #494949;
 }
 .form-container .labelbox .column {
@@ -36,11 +37,35 @@
 .content {
     padding-top: 100px;
 }
-.buttons {
+.form-container .buttons {
     padding: 60px;
+    border-bottom: 1.5px solid #494949;
+}
+.buttons .list-btn {
+    width: 80px;
+    height: 30px;
+    background: rgba(155, 47, 71, 0.9);
+    color: #fff;
+    border-radius: 5px 5px;
+}
+.comment-add {
+    padding: 50px;
 }
 
+.comment-add #addBtn {
+    width: 80px;
+    height: 30px;
+    background: rgba(155, 47, 71, 0.9);
+    color: #fff;
+    border-radius: 5px 5px;
+}
+
+
 .ss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /*background: #ffffff;*/
     padding: 10px;
     margin: 20px;
@@ -48,13 +73,19 @@
 }
 
 .ss .bgc {
+    width: 60%;
     background: #ffffff;
     display: flex;
     flex-direction: row;
     margin: 20px;
+    border: 1.5px solid #c49c9c;
+    border-radius: 3px;
 }
 
 .ss .commentbox {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
     width: 60%;
     margin: 20px;
     text-align: left;
@@ -62,6 +93,7 @@
 
 .ss .commentbox .column {
     display: flex;
+    gap: 5px;
 }
 .ss .Recommendation {
     width: 40%;
@@ -76,6 +108,19 @@
 .ss .lnr-thumbs-down {
     background: none;
     font-size: 30px;
+}
+
+.c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c .add-btn {
+    width: 80px;
+    height: 30px;
+    background: rgba(155, 47, 71, 0.9);
+    color: #fff;
+    border-radius: 5px 5px;
 }
 
 

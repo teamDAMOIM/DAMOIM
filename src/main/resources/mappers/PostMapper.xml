@@ -83,5 +83,9 @@
         </if>
     </select>
 
+    <select id="likeUpCount" resultType="int">
+
+    </select>
+
 
 </mapper>
