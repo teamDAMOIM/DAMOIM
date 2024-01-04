@@ -7,7 +7,7 @@
     padding-top: 30vh;
 }
 
-.main-title-wrap{
+.recruitment-board .main-title-wrap{
     width: 100%;
     padding: 10vh;
 
@@ -93,7 +93,7 @@
 
     /*font-size: 0.8em; font-weight: bold; color: #ffffff; text-align: center;*/
 
-    background: #ff803f;
+
     border-radius: 5px;
 
     display: flex;
@@ -120,6 +120,7 @@
 
         /*padding-top: 10px*/
     }
+
     .rp-content .endDate{
         width: 100%; text-align: center;
         color: #787878;

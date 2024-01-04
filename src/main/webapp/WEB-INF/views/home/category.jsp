@@ -3,9 +3,9 @@
 
 <!-- drop down menu -->
 <select class="form-select" name="type" id="search-type">
-    <option value="Freedom">자유</option>
-    <option value="exercise">운동</option>
-    <option value="wine">술</option>
-    <option value="Hobby">취미</option>
-    <option value="Study">스터디</option>
+    <option value="FREEDOM">자유</option>
+    <option value="EXERCISE">운동</option>
+    <option value="WINE">술</option>
+    <option value="HOBBY">취미</option>
+    <option value="STUDY">스터디</option>
 </select>
