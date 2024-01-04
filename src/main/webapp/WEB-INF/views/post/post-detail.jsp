@@ -27,10 +27,10 @@
         <div class="content" id="content" >${p.content}</div>
         <div class="buttons">
             <button class="list-btn" type="button"
-            onclick="window.location.href='/post?type=${ps.type}&keyword=${ps.keyword}'"
-<%--            onclick="window.location.href='/post'"--%>
+                    onclick="window.location.href='/post?type=${ps.type}&keyword=${ps.keyword}'"
+            <%--            onclick="window.location.href='/post'"--%>
             >
-                    목록
+                목록
             </button>
         </div>
         <div class="comment-add">
@@ -43,11 +43,11 @@
                 <option value="descRd">추천순</option> <%--descRecommendation--%>
             </select>
         </div>
-<%--    댓글    --%>
+        <%--    댓글    --%>
         <div id="replyData">
-<%--
-            댓글 창 입니다.
---%>
+            <%--
+                        댓글 창 입니다.
+            --%>
 
         </div>
         <div class="c">
@@ -63,7 +63,7 @@
 
 <script>
 
-    let amount = 3;
+    let amount = 5;
 
 
     document.querySelector('.add-btn').addEventListener('click', e => {
@@ -117,6 +117,7 @@
             .then(response => {
                 if (response){
                     $inputValue.value = '';
+                    fetchGetComment();
                 }
             })
     })
@@ -133,7 +134,8 @@
 
     function randerView(response) {
         let tag = '';
-        for (let r of response.commentList){
+        if(response.maxCount != 0) {
+            for (let r of response.commentList) {
                 tag += `
                 <div class="bgc">
                     <div class="commentbox">
@@ -152,22 +154,20 @@
                         </div>
                     </div>
                     <div class="Recommendation">
-<<<<<<< Updated upstream
                        <span class="lnr lnr-thumbs-up" id="upbtn"></span>
                         <span class="lnr lnr-thumbs-down"></span>
-=======
-                        <a id="upbtn" type="button"><span class="lnr lnr-thumbs-up"></span></a>
-                        <a class="downbtn" type="button"><span class="lnr lnr-thumbs-down"></span></a>
->>>>>>> Stashed changes
                     </div>
                 </div>
             `;
-            document.getElementById('replyData').innerHTML = tag;
+                document.getElementById('replyData').innerHTML = tag;
+            }
+        } else{
+            document.getElementById('replyData').innerHTML = `<div>없어용</div>`;
         }
     }
     function randerButton(maxCount){
         let element = document.querySelector('.add-btn');
-        let element2 = document.querySelector('.c');
+
         if (maxCount > 3){
             // 댓글이 3개 초과일때 뜸
             if (amount >= maxCount){
@@ -175,41 +175,31 @@
             } else if (amount <= maxCount){
                 element.textContent = '더보기';
             }
-        } else if (maxCount === 0) {
-                element2.textContent = '댓글 써라 십';
-        } else {
-            // 댓글이 3개이하일때 버튼 사라짐
-            element2.textContent = '';
         }
     }
 
     function likeUpbtn(){
-        let $element = document.querySelector('.ss');
+        let $element = document.getElementById('replyData');
 
         $element.onclick = e => {
 
             e.preventDefault();
 
             if (e.target.matches('#upbtn')){
-                console.log('asdfasdf');
+
             }
         }
 
     }
-<<<<<<< Updated upstream
 
 
-       (()=>{
-            fetchGetComment();
-            likeUpbtn();
-        })();
-=======
     (()=>{
-
         fetchGetComment();
-
+        likeUpbtn();
     })();
->>>>>>> Stashed changes
+
+
+
 </script>
 </body>
 </html>

@@ -61,7 +61,7 @@
 }
 
 
-.ss {
+#replyData {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +72,7 @@
 
 }
 
-.ss .bgc {
+#replyData  .bgc {
     width: 60%;
     background: #ffffff;
     display: flex;
@@ -82,7 +82,7 @@
     border-radius: 3px;
 }
 
-.ss .commentbox {
+#replyData .commentbox {
     display: flex;
     gap: 5px;
     flex-direction: column;
@@ -91,11 +91,11 @@
     text-align: left;
 }
 
-.ss .commentbox .column {
+#replyData  .commentbox .column {
     display: flex;
     gap: 5px;
 }
-.ss .Recommendation {
+#replyData .Recommendation {
     width: 40%;
     background: none;
     display: flex;
@@ -104,8 +104,8 @@
     padding: 0 20px 10px 0;
     gap: 10px;
 }
-.ss .lnr-thumbs-up,
-.ss .lnr-thumbs-down {
+#replyData .lnr-thumbs-up,
+#replyData .lnr-thumbs-down {
     background: none;
     font-size: 30px;
 }

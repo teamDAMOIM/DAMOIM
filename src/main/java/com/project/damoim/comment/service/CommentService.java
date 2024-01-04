@@ -35,4 +35,8 @@ public class CommentService {
     public boolean saveComment(CommentRequestDTO dto) {
         return mapper.save(dto.isEntity());
     }
+
+    public void upLikeCount(int rno){
+        mapper.upLikeCount(rno);
+    }
 }

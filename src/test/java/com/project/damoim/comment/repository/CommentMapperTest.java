@@ -38,6 +38,42 @@ class CommentMapperTest {
         System.out.println(count);
     }
 
+    @Test
+    @DisplayName("")
+    void upLikeCountTest() {
+        //given
+        int cno = 3;
+        //when
+        mapper.upLikeCount(cno);
+        //then
+    }
+
+
+    @Test
+    @DisplayName("")
+    void upLikeMemberTest() {
+        //given
+        int cno = 3;
+        String memberId = "jj3713";
+        //when
+        mapper.upLikeMember(cno, memberId);
+        //then
+    }
+
+    @Test
+    @DisplayName("")
+    void upLikeCheckTest() {
+        //given
+        String id = "jj3713";
+        //when
+        boolean b = mapper.upLikeCheck(id);
+        //then
+        assertFalse(b);
+    }
+
+
+
+
 
 
 
