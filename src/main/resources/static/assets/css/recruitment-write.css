@@ -1,0 +1,115 @@
+
+
+.recruitment-write-section{
+    width: 100%;
+}
+
+.recruitment-write-section .recruitment-form-container{
+    width: 40%;
+    margin: 30vh 30vh;
+    padding: 1.2em;
+    border: 5px solid #494949;
+    border-radius: 10px;
+    background: #FFD98D;
+
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+    /*justify-content: start; align-content: center;*/
+}
+
+    .rp-type-item{
+        width: 100%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start;
+        padding: 10px;
+    }
+
+        .rp-type-item .icon-type {
+            /*width: 60px; height: 60px;*/
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+            /*display: flex; align-items: center;*/
+        }
+
+        .rp-type-item .rp-title{
+            border: 0;
+            font-size: 1.5em; font-weight: bold;
+        }
+
+        .rp-type-item .rp-title:hover
+        , .rp-type-item .rp-title:focus{
+            border: #ffffff00;
+            /*outline: none;*/
+        }
+
+        .rp-type-item .form-select{
+            border: 0;
+            margin: 0 10px;
+            font-size: 1.5em; font-weight: bold;
+        }
+
+    .rp-content-item{
+        padding: 20px;
+        width: 100%;
+        border: 0;
+
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .rp-count-item{
+        width: 100%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start; align-items: center;
+        padding: 10px;
+    }
+
+        .rp-count-item .count-icon{
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+        }
+
+        .rp-count-item .rp-count-sub-item{
+            font-size: 1.2em; font-weight: bold;
+            padding: 10px;
+        }
+
+        .rp-count-item .count-num{
+            border: 0;
+            font-size: 1.2em;
+        }
+
+    .rp-end-date-item{
+        width: 100%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start; align-items: center;
+        padding: 10px;
+    }
+
+        .rp-end-date-item .date-icon{
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+        }
+
+        .rp-end-date-item .rp-date-item{
+            font-size: 1.2em; font-weight: bold;
+            padding: 10px;
+        }
+
+        .rp-end-date-item .end-date-calendar{
+            border: 0;
+            font-size: 1.2em;
+        }
+

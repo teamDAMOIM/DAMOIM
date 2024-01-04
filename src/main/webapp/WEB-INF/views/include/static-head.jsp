@@ -34,8 +34,9 @@
 <link rel="stylesheet" href="/assets/css/category.css">
 
 
-<!-- requestPost -->
+<%-- requestPost --%>
 <link rel="stylesheet" href="/assets/css/requestpost-list.css">
+<link rel="stylesheet" href="/assets/css/recruitment-write.css">
 
 
 

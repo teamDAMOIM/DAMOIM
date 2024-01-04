@@ -10,12 +10,13 @@
 <body>
 <%@ include file="../include/header.jsp"%>
 
-<div id="wrap" class="form-container">
+<div id="web-wrap" class="recruitment-container">
     <div class="background-logo">
         <div class="logo-img">
-<%--            <div class="title" id="title">${r.title}</div>--%>
+            <div class="title" id="title">${r.title}</div>
 
             <div class="top-writer">
+
                 <img src="/assets/img/personIcon.png" alt="person-icon">
                 <div type="text" id="writer">작성자</div>
             </div>
