@@ -44,7 +44,7 @@
             </select>
         </div>
 <%--    댓글    --%>
-        <div class="ss">
+        <div id="replyData">
 <%--
             댓글 창 입니다.
 --%>
@@ -117,7 +117,6 @@
             .then(response => {
                 if (response){
                     $inputValue.value = '';
-                    fetchGetComment(amount);
                 }
             })
     })
@@ -153,12 +152,17 @@
                         </div>
                     </div>
                     <div class="Recommendation">
+<<<<<<< Updated upstream
                        <span class="lnr lnr-thumbs-up" id="upbtn"></span>
                         <span class="lnr lnr-thumbs-down"></span>
+=======
+                        <a id="upbtn" type="button"><span class="lnr lnr-thumbs-up"></span></a>
+                        <a class="downbtn" type="button"><span class="lnr lnr-thumbs-down"></span></a>
+>>>>>>> Stashed changes
                     </div>
                 </div>
             `;
-            document.querySelector('.ss').innerHTML = tag;
+            document.getElementById('replyData').innerHTML = tag;
         }
     }
     function randerButton(maxCount){
@@ -192,12 +196,20 @@
         }
 
     }
+<<<<<<< Updated upstream
 
 
        (()=>{
             fetchGetComment();
             likeUpbtn();
         })();
+=======
+    (()=>{
+
+        fetchGetComment();
+
+    })();
+>>>>>>> Stashed changes
 </script>
 </body>
 </html>
