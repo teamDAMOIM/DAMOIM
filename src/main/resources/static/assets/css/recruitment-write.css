@@ -219,9 +219,6 @@
         display: flex; align-content: center;
     }
 
-        .address-write-item .form-group{
-            display: flex; flex-flow: row nowrap;
-        }
-        .address-write-item .form-group .row-ph{
+        .address-write-item .row-ph{
             display: flex; flex-flow: row nowrap;
         }
