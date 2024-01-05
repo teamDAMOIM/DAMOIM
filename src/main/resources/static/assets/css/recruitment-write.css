@@ -5,8 +5,9 @@
 }
 
 .recruitment-write-section .recruitment-form-container{
-    width: 40%;
-    margin: 30vh 30vh;
+    /*width: 40%;*/
+    /*margin: 30vh 30vh;*/
+    margin-top: 30vh;
     padding: 1.2em;
     border: 5px solid #494949;
     border-radius: 10px;
@@ -17,8 +18,9 @@
     /*justify-content: start; align-content: center;*/
 }
 
+    /* title */
     .rp-type-item{
-        width: 100%;
+        /*width: 100%;*/
         background: #FFFFFF;
         border-radius: 60px;
         display: flex; flex-flow: row nowrap;
@@ -34,7 +36,7 @@
             padding: 10px;
             /*display: flex; align-items: center;*/
         }
-
+        /* title - input */
         .rp-type-item .rp-title{
             border: 0;
             font-size: 1.5em; font-weight: bold;
@@ -52,14 +54,21 @@
             font-size: 1.5em; font-weight: bold;
         }
 
-    .rp-content-item{
-        padding: 20px;
-        width: 100%;
-        border: 0;
-
-        font-weight: bold;
-        font-size: 1.2em;
+    /* content */
+    .rp-sub-title-content{
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start;
+        padding: 10px;
     }
+        .rp-sub-title-content .content-icon{
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+
+        }
 
     .rp-count-item{
         width: 100%;
@@ -84,7 +93,7 @@
 
         .rp-count-item .count-num{
             border: 0;
-            font-size: 1.2em;
+            font-size: 1.2em; font-weight: bold;
         }
 
     .rp-end-date-item{
@@ -108,7 +117,8 @@
             padding: 10px;
         }
 
-        .rp-end-date-item .end-date-calendar{
+        .rp-end-date-item .end-date-calendar ,
+        .rp-end-date-item .end-time-clock{
             border: 0;
             font-size: 1.2em;
         }
