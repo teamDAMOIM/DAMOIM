@@ -28,7 +28,7 @@ class RecruitMapperTest {
                 .recruitTitle("ww")
                 .recruitContent("zzzzz")
                 .recruitEnddate(LocalDateTime.now().plusDays(30))
-                .recruitCategory(Category.STUDY)
+                .recruitCategory(Category.STUDY.toString())
                 .recruitAddress("공주")
                 .recruitCount(1)
                 .recruitMax(10)

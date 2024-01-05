@@ -43,9 +43,9 @@ public class RecuritResponseDTO {
         this.memberId = LoginUtiles.LoginUserId(session);
     }
 
-    static String makePrettierDateString(LocalDateTime endDate) {
-        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        return pattern.format(endDate);
-    }
+//    static String makePrettierDateString(LocalDateTime endDate) {
+//        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+//        return pattern.format(endDate);
+//    }
 
 }

@@ -75,6 +75,19 @@
                             <input type="time" class="end-time-clock" name="endDate" required>
                         </div>
                     </label>
+
+                    <label for="address-write-input" class="address-info-item">
+                        <div class="address-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house-add-fill" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/>
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                                <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                            </svg>
+                        </div>
+                        <div class="address-sub-title">모임 장소</div>
+                        <input type="text" id="address-write-input" class="address-write-item" readonly>
+                    </label>
+
                 </div>
 
                 <div class="buttons-item">
@@ -84,7 +97,7 @@
                                 <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
                             </svg>
                         </div>
-                        <button type="button" class="put-btn">put</button>
+                        <button type="button" class="list-btn">list</button>
                     </div>
                     <div class="put-up-item">
                         <div class="put-up-icon">
@@ -162,9 +175,9 @@
                 return;
 
             if($numCount.value < 2){
+                $numCount.value=2;
                 console.log($numCount.value);
                 alert('!!2명 이하 제한!!');
-                $numCount.value=2;
             }
         }
 
