@@ -140,7 +140,6 @@
                     $inputValue.value = '';
 
                     optionsChange(element.value);
-
                     fetchGetComment(element.value);
                 }
             })
@@ -245,7 +244,7 @@
                         }
                     })
                     .then(response => {
-                        console.log(response)
+                        color(response);
                         let element = document.querySelector('.comment' + response.commentNo);
                         element.innerHTML = `
                         <p>
@@ -255,7 +254,12 @@
             }
         }
 
-
+        function color(response) {
+            const color = document.getElementById('upbtn');
+            if (response.flag === true) {
+                color.style.color = "#2c34c0"
+            }
+        }
 
     }
 

@@ -116,6 +116,7 @@ public class MemberService {
         if (c != null){
             c.setMaxAge(0);
             c.setPath("/");
+            response.addCookie(c);
 
             mapper.madeSessionAutoLogin(
                     AutoLoginDTO.builder()
