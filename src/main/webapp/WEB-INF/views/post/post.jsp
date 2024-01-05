@@ -108,6 +108,7 @@
 <script>
     const $opt = [...document.querySelector('.sc-select').children];
 
+
     $opt.forEach($o => {
         if ($o.value === ${p.type}){
            $o.setAttribute('selected', 'selected');

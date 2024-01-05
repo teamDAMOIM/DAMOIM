@@ -37,10 +37,10 @@
             <input id="commentInputValue"/>
             <button id="addBtn">추가</button>
 
-            <select class="select-sorting" name="type" id="search-type">
-                <option class="sort-option" value="asc">오름차순</option>
-                <option class="sort-option" value="desc">내림차순</option>
-                <option class="sort-option" value="descRd">추천순</option> <%--descRecommendation--%>
+            <select class="select-sorting" name="sort" id="search-type">
+                <option value="dateasc">오래된순</option>
+                <option value="datedesc">최신순</option>
+                <option value="like">좋아요순</option>
             </select>
         </div>
         <%--    댓글    --%>
@@ -63,7 +63,16 @@
 
 <script>
 
+    let element = document.querySelector('.select-sorting');
+
+    element.addEventListener("change", evt => {
+
+        fetchGetComment(element.value);
+        optionsChange(element.value);
+    });
+
     let amount = 5;
+
 
 
     document.querySelector('.add-btn').addEventListener('click', e => {
@@ -76,7 +85,18 @@
         fetchGetComment();
     })
 
-    document.getElementById('addBtn').addEventListener('click', e=>{
+    const $enterKey = document.getElementById('commentInputValue')
+
+    $enterKey.onkeydown = e =>{
+        if (e.keyCode === 13){
+
+            addComment();
+        }
+    }
+
+    document.getElementById('addBtn').addEventListener('click', addComment)
+
+    function addComment(){
 
 
         const $inputValue = document.getElementById('commentInputValue');
@@ -118,19 +138,28 @@
             .then(response => {
                 if (response){
                     $inputValue.value = '';
-                    fetchGetComment();
+
+                    optionsChange(element.value);
+
+                    fetchGetComment(element.value);
                 }
             })
-    })
+    }
 
-    document.querySelector('.select-sorting').addEventListener('click', e=>{
+    function optionsChange($options){
+        const $option = [...document.querySelector('.select-sorting').children];
+        $option.forEach($opt => {
+            if ($opt.value === $options){
+                $opt.setAttribute('selected', 'selected');
+            } else {
+                $opt.removeAttribute('selected', 'selected');
+            }
+        })
+    }
 
 
-        const $options = document.querySelector('.sort-option');
-
-
-    function fetchGetComment(){
-        fetch("/comment/${p.pno}/amount/" + amount)
+    function fetchGetComment(sort){
+        fetch("/comment/${p.pno}/amount/" + amount + "/sort/" + sort)
             .then(request => request.json())
             .then(response=>{
                 randerView(response);
