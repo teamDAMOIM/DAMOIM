@@ -131,7 +131,7 @@ public class MemberController {
      */
     @GetMapping("/check")
     @ResponseBody
-    public ResponseEntity check(String type, String keyword){
+    public ResponseEntity<?> check(String type, String keyword){
         boolean flag = memberService.checkDuplicateValue(type, keyword);
         return ResponseEntity
                 .ok()

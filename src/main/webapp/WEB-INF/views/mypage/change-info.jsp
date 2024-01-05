@@ -60,7 +60,8 @@
                 </tr>
                 <tr>
                     <td class="text-left">ADDRESS</td>
-                    <td class="text-left"><input type="text" id="userAdd" value="${m.memberAddress}" disabled></td>
+                    <td class="text-left">
+                        <input type="text" id="userAdd" value="${m.memberAddress}" disabled><label id="addchk"></label></td>
                     <td>
                         <button class="change" id="add-btn" onclick="toggleInput2()">변경하기</button>
                     </td>
@@ -76,7 +77,8 @@
 </body>
 <script>
     let checkList = [false, false]
-    const checkResultList = [false, false];
+    const checkResultList = [false];
+    const checkResultList1 = [false];
 
     let changeList = [false, false]
     const $button1 = document.getElementById('nn-btn');
@@ -134,6 +136,8 @@
         }
     };
 
+    // 주소 버튼 이벤트
+
     $button2.onclick = e => {
         var inputField = document.getElementById('userAdd');
 
@@ -141,31 +145,73 @@
             inputField.disabled = false;
             $button2.innerText = '저장';
             type = 'address';
-            checkList[2] = true;
+            checkList[1] = true;
             console.log(checkList);
         } else {
             inputField.disabled = true;
             $button2.innerText = '변경하기';
-            checkList[2] = false;
+            checkList[1] = false;
             console.log(checkList);
         }
     }
-    //
+
+    const $inputAddress = document.getElementById('userAdd');
+    $inputAddress.onchange = e => {
+        console.log("ㅁㄴㅇ")
+        if ($inputAddress.value.trim() === '') {
+            document.getElementById('addchk').innerHTML =
+                '<b style="color: red">[주소를 넣어주세요]</b>'
+            checkResultList1[1] = false;
+            $button2.disabled = true;
+
+        } else if (!nickNamePattern.test($inputAddress.value)) {
+            document.getElementById('addchk').innerHTML =
+                '<b style="color: red">[한국어로 입력해주세요!!]</b>'
+            checkResultList1[1] = false;
+            $button2.disabled = true;
+
+        } else {
+            fetch("/members/check?type=memberAddress&keyword=" + $inputAddress.value)
+                .then(res => res.json())
+                .then(rep => {
+                    if(rep){ // 중복이 되면
+                        document.getElementById('addchk').innerHTML =
+                            '<b style="color: red">[중복 값입니다.]</b>'
+                        checkResultList1[1] = false;
+                        $button2.disabled = true;
+                    }else{
+                        document.getElementById('addchk').innerHTML =
+                            '<b style="color: skyblue">[사용 가능띠!!!]</b>'
+                        checkResultList1[1] = true;
+                        $button2.disabled = false;
+                    }
+                });
+        }
+    };
+
     const nickNamePattern = /^[가-힣]+$/;
 
-    const $nickNameKeyDown = document.getElementById('userNickname');
-    $nickNameKeyDown.onkeyup = e => {
-        if ($nickNameKeyDown.value.trim() === '') {
-            $nickNameKeyDown.style.borderColor = 'red';
-        }
-    }
+    // const $nickNameKeyDown = document.getElementById('userNickname');
+    // $nickNameKeyDown.onkeyup = e => {
+    //     if ($nickNameKeyDown.value.trim() === '') {
+    //         $nickNameKeyDown.style.borderColor = 'red';
+    //     }
+    // }
 
     function onSave() {
         console.log(checkList)
         if (!checkList.includes(true)) {
-            alert("회원님의 정보 수정이 완료되었습니다!")
-            window.location.href = "/members/update?type="
-                + type + "&nickName=바보&memberId=" + "${login.id}";
+            if(checkResultList.includes(true)&&(checkResultList1.includes(true))){
+                alert("회원님의 정보 수정이 완료되었습니다!")
+                window.location.href = "/members/update?type=all&nickName=" + $inputNickname.value + "&address=" + $inputAddress.value + "&memberId=" + "${login.id}";
+            }else if(checkResultList.includes(true)&&(checkResultList1.includes(false))){
+                alert("회원님의 정보 수정이 완료되었습니다!")
+                window.location.href = "/members/update?type=name&nickName=" + $inputNickname.value + "&memberId=" + "${login.id}";
+            }else{
+                window.location.href = "/members/update?type=address&address="
+                    + $inputAddress.value + "&memberId=" + "${login.id}";
+            }
+
         } else {
             alert("회원님의 정보 수정이 실패했습니다!")
         }
