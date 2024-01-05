@@ -38,9 +38,9 @@
             <button id="addBtn">추가</button>
 
             <select class="select-sorting" name="type" id="search-type">
-                <option value="asc">오름차순</option>
-                <option value="desc">내림차순</option>
-                <option value="descRd">추천순</option> <%--descRecommendation--%>
+                <option class="sort-option" value="asc">오름차순</option>
+                <option class="sort-option" value="desc">내림차순</option>
+                <option class="sort-option" value="descRd">추천순</option> <%--descRecommendation--%>
             </select>
         </div>
         <%--    댓글    --%>
@@ -123,6 +123,11 @@
             })
     })
 
+    document.querySelector('.select-sorting').addEventListener('click', e=>{
+
+
+        const $options = document.querySelector('.sort-option');
+
 
     function fetchGetComment(){
         fetch("/comment/${p.pno}/amount/" + amount)
@@ -156,7 +161,6 @@
                     </div>
                     <div class="Recommendation">
                         <span class="upCount lnr lnr-thumbs-up comment\${r.commentNo}" id="upbtn" name="\${r.commentNo}"><p>\${r.likeCount}</p></span>
-                        <span class="downCount lnr lnr-thumbs-down comment\${r.commentNo}" id="downbtn" name="\${r.commentNo}"><p>\${r.likeCount}</p></span>
                     </div>
                 </div>
             `;
@@ -168,7 +172,6 @@
     }
     function randerButton(maxCount){
         let element = document.querySelector('.add-btn');
-
 
         if (maxCount > 5){
             // 댓글이 3개 초과일때 뜸
@@ -214,56 +217,16 @@
                     })
                     .then(response => {
                         console.log(response)
-                        // let element = document.querySelector('.comment' + response.commentNo);
-                        // element.innerHTML = `
-                        // <p>
-                        // \${response.likeCount}
-                        // </p>`;
+                        let element = document.querySelector('.comment' + response.commentNo);
+                        element.innerHTML = `
+                        <p>
+                        \${response.likeCount}
+                        </p>`;
                     })
             }
         }
 
-        <%--function likeDownbtn(){--%>
-        <%--    let $element = document.getElementById('replyData');--%>
 
-        <%--    $element.onclick = e => {--%>
-
-        <%--        e.preventDefault();--%>
-
-        <%--        if (e.target.matches('#downbtn')) {--%>
-
-        <%--            const $getNo = e.target.getAttribute('name');--%>
-
-        <%--            console.log($getNo)--%>
-
-        <%--            const payload = {--%>
-        <%--                commentNo : $getNo,--%>
-        <%--                memberId : '${login.id}'--%>
-        <%--            }--%>
-
-        <%--            const requestInfo = {--%>
-        <%--                method : 'PATCH',--%>
-        <%--                headers : {--%>
-        <%--                    'content-type' : 'application/json'--%>
-        <%--                },--%>
-        <%--                body : JSON.stringify(payload)--%>
-        <%--            }--%>
-
-        <%--            fetch("/comment", requestInfo)--%>
-        <%--                .then(res => {--%>
-        <%--                    if (res.status === 200) {--%>
-        <%--                        return res.json();--%>
-        <%--                    }--%>
-        <%--                })--%>
-        <%--                .then(response => {--%>
-        <%--                    let element = document.querySelector('.comment' + response.commentNo);--%>
-        <%--                    element.innerHTML = `--%>
-        <%--                <p>--%>
-        <%--                \${response.likeCount}--%>
-        <%--                </p>`;--%>
-        <%--                })--%>
-        <%--        }--%>
-        <%--    }--%>
 
     }
 

@@ -51,6 +51,7 @@ public class CommentService {
 
         boolean flag = mapper.upLikeCheck(LoginUtiles.LoginUserId(session), cno);
 
+
         if (!flag){
             mapper.upLikeMember(cno, LoginUtiles.LoginUserId(session));
             upLikeCount(cno);
@@ -58,8 +59,7 @@ public class CommentService {
         } else{
             mapper.deleteLikeMember(cno, LoginUtiles.LoginUserId(session));
             mapper.minusCount(cno);
+            return false;
         }
-
-        return false;
     }
 }

@@ -10,6 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class CommentLikeResponseDTO {
-    private int likeCont;
+    private int likeCount;
     private boolean flag;
+    private int commentNo;
 }

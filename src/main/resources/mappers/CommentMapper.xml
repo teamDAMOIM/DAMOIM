@@ -58,7 +58,7 @@
 
     <update id="minusCount">
         UPDATE tb_comment
-        SET like_count = like_count + 1
+        SET like_count = like_count - 1
         WHERE comment_no = #{cno}
     </update>
 

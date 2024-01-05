@@ -75,8 +75,9 @@ public class CommentController {
         Comment comment = service.getComment(dto.getCommentNo());
 
         CommentLikeResponseDTO responseDTO = CommentLikeResponseDTO.builder()
-                .likeCont(comment.getLikeCount())
+                .likeCount(comment.getLikeCount())
                 .flag(flag)
+                .commentNo(comment.getCommentNo())
                 .build();
 
         return ResponseEntity

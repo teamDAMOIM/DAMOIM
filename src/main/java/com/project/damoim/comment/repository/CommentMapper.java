@@ -29,5 +29,5 @@ public interface CommentMapper {
 
     void minusCount(int cno);
 
-    boolean deleteLikeMember(int con, String memberId);
+    boolean deleteLikeMember(int cno, String memberId);
 }
