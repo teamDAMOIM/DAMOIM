@@ -16,7 +16,7 @@ public class Recruit {
     private int recruitNo; // 모집 게시물 번호
     private String recruitTitle; // 모집 게시물 제목
     private String recruitContent; // 모집 게시물 내용
-    private Category recruitCategory; // 모집 게시물 카테고리
+    private String recruitCategory; // 모집 게시물 카테고리
     private LocalDateTime recruitStartdate; // 모집 시작 시간
     private LocalDateTime recruitEnddate; //  모집 종료 시간
     private String recruitAddress; // 모집 주소

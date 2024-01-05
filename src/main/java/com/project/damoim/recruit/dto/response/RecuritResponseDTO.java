@@ -22,10 +22,10 @@ public class RecuritResponseDTO {
     private int rno;
     private String title;
     private String content;
-    private Category category;
+    private String category;
     private int count;
-//    private LocalDateTime endDate;
-    private String endDate;
+    private LocalDateTime endDate;
+//    private String endDate;
     private String addrass;
     private int maxCount;
     private String memberId;
@@ -36,8 +36,8 @@ public class RecuritResponseDTO {
         this.content = recruit.getRecruitContent();
         this.category = recruit.getRecruitCategory();
         this.count = recruit.getRecruitCount();
-//        this.endDate = recruit.getRecruitEnddate();
-        this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
+        this.endDate = recruit.getRecruitEnddate();
+//        this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
         this.addrass = recruit.getRecruitAddress();
         this.maxCount = recruit.getRecruitMax();
         this.memberId = LoginUtiles.LoginUserId(session);

@@ -17,7 +17,7 @@ public class RecuriitDetileResponseDTO {
     private int rno;
     private String title;
     private String content;
-    private Category category;
+    private String category;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String address;
