@@ -1,6 +1,7 @@
 package com.project.damoim.comment.service;
 
 
+import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.comment.dto.request.CommentRequestDTO;
 import com.project.damoim.comment.dto.response.CommentResponseDTO;
 import com.project.damoim.comment.entity.Comment;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,7 +42,20 @@ public class CommentService {
         mapper.upLikeCount(rno);
     }
 
-    public Comment getComment(int cno){
+    private Comment getComment(int cno){
         return mapper.findOne(cno);
+    }
+
+    public boolean checkLike(int cno, HttpSession session){
+        // 좋아요 버튼을 누르면 좋아요 테이블에 좋아요 버튼 누른 회원을 저장하는 처리
+        mapper.upLikeMember(cno, LoginUtiles.LoginUserId(session));
+        boolean flag = mapper.upLikeCheck(LoginUtiles.LoginUserId(session));
+
+        if (!flag){
+            upLikeCount(cno);
+            return true;
+        }
+
+        return false;
     }
 }

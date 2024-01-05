@@ -17,9 +17,13 @@ public interface CommentMapper {
     // 댓글 갯수 확인
     int commentMaxCount(int pno);
 
+
+    // 단순 좋아요 카운트 업
     void upLikeCount(int cno);
 
+    // 좋아요 누른 회원 아이디를 디비에 저장
     boolean upLikeMember(int cno, String memberId);
 
+    // 테이블에 회원이 있으면 1조회 0조회
     boolean upLikeCheck(String memberId);
 }
