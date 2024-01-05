@@ -56,10 +56,7 @@
                             <input type="number" class="form-control ph3" required name="pp" maxlength="4">
                         </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <label class="label">Address</label>
-                        <input type="text" class="form-control" placeholder="Address" required name="ad">
-                    </div>
+                    <%@ include file="../include/address.jsp"%>
                     <div class="form-group">
                         <button type="button" class="form-control btn btn-primary submit px-3">Sign Up</button>
                     </div>
