@@ -56,6 +56,19 @@
         AND comment_no = #{cno}
     </select>
 
+    <update id="minusCount">
+        UPDATE tb_comment
+        SET like_count = like_count + 1
+        WHERE comment_no = #{cno}
+    </update>
+
+    <delete id="deleteLikeMember">
+        DELETE
+        FROM tb_like
+        WHERE comment_no = #{cno}
+        AND member_id = #{memberId}
+    </delete>
+
 
 
 </mapper>

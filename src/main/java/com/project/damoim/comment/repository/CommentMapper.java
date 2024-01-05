@@ -26,4 +26,8 @@ public interface CommentMapper {
 
     // 테이블에 회원이 있으면 1조회 0조회
     boolean upLikeCheck(String memberId, int cno);
+
+    void minusCount(int cno);
+
+    boolean deleteLikeMember(int con, String memberId);
 }

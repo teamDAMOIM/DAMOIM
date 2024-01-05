@@ -55,6 +55,9 @@ public class CommentService {
             mapper.upLikeMember(cno, LoginUtiles.LoginUserId(session));
             upLikeCount(cno);
             return true;
+        } else{
+            mapper.deleteLikeMember(cno, LoginUtiles.LoginUserId(session));
+            mapper.minusCount(cno);
         }
 
         return false;
