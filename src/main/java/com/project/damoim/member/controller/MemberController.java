@@ -139,10 +139,9 @@ public class MemberController {
     }
 
     @GetMapping("/update")
-    public String update(String type, UpdateMember member){
-        log.info("{}", type);
+    public String update(UpdateMember member){
         log.info("{}", member);
-        memberService.updateMember(type, member);
+        memberService.updateMember(member);
         return "";
     }
 }

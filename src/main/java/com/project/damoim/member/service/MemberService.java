@@ -90,8 +90,8 @@ public class MemberService {
         return mapper.findOne(id);
     }
 
-    public void updateMember(String type, UpdateMember member){
-        mapper.update(type, member);
+    public void updateMember(UpdateMember member){
+        mapper.update(member);
     }
 
     // 아이디 비밀번호 중복 검사 서비스

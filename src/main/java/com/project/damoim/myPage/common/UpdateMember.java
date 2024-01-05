@@ -8,8 +8,8 @@ import lombok.*;
 @EqualsAndHashCode
 @Builder
 public class UpdateMember {
+    private String type;
     private String memberId;
-    private String name;
-//    private String address;
-
+    private String nickName;
+    private String address;
 }

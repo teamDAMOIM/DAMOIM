@@ -165,7 +165,7 @@
         if (!checkList.includes(true)) {
             alert("회원님의 정보 수정이 완료되었습니다!")
             window.location.href = "/members/update?type="
-                + type + "&name=바보&memberId=" + "${login.id}";
+                + type + "&nickName=바보&memberId=" + "${login.id}";
         } else {
             alert("회원님의 정보 수정이 실패했습니다!")
         }
