@@ -28,6 +28,6 @@ public interface MemberMapper {
     Member findMemberByCookie(String sessionId);
 
     // 회원 정보 수정
-    UserUpdateDTO update(UserUpdateDTO dto);
+    void update(String type);
 
 }

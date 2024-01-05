@@ -89,6 +89,10 @@ public class MemberService {
         return mapper.findOne(id);
     }
 
+    public void updateMember(String type){
+        mapper.update(type);
+    }
+
     // 아이디 비밀번호 중복 검사 서비스
     public boolean checkDuplicateValue(String type, String keyword){
         return mapper.isDuplicate(type, keyword);
@@ -127,4 +131,6 @@ public class MemberService {
             );
         }
     }
+
+
 }

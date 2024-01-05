@@ -136,4 +136,11 @@ public class MemberController {
                 .ok()
                 .body(flag);
     }
+
+    @GetMapping("/update")
+    public String update(String type){
+        log.info(type);
+        memberService.updateMember(type);
+        return "";
+    }
 }

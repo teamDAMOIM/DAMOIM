@@ -68,11 +68,14 @@
     const $button1 = document.getElementById('nn-btn');
     const $button2 = document.getElementById('add-btn');
 
+    let type = '';
+
     $button1.onclick = e => {
         var inputField = document.getElementById('userNickname');
         if (inputField.disabled) {
             inputField.disabled = false;
             $button1.innerText = '저장';
+            type = 'name';
             checkList[0] = true;
             console.log(checkList);
         } else {
@@ -88,25 +91,27 @@
 
         if (inputField.disabled) {
             inputField.disabled = false;
-            $button3.innerText = '저장';
+            $button2.innerText = '저장';
+            type = 'address';
             checkList[2] = true;
             console.log(checkList);
         } else {
             inputField.disabled = true;
-            $button3.innerText = '변경하기';
+            $button2.innerText = '변경하기';
             checkList[2] = false;
             console.log(checkList);
         }
     }
     //
-    // const nickNamePattern = /^[가-힣]+$/;
+    const nickNamePattern = /^[가-힣]+$/;
 
-    // const $nickNameKeyDown = document.getElementById('userNickname');
-    // $nickNameKeyDown.onkeyup = e =>{
-    //     if ($nickNameKeyDown.value.trim() === ''){
-    //         $nickNameKeyDown.style.borderColor = 'red';
-    //     }
-    // }
+    const $nickNameKeyDown = document.getElementById('userNickname');
+    $nickNameKeyDown.onkeyup = e =>{
+        if ($nickNameKeyDown.value.trim() === ''){
+            $nickNameKeyDown.style.borderColor = 'red';
+        }
+    }
+
 
 
 
@@ -114,6 +119,7 @@
         console.log(checkList)
         if (!checkList.includes(true)){
             alert("회원님의 정보 수정이 완료되었습니다!")
+            window.location.href = "/members/update?type=" + type ;
         }else {
             alert("회원님의 정보 수정이 실패했습니다!")
         }
