@@ -9,11 +9,14 @@
             comment_username, post_no, member_id, like_count
         FROM tb_comment
         WHERE post_no = #{pno}
-        <if test="sort == 'date'">
-            ORDER BY ORDER BY comment_date DESC
+        <if test="sort == 'dateasc'">
+            ORDER BY comment_date
+        </if>
+        <if test="sort == 'datedesc'">
+            ORDER BY comment_date DESC
         </if>
         <if test="sort == 'like'">
-            ORDER BY ORDER BY comment_date DESC
+            ORDER BY like_count DESC
         </if>
 
         LIMIT 0, #{amount}

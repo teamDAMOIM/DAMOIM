@@ -43,10 +43,11 @@
                     <div class="rp-board-content">
                         <label for="content" class="rp-sub-title-content">
                             <div class="content-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-text-fill" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-file-text-fill" viewBox="0 0 16 16">
                                     <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1m-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1m0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1"/>
                                 </svg>
-                            </div>내용
+                            </div>
+                            <div class="rp-content-sub-item">내용</div>
                         </label>
                         <textarea id="content" class="rp-content-write" name="content" maxlength="800" required style="resize: none;" rows="30" cols="80"></textarea>
                     </div>
@@ -77,8 +78,23 @@
                 </div>
 
                 <div class="buttons-item">
-                    <button class="list-btn" type="button" onclick="window.location.href='/recruit'">목록</button>
-                    <button type="submit" class="write-btn">글쓰기</button>
+                    <div class="list-item">
+                        <div class="list-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg>
+                        </div>
+                        <button type="button" class="put-btn">put</button>
+                    </div>
+                    <div class="put-up-item">
+                        <div class="put-up-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+                            </svg>
+                        </div>
+                        <button type="submit" class="put-btn">put</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -87,6 +103,13 @@
     <%@ include file="../include/footer.jsp"%>
 
     <script>
+
+        // list 버튼의 이벤트 추가
+        let $listBtn = document.querySelector('.list-item');
+        $listBtn.onclick = e =>{
+            window.location.href=window.location.href='/recruit';
+        }
+
 
         // 카테고리에 따른 아이콘 변화
         let $cType = document.querySelector('.form-select');
@@ -134,7 +157,7 @@
 
         // 인원 수 2명 이하 제한
         let $numCount = document.querySelector('.count-num');
-        $numCount.oninput = function() {
+        $numCount.onchange = function() {
             if($numCount.value.trim()==='')
                 return;
 
