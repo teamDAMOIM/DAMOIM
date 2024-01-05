@@ -212,6 +212,16 @@
     }
     /*  모임 장소 입력창 */
     .address-info-item .address-write-item{
+        /*display: flex; flex-flow: row nowrap;*/
         border: 0;
         font-size: 1.5em; font-weight: bold;
+        /*text-align: center;*/
+        display: flex; align-content: center;
     }
+
+        .address-write-item .form-group{
+            display: flex; flex-flow: row nowrap;
+        }
+        .address-write-item .form-group .row-ph{
+            display: flex; flex-flow: row nowrap;
+        }

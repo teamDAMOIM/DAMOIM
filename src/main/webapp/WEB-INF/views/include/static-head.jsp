@@ -37,6 +37,7 @@
 <%-- requestPost --%>
 <link rel="stylesheet" href="/assets/css/requestpost-list.css">
 <link rel="stylesheet" href="/assets/css/recruitment-write.css">
+<link rel="stylesheet" href="/assets/css/recruitment-detail.css">
 
 
 

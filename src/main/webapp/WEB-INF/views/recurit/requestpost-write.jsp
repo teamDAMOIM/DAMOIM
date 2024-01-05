@@ -60,7 +60,7 @@
                             </svg>
                         </div>
                         <div class="rp-count-sub-item">모집 인원수</div>
-                        <input type="number" id="maxUserCount" class="count-num" name="maxCount" required>
+                        <input type="number" id="maxUserCount" class="count-num" name="maxNumCount" required>
                     </label>
 
                     <label for="endDate" class="rp-end-date-item">
@@ -85,7 +85,10 @@
                             </svg>
                         </div>
                         <div class="address-sub-title">모임 장소</div>
-                        <input type="text" id="address-write-input" class="address-write-item" readonly>
+<%--                        <input type="text" id="address-write-input" class="address-write-item" readonly>--%>
+                        <div id="address-write-input" class="address-write-item">
+                            <%@include file="../include/address.jsp"%>
+                        </div>
                     </label>
 
                 </div>
@@ -116,13 +119,34 @@
     <%@ include file="../include/footer.jsp"%>
 
     <script>
+        // 인원 수 2명 이하 제한
+        let $numCount = document.querySelector('.count-num');
+        $numCount.onchange = function() {
+            if($numCount.value.trim()==='')
+                return;
+
+            if($numCount.value < 2){
+                $numCount.value=2;
+                console.log($numCount.value);
+                alert('!!2명 이하 제한!!');
+            }
+        }
+
+        // put 버튼의 이벤트 추가
+        let $putBtn = document.querySelector('.put-btn');
+
+        $putBtn.onclick = e => {
+            if($numCount.value < 2){
+                alert('!!2명 이하 제한!!');
+                e.preventDefault();
+            }
+        }
 
         // list 버튼의 이벤트 추가
         let $listBtn = document.querySelector('.list-item');
         $listBtn.onclick = e =>{
             window.location.href=window.location.href='/recruit';
         }
-
 
         // 카테고리에 따른 아이콘 변화
         let $cType = document.querySelector('.form-select');
@@ -168,19 +192,6 @@
             }
         }
 
-        // 인원 수 2명 이하 제한
-        let $numCount = document.querySelector('.count-num');
-        $numCount.onchange = function() {
-            if($numCount.value.trim()==='')
-                return;
-
-            if($numCount.value < 2){
-                $numCount.value=2;
-                console.log($numCount.value);
-                alert('!!2명 이하 제한!!');
-            }
-        }
-
         // 오늘 날짜로 지정
         let $todayDate = document.querySelector('.end-date-calendar');
 
@@ -197,11 +208,11 @@
         // 지금 시간으로 지정
         let $endTime = document.querySelector('.end-time-clock');
 
-        let hour = today.getHours();
-        let minute = today.getMinutes();
+        let formattedTime = new Date().toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+        console.log(formattedTime);
 
-        $endTime.value = hour + ':' + minute;
-        console.log(hour + ':' + minute);
+        $endTime.value = formattedTime;
+
     </script>
 </body>
 </html>
