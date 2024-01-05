@@ -52,20 +52,18 @@
 
     <update id="update">
         UPDATE tb_member
-        <if test="type == 'all'">
-            SET member_nickname = #{nickName}, member_address = #{address}
-            WHERE member_id = #{memberId}
-        </if>
+<!--        <if test="type == 'all'">-->
+<!--            SET member_nickname = #{nickName}, member_address = #{address}-->
+<!--            WHERE member_id = #{memberId}-->
+<!--        </if>-->
 
-        <if test="type == 'name'">
-            SET member_nickname = #{nickName}
+            SET member_nickname = #{name}
             WHERE member_id = #{memberId}
-        </if>
 
-        <if test="type == 'address'">
-            SET member_address = #{address}
-            WHERE member_id = #{memberId}
-        </if>
+<!--        <if test="type == 'address'">-->
+<!--            SET member_address = #{address}-->
+<!--            WHERE member_id = #{memberId}-->
+<!--        </if>-->
 
     </update>
 

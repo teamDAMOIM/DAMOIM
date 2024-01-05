@@ -3,6 +3,7 @@ package com.project.damoim.member.repository;
 import com.project.damoim.member.dto.request.AutoLoginDTO;
 import com.project.damoim.member.entity.Member;
 import com.project.damoim.myPage.DTO.UserUpdateDTO;
+import com.project.damoim.myPage.common.UpdateMember;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
@@ -28,6 +29,6 @@ public interface MemberMapper {
     Member findMemberByCookie(String sessionId);
 
     // 회원 정보 수정
-    void update(String type);
+    void update(String type, UpdateMember member);
 
 }

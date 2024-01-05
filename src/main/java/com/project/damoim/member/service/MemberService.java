@@ -8,6 +8,7 @@ import com.project.damoim.member.dto.request.SignUpRequestDTO;
 import com.project.damoim.member.dto.response.LoginSessionDTO;
 import com.project.damoim.member.entity.Member;
 import com.project.damoim.member.repository.MemberMapper;
+import com.project.damoim.myPage.common.UpdateMember;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -89,8 +90,8 @@ public class MemberService {
         return mapper.findOne(id);
     }
 
-    public void updateMember(String type){
-        mapper.update(type);
+    public void updateMember(String type, UpdateMember member){
+        mapper.update(type, member);
     }
 
     // 아이디 비밀번호 중복 검사 서비스

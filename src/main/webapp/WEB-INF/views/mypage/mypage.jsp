@@ -13,7 +13,7 @@
 <div id="box">
     <div id="background-box">
         <div style="display: flex; flex-direction: row; justify-content: center">
-            <img src="/local${login.profile}" alt="프사">
+            <img id="profile" src="/local${login.profile}" alt="프사">
             <div style="display: flex; flex-direction: column">
                 <h1 id="nickName">${login.nickName}님
                     반갑습니다!</h1>

@@ -13,7 +13,7 @@
 <div id="box">
     <div id="background-box">
         <div style="display: flex; flex-direction: row; justify-content: center">
-            <img src="/local${login.profile}" alt="프사">
+            <img id="profile" src="/local${login.profile}" alt="프사">
             <div style="display: flex; flex-direction: column">
                 <h1 id="nickName">${login.nickName}님
                     반갑습니다!</h1>
@@ -26,43 +26,57 @@
         <div class="table-title">
             <h3>my정보 수정</h3>
         </div>
-        <table class="table-fill">
-            <tbody class="table-hover">
-            <tr>
-                <td class="text-left">ID</td>
-                <td class="text-left"><input type="text" id="userId" value="${m.memberId}" disabled></td>
-                <td><button class="not">변경불가</button></td>
-            </tr>
-            <tr>
-                <td class="text-left">NAME</td>
-                <td class="text-left"><input type="text" id="userName" value="${m.memberName}" disabled></td>
-                <td><button class="not">변경불가</button></td>
-            </tr>
-            <tr>
-                <td class="text-left">닉네임</td>
-                <td class="text-left"><input type="text" id="userNickname" value="${m.memberNickname}" disabled><label id="nickchk"></label></td>
-                <td><button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button></td>
-            </tr>
-            <tr>
-                <td class="text-left">PHONE</td>
-                <td class="text-left"><input type="text" id="userPhone" value="${m.memberPhone}" disabled></td>
-                <td><button class="not">변경불가</button></td>
-            </tr>
-            <tr>
-                <td class="text-left">ADDRESS</td>
-                <td class="text-left"><input type="text" id="userAdd" value="${m.memberAddress}" disabled></td>
-                <td><button class="change" id="add-btn"  onclick="toggleInput2()">변경하기</button></td>
-            </tr>
-            </tbody>
-        </table>
-        <div id="savediv">
-            <button id="save" onclick="onSave()">변경사항 저장하기</button>
-        </div>
+<%--        <form action="/myPage/change-info" class="change-form" method="post" enctype="multipart/form-data">--%>
+            <table class="table-fill">
+                <tbody class="table-hover">
+                <tr>
+                    <td class="text-left">ID</td>
+                    <td class="text-left"><input type="text" id="userId" value="${m.memberId}" disabled></td>
+                    <td>
+                        <button class="not">변경불가</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">NAME</td>
+                    <td class="text-left"><input type="text" id="userName" value="${m.memberName}" disabled></td>
+                    <td>
+                        <button class="not">변경불가</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">닉네임</td>
+                    <td class="text-left">
+                        <input type="text" id="userNickname" value="${m.memberNickname}" disabled><label id="nickchk"></label></td>
+                    <td>
+                        <button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">PHONE</td>
+                    <td class="text-left"><input type="text" id="userPhone" value="${m.memberPhone}" disabled></td>
+                    <td>
+                        <button class="not">변경불가</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">ADDRESS</td>
+                    <td class="text-left"><input type="text" id="userAdd" value="${m.memberAddress}" disabled></td>
+                    <td>
+                        <button class="change" id="add-btn" onclick="toggleInput2()">변경하기</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div id="savediv">
+                <button id="save" onclick="onSave()">변경사항 저장하기</button>
+            </div>
+<%--        </form>--%>
     </div>
 </div>
 </body>
 <script>
     let checkList = [false, false]
+    const checkResultList = [false, false];
 
     let changeList = [false, false]
     const $button1 = document.getElementById('nn-btn');
@@ -86,6 +100,40 @@
         }
     }
 
+    const $inputNickname = document.getElementById('userNickname');
+    $inputNickname.onchange = e => {
+        console.log("ㅁㄴㅇ")
+        if ($inputNickname.value.trim() === '') {
+            document.getElementById('nickchk').innerHTML =
+                '<b style="color: red">[닉네임은 필수 값입니다.]</b>'
+            checkResultList[0] = false;
+            $button1.disabled = true;
+
+        } else if (!nickNamePattern.test($inputNickname.value)) {
+            document.getElementById('nickchk').innerHTML =
+                '<b style="color: red">[한국어로 입력해주세요!!]</b>'
+            checkResultList[0] = false;
+            $button1.disabled = true;
+
+        } else {
+            fetch("/members/check?type=memberNickname&keyword=" + $inputNickname.value)
+                .then(res => res.json())
+                .then(rep => {
+                    if(rep){ // 중복이 되면
+                        document.getElementById('nickchk').innerHTML =
+                            '<b style="color: red">[중복 값입니다.]</b>'
+                        checkResultList[0] = false;
+                        $button1.disabled = true;
+                    }else{
+                        document.getElementById('nickchk').innerHTML =
+                            '<b style="color: skyblue">[사용 가능띠!!!]</b>'
+                        checkResultList[0] = true;
+                        $button1.disabled = false;
+                    }
+                });
+        }
+    };
+
     $button2.onclick = e => {
         var inputField = document.getElementById('userAdd');
 
@@ -106,21 +154,19 @@
     const nickNamePattern = /^[가-힣]+$/;
 
     const $nickNameKeyDown = document.getElementById('userNickname');
-    $nickNameKeyDown.onkeyup = e =>{
-        if ($nickNameKeyDown.value.trim() === ''){
+    $nickNameKeyDown.onkeyup = e => {
+        if ($nickNameKeyDown.value.trim() === '') {
             $nickNameKeyDown.style.borderColor = 'red';
         }
     }
 
-
-
-
     function onSave() {
         console.log(checkList)
-        if (!checkList.includes(true)){
+        if (!checkList.includes(true)) {
             alert("회원님의 정보 수정이 완료되었습니다!")
-            window.location.href = "/members/update?type=" + type ;
-        }else {
+            window.location.href = "/members/update?type="
+                + type + "&name=바보&memberId=" + "${login.id}";
+        } else {
             alert("회원님의 정보 수정이 실패했습니다!")
         }
     }

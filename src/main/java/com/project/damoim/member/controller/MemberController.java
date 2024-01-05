@@ -8,6 +8,7 @@ import com.project.damoim.member.dto.request.SignUpRequestDTO;
 import com.project.damoim.member.entity.Member;
 import com.project.damoim.member.service.LoginResult;
 import com.project.damoim.member.service.MemberService;
+import com.project.damoim.myPage.common.UpdateMember;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -138,9 +139,10 @@ public class MemberController {
     }
 
     @GetMapping("/update")
-    public String update(String type){
-        log.info(type);
-        memberService.updateMember(type);
+    public String update(String type, UpdateMember member){
+        log.info("{}", type);
+        log.info("{}", member);
+        memberService.updateMember(type, member);
         return "";
     }
 }
