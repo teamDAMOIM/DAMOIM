@@ -40,28 +40,18 @@
             </tr>
             <tr>
                 <td class="text-left">닉네임</td>
-                <td class="text-left"><input type="text" id="userNickname" value="${m.memberNickname}" disabled></td>
+                <td class="text-left"><input type="text" id="userNickname" value="${m.memberNickname}" disabled><label id="nickchk"></label></td>
                 <td><button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button></td>
             </tr>
             <tr>
                 <td class="text-left">PHONE</td>
-                <td class="text-left">
-                    <div class="userPn1" style="display: flex; flex-direction: row">
-                        <select name="startph" class="userPn" style="appearance: auto" disabled>
-                            <option value="010">010</option>
-                            <option value="011">011</option>
-                            <option value="012">012</option>
-                        </select>_
-                        <input type="number" class="userPn" value="1234" required name="ph" maxlength="4" disabled>_
-                        <input type="number" class="userPn" value="1234" required name="pp" maxlength="4" disabled>
-                    </div>
-                </td>
-                <td><button class="change" id="pn-btn"  onclick="toggleInput2()">변경하기</button></td>
+                <td class="text-left"><input type="text" id="userPhone" value="${m.memberPhone}" disabled></td>
+                <td><button class="not">변경불가</button></td>
             </tr>
             <tr>
                 <td class="text-left">ADDRESS</td>
                 <td class="text-left"><input type="text" id="userAdd" value="${m.memberAddress}" disabled></td>
-                <td><button class="change" id="add-btn"  onclick="toggleInput3()">변경하기</button></td>
+                <td><button class="change" id="add-btn"  onclick="toggleInput2()">변경하기</button></td>
             </tr>
             </tbody>
         </table>
@@ -72,10 +62,11 @@
 </div>
 </body>
 <script>
-    let checkList = [false, false, false]
+    let checkList = [false, false]
+
+    let changeList = [false, false]
     const $button1 = document.getElementById('nn-btn');
-    const $button2 = document.getElementById('pn-btn');
-    const $button3 = document.getElementById('add-btn');
+    const $button2 = document.getElementById('add-btn');
 
     $button1.onclick = e => {
         var inputField = document.getElementById('userNickname');
@@ -92,30 +83,7 @@
         }
     }
 
-
-
     $button2.onclick = e => {
-        var inputFields = document.querySelectorAll('.userPn');
-
-        inputFields.forEach(function (inputField) {
-            if (inputField.disabled) {
-                inputField.disabled = false;
-                $button2.innerText = '저장';
-                checkList[1] = true;
-                console.log(checkList);
-            } else {
-                inputField.disabled = true;
-                $button2.innerText = '변경하기';
-                checkList[1] = false;
-                console.log(checkList);
-            }
-
-        });
-
-
-    }
-
-    $button3.onclick = e => {
         var inputField = document.getElementById('userAdd');
 
         if (inputField.disabled) {
@@ -130,14 +98,26 @@
             console.log(checkList);
         }
     }
+    //
+    // const nickNamePattern = /^[가-힣]+$/;
+
+    // const $nickNameKeyDown = document.getElementById('userNickname');
+    // $nickNameKeyDown.onkeyup = e =>{
+    //     if ($nickNameKeyDown.value.trim() === ''){
+    //         $nickNameKeyDown.style.borderColor = 'red';
+    //     }
+    // }
+
+
 
     function onSave() {
         console.log(checkList)
         if (!checkList.includes(true)){
-            alert("성공")
+            alert("회원님의 정보 수정이 완료되었습니다!")
         }else {
-            alert("실패")
+            alert("회원님의 정보 수정이 실패했습니다!")
         }
     }
+
 </script>
 </html>

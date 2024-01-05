@@ -62,7 +62,7 @@
             COUNT(*)
         FROM tb_like
         WHERE member_id = #{memberId}
-        AND comment_no = #{cno}
+            AND comment_no = #{cno}
     </select>
 
     <update id="minusCount">

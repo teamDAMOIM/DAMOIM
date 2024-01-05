@@ -26,7 +26,6 @@
     </select>
 
     <select id="isDuplicate" resultType="boolean">
-
         SELECT COUNT(*)
         FROM tb_member
         <if test="type == 'memberId'">
@@ -50,5 +49,11 @@
         FROM tb_member
         WHERE session_id = #{sessionId}
     </select>
+
+    <update id="update">
+        UPDATE tb_member
+        SET member_nickname = #{nickName}, member_address = #{address}
+        WHERE member_id = #{memberId}
+    </update>
 
 </mapper>

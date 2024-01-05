@@ -32,6 +32,7 @@ public class SignUpRequestDTO {
     private String startph; // ex) 010,011,013
     private String ph; // 중간 번호
     private String pp; // 마지막 번호
+
     @NotBlank
     private String ad;
     private MultipartFile profile;
