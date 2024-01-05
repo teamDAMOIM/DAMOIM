@@ -2,25 +2,32 @@
 
 .recruitment-write-section{
     width: 100%;
+    padding-top: 30vh;
 }
 
 .recruitment-write-section .recruitment-form-container{
     /*width: 40%;*/
     /*margin: 30vh 30vh;*/
-    margin-top: 30vh;
+    /*margin-top: 30vh;*/
     padding: 1.2em;
     border: 5px solid #494949;
     border-radius: 10px;
     background: #FFD98D;
 
-    /*display: flex;*/
-    /*flex-flow: row wrap;*/
-    /*justify-content: start; align-content: center;*/
+    /*display: flex;
+    flex-flow: row wrap;
+    justify-content: start; align-content: center;*/
 }
 
-    /* title */
+.rp-write-board-contain{
+    display: flex;
+    flex-flow:  column wrap;
+    justify-content: start;
+}
+
+    /* 게시판 제목 */
     .rp-type-item{
-        /*width: 100%;*/
+        width: 50%;
         background: #FFFFFF;
         border-radius: 60px;
         display: flex; flex-flow: row nowrap;
@@ -54,24 +61,44 @@
             font-size: 1.5em; font-weight: bold;
         }
 
-    /* content */
+    /* 게시판 내용 */
+    .rp-board-content{
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+    }
     .rp-sub-title-content{
+        width: 20%;
         background: #FFFFFF;
         border-radius: 60px;
         display: flex; flex-flow: row nowrap;
-        justify-content: start;
+        /*justify-content: start;*/
         padding: 10px;
+        border: 3px solid #ff7b40;
     }
         .rp-sub-title-content .content-icon{
             border-radius: 50%;
             background: #FFD98D;
             color: #ff7b40;
             padding: 10px;
-
         }
 
+        .rp-sub-title-content .rp-content-sub-item{
+            font-size: 1.5em; font-weight: bold;
+            padding: 10px;
+            margin: 0 10px;
+            /*background: #18c722;*/
+        }
+
+        .rp-content-write{
+            border: 0;
+            padding-top: 20px;
+            font-size: 1.3em; font-weight: bold;
+        }
+
+    /* 모집 인원수*/
     .rp-count-item{
-        width: 100%;
+        width: 50%;
         background: #FFFFFF;
         border-radius: 60px;
         display: flex; flex-flow: row nowrap;
@@ -89,6 +116,7 @@
         .rp-count-item .rp-count-sub-item{
             font-size: 1.2em; font-weight: bold;
             padding: 10px;
+            margin: 0 10px;
         }
 
         .rp-count-item .count-num{
@@ -96,8 +124,9 @@
             font-size: 1.2em; font-weight: bold;
         }
 
+    /* 모집 기간 */
     .rp-end-date-item{
-        width: 100%;
+        width: 60%;
         background: #FFFFFF;
         border-radius: 60px;
         display: flex; flex-flow: row nowrap;
@@ -115,6 +144,7 @@
         .rp-end-date-item .rp-date-item{
             font-size: 1.2em; font-weight: bold;
             padding: 10px;
+            margin: 0 10px;
         }
 
         .rp-end-date-item .end-date-calendar ,
@@ -122,4 +152,39 @@
             border: 0;
             font-size: 1.2em;
         }
+
+    .buttons-item {
+        background: #ff8f61;
+        width: 100%; height: 10vh;
+
+        display: flex; flex-flow: row nowrap;
+        justify-content: end;
+
+        padding: 20px;
+    }
+
+    .list-item
+    , .put-up-item
+    {
+        display: flex; flex-flow: row nowrap;
+        justify-content: center; align-items: center;
+        padding: 20px;
+        background: #FFFFFF;
+        margin: 0 15px;
+
+    }
+
+    .list-item .list-icon
+    , .put-up-item .put-up-icon
+    {
+        padding: 10px;
+        border-radius: 50%;
+
+    }
+
+    .list-item .put-btn
+    , .put-up-item .put-btn
+    {
+        font-size: 1.2em; font-weight: bold;
+    }
 
