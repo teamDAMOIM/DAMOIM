@@ -1,0 +1,39 @@
+
+
+.detail-buttons-item{
+    background: #FFFFFF;
+}
+    /* 신청 버튼 */
+    .check-person-number{
+        font-weight: bold; color: #ff7b40;
+        padding: 10px;
+        box-shadow: 5px 5px #ffa7a7;
+        background: #e8cbff;
+    }
+        .count-info{
+            background: #18c722;
+            padding: 10px;
+        }
+        .count-info .count-check-icon{
+            color: rgba(184, 79, 255, 0.85);
+            background: #4bceff;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .count-info .checkCount{
+
+        }
+        .count-info .recruitment-max-count{
+
+        }
+    /* 신청 버튼 */
+    .list-view{
+        font-weight: bold; color: #ff7b40;
+        padding: 10px;
+        box-shadow: 5px 5px #ffa7a7;
+        background: #e8cbff;
+    }
+    .list-view .list-view-icon{
+        background: #18c722;
+        padding: 10px;
+    }
