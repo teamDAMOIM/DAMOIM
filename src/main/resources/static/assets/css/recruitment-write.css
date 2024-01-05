@@ -188,3 +188,30 @@
         font-size: 1.2em; font-weight: bold;
     }
 
+    /* 모임 장소 */
+    .address-info-item{
+        width: 60%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start; align-items: center;
+        padding: 10px;
+    }
+    /* 모임 장소 아이콘*/
+    .address-info-item .address-icon{
+        border-radius: 50%;
+        background: #FFD98D;
+        color: #ff7b40;
+        padding: 10px;
+    }
+    /* 서브 타이틀*/
+    .address-info-item .address-sub-title{
+        font-size: 1.2em; font-weight: bold;
+        padding: 10px;
+        margin: 0 10px;
+    }
+    /*  모임 장소 입력창 */
+    .address-info-item .address-write-item{
+        border: 0;
+        font-size: 1.5em; font-weight: bold;
+    }
