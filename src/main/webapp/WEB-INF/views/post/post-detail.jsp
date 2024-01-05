@@ -156,14 +156,13 @@
                     </div>
                     <div class="Recommendation">
                         <span class="upCount lnr lnr-thumbs-up comment\${r.commentNo}" id="upbtn" name="\${r.commentNo}"><p>\${r.likeCount}</p></span>
-
-                        <span class="lnr lnr-thumbs-down" id="downbtn"></span>
+                        <span class="downCount lnr lnr-thumbs-down comment\${r.commentNo}" id="downbtn" name="\${r.commentNo}"><p>\${r.likeCount}</p></span>
                     </div>
                 </div>
             `;
                 document.getElementById('replyData').innerHTML = tag;
             }
-        } else{
+        } else {
             document.getElementById('replyData').innerHTML = `<div>없어용</div>`;
         }
     }
@@ -214,14 +213,57 @@
                         }
                     })
                     .then(response => {
-                        let element = document.querySelector('.comment' + response.commentNo);
-                        element.innerHTML = `
-                        <p>
-                        \${response.likeCount}
-                        </p>`;
+                        console.log(response)
+                        // let element = document.querySelector('.comment' + response.commentNo);
+                        // element.innerHTML = `
+                        // <p>
+                        // \${response.likeCount}
+                        // </p>`;
                     })
             }
         }
+
+        <%--function likeDownbtn(){--%>
+        <%--    let $element = document.getElementById('replyData');--%>
+
+        <%--    $element.onclick = e => {--%>
+
+        <%--        e.preventDefault();--%>
+
+        <%--        if (e.target.matches('#downbtn')) {--%>
+
+        <%--            const $getNo = e.target.getAttribute('name');--%>
+
+        <%--            console.log($getNo)--%>
+
+        <%--            const payload = {--%>
+        <%--                commentNo : $getNo,--%>
+        <%--                memberId : '${login.id}'--%>
+        <%--            }--%>
+
+        <%--            const requestInfo = {--%>
+        <%--                method : 'PATCH',--%>
+        <%--                headers : {--%>
+        <%--                    'content-type' : 'application/json'--%>
+        <%--                },--%>
+        <%--                body : JSON.stringify(payload)--%>
+        <%--            }--%>
+
+        <%--            fetch("/comment", requestInfo)--%>
+        <%--                .then(res => {--%>
+        <%--                    if (res.status === 200) {--%>
+        <%--                        return res.json();--%>
+        <%--                    }--%>
+        <%--                })--%>
+        <%--                .then(response => {--%>
+        <%--                    let element = document.querySelector('.comment' + response.commentNo);--%>
+        <%--                    element.innerHTML = `--%>
+        <%--                <p>--%>
+        <%--                \${response.likeCount}--%>
+        <%--                </p>`;--%>
+        <%--                })--%>
+        <%--        }--%>
+        <%--    }--%>
 
     }
 

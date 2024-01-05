@@ -51,7 +51,7 @@ public class CommentService {
         mapper.upLikeMember(cno, LoginUtiles.LoginUserId(session));
         boolean flag = mapper.upLikeCheck(LoginUtiles.LoginUserId(session));
 
-        if (!flag){
+        if (flag){
             upLikeCount(cno);
             return true;
         }

@@ -118,7 +118,8 @@
     margin: 0;
 }
 
-#replyData .upCount p {
+#replyData .upCount p,
+#replyData .downCount p{
     font-size: 20px;
     font-weight: 500;
     color: #494949;
