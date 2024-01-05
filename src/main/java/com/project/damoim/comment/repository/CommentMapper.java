@@ -25,5 +25,5 @@ public interface CommentMapper {
     boolean upLikeMember(int cno, String memberId);
 
     // 테이블에 회원이 있으면 1조회 0조회
-    boolean upLikeCheck(String memberId);
+    boolean upLikeCheck(String memberId, int cno);
 }

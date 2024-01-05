@@ -53,6 +53,7 @@
             COUNT(*)
         FROM tb_like
         WHERE member_id = #{memberId}
+        AND comment_no = #{cno}
     </select>
 
 

@@ -49,7 +49,7 @@ public class CommentService {
     public boolean checkLike(int cno, HttpSession session){
         // 좋아요 버튼을 누르면 좋아요 테이블에 좋아요 버튼 누른 회원을 저장하는 처리
 
-        boolean flag = mapper.upLikeCheck(LoginUtiles.LoginUserId(session));
+        boolean flag = mapper.upLikeCheck(LoginUtiles.LoginUserId(session), cno);
 
         if (!flag){
             mapper.upLikeMember(cno, LoginUtiles.LoginUserId(session));
