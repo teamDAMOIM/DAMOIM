@@ -11,4 +11,5 @@ import lombok.*;
 @Builder
 public class CommentLikeResponseDTO {
     private int likeCont;
+    private boolean flag;
 }

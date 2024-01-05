@@ -38,20 +38,21 @@ public class CommentService {
         return mapper.save(dto.isEntity());
     }
 
-    public void upLikeCount(int rno){
+    private void upLikeCount(int rno){
         mapper.upLikeCount(rno);
     }
 
-    private Comment getComment(int cno){
+    public Comment getComment(int cno){
         return mapper.findOne(cno);
     }
 
     public boolean checkLike(int cno, HttpSession session){
         // 좋아요 버튼을 누르면 좋아요 테이블에 좋아요 버튼 누른 회원을 저장하는 처리
-        mapper.upLikeMember(cno, LoginUtiles.LoginUserId(session));
+
         boolean flag = mapper.upLikeCheck(LoginUtiles.LoginUserId(session));
 
-        if (flag){
+        if (!flag){
+            mapper.upLikeMember(cno, LoginUtiles.LoginUserId(session));
             upLikeCount(cno);
             return true;
         }

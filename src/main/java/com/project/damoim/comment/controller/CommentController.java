@@ -72,10 +72,17 @@ public class CommentController {
 
         boolean flag = service.checkLike(dto.getCommentNo(), session);
 
+        Comment comment = service.getComment(dto.getCommentNo());
+
+        CommentLikeResponseDTO responseDTO = CommentLikeResponseDTO.builder()
+                .likeCont(comment.getLikeCount())
+                .flag(flag)
+                .build();
+
         return ResponseEntity
                 .ok()
                 .body(
-                        flag
+                        responseDTO
                 );
     }
 
