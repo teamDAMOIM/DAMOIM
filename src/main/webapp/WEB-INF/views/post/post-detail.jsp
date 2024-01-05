@@ -51,7 +51,7 @@
 
         </div>
         <div class="c">
-            <button class="add-btn"></button>
+            <button class="add-btn" style="display: none;"></button>
         </div>
 
 
@@ -71,7 +71,7 @@
         optionsChange(element.value);
     });
 
-    let amount = 5;
+    let amount = 3;
 
 
 
@@ -201,7 +201,8 @@
     function randerButton(maxCount){
         let element = document.querySelector('.add-btn');
 
-        if (maxCount > 5){
+        if (maxCount > 3){
+            element.style.display = 'block';
             // 댓글이 3개 초과일때 뜸
             if (amount >= maxCount){
                 element.textContent = '간략히 보기';
