@@ -20,8 +20,8 @@ import java.util.stream.Collectors;
 public class CommentService {
     private final CommentMapper mapper;
 
-    public CommentResponseDTO findComment(int pno, int amount){
-        List<Comment> commentList = mapper.findComment(pno, amount).stream()
+    public CommentResponseDTO findComment(int pno, int amount, String sort){
+        List<Comment> commentList = mapper.findComment(pno, amount, sort).stream()
                 .collect(Collectors.toList());
 
 

@@ -9,14 +9,13 @@ import java.util.List;
 public interface CommentMapper {
 
     // 포스트 번호에 맞춰 댓글 찾기
-    List<Comment> findComment(int pno, int amount);
+    List<Comment> findComment(int pno, int amount, String sort);
 
     Comment findOne(int cno);
     // 댓글 등록
     boolean save(Comment comment);
     // 댓글 갯수 확인
     int commentMaxCount(int pno);
-
 
     // 단순 좋아요 카운트 업
     void upLikeCount(int cno);
