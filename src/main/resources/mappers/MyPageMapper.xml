@@ -3,7 +3,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.project.damoim.myPage.response.MyPageMapper">
+<mapper namespace="com.project.damoim.myPage.repository.MyPageMapper">
 
     <select id="myRecruiteCount" resultType="int">
         SELECT
@@ -36,6 +36,22 @@
             recruit_no, recruit_title, recruit_startdate, recruit_enddate
         FROM
             tb_recruit
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findByIdPost" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+            post_no, post_title, post_date
+        FROM
+            tb_post
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findByIdComment" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+            comment_no, comment_content, comment_date, post_no
+        FROM
+            tb_comment
         WHERE member_id = #{memberId}
     </select>
 

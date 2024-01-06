@@ -1,4 +1,4 @@
-package com.project.damoim.myPage.response;
+package com.project.damoim.myPage.repository;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

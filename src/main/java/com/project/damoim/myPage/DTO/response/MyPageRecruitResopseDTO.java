@@ -11,14 +11,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MyPageResopseDTO {
+public class MyPageRecruitResopseDTO {
     private int rno;
     private String title;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
 
-    public MyPageResopseDTO(Recruit r){
+    public MyPageRecruitResopseDTO(Recruit r){
         this.rno = r.getRecruitNo();
         this.title = r.getRecruitTitle();
         this.startDate = r.getRecruitStartdate();

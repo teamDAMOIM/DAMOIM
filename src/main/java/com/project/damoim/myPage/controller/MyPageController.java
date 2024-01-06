@@ -4,10 +4,10 @@ package com.project.damoim.myPage.controller;
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.member.entity.Member;
 import com.project.damoim.member.service.MemberService;
-import com.project.damoim.myPage.dto.response.MyPageResopseDTO;
+import com.project.damoim.myPage.dto.response.MyPageCommentResponseDTO;
+import com.project.damoim.myPage.dto.response.MyPagePostResponseDTO;
+import com.project.damoim.myPage.dto.response.MyPageRecruitResopseDTO;
 import com.project.damoim.myPage.service.MyPageService;
-import com.project.damoim.recruit.entity.Recruit;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -34,13 +34,17 @@ public class MyPageController {
         int postedCount = myPageService.postCount(session);
         int commentedCount = myPageService.commentCount(session);
 
-        List<MyPageResopseDTO> recruitList = myPageService.getRecruitList(session);
+        List<MyPageRecruitResopseDTO> recruitList = myPageService.getRecruitList(session);
+        List<MyPagePostResponseDTO> postList = myPageService.getPostList(session);
+        List<MyPageCommentResponseDTO> commentList = myPageService.getCommentList(session);
 
         model.addAttribute("rcount", recruitedCount);
         model.addAttribute("pcount", postedCount);
         model.addAttribute("ccount", commentedCount);
 
         model.addAttribute("rList", recruitList);
+        model.addAttribute("pList", postList);
+        model.addAttribute("cList", commentList);
 
         return "/mypage/mypage";
     }

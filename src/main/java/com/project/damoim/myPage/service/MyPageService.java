@@ -2,10 +2,10 @@ package com.project.damoim.myPage.service;
 
 
 import com.project.damoim.Util.LoginUtiles;
-import com.project.damoim.myPage.dto.response.MyPageResopseDTO;
-import com.project.damoim.myPage.response.MyPageMapper;
-import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
-import com.project.damoim.recruit.entity.Recruit;
+import com.project.damoim.myPage.dto.response.MyPageCommentResponseDTO;
+import com.project.damoim.myPage.dto.response.MyPagePostResponseDTO;
+import com.project.damoim.myPage.dto.response.MyPageRecruitResopseDTO;
+import com.project.damoim.myPage.repository.MyPageMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,10 +28,30 @@ public class MyPageService {
         return mapper.myCommentCount(LoginUtiles.LoginUserId(session));
     }
 
-    public List<MyPageResopseDTO> getRecruitList(HttpSession session){
+    public List<MyPageRecruitResopseDTO> getRecruitList(HttpSession session){
         String loginUserId = LoginUtiles.LoginUserId(session);
         return mapper.findByIdRecruit(loginUserId).stream()
-                .map(recruit -> new MyPageResopseDTO(recruit))
+                .map(recruit -> new MyPageRecruitResopseDTO(recruit))
+                .collect(Collectors.toList())
+                ;
+    }
+
+    public List<MyPageCommentResponseDTO> getCommentList(HttpSession session){
+        String loginUserId = LoginUtiles.LoginUserId(session);
+
+
+        return mapper.findByIdComment(loginUserId).stream()
+                .map(comment -> new MyPageCommentResponseDTO(comment))
+                .collect(Collectors.toList())
+                ;
+    }
+
+    public List<MyPagePostResponseDTO> getPostList(HttpSession session){
+        String loginUserId = LoginUtiles.LoginUserId(session);
+
+
+        return mapper.findByIdPost(loginUserId).stream()
+                .map(post -> new MyPagePostResponseDTO(post))
                 .collect(Collectors.toList())
                 ;
     }
