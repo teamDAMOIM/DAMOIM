@@ -6,6 +6,7 @@ import com.project.damoim.recruit.entity.Category;
 import com.project.damoim.recruit.entity.Recruit;
 import lombok.*;
 
+import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -25,7 +26,7 @@ public class RecuritRequestDTO {
     private String memberId;
 
 
-    public Recruit isEntity(){
+    public Recruit isEntity(String memberId){
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd,HH:mm");
         return Recruit.builder()
@@ -35,7 +36,7 @@ public class RecuritRequestDTO {
                 .recruitMax(this.maxNumCount)
                 .recruitEnddate(LocalDateTime.parse(this.endDate, formatter))
                 .recruitAddress(this.placename + ' ' + this.area)
-                .memberId(this.memberId)
+                .memberId(memberId)
                 .build();
     }
 }

@@ -31,8 +31,9 @@ public class RecuritService {
                 ;
     }
 
-    public boolean saveRecurit(RecuritRequestDTO dto){
-        return recruitMapper.save(dto.isEntity());
+    public boolean saveRecurit(RecuritRequestDTO dto, HttpSession session){
+        String loginUserId = LoginUtiles.LoginUserId(session);
+        return recruitMapper.save(dto.isEntity(loginUserId));
     }
 
     public RecuriitDetileResponseDTO detailRecurit(int rno){

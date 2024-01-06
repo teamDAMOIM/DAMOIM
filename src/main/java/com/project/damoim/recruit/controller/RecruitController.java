@@ -39,8 +39,8 @@ public class RecruitController {
     }
 
     @PostMapping("/write")
-    public String write(RecuritRequestDTO dto){
-        service.saveRecurit(dto);
+    public String write(RecuritRequestDTO dto, HttpSession session){
+        service.saveRecurit(dto, session);
         log.info(" address : {} ",dto);
         return "redirect:/recruit";
     }
