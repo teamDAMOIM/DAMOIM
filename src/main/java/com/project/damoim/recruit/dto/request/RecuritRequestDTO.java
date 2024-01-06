@@ -21,7 +21,7 @@ public class RecuritRequestDTO {
     private int maxNumCount;
     private String endDate;
     private String placename;
-    private String gnarea;
+    private String area;
 
 
     public Recruit isEntity(){
@@ -33,7 +33,7 @@ public class RecuritRequestDTO {
                 .recruitContent(this.content)
                 .recruitMax(this.maxNumCount)
                 .recruitEnddate(LocalDateTime.parse(this.endDate, formatter))
-                .recruitAddress(this.placename + ' ' + this.gnarea)
+                .recruitAddress(this.placename + ' ' + this.area)
                 .build();
     }
 }

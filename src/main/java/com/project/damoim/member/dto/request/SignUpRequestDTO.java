@@ -31,7 +31,7 @@ public class SignUpRequestDTO {
 
 
     private String placename;
-    private String placearea;
+    private String area;
 
 
     private MultipartFile profile;
@@ -44,7 +44,7 @@ public class SignUpRequestDTO {
                 .memberName(this.un)
                 .memberPhone(startph + "-" + this.ph + "-" + this.pp)
                 .memberNickname(this.nn)
-                .memberAddress(placename + " " + placearea)
+                .memberAddress(this.placename + ' ' + this.area)
                 .profileImage(savePath)
                 .build();
     }
