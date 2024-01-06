@@ -8,7 +8,7 @@
             <option value="충청남도">충청남도</option>
             <option value="서울특별시">서울특별시</option>
         </select>
-        <select class="form-control placearea" name="gnarea" id="경상남도area" value="gn" style="appearance: auto;" >
+        <select class="form-control placearea" name="placearea" id="경상남도area" value="gn" style="appearance: auto;" >
             <option value="거제시">거제시</option>
             <option value="거창군">거창군</option>
             <option value="고성군">고성군</option>
@@ -28,14 +28,14 @@
             <option value="함양군">함양군</option>
             <option value="합천군">합천군</option>
         </select>
-        <select class="form-control placearea" name="daejeonarea" id="대전광역시area" value="daejeon" style="appearance: auto; display: none;" >
+        <select class="form-control placearea" name="placearea" id="대전광역시area" value="daejeon" style="appearance: auto; display: none;" >
             <option value="대덕구">대덕구</option>
             <option value="동구">동구</option>
             <option value="서구">서구</option>
             <option value="유성구">유성구</option>
             <option value="중구">중구</option>
         </select>
-        <select class="form-control placearea" name="cnarea" id="충청남도area" value="cn" style="appearance: auto;  display: none;">
+        <select class="form-control placearea" name="placearea" id="충청남도area" value="cn" style="appearance: auto;  display: none;">
             <option value="계룡시">계룡시</option>
             <option value="공주시">공주시</option>
             <option value="금산군">금산군</option>
@@ -50,7 +50,7 @@
             <option value="태안군">태안군</option>
             <option value="홍성군">홍성군</option>
         </select>
-        <select class="form-control placearea" name="seoularea" id="서울특별시area" value="seoul" style="appearance: auto; display: none;" >
+        <select class="form-control placearea" name="placearea" id="서울특별시area" value="seoul" style="appearance: auto; display: none;" >
             <option value="강남구">강남구</option>
             <option value="강동구">강동구</option>
             <option value="강북구">강북구</option>

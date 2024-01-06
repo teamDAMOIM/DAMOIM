@@ -5,10 +5,8 @@ import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.beans.Encoder;
 
 @Setter @Getter @ToString
 @EqualsAndHashCode
@@ -21,7 +19,6 @@ public class SignUpRequestDTO {
     @Size(min = 4, max = 15)
     private String id;
     @NotBlank
-    @Size(min = 8) // 비밀번호 8글자 이상 만들기
     private String pw;
     @NotBlank
     @Size(min = 2, max = 6)
@@ -33,8 +30,9 @@ public class SignUpRequestDTO {
     private String ph; // 중간 번호
     private String pp; // 마지막 번호
 
-    @NotBlank
-    private String ad;
+
+    private String placename;
+    private String placearea;
     private MultipartFile profile;
 
 
@@ -45,7 +43,7 @@ public class SignUpRequestDTO {
                 .memberName(this.un)
                 .memberPhone(startph + "-" + this.ph + "-" + this.pp)
                 .memberNickname(this.nn)
-                .memberAddress(ad)
+                .memberAddress(placename + " " + placearea)
                 .profileImage(savePath)
                 .build();
     }
