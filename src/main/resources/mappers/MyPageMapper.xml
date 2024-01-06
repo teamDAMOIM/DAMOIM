@@ -39,7 +39,7 @@
         WHERE member_id = #{memberId}
     </select>
 
-    <select id="findByIdPost" resultType="com.project.damoim.recruit.entity.Recruit">
+    <select id="findByIdPost" resultType="com.project.damoim.post.entity.Post">
         SELECT
             post_no, post_title, post_date
         FROM
@@ -47,7 +47,7 @@
         WHERE member_id = #{memberId}
     </select>
 
-    <select id="findByIdComment" resultType="com.project.damoim.recruit.entity.Recruit">
+    <select id="findByIdComment" resultType="com.project.damoim.comment.entity.Comment">
         SELECT
             comment_no, comment_content, comment_date, post_no
         FROM

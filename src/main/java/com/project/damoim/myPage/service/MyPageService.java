@@ -30,6 +30,7 @@ public class MyPageService {
 
     public List<MyPageRecruitResopseDTO> getRecruitList(HttpSession session){
         String loginUserId = LoginUtiles.LoginUserId(session);
+
         return mapper.findByIdRecruit(loginUserId).stream()
                 .map(recruit -> new MyPageRecruitResopseDTO(recruit))
                 .collect(Collectors.toList())
