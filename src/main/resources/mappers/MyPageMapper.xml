@@ -31,5 +31,13 @@
         WHERE member_id = #{memberId}
     </select>
 
+    <select id="findByIdRecruit" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+            recruit_no, recruit_title, recruit_startdate, recruit_enddate
+        FROM
+            tb_recruit
+        WHERE member_id = #{memberId}
+    </select>
+
 
 </mapper>

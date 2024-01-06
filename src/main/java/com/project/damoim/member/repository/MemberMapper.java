@@ -2,12 +2,8 @@ package com.project.damoim.member.repository;
 
 import com.project.damoim.member.dto.request.AutoLoginDTO;
 import com.project.damoim.member.entity.Member;
-import com.project.damoim.myPage.DTO.UserUpdateDTO;
 import com.project.damoim.myPage.common.UpdateMember;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
-import javax.websocket.server.PathParam;
 
 @Mapper
 public interface MemberMapper {

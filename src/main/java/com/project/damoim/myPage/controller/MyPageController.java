@@ -4,7 +4,9 @@ package com.project.damoim.myPage.controller;
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.member.entity.Member;
 import com.project.damoim.member.service.MemberService;
+import com.project.damoim.myPage.dto.response.MyPageResopseDTO;
 import com.project.damoim.myPage.service.MyPageService;
+import com.project.damoim.recruit.entity.Recruit;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -31,9 +34,13 @@ public class MyPageController {
         int postedCount = myPageService.postCount(session);
         int commentedCount = myPageService.commentCount(session);
 
+        List<MyPageResopseDTO> recruitList = myPageService.getRecruitList(session);
+
         model.addAttribute("rcount", recruitedCount);
         model.addAttribute("pcount", postedCount);
         model.addAttribute("ccount", commentedCount);
+
+        model.addAttribute("rList", recruitList);
 
         return "/mypage/mypage";
     }
