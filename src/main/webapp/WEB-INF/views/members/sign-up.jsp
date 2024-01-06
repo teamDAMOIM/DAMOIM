@@ -200,14 +200,12 @@
 
                    return;
                }
-               pla.forEach(p => {
-                   if (p.value === 'select') {
-                       alert("시/군를 선택하세요");
-                       return;
-                   }
-               })
 
+               if (!se.includes(true)){
+                   alert("입력해라");
 
+                   return;
+               }
 
 
                alert("회원가입이 완료되었습니다.");

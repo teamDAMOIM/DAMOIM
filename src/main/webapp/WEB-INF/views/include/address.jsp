@@ -90,6 +90,8 @@
     let select = document.querySelector('.adselect');
 
 
+    const se = [false, false, false, false];
+
     place.addEventListener('change', e => {
 
         /**
@@ -112,6 +114,7 @@
 
                 live.addEventListener('change', e => {
                     console.log(live.value);
+                    se[0] = true;
                 })
 
             }
@@ -137,6 +140,34 @@
 
                 live.addEventListener('change', e => {
                     console.log(live.value);
+                    se[1] = true;
+                })
+
+            }
+
+        }
+
+        /**
+         *
+         * 대전광역시
+         *
+         */
+
+
+        if (place.value === '대전광역시'){
+            pla.forEach(area => {
+                area.style.display = 'none';
+            })
+
+            const selectedArea = document.getElementById(place.value + 'area');
+            if (selectedArea){
+                selectedArea.style.display = 'block';
+
+                const live = document.querySelector('.daejeonarea')
+
+                live.addEventListener('change', e => {
+                    console.log(live.value);
+                    se[2] = true;
                 })
 
             }
@@ -144,34 +175,34 @@
         }
 
 
+        /**
+         *
+         * 충창남도
+         *
+         */
+
+
+        if (place.value === '충창남도'){
+            pla.forEach(area => {
+                area.style.display = 'none';
+            })
+
+            const selectedArea = document.getElementById(place.value + 'area');
+            if (selectedArea){
+                selectedArea.style.display = 'block';
+
+                const live = document.querySelector('.cnarea');
+
+                live.addEventListener('change', e => {
+                    console.log(live.value);
+                    se[3] = true;
+                })
+
+            }
+
+        }
     })
 
-    //
-    // let place = document.getElementById('placename');
-    // let pla = document.querySelectorAll('.placearea');
-    //
-    // place.addEventListener("change", evt => {
-    //     const selectedValue = place.value;
-    //
-    //
-    //     // 모든 placearea 드롭다운을 숨깁니다.
-    //     pla.forEach(area => {
-    //         area.style.display = 'none';
-    //     });
-    //
-    //
-    //     // 선택한 placearea 드롭다운을 보여줍니다.
-    //     if (selectedValue) {
-    //         const selectedArea = document.getElementById(selectedValue + 'area');
-    //         if (selectedArea) {
-    //             console.log(selectedArea.value);
-    //             selectedArea.style.display = 'block';
-    //
-    //         }
-    //
-    //     }
-
-    // });
 
 </script>
 

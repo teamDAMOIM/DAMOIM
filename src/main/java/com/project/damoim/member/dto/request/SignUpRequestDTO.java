@@ -21,7 +21,6 @@ public class SignUpRequestDTO {
     @NotBlank
     private String pw;
     @NotBlank
-    @Size(min = 2, max = 6)
     private String un;
     @NotBlank
     private String nn;
