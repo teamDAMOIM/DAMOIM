@@ -106,13 +106,21 @@
 <%@ include file="../include/footer.jsp" %>
 
 <script>
-    const $opt = [...document.querySelector('.sc-select').children];
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const selectedValue = '${ps.type}';
 
 
-    $opt.forEach($o => {
-        if ($o.value === ${p.type}){
-           $o.setAttribute('selected', 'selected');
-            console.log($o);
+        const selectElement = document.querySelector('.sc-select');
+
+
+        for (const option of selectElement.options) {
+
+            if (option.value === selectedValue) {
+
+                option.setAttribute('selected', 'selected');
+            }
         }
     });
 </script>

@@ -18,7 +18,7 @@ public interface RecruitMapper {
     boolean save(Recruit recruit);
     //디테일 정보 조회
     Recruit findOne(int rno);
-    void viewUpCount(int rno);
+    void upCount(int rno);
 
     List<Recruit> findData();
 }

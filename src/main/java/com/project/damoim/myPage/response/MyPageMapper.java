@@ -7,4 +7,5 @@ public interface MyPageMapper {
     int myRecruiteCount(String memberId);
     int myPostCount(String memberId);
     int myCommentCount(String memberId);
+
 }
