@@ -23,7 +23,6 @@ public class RecuritResponseDTO {
     private String title;
     private String content;
     private String category;
-    private int count;
     private LocalDateTime endDate;
 //    private String endDate;
     private String addrass;
@@ -36,7 +35,6 @@ public class RecuritResponseDTO {
         this.title = recruit.getRecruitTitle();
         this.content = recruit.getRecruitContent();
         this.category = recruit.getRecruitCategory();
-        this.count = recruit.getRecruitCount();
         this.endDate = recruit.getRecruitEnddate();
 //        this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
         this.addrass = recruit.getRecruitAddress();
