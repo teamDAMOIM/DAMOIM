@@ -143,6 +143,6 @@ public class MemberController {
     public String update(UpdateMember member){
         log.info("{}", member);
         memberService.updateMember(member);
-        return "";
+        return "redirect:/changeInfo";
     }
 }

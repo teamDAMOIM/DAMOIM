@@ -33,6 +33,8 @@ public class SignUpRequestDTO {
 
     private String placename;
     private String placearea;
+
+
     private MultipartFile profile;
 
 
