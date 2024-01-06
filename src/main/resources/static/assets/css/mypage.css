@@ -43,7 +43,6 @@ div#header-link a{
 #main-box div{
     display: flex;
     flex-direction: column;
-    background: cyan;
     align-items: center;
     font-size: 30px;
 }
@@ -177,4 +176,60 @@ button#save:active{
 div #row-ph input{
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* 모달 css */
+
+#modalClose1, #modalClose2, #modalClose3, #modalClose4 {
+    cursor: pointer;
+    position : absolute;
+    bottom : 20px;
+    border-radius: 20px;
+}
+
+#modalContainer1, #modalContainer2, #modalContainer3, #modalContainer4 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+ #modalContent1, #modalContent2, #modalContent3, #modalContent4{
+    position: absolute;
+    background-color: #CCCCFF;
+    width: 700px;
+    height: 600px;
+    padding: 15px;
+     border-radius: 30px;
+}
+
+#modalContainer1.hidden {
+    display: none;
+}
+
+#modalContainer2.hidden {
+    display: none;
+}
+
+#modalContainer3.hidden {
+    display: none;
+}
+
+#modalContainer4.hidden {
+    display: none;
+}
+
+div.mcon{
+    position: absolute;
+    background-color: #FFFFFF;
+    margin-top: 60px;
+    width: 600px;
+    height: 440px;
+    padding: 15px;
+    border-radius: 30px;
 }
