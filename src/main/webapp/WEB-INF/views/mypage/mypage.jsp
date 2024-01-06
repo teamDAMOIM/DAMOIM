@@ -26,7 +26,7 @@
         <div id="main-box">
             <div>
                 <p>my 모집</p>
-                <a href="#" id="modalOpen1">1 건</a>
+                <a href="#" id="modalOpen1">${rcount} 건</a>
                 <div id="modalContainer1" class="hidden">
                     <div id="modalContent1">
                         <p>my 모집</p>
@@ -34,9 +34,9 @@
                             <div class="container" style="width: 100%; padding: 0;">
                                 <table class="table" id="post-table">
                                     <colgroup>
-                                        <col style="width: 10%;" class="size01" data-alias="number">
+                                        <col style="width: 15%;" class="size01" data-alias="number">
                                         <col style="width: 60%;" class="size02" data-alias="title">
-                                        <col style="width: 30%;" class="size04" data-alias="date">
+                                        <col style="width: 25%;" class="size04" data-alias="date">
                                     </colgroup>
                                     <thead>
                                     <tr>
@@ -74,7 +74,7 @@
             </div>
             <div>
                 <p>작성한 게시판글 목록</p>
-                <a href="#" id="modalOpen3">1 건</a>
+                <a href="#" id="modalOpen3">${pcount} 건</a>
                 <div id="modalContainer3" class="hidden">
                     <div id="modalContent3">
                         <p>작성한 게시판글 목록</p>
@@ -85,7 +85,7 @@
             </div>
             <div>
                 <p>작성한 댓글 목록</p>
-                <a href="#" id="modalOpen4">1 건</a>
+                <a href="#" id="modalOpen4">${ccount} 건</a>
                 <div id="modalContainer4" class="hidden">
                     <div id="modalContent4">
                         <p>작성한 댓글 목록</p>

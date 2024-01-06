@@ -115,7 +115,6 @@
             console.log($o);
         }
     });
-
 </script>
 </body>
 </html>
