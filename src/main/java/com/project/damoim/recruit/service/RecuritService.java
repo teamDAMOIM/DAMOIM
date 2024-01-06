@@ -49,7 +49,7 @@ public class RecuritService {
                 ;
     }
 
-    public void upViewCount(int rno){
-        recruitMapper.viewUpCount(rno);
+    public void upCount(int rno){
+        recruitMapper.upCount(rno);
     }
 }
