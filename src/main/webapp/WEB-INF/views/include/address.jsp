@@ -3,6 +3,7 @@
 
 <div class="row-ph">
     <select class="form-control" name="placename" id="placename" style="appearance: auto">
+        <option value="select">도를 선택하세요</option>
         <option value="경상남도">경상남도</option>
         <option value="대전광역시">대전광역시</option>
         <option value="충청남도">충청남도</option>
@@ -12,6 +13,7 @@
             name="gnarea"
     <%--                name="area"--%>
             id="경상남도area" value="gn" style="appearance: auto;" >
+        <option value="select">시/군을 선택하세요</option>
         <option value="거제시">거제시</option>
         <option value="거창군">거창군</option>
         <option value="고성군">고성군</option>
@@ -35,6 +37,7 @@
             name="daejeonarea"
     <%--                name="area"--%>
             id="대전광역시area" value="daejeon" style="appearance: auto; display: none;" >
+        <option value="select">시/군을 선택하세요</option>
         <option value="대덕구">대덕구</option>
         <option value="동구">동구</option>
         <option value="서구">서구</option>
@@ -45,6 +48,7 @@
             name="cnarea"
     <%--                name="area"--%>
             id="충청남도area" value="cn" style="appearance: auto;  display: none;">
+        <option value="select">시/군을 선택하세요</option>
         <option value="계룡시">계룡시</option>
         <option value="공주시">공주시</option>
         <option value="금산군">금산군</option>
@@ -63,6 +67,7 @@
             name="seoularea"
     <%--                name="area"--%>
             id="서울특별시area" value="seoul" style="appearance: auto; display: none;" >
+        <option value="select">시/군을 선택하세요</option>
         <option value="강남구">강남구</option>
         <option value="강동구">강동구</option>
         <option value="강북구">강북구</option>
@@ -92,15 +97,20 @@
 </div>
 
 <script>
-    let place = document.getElementById('placename');
-    let pla = document.querySelectorAll('.placearea');
+    let se = false;
 
-    place.addEventListener("change", evt => {
-        const selectedValue = place.value;
+    let $addressPlace = document.getElementById('placename');
+    let $addressArea = document.querySelectorAll('.placearea');
+
+    // let place = document.getElementById('placename');
+    // let pla = document.querySelectorAll('.placearea');
+
+    $addressPlace.addEventListener("change", evt => {
+        const selectedValue = $addressPlace.value;
 
 
         // 모든 placearea 드롭다운을 숨깁니다.
-        pla.forEach(area => {
+        $addressArea.forEach(area => {
             area.style.display = 'none';
         });
 
@@ -116,6 +126,70 @@
 
     });
 
+
+
+    // 주소 넣기
+
+
+    let $id=document.getElementById('경상남도area');
+    let $newId = '';
+
+    // place 저장 값
+    let p = $addressPlace.value;
+    let newPlace = '';
+
+    // area 저장 값
+    let att = 'gnarea';
+
+
+    $addressPlace.onchange = function (){
+        if($addressPlace.value==='경상남도'){
+            console.log(document.getElementById('경상남도area'));
+            $id = document.getElementById('경상남도area');
+            p = '경상남도';
+            att='gnarea'
+        }
+        if($addressPlace.value==='대전광역시'){
+            console.log(document.getElementById('대전광역시area'))
+            $id = document.getElementById('대전광역시area')
+            p = '대전광역시';
+            att='daejeonarea';
+        }
+        if($addressPlace.value==='충청남도'){
+            console.log(document.getElementById('충청남도area'))
+            $id = document.getElementById('충청남도area')
+            p = '충청남도';
+            att='cnarea';
+        }
+        if($addressPlace.value==='서울특별시'){
+            console.log(document.getElementById('서울특별시area'))
+            $id = document.getElementById('서울특별시area')
+            p = '서울특별시';
+            att='seoularea';
+        }
+
+        if(p !== newPlace && newPlace!==''){
+            $newId = document.getElementById(newPlace+'area');
+            $newId.setAttribute('name', att);
+            console.log(newPlace+'-'+p+'-'+att);
+        }
+
+
+        $id.onchange = function (){
+            console.log($id.value)
+
+            $id.setAttribute('name', 'area');
+
+            newPlace = p;
+
+            se = true;
+
+            console.log($id)
+        }
+
+
+
+    }
 
 
 

@@ -52,8 +52,8 @@
                                 <option value="011">011</option>
                                 <option value="012">012</option>
                             </select>_
-                            <input type="number" class="form-control ph2" required name="ph" maxlength="4">_
-                            <input type="number" class="form-control ph3" required name="pp" maxlength="4">
+                            <input type="text" class="form-control ph2" required name="ph" maxlength="4">_
+                            <input type="text" class="form-control ph3" required name="pp" maxlength="4">
                         </div>
                     </div>
                     <div class="form-group mb-3">
@@ -195,14 +195,14 @@
            const $form = document.querySelector('.signup-form');
            if(!checkResultList.includes(false)){
 
-               if (place.value === 'select') {
+               if ($addressPlace.value === 'select') {
                    alert("도를 선택하세요");
 
                    return;
                }
 
-               if (!se.includes(true)){
-                   alert("입력해라");
+               if (!se){
+                   alert("시/군을 선택하세요");
 
                    return;
                }

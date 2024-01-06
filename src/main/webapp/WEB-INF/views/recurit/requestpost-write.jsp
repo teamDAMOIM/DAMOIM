@@ -119,67 +119,7 @@
     <%@ include file="../include/footer.jsp"%>
 
     <script>
-        // 주소 넣기
-        let $addressPlace = document.querySelector('.form-control');
-        let $addressArea = document.querySelectorAll('.placearea');
 
-        let $id=document.getElementById('경상남도area');
-        let $newId = '';
-
-        // place 저장 값
-        let p = $addressPlace.value;
-        let newPlace = '';
-
-        // area 저장 값
-        let att = 'gnarea';
-
-
-        $addressPlace.onchange = function (){
-            if($addressPlace.value==='경상남도'){
-                console.log(document.getElementById('경상남도area'));
-                $id = document.getElementById('경상남도area');
-                p = '경상남도';
-                att='gnarea'
-            }
-            if($addressPlace.value==='대전광역시'){
-                console.log(document.getElementById('대전광역시area'))
-                $id = document.getElementById('대전광역시area')
-                p = '대전광역시';
-                att='daejeonarea';
-            }
-            if($addressPlace.value==='충청남도'){
-                console.log(document.getElementById('충청남도area'))
-                $id = document.getElementById('충청남도area')
-                p = '충청남도';
-                att='cnarea';
-            }
-            if($addressPlace.value==='서울특별시'){
-                console.log(document.getElementById('서울특별시area'))
-                $id = document.getElementById('서울특별시area')
-                p = '서울특별시';
-                att='seoularea';
-            }
-
-            if(p !== newPlace && newPlace!==''){
-                $newId = document.getElementById(newPlace+'area');
-                $newId.setAttribute('name', att);
-                console.log(newPlace+'-'+p+'-'+att);
-            }
-
-
-            $id.onchange = function (){
-                console.log($id.value)
-
-                $id.setAttribute('name', 'area');
-
-                newPlace = p;
-
-                console.log($id)
-            }
-
-
-
-        }
 
         // 인원 수 2명 이하 제한
         let $numCount = document.querySelector('.count-num');
@@ -198,8 +138,21 @@
         let $putBtn = document.querySelector('.put-btn');
 
         $putBtn.onclick = e => {
+
             if($numCount.value < 2){
                 $numCount.value=2;
+                alert("멍청이");
+                e.preventDefault();
+                return;
+            }
+            if ($addressPlace.value === 'select') {
+                alert("도를 선택하세요");
+                e.preventDefault();
+                return;
+            }
+
+            if (!se){
+                alert("시/군을 선택하세요");
                 e.preventDefault();
             }
         }
