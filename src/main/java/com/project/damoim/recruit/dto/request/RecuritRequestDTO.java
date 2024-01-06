@@ -35,7 +35,7 @@ public class RecuritRequestDTO {
                 .recruitContent(this.content)
                 .recruitMax(this.maxNumCount)
                 .recruitEnddate(LocalDateTime.parse(this.endDate, formatter))
-                .recruitAddress(this.placename + ' ' + this.area)
+                .recruitAddrass(this.placename + ' ' + this.area)
                 .memberId(memberId)
                 .build();
     }

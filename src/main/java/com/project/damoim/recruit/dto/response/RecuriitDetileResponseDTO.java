@@ -31,7 +31,7 @@ public class RecuriitDetileResponseDTO {
         this.category = r.getRecruitCategory();
         this.startDate = r.getRecruitStartdate();
         this.endDate = r.getRecruitEnddate();
-        this.address = r.getRecruitAddress();
+        this.address = r.getRecruitAddrass();
         this.count = r.getRecruitCount();
         this.max = r.getRecruitMax();
     }

@@ -37,7 +37,7 @@ public class RecuritResponseDTO {
         this.category = recruit.getRecruitCategory();
         this.endDate = recruit.getRecruitEnddate();
 //        this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
-        this.addrass = recruit.getRecruitAddress();
+        this.addrass = recruit.getRecruitAddrass();
         this.checkCount = recruit.getRecruitCount();
         this.maxCount = recruit.getRecruitMax();
         this.memberId = LoginUtiles.LoginUserId(session);
