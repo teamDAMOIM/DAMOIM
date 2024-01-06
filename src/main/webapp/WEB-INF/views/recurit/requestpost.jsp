@@ -129,6 +129,10 @@
 <%@ include file="../include/footer.jsp"%>
 
 <script>
+
+    // 검색할 타입
+
+
     const $writeBtn = document.querySelector('.add-btn');
     $writeBtn.onclick = e => {
         const targetPageURL = '/recruit/write';

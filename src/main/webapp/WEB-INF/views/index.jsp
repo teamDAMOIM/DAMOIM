@@ -30,10 +30,8 @@
         if (e.keyCode === 13){
             geocodeAddress($inputAddress.value);
         }
-
     }
-
-
+    console.log(${rList});
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {

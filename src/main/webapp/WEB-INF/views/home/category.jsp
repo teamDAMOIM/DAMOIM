@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- drop down menu -->
-<select class="form-select" name="type" id="search-type">
+<select class="form-select" name="category" id="search-type">
     <option value="FREEDOM">자유</option>
     <option value="EXERCISE">운동</option>
     <option value="WINE">술</option>

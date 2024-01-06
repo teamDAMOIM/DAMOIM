@@ -27,6 +27,7 @@ public class RecuritResponseDTO {
     private LocalDateTime endDate;
 //    private String endDate;
     private String addrass;
+    private int checkCount;
     private int maxCount;
     private String memberId;
 
@@ -39,6 +40,7 @@ public class RecuritResponseDTO {
         this.endDate = recruit.getRecruitEnddate();
 //        this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
         this.addrass = recruit.getRecruitAddress();
+        this.checkCount = recruit.getRecruitCount();
         this.maxCount = recruit.getRecruitMax();
         this.memberId = LoginUtiles.LoginUserId(session);
     }

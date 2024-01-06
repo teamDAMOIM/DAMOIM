@@ -4,6 +4,7 @@ package com.project.damoim.myPage.controller;
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.member.entity.Member;
 import com.project.damoim.member.service.MemberService;
+import com.project.damoim.myPage.service.MyPageService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,8 +23,18 @@ public class MyPageController {
 
     private final MemberService memberService;
 
+    private final MyPageService myPageService;
+
     @GetMapping("")
-    public String myPage(){
+    public String myPage(HttpSession session, Model model){
+        int recruitedCount = myPageService.recruitCount(session);
+        int postedCount = myPageService.postCount(session);
+        int commentedCount = myPageService.commentCount(session);
+
+        model.addAttribute("rcount", recruitedCount);
+        model.addAttribute("pcount", postedCount);
+        model.addAttribute("ccount", commentedCount);
+
         return "/mypage/mypage";
     }
 

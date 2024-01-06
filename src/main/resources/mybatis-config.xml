@@ -13,6 +13,7 @@
         <mapper resource="mappers/PostMapper.xml" />
         <mapper resource="mappers/CommentMapper.xml" />
         <mapper resource="mappers/RecruitMapper.xml" />
+        <mapper resource="mappers/MyPageMapper.xml" />
      </mappers>
 
 </configuration>

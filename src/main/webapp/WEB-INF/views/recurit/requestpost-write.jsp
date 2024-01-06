@@ -119,6 +119,8 @@
     <%@ include file="../include/footer.jsp"%>
 
     <script>
+
+
         // 인원 수 2명 이하 제한
         let $numCount = document.querySelector('.count-num');
         $numCount.onchange = function() {
@@ -136,8 +138,21 @@
         let $putBtn = document.querySelector('.put-btn');
 
         $putBtn.onclick = e => {
+
             if($numCount.value < 2){
-                alert('!!2명 이하 제한!!');
+                $numCount.value=2;
+                alert("멍청이");
+                e.preventDefault();
+                return;
+            }
+            if ($addressPlace.value === 'select') {
+                alert("도를 선택하세요");
+                e.preventDefault();
+                return;
+            }
+
+            if (!se){
+                alert("시/군을 선택하세요");
                 e.preventDefault();
             }
         }
@@ -208,11 +223,32 @@
         // 지금 시간으로 지정
         let $endTime = document.querySelector('.end-time-clock');
 
-        let formattedTime = new Date().toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+        /*let formattedTime = new Date().toLocaleTimeString('en-US', {hour12: true, hour: '2-digit', minute: '2-digit'});
         console.log(formattedTime);
+        $endTime.value = formattedTime;*/
 
-        $endTime.value = formattedTime;
+        function getCurrentTime() {
+            const now = new Date();
 
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+
+            // "HH:mm" 형태
+            const formattedTime = padZero(hours) + ':' + padZero(minutes);
+
+            return formattedTime;
+        }
+
+        // 1~9 => 01, ..., 09
+        function padZero(number) {
+            return number < 10 ? '0'+number : number;
+        }
+
+        const currentTime = getCurrentTime();
+        console.log(currentTime);
+
+        // $endTime에 현재 시간 설정
+        $endTime.value = currentTime;
     </script>
 </body>
 </html>
