@@ -194,6 +194,20 @@
        document.querySelector('.btn').onclick = e =>{
            const $form = document.querySelector('.signup-form');
            if(!checkResultList.includes(false)){
+
+               if (place.value === 'select') {
+                   alert("도를 선택하세요");
+
+                   return;
+               }
+
+               if (!se.includes(true)){
+                   alert("입력해라");
+
+                   return;
+               }
+
+
                alert("회원가입이 완료되었습니다.");
                $form.submit();
            }else{
@@ -201,6 +215,8 @@
            }
        }
    }
+
+
     const $imgbox = document.getElementById('img-box');
     const $imgInput = document.getElementById('img-input');
 

@@ -36,7 +36,7 @@ public class MemberController {
     @Value("${root.path}")
     private String rootPath;
 
-    /*
+    /*tb_member
         회원가입 창 띄우기
      */
     @GetMapping("/sign-up")
@@ -53,11 +53,9 @@ public class MemberController {
             SignUpRequestDTO dto,
             BindingResult result
     ){
-        log.info("asdfasdf");
 
         // 입력값 검증에 걸리면 회원가입창을 다시 띄우기
         if (result.hasErrors()) {
-
             return "/";
         }
         try { // 회원가입에 문제없이 통과하면
