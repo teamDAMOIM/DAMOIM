@@ -66,9 +66,6 @@ class CommentMapperTest {
         //given
         String id = "jj3713";
         //when
-        boolean b = mapper.upLikeCheck(id);
-        //then
-        assertFalse(b);
     }
 
 

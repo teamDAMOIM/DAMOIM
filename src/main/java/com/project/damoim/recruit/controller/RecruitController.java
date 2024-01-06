@@ -28,6 +28,7 @@ public class RecruitController {
     @GetMapping("")
     public String main(String type, String keyword, HttpSession session, Model model){
         List<RecuritResponseDTO> listRecurit = service.getListRecurit(type, keyword, session);
+
         model.addAttribute("rList", listRecurit);
         return "/recurit/requestpost";
     }

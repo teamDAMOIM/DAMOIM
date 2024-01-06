@@ -1,0 +1,35 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.damoim.myPage.response.MyPageMapper">
+
+    <select id="myRecruiteCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_recruit
+        WHERE member_id = #{memberId}
+    </select>
+
+
+    <select id="myPostCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_post
+        WHERE member_id = #{memberId}
+    </select>
+
+
+    <select id="myCommentCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_comment
+        WHERE member_id = #{memberId}
+    </select>
+
+
+</mapper>
