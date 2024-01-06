@@ -3,12 +3,14 @@
 
     <div class="row-ph">
         <select class="form-control" name="placename" id="placename" style="appearance: auto">
-            <option value="경상남도" selected>경상남도</option>
+            <option class="adselect" value="select">선택(도)</option>
+            <option value="경상남도">경상남도</option>
             <option value="대전광역시">대전광역시</option>
             <option value="충청남도">충청남도</option>
             <option value="서울특별시">서울특별시</option>
         </select>
         <select class="form-control gnarea placearea" name="placearea" id="경상남도area" value="gn" style="appearance: auto;" >
+            <option class="adselect" value="select">선택(시/군)</option>
             <option value="거제시">거제시</option>
             <option value="거창군">거창군</option>
             <option value="고성군">고성군</option>
@@ -16,8 +18,20 @@
             <option value="남해군">남해군</option>
             <option value="밀양시">밀양시</option>
             <option value="사천시">사천시</option>
+            <option value="산청군">산청군</option>
+            <option value="양산시">양산시</option>
+            <option value="의령군">의령군</option>
+            <option value="진주시">진주시</option>
+            <option value="창녕군">창녕군</option>
+            <option value="창원시">창원시</option>
+            <option value="통영시">통영시</option>
+            <option value="하동군">하동군</option>
+            <option value="함안군">함안군</option>
+            <option value="함양군">함양군</option>
+            <option value="합천군">합천군</option>
         </select>
         <select class="form-control daejeonarea placearea" name="placearea" id="대전광역시area" value="daejeon" style="appearance: auto; display: none;" >
+            <option class="adselect" value="select">선택(시/군)</option>
             <option value="대덕구">대덕구</option>
             <option value="동구">동구</option>
             <option value="서구">서구</option>
@@ -25,6 +39,7 @@
             <option value="중구">중구</option>
         </select>
         <select class="form-control cnarea placearea" name="placearea" id="충청남도area" value="cn" style="appearance: auto;  display: none;">
+            <option class="adselect" value="select">선택(시/군)</option>
             <option value="계룡시">계룡시</option>
             <option value="공주시">공주시</option>
             <option value="금산군">금산군</option>
@@ -40,6 +55,7 @@
             <option value="홍성군">홍성군</option>
         </select>
         <select class="form-control seoularea placearea" name="placearea" id="서울특별시area" style="appearance: auto; display: none;" >
+            <option class="adselect" value="select">선택(시/군)</option>
             <option value="강남구">강남구</option>
             <option value="강동구">강동구</option>
             <option value="강북구">강북구</option>
@@ -71,8 +87,9 @@
 <script>
     let place = document.getElementById('placename');
     let pla = document.querySelectorAll('.placearea');
+    let select = document.querySelector('.adselect');
 
-    place.value = '경상남도';
+
     place.addEventListener('change', e => {
 
         /**
