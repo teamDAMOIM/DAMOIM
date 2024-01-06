@@ -191,12 +191,6 @@
 
     const nickNamePattern = /^[가-힣]+$/;
 
-    // const $nickNameKeyDown = document.getElementById('userNickname');
-    // $nickNameKeyDown.onkeyup = e => {
-    //     if ($nickNameKeyDown.value.trim() === '') {
-    //         $nickNameKeyDown.style.borderColor = 'red';
-    //     }
-    // }
 
     function onSave() {
         console.log(checkList)
