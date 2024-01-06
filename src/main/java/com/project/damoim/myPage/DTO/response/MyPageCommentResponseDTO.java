@@ -20,13 +20,13 @@ public class MyPageCommentResponseDTO {
     private int cno;
     private int pno;
     private String title;
-    private String date;
+    private LocalDateTime date;
 
 
     public MyPageCommentResponseDTO(Comment c){
         this.cno = c.getCommentNo();
         this.pno = c.getPostNo();
         this.title = c.getCommentContent();
-        this.date = DateChange.postDateChang(c.getCommentDate());
+        this.date = c.getCommentDate();
     }
 }
