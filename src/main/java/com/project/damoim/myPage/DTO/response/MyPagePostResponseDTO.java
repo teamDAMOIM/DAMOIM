@@ -1,4 +1,4 @@
-package com.project.damoim.myPage.dto.response;
+package com.project.damoim.myPage.DTO.response;
 
 import com.project.damoim.Util.date.DateChange;
 import com.project.damoim.post.entity.Post;

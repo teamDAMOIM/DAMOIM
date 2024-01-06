@@ -2,9 +2,9 @@ package com.project.damoim.myPage.service;
 
 
 import com.project.damoim.Util.LoginUtiles;
-import com.project.damoim.myPage.dto.response.MyPageCommentResponseDTO;
-import com.project.damoim.myPage.dto.response.MyPagePostResponseDTO;
-import com.project.damoim.myPage.dto.response.MyPageRecruitResopseDTO;
+import com.project.damoim.myPage.DTO.response.MyPageCommentResponseDTO;
+import com.project.damoim.myPage.DTO.response.MyPagePostResponseDTO;
+import com.project.damoim.myPage.DTO.response.MyPageRecruitResopseDTO;
 import com.project.damoim.myPage.repository.MyPageMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

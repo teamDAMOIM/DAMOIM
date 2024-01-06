@@ -196,7 +196,7 @@ div #row-ph input{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
 }
 
  #modalContent1, #modalContent2, #modalContent3, #modalContent4{

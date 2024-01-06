@@ -30,27 +30,30 @@
                 <div id="modalContainer1" class="hidden">
                     <div id="modalContent1">
                         <p>my 모집</p>
-                        <div class="mcon">
+                        <div class="mcon" style="max-height: calc(100vh - 200px); overflow-x: hidden; overflow-y: auto;">
                             <div class="container" style="width: 100%; padding: 0;">
                                 <table class="table" id="post-table">
                                     <colgroup>
-                                        <col style="width: 15%;" class="size01" data-alias="number">
-                                        <col style="width: 60%;" class="size02" data-alias="title">
-                                        <col style="width: 25%;" class="size04" data-alias="date">
+                                        <col style="width: 15%;" data-alias="number">
+                                        <col style="width: 51%;" data-alias="title">
+                                        <col style="width: 17%;" data-alias="date">
+                                        <col style="width: 17%;" data-alias="date">
                                     </colgroup>
                                     <thead>
                                     <tr>
                                         <th class="text-center">번호</th>
                                         <th class="text-center">제목</th>
                                         <th class="text-center">작성일</th>
+                                        <th class="text-center">마감일</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="p" items="${pList}">
+                                    <c:forEach var="r" items="${rList}">
                                         <tr id="table">
-                                            <td class="num">${p.pno}</td>
-                                            <td class="tit"><a href="/post/detail?pno=${p.pno}&type=${ps.type}&keyword=${ps.keyword}">${p.title}</a></td>
-                                            <td class="dt">${p.date}</td>
+                                            <td class="num">${r.rno}</td>
+                                            <td class="tit"><a href="/recruit/detail?rno=${r.rno}">${r.title}</a></td>
+                                            <td class="dt">${r.startDate}</td>
+                                            <td class="dt">${r.endDate}</td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
@@ -67,7 +70,9 @@
                 <div id="modalContainer2" class="hidden">
                     <div id="modalContent2">
                         <p>my 참여모임 list</p>
-                        <div class="mcon">모야호</div>
+                        <div class="mcon">
+                            asd
+                        </div>
                         <button id="modalClose2">닫기</button>
                     </div>
                 </div>
@@ -78,7 +83,33 @@
                 <div id="modalContainer3" class="hidden">
                     <div id="modalContent3">
                         <p>작성한 게시판글 목록</p>
-                        <div class="mcon">모야호</div>
+                        <div class="mcon" style="max-height: calc(100vh - 200px); overflow-x: hidden; overflow-y: auto;">
+                            <div class="container" style="width: 100%; padding: 0;">
+                                <table class="table">
+                                    <colgroup>
+                                        <col style="width: 15%;" data-alias="number">
+                                        <col style="width: 68%;" data-alias="title">
+                                        <col style="width: 17%;" data-alias="date">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">번호</th>
+                                        <th class="text-center">제목</th>
+                                        <th class="text-center">작성일</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="p" items="${pList}">
+                                        <tr id="table">
+                                            <td class="num">${p.pno}</td>
+                                            <td class="tit"><a href="/recruit/detail?rno=${p.pno}">${p.title}</a></td>
+                                            <td class="dt">${p.date}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                         <button id="modalClose3">닫기</button>
                     </div>
                 </div>
@@ -89,7 +120,34 @@
                 <div id="modalContainer4" class="hidden">
                     <div id="modalContent4">
                         <p>작성한 댓글 목록</p>
-                        <div class="mcon">모야호</div>
+                        <div class="mcon" style="max-height: calc(100vh - 200px); overflow-x: hidden; overflow-y: auto;">
+                            <div class="container" style="width: 100%; padding: 0;">
+                                <table class="table">
+                                    <colgroup>
+                                        <col style="width: 15%;" data-alias="number">
+                                        <col style="width: 51%;" data-alias="title">
+                                        <col style="width: 17%;" data-alias="date">
+                                        <col style="width: 17%;" data-alias="date">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">번호</th>
+                                        <th class="text-center">제목</th>
+                                        <th class="text-center">작성일</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="c" items="${cList}">
+                                        <tr id="table">
+                                            <td class="num">${c.pno}</td>
+                                            <td class="tit"><a href="/post/detail?pno=${c.pno}">${c.title}</a></td>
+                                            <td class="dt">${c.date}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                         <button id="modalClose4">닫기</button>
                     </div>
                 </div>
