@@ -30,7 +30,33 @@
                 <div id="modalContainer1" class="hidden">
                     <div id="modalContent1">
                         <p>my 모집</p>
-                        <div class="mcon">모야호</div>
+                        <div class="mcon">
+                            <div class="container" style="width: 100%; padding: 0;">
+                                <table class="table" id="post-table">
+                                    <colgroup>
+                                        <col style="width: 10%;" class="size01" data-alias="number">
+                                        <col style="width: 60%;" class="size02" data-alias="title">
+                                        <col style="width: 30%;" class="size04" data-alias="date">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">번호</th>
+                                        <th class="text-center">제목</th>
+                                        <th class="text-center">작성일</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="p" items="${pList}">
+                                        <tr id="table">
+                                            <td class="num">${p.pno}</td>
+                                            <td class="tit"><a href="/post/detail?pno=${p.pno}&type=${ps.type}&keyword=${ps.keyword}">${p.title}</a></td>
+                                            <td class="dt">${p.date}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                         <button id="modalClose1">닫기</button>
                     </div>
                 </div>
