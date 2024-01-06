@@ -119,6 +119,42 @@
     <%@ include file="../include/footer.jsp"%>
 
     <script>
+        // 주소 넣기
+        let $addressPlace = document.querySelector('.form-control');
+        let $addressArea = document.querySelectorAll('.placearea');
+
+        let $id='';
+
+        $addressPlace.onchange = function (){
+            if($addressPlace.value==='경상남도'){
+                console.log(document.getElementById('경상남도area'))
+                $id = document.getElementById('경상남도area')
+            }
+            if($addressPlace.value==='대전광역시'){
+                console.log(document.getElementById('대전광역시area'))
+                $id = document.getElementById('대전광역시area')
+            }
+            if($addressPlace.value==='충청남도'){
+                console.log(document.getElementById('충청남도area'))
+                $id = document.getElementById('충청남도area')
+            }
+            if($addressPlace.value==='서울특별시'){
+                console.log(document.getElementById('서울특별시area'))
+                $id = document.getElementById('서울특별시area')
+            }
+
+            $id.onchange = function (){
+                console.log($id.value)
+
+
+
+                $id.setAttribute('name', 'area');
+                console.log($id)
+            }
+
+
+        }
+
         // 인원 수 2명 이하 제한
         let $numCount = document.querySelector('.count-num');
         $numCount.onchange = function() {
@@ -137,7 +173,7 @@
 
         $putBtn.onclick = e => {
             if($numCount.value < 2){
-                alert('!!2명 이하 제한!!');
+                $numCount.value=2;
                 e.preventDefault();
             }
         }
