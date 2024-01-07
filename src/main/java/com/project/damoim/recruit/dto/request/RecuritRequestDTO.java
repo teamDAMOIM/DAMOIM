@@ -1,12 +1,9 @@
 package com.project.damoim.recruit.dto.request;
 
 
-import com.project.damoim.Util.date.DateChange;
-import com.project.damoim.recruit.entity.Category;
 import com.project.damoim.recruit.entity.Recruit;
 import lombok.*;
 
-import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -21,8 +18,7 @@ public class RecuritRequestDTO {
     private String content;
     private int maxNumCount;
     private String endDate;
-    private String placename;
-    private String area;
+    private String address;
     private String memberId;
 
 
@@ -35,7 +31,7 @@ public class RecuritRequestDTO {
                 .recruitContent(this.content)
                 .recruitMax(this.maxNumCount)
                 .recruitEnddate(LocalDateTime.parse(this.endDate, formatter))
-                .recruitAddrass(this.placename + ' ' + this.area)
+                .recruitAddrass(this.address)
                 .memberId(memberId)
                 .build();
     }
