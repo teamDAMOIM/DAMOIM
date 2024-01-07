@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>web study</title>
+
     <%@ include file="../include/static-head.jsp" %>
 </head>
 <body>

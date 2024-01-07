@@ -4,6 +4,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://localhost/editor/daumEditor/css/editor.css" type="text/css" charset="utf-8"/>
+    <script src="http://localhost/editor/daumEditor/js/editor_loader.js" type="text/javascript" charset="utf-8"></script>
     <%@ include file="../include/static-head.jsp" %>
 </head>
 <body>
