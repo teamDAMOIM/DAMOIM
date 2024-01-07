@@ -234,3 +234,22 @@ footer .inner-footer img {
     width: 74px;
     margin-left: 15px;
 }
+
+.view-place {
+    text-align: center;
+    padding: 30px;
+}
+
+.view-place .place-title {
+    margin: 10px;
+}
+.view-place .place-address {
+    margin: 10px;
+}
+.view-place .button {
+    width: 80px;
+    background: rgba(75, 133, 87, 0.9);
+    color: #fff;
+    border: #4d4d4d 1px solid;
+    border-radius: 5px 5px;
+}
