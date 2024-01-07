@@ -20,5 +20,21 @@ public interface RecruitMapper {
     boolean save(Recruit recruit);
     //디테일 정보 조회
     Recruit findOne(int rno);
+
+    // 신청 버튼 누르면 올라가는 값
     void upCount(int rno);
+    // tb_member_Recruite insert 기능
+    boolean upPerson(int rno, String memberId);
+    // 중복 여부 체크
+    boolean check(int rno, String memberId);
+
+    boolean deleteRecurite(int rno);
+
+    // 다운 카운트
+    void downCount(int rno);
+
+    void isChekeUP(int rno);
+    void isChekedown(int rno);
+
+
 }

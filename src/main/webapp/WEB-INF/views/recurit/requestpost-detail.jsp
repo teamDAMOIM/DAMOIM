@@ -85,7 +85,7 @@
                         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                     </svg>
                 </label>
-                <label class="checkCount">신청 인원(checkCount)</label>
+                <label class="checkCount">${r.count}</label>
                 <span>/</span>
                 <label class="recruitment-max-count">${r.max}</label>
             </label>
@@ -110,7 +110,6 @@
 <%@ include file="../include/footer.jsp"%>
 
 <script>
-
     // 카테고리에 따른 아이콘
     let $detailCategory = document.querySelector('.board-category-sub');
     let $detailIcon = document.querySelector('.detail-icon');

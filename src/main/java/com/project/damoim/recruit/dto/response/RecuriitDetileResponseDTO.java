@@ -24,6 +24,7 @@ public class RecuriitDetileResponseDTO {
     private int count;
     private int max;
     private int check;
+    private String memberId;
 
     public RecuriitDetileResponseDTO(Recruit r) {
         this.rno = r.getRecruitNo();
@@ -36,6 +37,7 @@ public class RecuriitDetileResponseDTO {
         this.count = r.getRecruitCount();
         this.max = r.getRecruitMax();
         this.check = r.getRecruitCheck();
+        this.memberId = r.getMemberId();
     }
 
 }

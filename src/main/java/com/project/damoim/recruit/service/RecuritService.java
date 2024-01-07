@@ -59,13 +59,20 @@ public class RecuritService {
                 ;
     }
 
-    public boolean addMemberRecruit(int rno){
-        upCount(rno);
-        return false;
-    }
+    public void upCount(int rno, HttpSession session){
+        String loginUserId = LoginUtiles.LoginUserId(session);
 
+        boolean check = recruitMapper.check(rno, loginUserId);
 
-    private void upCount(int rno){
-        recruitMapper.upCount(rno);
+        if (!check){
+            recruitMapper.upCount(rno);
+            recruitMapper.upPerson(rno, loginUserId);
+            recruitMapper.isChekeUP(rno);
+        }else{
+            recruitMapper.downCount(rno);
+            recruitMapper.deleteRecurite(rno);
+            recruitMapper.isChekedown(rno);
+        }
+
     }
 }

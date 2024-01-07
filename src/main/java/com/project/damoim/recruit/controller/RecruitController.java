@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -70,7 +71,8 @@ public class RecruitController {
 
 
     @GetMapping("/addRecruit")
-    public String addRecruit(int rno){
-        return "redirect:/recruit/detail";
+    public String addRecruit(int rno, HttpSession session){
+        service.upCount(rno, session);
+        return "redirect:/recruit/detail?rno=" + rno;
     }
 }

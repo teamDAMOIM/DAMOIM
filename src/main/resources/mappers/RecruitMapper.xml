@@ -70,9 +70,54 @@
         WHERE recruit_no = #{rno}
     </select>
 
+
+
     <update id="upCount">
         UPDATE tb_recruit
         SET recruit_count = recruit_count + 1
         WHERE recruit_no = #{rno}
     </update>
+
+    <insert id="upPerson">
+        insert into tb_member_recruit
+            (member_id, recruit_no)
+        VALUE
+            (#{memberId}, #{rno})
+    </insert>
+    
+    <select id="check" resultType="boolean">
+        SELECT
+            COUNT(*)
+        FROM tb_member_recruit
+        WHERE
+            member_id = #{memberId}
+        AND recruit_no = #{rno}
+    </select>
+
+    <update id="downCount">
+        UPDATE tb_recruit
+        SET recruit_count = recruit_count - 1
+        WHERE recruit_no = #{rno}
+    </update>
+
+    <delete id="deleteRecurite">
+        DELETE
+        FROM
+            tb_member_recruit
+        WHERE
+            recruit_no = #{rno}
+    </delete>
+
+    <update id="isChekeUP">
+        UPDATE tb_recruit
+        SET recruit_check = recruit_check + 1
+        WHERE recruit_no = #{rno}
+    </update>
+
+    <update id="isChekedown">
+        UPDATE tb_recruit
+        SET recruit_check = recruit_check - 1
+        WHERE recruit_no = #{rno}
+    </update>
+
 </mapper>
