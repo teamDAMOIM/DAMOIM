@@ -142,7 +142,7 @@
 
         let titleElements = document.querySelectorAll(".title");
         titleElements.forEach(function(title) {
-            truncateText(title, 15);
+            truncateText(title, 10);
         });
     });
 

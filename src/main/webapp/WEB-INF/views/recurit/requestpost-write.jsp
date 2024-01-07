@@ -50,7 +50,7 @@
                         </div>
                         <div class="rp-content-sub-item">내용</div>
                     </label>
-                    <textarea id="content" class="rp-content-write" name="content" maxlength="800" required style="resize: none;" rows="30" cols="80"></textarea>
+                    <textarea id="content" class="rp-content-write" name="content" maxlength="800" required style="resize: none;" rows="20" cols="50"></textarea>
                 </div>
 
                 <label for="maxUserCount" class="rp-count-item">
@@ -123,13 +123,13 @@
 <script>
 
     // title 길이 제한
-    /*let $titleCount = document.querySelector('.rp-title');
-    document.querySelector('.rp-title').addEventListener('input', function() {
-        if (this.value.length > 20) {
-            this.value = this.value.slice(0, 20); // 길이가 20을 초과하면 20자까지만 유지
-            alert('20자 제한 입니다!!')
+    let $titleCount = document.querySelector('.rp-title');
+    $titleCount.addEventListener('input', function() {
+        if (this.value.length > 100) {
+            this.value = this.value.slice(0, 100); // 길이가 20을 초과하면 20자까지만 유지
+            alert('100자 제한 입니다!!')
         }
-    });*/
+    });
 
     // 인원 수 2명 이하 제한
     let $numCount = document.querySelector('.count-num');
