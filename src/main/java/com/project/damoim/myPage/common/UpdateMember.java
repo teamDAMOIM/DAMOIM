@@ -11,5 +11,6 @@ public class UpdateMember {
     private String type;
     private String memberId;
     private String nickName;
-    private String address;
+    private String plaacename;
+    private String area;
 }

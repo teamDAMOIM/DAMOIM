@@ -61,12 +61,12 @@
         </if>
 
         <if test="type == 'address'">
-            SET member_address = #{address}
+            SET member_address = #{plaacename} + ' ' + #{area}
             WHERE member_id = #{memberId}
         </if>
 
         <if test="type == 'all'">
-            SET member_address = #{address}, member_nickname = #{nickName}
+            SET member_address = #{plaacename} + ' ' + #{area}, member_nickname = #{nickName}
             WHERE member_id = #{memberId}
         </if>
 
