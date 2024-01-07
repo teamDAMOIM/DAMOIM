@@ -14,13 +14,19 @@
     font-size: 2.1rem;
     padding-bottom: 50px;
 }
+.form-container .userview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1.5px solid #494949;
+}
 
 .form-container .labelbox {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 20px;
-    border-bottom: 1.5px solid #494949;
+
 }
 .form-container .labelbox .column {
     width: 100%;
@@ -32,6 +38,15 @@
 
 .form-container .labelbox .column label {
     padding-right: 5px;
+}
+.editorbutton .column {
+    padding: 5px;
+}
+.editorbutton .column .a {
+    width: 80px;
+    background: rgba(155, 47, 71, 0.9);
+    color: #fff;
+    border-radius: 5px 5px;
 }
 
 .content {
@@ -138,6 +153,25 @@
     color: #fff;
     border-radius: 5px 5px;
 }
+.modal {
+    display: flex;
+    justify-content: center;
+    padding: 200px;
+}
+.modal-content {
+    width: 300px;
+    height: 600px;
+    background: #fff;
+    color: #494949;
+}
+#updateForm {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
 
 
 

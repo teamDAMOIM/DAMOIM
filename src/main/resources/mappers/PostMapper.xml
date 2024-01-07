@@ -57,7 +57,7 @@
 
     <delete id="deleteByNo">
         DELETE FROM tb_post
-        WHERE post_no = #{postNo}
+        WHERE post_no = #{pno}
     </delete>
 
     <update id="updateViewCount">

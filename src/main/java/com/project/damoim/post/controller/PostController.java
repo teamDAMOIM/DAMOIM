@@ -1,14 +1,10 @@
 package com.project.damoim.post.controller;
 
-import com.project.damoim.Util.LoginUtiles;
-import com.project.damoim.Util.date.DateChange;
-import com.project.damoim.post.common.Page;
 import com.project.damoim.post.common.PageMaker;
 import com.project.damoim.post.common.Search;
 import com.project.damoim.post.dto.request.PostListRequestDTO;
 import com.project.damoim.post.dto.request.PostRequestDTO;
 import com.project.damoim.post.dto.response.PostResponseDTO;
-import com.project.damoim.post.entity.Post;
 import com.project.damoim.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
