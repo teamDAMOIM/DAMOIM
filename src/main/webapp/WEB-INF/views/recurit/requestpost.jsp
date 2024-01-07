@@ -30,7 +30,7 @@
 
     <div class="container">
         <c:forEach var="r" items="${rList}">
-            <a class="rp-one" href="/recruit/detail?rno=${r.rno}">
+            <a class="rp-one" href="/recruit/detail?rno=${r.rno}" data-category="${r.category}">
                 <!-- category icon -->
                 <!-- 운동 -->
                 <c:if test="${r.category=='EXERCISE'}">
@@ -128,8 +128,43 @@
 <%@ include file="../include/footer.jsp"%>
 
 <script>
+    let $titleElements = document.querySelector(".title");
+    console.log($titleElements.innerText)
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        function truncateText(element, maxLength) {
+            let text = element.innerText;
+            if (text.length > maxLength) {
+                element.innerText = text.substring(0, maxLength) + " ···";
+            }
+        }
+
+        let titleElements = document.querySelectorAll(".title");
+        titleElements.forEach(function(title) {
+            truncateText(title, 15);
+        });
+    });
 
     // 검색할 타입
+    document.addEventListener("DOMContentLoaded", function() {
+        let categoryFilter = document.querySelector('.form-select');
+        let container = document.querySelector('.container');
+
+        categoryFilter.addEventListener("change", function() {
+            let selectedCategory = categoryFilter.value;
+
+            let rpItems = document.querySelectorAll('.rp-one');
+            rpItems.forEach(function(item) {
+                let category = item.getAttribute("data-category");
+                if ( selectedCategory !== category) {
+                    item.style.display = "none";
+                }else {
+                    item.style.display = "flex";
+                }
+            });
+        });
+    });
 
 
     const $writeBtn = document.querySelector('.add-btn');
@@ -224,12 +259,6 @@
                     `</div>
                     <div class="rp-content">
                         <div class="title">\${r.title}</div>
-                        <div class="user-count">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
-                            </svg>\${r.count}
-                        </div>
                         <div class="endDate">\${r.endDate}</div> <!-- 모집 종료일 -->
                     </div>
                     <div class="maxCount">
