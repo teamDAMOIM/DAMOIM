@@ -8,6 +8,7 @@ import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
 import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Recruit;
+import com.project.damoim.recruit.entity.RecruitandMember;
 import com.project.damoim.recruit.repository.RecruitMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -64,15 +65,28 @@ public class RecuritService {
 
         boolean check = recruitMapper.check(rno, loginUserId);
 
+        RecruitandMember rm = recruitMapper.selectCheckCount(rno, loginUserId);
+
+
         if (!check){
             recruitMapper.upCount(rno);
             recruitMapper.upPerson(rno, loginUserId);
-            recruitMapper.isChekeUP(rno);
+
+
+            if (rm.getIscheck() == 0){
+                recruitMapper.isChekeUP(rno);
+            }else {
+                recruitMapper.isChekedown(rno);
+            }
+
         }else{
             recruitMapper.downCount(rno);
             recruitMapper.deleteRecurite(rno);
-            recruitMapper.isChekedown(rno);
         }
+    }
 
+    public RecruitandMember getRecruit(int rno, HttpSession session){
+        String loginUserId = LoginUtiles.LoginUserId(session);
+        return recruitMapper.selectCheckCount(rno, loginUserId);
     }
 }

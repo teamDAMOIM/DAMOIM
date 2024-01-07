@@ -3,6 +3,7 @@ package com.project.damoim.recruit.repository;
 import com.project.damoim.post.common.Search;
 import com.project.damoim.recruit.common.RecruitSearch;
 import com.project.damoim.recruit.entity.Recruit;
+import com.project.damoim.recruit.entity.RecruitandMember;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -35,6 +36,8 @@ public interface RecruitMapper {
 
     void isChekeUP(int rno);
     void isChekedown(int rno);
+
+    RecruitandMember selectCheckCount(int rno, String memberId);
 
 
 }

@@ -9,7 +9,7 @@
         recruit_no, recruit_title, recruit_content,
         recruit_category, recruit_startdate
         , recruit_enddate, recruit_addrass, recruit_count,
-        recruit_max, recruit_check, member_id
+        recruit_max, member_id
         FROM tb_recruit
     </select>
 
@@ -19,7 +19,7 @@
                 recruit_no, recruit_title, recruit_content,
             recruit_category, recruit_startdate
                 , recruit_enddate, recruit_addrass, recruit_count,
-            recruit_max, recruit_check, member_id
+            recruit_max, member_id
         FROM tb_recruit
         <if test="type == 'EXERCISE'">
             WHERE recruit_category = #{type}
@@ -48,7 +48,7 @@
             recruit_no, recruit_title, recruit_content,
             recruit_category, recruit_startdate ,
             recruit_enddate, recruit_addrass,
-            recruit_count, recruit_max, recruit_check, member_id
+            recruit_count, recruit_max, member_id
         FROM tb_recruit
         WHERE recruit_addrass LIKE CONCAT('%', #{address}, '%')
         ORDER BY recruit_count DESC
@@ -57,15 +57,15 @@
 
     <insert id="save">
         INSERT INTO tb_recruit
-            (recruit_title, recruit_content, recruit_category, recruit_count, recruit_enddate, recruit_addrass, recruit_check, recruit_max, member_id)
+            (recruit_title, recruit_content, recruit_category, recruit_count, recruit_enddate, recruit_addrass, recruit_max, member_id)
         VALUES
-            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitCount}, #{recruitEnddate}, #{recruitAddrass}, 0, #{recruitMax}, #{memberId})
+            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitCount}, #{recruitEnddate}, #{recruitAddrass}, #{recruitMax}, #{memberId})
     </insert>
 
     <select id="findOne" resultType="com.project.damoim.recruit.entity.Recruit">
         SELECT
         recruit_no, recruit_title, recruit_content, recruit_category, recruit_startdate
-        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, recruit_check, member_id
+        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, member_id
         FROM tb_recruit
         WHERE recruit_no = #{rno}
     </select>
@@ -109,15 +109,24 @@
     </delete>
 
     <update id="isChekeUP">
-        UPDATE tb_recruit
-        SET recruit_check = recruit_check + 1
+        UPDATE tb_member_recruit
+        SET ischeck = ischeck + 1
         WHERE recruit_no = #{rno}
     </update>
 
     <update id="isChekedown">
-        UPDATE tb_recruit
-        SET recruit_check = recruit_check - 1
+        UPDATE tb_member_recruit
+        SET ischeck = ischeck - 1
         WHERE recruit_no = #{rno}
     </update>
+
+    <select id="selectCheckCount" resultType="com.project.damoim.recruit.entity.RecruitandMember">
+        select
+            *
+        from
+            tb_member_recruit
+        WHERE member_id = #{memberId}
+        AND recruit_mo = #{rno}
+    </select>
 
 </mapper>

@@ -7,6 +7,7 @@ import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Category;
 import com.project.damoim.recruit.entity.Recruit;
+import com.project.damoim.recruit.entity.RecruitandMember;
 import com.project.damoim.recruit.service.RecuritService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -71,8 +72,13 @@ public class RecruitController {
 
 
     @GetMapping("/addRecruit")
-    public String addRecruit(int rno, HttpSession session){
+    public String addRecruit(int rno, HttpSession session, RedirectAttributes ra){
         service.upCount(rno, session);
+
+        RecruitandMember recruit = service.getRecruit(rno, session);
+
+        ra.addFlashAttribute("rs", recruit);
+
         return "redirect:/recruit/detail?rno=" + rno;
     }
 }
