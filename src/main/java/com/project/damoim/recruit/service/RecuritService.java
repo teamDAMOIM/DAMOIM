@@ -77,7 +77,7 @@ public class RecuritService {
         }
     }
 
-    public List<RecruitandMember> getRecruit(int rno, HttpSession session){
+    public RecruitandMember getRecruit(int rno, HttpSession session){
         String loginUserId = LoginUtiles.LoginUserId(session);
         return recruitMapper.selectCheckCount(rno, loginUserId);
     }

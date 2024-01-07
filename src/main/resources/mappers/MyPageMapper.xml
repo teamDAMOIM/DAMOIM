@@ -31,6 +31,14 @@
         WHERE member_id = #{memberId}
     </select>
 
+    <select id="myRecruiteAndMember" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_member_recruit
+        WHERE member_id = #{memberId}
+    </select>
+
     <select id="findByIdRecruit" resultType="com.project.damoim.recruit.entity.Recruit">
         SELECT
             recruit_no, recruit_title, recruit_startdate, recruit_enddate
@@ -53,6 +61,14 @@
         FROM
             tb_comment
         WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findByIdRecruitAndMember" resultType="com.project.damoim.recruit.entity.RecruitandMember">
+        select
+        a.recruit_no, b.recruit_title, b.recruit_startdate, b.recruit_enddate
+        from tb_member_recruit as a
+        join damoim.tb_recruit as b on b.recruit_no = a.recruit_no
+        where a.member_id = #{memberId}
     </select>
 
 

@@ -20,27 +20,7 @@ class RecruitMapperTest {
     @Autowired
     RecruitMapper recruitMapper;
 
-    @Test
-    @DisplayName("")
-    void saveTest() {
-        //given
-        Recruit r = Recruit.builder()
-                .recruitTitle("ww")
-                .recruitContent("zzzzz")
-                .recruitEnddate(LocalDateTime.now().plusDays(30))
-                .recruitCategory(Category.STUDY.toString())
-                .recruitAddress("공주")
-                .recruitCount(1)
-                .recruitMax(10)
-                .memberId("sss1234")
-                .build();
-        for (int i = 0; i < 10; i++) {
-            recruitMapper.save(r);
-        }
-        //when
 
-        //then
-    }
 
     @Test
     @DisplayName("전체조회")
@@ -74,13 +54,16 @@ class RecruitMapperTest {
         //then
         System.out.println("sortRecruit = " + sortRecruit);
     }
+
+
     @Test
-    @DisplayName("asdf")
-    void upViewTest() {
+    @DisplayName("")
+    void selectCheckCountTest() {
         //given
-        int rno = 1;
+        String id = "jj3713";
+        int pno = 10;
         //when
-        recruitMapper.viewUpCount(rno);
+
         //then
     }
 

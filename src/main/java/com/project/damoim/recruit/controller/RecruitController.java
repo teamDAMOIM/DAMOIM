@@ -52,11 +52,6 @@ public class RecruitController {
         RecuriitDetileResponseDTO r = service.detailRecurit(rno);
 
 
-        List<RecruitandMember> recruit = service.getRecruit(rno, session);
-
-        model.addAttribute("rmList", recruit);
-
-
 
         model.addAttribute("r", r);
 
@@ -85,11 +80,10 @@ public class RecruitController {
     public String addRecruit(int rno, HttpSession session, RedirectAttributes ra){
         boolean b = service.upCount(rno, session);
 
+        RecruitandMember recruit = service.getRecruit(rno, session);
 
-
-        ra.addFlashAttribute("rs", b);
-
-
+        ra.addFlashAttribute("rm", recruit);
+        ra.addFlashAttribute("b", b);
 
 
         return "redirect:/recruit/detail?rno=" + rno;

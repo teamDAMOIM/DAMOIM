@@ -8,6 +8,7 @@ import com.project.damoim.myPage.DTO.response.MyPageCommentResponseDTO;
 import com.project.damoim.myPage.DTO.response.MyPagePostResponseDTO;
 import com.project.damoim.myPage.DTO.response.MyPageRecruitResopseDTO;
 import com.project.damoim.myPage.service.MyPageService;
+import com.project.damoim.recruit.entity.RecruitandMember;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -33,18 +34,23 @@ public class MyPageController {
         int recruitedCount = myPageService.recruitCount(session);
         int postedCount = myPageService.postCount(session);
         int commentedCount = myPageService.commentCount(session);
+        int recriteAndMemberCount = myPageService.recriteAndMemberCount(session);
 
         List<MyPageRecruitResopseDTO> recruitList = myPageService.getRecruitList(session);
         List<MyPagePostResponseDTO> postList = myPageService.getPostList(session);
         List<MyPageCommentResponseDTO> commentList = myPageService.getCommentList(session);
+        List<RecruitandMember> recruitandMember = myPageService.getRecruitandMember(session);
 
         model.addAttribute("rcount", recruitedCount);
         model.addAttribute("pcount", postedCount);
         model.addAttribute("ccount", commentedCount);
+        model.addAttribute("rcount", commentedCount);
+        model.addAttribute("rmcount", recriteAndMemberCount);
 
         model.addAttribute("rList", recruitList);
         model.addAttribute("pList", postList);
         model.addAttribute("cList", commentList);
+        model.addAttribute("rmList", commentedCount);
 
         return "/mypage/mypage";
     }

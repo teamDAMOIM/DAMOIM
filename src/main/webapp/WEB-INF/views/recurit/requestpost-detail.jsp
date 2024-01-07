@@ -79,45 +79,12 @@
 
     <%-- 버튼 contain --%>
     <div class="detail-buttons-item">
-        <c:forEach var="ra" items="${rmList}">
-            <%-- 신청 버튼 --%>
-            <c:if test="${r.max > r.count}">
-                <a class="check-person-number" type="button"
-                   onclick="window.location.href='/recruit/addRecruit?rno=${r.rno}'">
-                    <label class="count-info">
-                        <label class="count-check-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                 class="bi bi-person-check-fill" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
-                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                            </svg>
-                        </label>
-                        <label class="recruitment-max-count">${r.max}</label>
-                        <span>/</span>
-                        <label class="checkCount">${r.count}</label>
-                    </label>
-
-                    <label class="checkCount">${r.max}</label>
-                    <span>/</span>
-                    <label class="recruitment-max-count">${r.count}</label>
-
-
-                    <c:if test="${!b}">
-                        <span>신청하기</span>
-                    </c:if>
-                    <c:if test="${b}">
-                        <span>취소하기</span>
-                    </c:if>
-                    <c:if test="${login.id != ra.memberId}">
-                        <span>모집 완료</span>
-                    </c:if>
-                </a>
+        <%-- 신청 버튼 --%>
+        <c:if test="${r.max <= r.count}">
+            <c:if test="${login.id != rm.memberId}">
+                <span>모집 완료</span>
             </c:if>
-        </c:forEach>
-
-
-        <%--    max가 count보다 크다면 --%>
+        </c:if>
         <c:if test="${r.max >= r.count}">
             <a class="check-person-number" type="button"
                onclick="window.location.href='/recruit/addRecruit?rno=${r.rno}'">
@@ -133,8 +100,15 @@
                     <label class="recruitment-max-count">${r.max}</label>
                     <span>/</span>
                     <label class="checkCount">${r.count}</label>
+                    <c:if test="${!b}">
+                        <span>신청하기</span>
+                    </c:if>
+                    <c:if test="${b}">
+                        <span>취소하기</span>
+                    </c:if>
                 </label>
             </a>
+
         </c:if>
 
         <%-- 목록 보기 --%>

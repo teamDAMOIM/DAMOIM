@@ -6,6 +6,7 @@ import com.project.damoim.myPage.DTO.response.MyPageCommentResponseDTO;
 import com.project.damoim.myPage.DTO.response.MyPagePostResponseDTO;
 import com.project.damoim.myPage.DTO.response.MyPageRecruitResopseDTO;
 import com.project.damoim.myPage.repository.MyPageMapper;
+import com.project.damoim.recruit.entity.RecruitandMember;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,9 @@ public class MyPageService {
     }
     public int commentCount(HttpSession session){
         return mapper.myCommentCount(LoginUtiles.LoginUserId(session));
+    }
+    public int recriteAndMemberCount(HttpSession session){
+        return mapper.myRecruiteAndMember(LoginUtiles.LoginUserId(session));
     }
 
     public List<MyPageRecruitResopseDTO> getRecruitList(HttpSession session){
@@ -53,6 +57,14 @@ public class MyPageService {
 
         return mapper.findByIdPost(loginUserId).stream()
                 .map(post -> new MyPagePostResponseDTO(post))
+                .collect(Collectors.toList())
+                ;
+    }
+
+    public List<RecruitandMember> getRecruitandMember(HttpSession session){
+        String loginUserId = LoginUtiles.LoginUserId(session);
+
+        return mapper.findByIdRecruitAndMember(loginUserId).stream()
                 .collect(Collectors.toList())
                 ;
     }

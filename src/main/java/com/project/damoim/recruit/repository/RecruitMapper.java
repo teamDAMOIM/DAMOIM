@@ -34,7 +34,6 @@ public interface RecruitMapper {
     // 다운 카운트
     void downCount(int rno);
 
-    List<RecruitandMember> selectCheckCount(int rno, String memberId);
-
+    RecruitandMember selectCheckCount(int rno, String memberId);
 
 }
