@@ -67,4 +67,10 @@ public class RecruitController {
                 .body(listRecurit)
                 ;
     }
+
+
+    @GetMapping("/addRecruit")
+    public String addRecruit(int rno){
+        return "redirect:/recruit/detail";
+    }
 }

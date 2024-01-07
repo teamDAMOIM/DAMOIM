@@ -21,6 +21,4 @@ public interface RecruitMapper {
     //디테일 정보 조회
     Recruit findOne(int rno);
     void upCount(int rno);
-
-    List<Recruit> findData();
 }

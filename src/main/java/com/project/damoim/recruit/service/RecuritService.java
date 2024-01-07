@@ -59,7 +59,13 @@ public class RecuritService {
                 ;
     }
 
-    public void upCount(int rno){
+    public boolean addMemberRecruit(int rno){
+        upCount(rno);
+        return false;
+    }
+
+
+    private void upCount(int rno){
         recruitMapper.upCount(rno);
     }
 }

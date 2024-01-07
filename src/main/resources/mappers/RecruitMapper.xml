@@ -70,7 +70,7 @@
         WHERE recruit_no = #{rno}
     </select>
 
-    <update id="viewUpCount">
+    <update id="upCount">
         UPDATE tb_recruit
         SET recruit_count = recruit_count + 1
         WHERE recruit_no = #{rno}
