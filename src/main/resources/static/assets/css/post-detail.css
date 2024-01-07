@@ -155,20 +155,29 @@
 }
 .modal {
     display: flex;
-    justify-content: center;
-    padding: 200px;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.2);
+    padding-top: 200px;
 }
 .modal-content {
-    width: 300px;
+    width: 500px;
     height: 600px;
+    display: flex;
+    align-content: center;
     background: #fff;
     color: #494949;
+    padding: 20px;
 }
 #updateForm {
-    padding: 20px;
+    padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
 
+}
+
+#updateForm .editorbuttons{
+    padding: 20px;
 }
 
 
