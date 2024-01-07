@@ -60,32 +60,24 @@ public class RecuritService {
                 ;
     }
 
-    public void upCount(int rno, HttpSession session){
+    public boolean upCount(int rno, HttpSession session){
         String loginUserId = LoginUtiles.LoginUserId(session);
 
         boolean check = recruitMapper.check(rno, loginUserId);
-
-        RecruitandMember rm = recruitMapper.selectCheckCount(rno, loginUserId);
 
 
         if (!check){
             recruitMapper.upCount(rno);
             recruitMapper.upPerson(rno, loginUserId);
-
-
-            if (rm.getIscheck() == 0){
-                recruitMapper.isChekeUP(rno);
-            }else {
-                recruitMapper.isChekedown(rno);
-            }
-
+            return true;
         }else{
             recruitMapper.downCount(rno);
-            recruitMapper.deleteRecurite(rno);
+            recruitMapper.deleteRecurite(rno, loginUserId);
+            return false;
         }
     }
 
-    public RecruitandMember getRecruit(int rno, HttpSession session){
+    public List<RecruitandMember> getRecruit(int rno, HttpSession session){
         String loginUserId = LoginUtiles.LoginUserId(session);
         return recruitMapper.selectCheckCount(rno, loginUserId);
     }

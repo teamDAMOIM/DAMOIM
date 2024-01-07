@@ -48,9 +48,19 @@ public class RecruitController {
     }
 
     @GetMapping("/detail")
-    public String detail(int rno, Model model){
+    public String detail(int rno, HttpSession session, Model model){
         RecuriitDetileResponseDTO r = service.detailRecurit(rno);
+
+
+        List<RecruitandMember> recruit = service.getRecruit(rno, session);
+
+        model.addAttribute("rmList", recruit);
+
+
+
         model.addAttribute("r", r);
+
+
         return "/recurit/requestpost-detail";
     }
 
@@ -73,11 +83,14 @@ public class RecruitController {
 
     @GetMapping("/addRecruit")
     public String addRecruit(int rno, HttpSession session, RedirectAttributes ra){
-        service.upCount(rno, session);
+        boolean b = service.upCount(rno, session);
 
-        RecruitandMember recruit = service.getRecruit(rno, session);
 
-        ra.addFlashAttribute("rs", recruit);
+
+        ra.addFlashAttribute("rs", b);
+
+
+
 
         return "redirect:/recruit/detail?rno=" + rno;
     }

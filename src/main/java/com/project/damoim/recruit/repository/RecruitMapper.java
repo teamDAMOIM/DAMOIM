@@ -29,15 +29,12 @@ public interface RecruitMapper {
     // 중복 여부 체크
     boolean check(int rno, String memberId);
 
-    boolean deleteRecurite(int rno);
+    boolean deleteRecurite(int rno, String memberId);
 
     // 다운 카운트
     void downCount(int rno);
 
-    void isChekeUP(int rno);
-    void isChekedown(int rno);
-
-    RecruitandMember selectCheckCount(int rno, String memberId);
+    List<RecruitandMember> selectCheckCount(int rno, String memberId);
 
 
 }

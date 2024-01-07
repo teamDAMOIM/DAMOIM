@@ -106,19 +106,8 @@
             tb_member_recruit
         WHERE
             recruit_no = #{rno}
+        AND member_id = #{memberId}
     </delete>
-
-    <update id="isChekeUP">
-        UPDATE tb_member_recruit
-        SET ischeck = ischeck + 1
-        WHERE recruit_no = #{rno}
-    </update>
-
-    <update id="isChekedown">
-        UPDATE tb_member_recruit
-        SET ischeck = ischeck - 1
-        WHERE recruit_no = #{rno}
-    </update>
 
     <select id="selectCheckCount" resultType="com.project.damoim.recruit.entity.RecruitandMember">
         select
@@ -126,7 +115,7 @@
         from
             tb_member_recruit
         WHERE member_id = #{memberId}
-        AND recruit_mo = #{rno}
+        AND recruit_no = #{rno}
     </select>
 
 </mapper>
