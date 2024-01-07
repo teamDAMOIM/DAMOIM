@@ -67,7 +67,7 @@
         select
         a.recruit_no, b.recruit_title, b.recruit_startdate, b.recruit_enddate
         from tb_member_recruit as a
-        join damoim.tb_recruit as b on b.recruit_no = a.recruit_no
+        join tb_recruit as b on b.recruit_no = a.recruit_no
         where a.member_id = #{memberId}
     </select>
 
