@@ -1,7 +1,148 @@
 
 
+
+.recruitment-detail-container{
+    padding-top: 25vh;
+    background: #ffd5d5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.blank-space-fill{
+    background-image: url("../img/detail-blackSpaceFill.png");
+    background-position: top;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    width: 100%; height: 70vh;
+}
+
+.section-recruitment-board{
+    /*width: 60%;*/
+    margin-bottom: 5vh;
+    /*border: 5px solid #FFFFFF90;*/
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+@media (max-width: 1500px) {
+    .recruitment-detail-container {
+        width: 1500px;
+    }
+}
+
+
+/* board top title*/
+.top-detail-header{
+    background: #ff7b40;
+
+    font-size: 2.5em; font-weight: bold;
+    display: flex; flex-flow: row nowrap;
+    justify-content: start;
+    padding: 10px;
+}
+
+    .top-detail-header .logo-img{
+        background: url("../img/backgroundimg.jpg");
+        width: 100%; height: 10vh;
+    }
+
+    /* 카테고리 아이콘*/
+    .top-detail-header .detail-icon{
+        padding: 20px; background: #FFD98D;
+        border-radius: 10px;
+    }
+
+        .top-detail-header  .detail-icon svg{
+            width: 60px; height: 60px;
+        }
+
+    .board-write-info{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: space-between;
+        margin: 0 10vh;
+
+    }
+    .board-write-info .board-title-topic{
+        width: 100%;
+        /*text-align: center;*/
+    }
+    .board-write-info .detail-startDate-item{
+        width: 100%;
+        font-size: 0.5em; font-weight: normal;
+        text-align: right;
+    }
+
+/* content container*/
+.center-detail-items{
+    background: #FFFFFF;
+    width: 100%;
+    padding: 0 10vh;
+}
+
+    .detail-content-item{
+        border: 3px solid #ffcbb5;
+        padding: 30px;
+        font-size: 1.7em;
+        overflow: scroll;
+    }
+
+/* recruitment info*/
+.detail-recruitment-info{
+    background: #18c722;
+    display: flex; flex-flow: row wrap;
+    align-content: space-around;
+    /*padding: 15px;*/
+    height: 18vh;
+}
+
+    .detail-endDate-item{
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        padding: 0 20px;
+
+    }
+
+        .detail-endDate-item .deadline-icon{
+            padding: 10px;
+            background: #4bceff;
+            border-radius: 10px;
+        }
+
+        .detail-endDate-item label
+        , .detail-address-item label{
+            margin: 0 10px;
+        }
+
+    .detail-address-item{
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        padding: 0 20px;
+
+    }
+
+        .detail-address-item .detail-area-address-icon{
+            padding: 10px;
+            background: #4bceff;
+            border-radius: 10px;
+        }
+
+
+/* 버튼 container*/
 .detail-buttons-item{
     background: #FFFFFF;
+    width: 100%;
+    padding: 2vh 0;
+    display: flex; justify-content: center;
 }
     /* 신청 버튼 */
     .check-person-number{

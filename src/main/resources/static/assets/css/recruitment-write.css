@@ -19,6 +19,12 @@
     justify-content: start; align-content: center;*/
 }
 
+@media (max-width: 1500px) {
+    .recruitment-write-section {
+        width: 1500px;
+    }
+}
+
 .rp-write-board-contain{
     display: flex;
     flex-flow:  column wrap;
