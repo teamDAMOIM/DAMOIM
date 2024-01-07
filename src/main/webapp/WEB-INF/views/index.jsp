@@ -20,6 +20,7 @@
     <%@ include file="include/footer.jsp"%>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7LCcErx4-uaTP0zFhBenCn9qwTsZsfmY&callback=initMap" async defer></script>
+    
 
 <script>
     var map
@@ -32,6 +33,7 @@
             geocodeAddress($inputAddress.value);
         }
     }
+
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -87,7 +89,19 @@
                 return res.json();
             })
             .then(response => {
-                let tag = '';
+                console.log(response)
+                let tag = `
+                     <div class="view-place">
+                        <div class="place-title pinfo">\${response.title}</div>
+                        <img src="#" alt="첫화면, 검색한 장소가 없다면 현재 내위치">
+                        <div class="place-address pinfo">\${response.address}</div>
+                        <input type="button" value="모집하기" name="recruitment">
+                            <div class="place-detail">
+                        </div>
+                    </div>
+                `;
+
+                document.querySelector('.detail-place').innerHTML = tag;
             })
     }
 

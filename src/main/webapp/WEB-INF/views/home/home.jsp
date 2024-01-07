@@ -7,29 +7,23 @@
 <section id="home-DAMOIM">
     <!-- 지도 보기, 모집 -->
     <div class="map-view-search">
+        <label class="google-it-place">
+            <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon">
+            <!-- <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon"> -->
+            <input type="text" name="searchPlace" id="inputAddress">
+        </label>
 
         <!-- 장소 검색 기능, 상세보기 -->
         <div class="detail-place">
             <!-- 장소 검색 -->
-            <label class="google-it-place">
-                <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon">
-                <!-- <img src="/assets/img/magnifierIcon.png" alt="magnifierIcon"> -->
-                <input type="text" name="searchPlace" id="inputAddress">
-            </label>
+
             <!--
                 장소 보기
                 첫 화면은 내 현재 위치로
                 장소 보기를 눌렀을 때 만약 장소 없는(도로, 길, 블럭 빈 부분)은 클릭해도 아무런 반응이 없도록
                 장소인데 이미지가 없다면 기본 설정으로 된 이미지가 뜨도록
             -->
-            <div class="view-place">
-                <div class="place-title pinfo">이건 장소이름</div>
-                <img src="#" alt="첫화면, 검색한 장소가 없다면 현재 내위치">
-                <div class="place-address pinfo">여기는 주소</div>
-                <input type="button" value="모집하기" name="recruitment">
-                <div class="place-detail">
-                </div>
-            </div>
+
         </div>
 
         <!-- 구글 지도 -->
