@@ -202,13 +202,16 @@
         if (!checkList.includes(true)) {
             if (checkResultList.includes(true) && (checkResultList1.includes(true))) {
                 alert("회원님의 정보 수정이 완료되었습니다!")
-                window.location.href = "/members/update?type=all&nickName=" + $inputNickname.value + "&plaacename=" + $addressPlace.value + "&area" + $addressArea.value + "&memberId=" + "${login.id}";
+                console.log('전체 수정');
+                window.location.href = "/members/update?type=all&nickName=" + $inputNickname.value + "&plaacename=" + $addressPlace.value + "&area=" + $id.value + "&memberId=" + "${login.id}";
             } else if (checkResultList.includes(true) && (checkResultList1.includes(false))) {
+                console.log('아이디 수정');
                 alert("회원님의 정보 수정이 완료되었습니다!")
                 window.location.href = "/members/update?type=name&nickName=" + $inputNickname.value + "&memberId=" + "${login.id}";
             } else {
-                window.location.href = "/members/update?type=address&address="
-                    + $inputAddress.value + "&memberId=" + "${login.id}";
+                console.log('바말번호 수정');
+                window.location.href = "/members/update?type=address&plaacename="
+                    + $addressPlace.value + "&area=" + $id.value + "&memberId=" + "${login.id}";
             }
 
         } else {
