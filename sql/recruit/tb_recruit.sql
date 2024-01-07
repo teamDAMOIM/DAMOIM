@@ -30,6 +30,8 @@ delete from tb_recruit where recruit_no = 1;
 
 ALTER TABLE tb_recruit MODIFY recruit_count INT NOT NULL;
 
+ALTER TABLE tb_recruit MODIFY recruit_check INT NOT NULL;
+
 alter table tb_recruit modify recruit_no int not null auto_increment;
 
 drop table tb_recruit;
