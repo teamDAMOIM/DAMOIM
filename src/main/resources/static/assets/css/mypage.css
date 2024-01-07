@@ -3,11 +3,14 @@
     height: 1300px;
     text-align-all: center;
 }
+P{
+    margin-bottom: 0;
+}
 
 #background-box{
     margin: 150px auto 0;
     height: 90%; width: 90%;
-    background: #bf8dea;
+    background: #B1B2FF;
     border-radius: 40px;
 }
 
@@ -19,9 +22,15 @@ img#profile{
 }
 
 #nickName{
+    display: flex;
     font-size: 100px;
     margin-top: 80px;
-    background: powderblue;
+    width: 990px;
+    height: 160px;
+    background: #FFFFFF;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
 }
 
 div#header-link a{
@@ -33,7 +42,7 @@ div#header-link a{
     margin: 0 auto;
     width: 90%;
     height: 50%;
-    background: pink;
+    background: #FFFFFF;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -64,16 +73,24 @@ div#header-link a{
 }
 
 .table-fill {
-    background: white;
-    border-radius:3px;
-    border-collapse: collapse;
-    height: 320px;
+    /*background: white;*/
+    /*border-radius:3px;*/
+    /*border-collapse: collapse;*/
+    /*height: 320px;*/
+    /*margin: auto;*/
+    /*max-width: 1000px;*/
+    /*padding:5px;*/
+    /*width: 100%;*/
+    /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);*/
+    /*animation: float 5s infinite;*/
+    /*border-radius: 30px;*/
     margin: auto;
-    max-width: 1000px;
-    padding:5px;
-    width: 100%;
+    width: 80%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    animation: float 5s infinite;
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 20px; /* 테이블 테두리를 둥글게 설정 */
+    overflow: hidden;
 }
 
 th {
@@ -110,29 +127,6 @@ td {
     border-right: 1px solid #C1C3D1;
 }
 
-th.text-left {
-    text-align: left;
-}
-
-th.text-center {
-    text-align: center;
-}
-
-th.text-right {
-    text-align: right;
-}
-
-td.text-left {
-    text-align: left;
-}
-
-td.text-center {
-    text-align: center;
-}
-
-td.text-right {
-    text-align: right;
-}
 td button.change{
     text-align: center;
     background: #FFCCFF;

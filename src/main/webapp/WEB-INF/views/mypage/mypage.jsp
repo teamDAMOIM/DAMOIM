@@ -18,13 +18,13 @@
                 <h1 id="nickName">${login.nickName}님
                     반갑습니다!</h1>
                 <div id="header-link" style="display: flex; flex-direction: row; margin-top: 50px ">
-                    <a href="/myPage/changeInfo" style="background: red; ">my정보 수정하기</a>
-                    <a href="/members/sign-out" style="background: blue;">로그아웃</a>
+                    <a href="/myPage/changeInfo" style=" background: #FFFFFF; width: 420px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">my정보 수정하기</a>
+                    <a href="/members/sign-out" style="background: #FFFFFF;width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">로그아웃</a>
                 </div>
             </div>
         </div>
         <div id="main-box">
-            <div>
+            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
                 <p>my 모집</p>
                 <a href="#" id="modalOpen1">${rcount} 건</a>
                 <div id="modalContainer1" class="hidden">
@@ -64,20 +64,45 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
                 <p>my 참여모임 list</p>
-                <a href="#" id="modalOpen2">1 건</a>
+                <a href="#" id="modalOpen2">${rmcount} 건</a>
                 <div id="modalContainer2" class="hidden">
                     <div id="modalContent2">
                         <p>my 참여모임 list</p>
                         <div class="mcon">
-                            asd
+                            <div class="container" style="width: 100%; padding: 0;">
+                                <table class="table">
+                                    <colgroup>
+                                        <col style="width: 15%;" data-alias="number">
+                                        <col style="width: 68%;" data-alias="title">
+                                        <col style="width: 17%;" data-alias="date">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">번호</th>
+                                        <th class="text-center">제목</th>
+                                        <th class="text-center">모집일</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="rm" items="${rmList}">
+                                        <tr id="table">
+                                            <td class="num">${rm.recruitNo}</td>
+                                            <td class="tit"><a href="/recruit/detail?rno=${rm.recruitNo}">${rm.recruitTitle}</a></td>
+                                            <td class="sdt">${rm.recruitStartdate}</td>
+                                            <td class="edt">${rm.recruitEnddate}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <button id="modalClose2">닫기</button>
                     </div>
                 </div>
             </div>
-            <div>
+            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
                 <p>작성한 게시판글 목록</p>
                 <a href="#" id="modalOpen3">${pcount} 건</a>
                 <div id="modalContainer3" class="hidden">
@@ -114,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
                 <p>작성한 댓글 목록</p>
                 <a href="#" id="modalOpen4">${ccount} 건</a>
                 <div id="modalContainer4" class="hidden">
