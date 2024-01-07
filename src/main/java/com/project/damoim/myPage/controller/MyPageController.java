@@ -44,13 +44,12 @@ public class MyPageController {
         model.addAttribute("rcount", recruitedCount);
         model.addAttribute("pcount", postedCount);
         model.addAttribute("ccount", commentedCount);
-        model.addAttribute("rcount", commentedCount);
         model.addAttribute("rmcount", recriteAndMemberCount);
 
         model.addAttribute("rList", recruitList);
         model.addAttribute("pList", postList);
         model.addAttribute("cList", commentList);
-        model.addAttribute("rmList", commentedCount);
+        model.addAttribute("rmList", recruitandMember);
 
         return "/mypage/mypage";
     }
