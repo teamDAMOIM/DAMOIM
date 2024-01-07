@@ -19,7 +19,7 @@
                     반갑습니다!</h1>
                 <div id="header-link" style="display: flex; flex-direction: row; margin-top: 50px ">
                     <a href="/myPage/changeInfo" style="background: red; ">my정보 수정하기</a>
-                    <a href="#" style="background: blue;">로그아웃</a>
+                    <a href="/members/sign-out" style="background: blue;">로그아웃</a>
                 </div>
             </div>
         </div>

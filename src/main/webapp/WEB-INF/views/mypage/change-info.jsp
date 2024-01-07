@@ -63,7 +63,7 @@
                 <td class="text-left">ADDRESS</td>
                 <td class="text-left">
                     <%--                        <input type="text" id="userAdd" value="${m.memberAddress}" disabled>--%>
-                    <div id="userAdd">
+                    <div id="userAdd" style="display: none">
                         <%@ include file="../include/address.jsp" %>
                     </div>
                     <label id="addchk"></label></td>
@@ -81,7 +81,7 @@
 </div>
 </body>
 <script>
-    let checkList = [false, false]
+    let checkList = [false, false] // onSave
     const checkResultList = [false];
     const checkResultList1 = [false];
 
@@ -145,15 +145,17 @@
 
     $button2.onclick = e => {
         var inputField = document.getElementById('userAdd');
-
-        if (inputField.disabled) {
-            inputField.disabled = false;
+        var addressStyle = window.getComputedStyle(inputField).display;
+        if (addressStyle === "none") {
+            console.log("띄우ㅡㅁ")
+            inputField.style.display = "inline";
             $button2.innerText = '저장';
             type = 'address';
             checkList[1] = true;
             console.log(checkList);
         } else {
-            inputField.disabled = true;
+            console.log("없어짐")
+            inputField.style.display = "none";
             $button2.innerText = '변경하기';
             checkList[1] = false;
             console.log(checkList);
@@ -161,6 +163,7 @@
     }
 
     const $inputAddress = document.getElementById('userAdd');
+
     // $inputAddress.onchange = e => {
     //     console.log("ㅁㄴㅇ")
     //     if ($inputAddress.value.trim() === '') {
@@ -200,11 +203,11 @@
     function onSave() {
         console.log(checkList)
         if (!checkList.includes(true)) {
-            if (checkResultList.includes(true) && (checkResultList1.includes(true))) {
+            if (checkResultList.includes(true) && (se)) {
                 alert("회원님의 정보 수정이 완료되었습니다!")
                 console.log('전체 수정');
                 window.location.href = "/members/update?type=all&nickName=" + $inputNickname.value + "&plaacename=" + $addressPlace.value + "&area=" + $id.value + "&memberId=" + "${login.id}";
-            } else if (checkResultList.includes(true) && (checkResultList1.includes(false))) {
+            } else if (checkResultList.includes(true) && (!se)) {
                 console.log('아이디 수정');
                 alert("회원님의 정보 수정이 완료되었습니다!")
                 window.location.href = "/members/update?type=name&nickName=" + $inputNickname.value + "&memberId=" + "${login.id}";
