@@ -11,7 +11,6 @@ CREATE TABLE tb_recruit(
     recruit_addrass VARCHAR(255),
     recruit_count INT,
     recruit_max INT(10),
-    recruit_check INT,
     member_id varchar(255),
 
     CONSTRAINT pk_rno
@@ -26,12 +25,9 @@ ALTER TABLE tb_recruit
 MODIFY recruit_startdate DATETIME
 ;
 
-delete from tb_recruit where recruit_no = 1;
-
 ALTER TABLE tb_recruit MODIFY recruit_count INT NOT NULL;
 
-ALTER TABLE tb_recruit MODIFY recruit_check INT NOT NULL;
-
 alter table tb_recruit modify recruit_no int not null auto_increment;
+
 
 drop table tb_recruit;

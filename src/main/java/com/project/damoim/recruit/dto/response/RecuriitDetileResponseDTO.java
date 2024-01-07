@@ -23,7 +23,6 @@ public class RecuriitDetileResponseDTO {
     private String address;
     private int count;
     private int max;
-    private int check;
     private String memberId;
 
     public RecuriitDetileResponseDTO(Recruit r) {
@@ -36,7 +35,6 @@ public class RecuriitDetileResponseDTO {
         this.address = r.getRecruitAddrass();
         this.count = r.getRecruitCount();
         this.max = r.getRecruitMax();
-        this.check = r.getRecruitCheck();
         this.memberId = r.getMemberId();
     }
 
