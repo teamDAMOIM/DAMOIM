@@ -35,12 +35,12 @@
                             <form id="updateForm">
 
                                 <label for="updateTitle">제목</label>
-                                <input type="text" id="updateTitle" name="updateTitle" value="${p.title}" required>
+                                <textarea type="text" id="updateTitle" name="updateTitle" style="resize: none; height: 30px;"  required>${p.title}</textarea>
 
                                 <label for="updateContent">내용</label>
-                                <input type="text" id="updateContent" name="updateContent" value="${p.content}" required>
+                                <textarea type="text" id="updateContent" name="updateContent" style="resize: none; height: 380px;" required>${p.content}</textarea>
 
-                                <div class="buttons">
+                                <div class="editorbuttons">
                                     <button type="button" id="confirmUpdate">수정</button>
                                     <button type="button" id="closeUpdateModal" class="close">취소</button>
                                 </div>
@@ -136,7 +136,7 @@
     // $updateModal.style.display = 'none';
 
     $updateBtn.addEventListener('click', () => {
-        $updateModal.style.display = 'block';
+        $updateModal.style.display = 'flex';
     });
 
     $closeUpdateModal.addEventListener('click', () => {
