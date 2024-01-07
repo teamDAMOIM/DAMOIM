@@ -10,7 +10,9 @@ import java.util.List;
 @Mapper
 public interface RecruitMapper {
 
-    // 모집 게시판 전체 조회
+
+    List<Recruit> find();
+    // 모집 게시판 검색 조회
     List<Recruit> findAll(String type, String keyword);
     // 메인창에 정렬 할 모집 게시물
     List<Recruit> findSortRecruit(String address);

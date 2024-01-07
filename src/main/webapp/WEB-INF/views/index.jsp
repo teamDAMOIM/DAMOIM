@@ -26,12 +26,12 @@
 
     const $inputAddress = document.getElementById('inputAddress');
 
+
     $inputAddress.onkeydown = e => {
         if (e.keyCode === 13){
             geocodeAddress($inputAddress.value);
         }
     }
-    console.log(${rList});
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -40,7 +40,7 @@
         const userAddress = '${login.address}';
         geocodeAddress(userAddress);
     }
-
+    // 맵 초기 값 설정
     function geocodeAddress(address) {
         const geocoder = new google.maps.Geocoder();
 
@@ -56,6 +56,60 @@
             }
         });
     }
+
+
+    /**
+     * 마커를 찍기 위해 비동기로 받은 recruit.address 값 마커 찍기
+     * @param address - 모집게시판 전체의 주소 @param : rno - 모집 게시판의 식별자
+     */
+    function geocodeAddressList(address, rno) {
+        const geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status === 'OK') {
+                var location = results[0].geometry.location;
+
+                const marker = new google.maps.Marker({
+                    map: map,
+                    position: location,
+                });
+
+                marker.addListener('click', e => {
+                    fetchGetRecruite(rno);
+                });
+            }
+        });
+    }
+
+    function fetchGetRecruite(rno){
+        fetch("/recruitList/" + rno)
+            .then(res => {
+                return res.json();
+            })
+            .then(response => {
+                let tag = '';
+            })
+    }
+
+
+
+
+
+
+    function fetchGetRecuriteList(){
+        fetch("/recruitList")
+            .then(res => res.json())
+            .then(response => {
+                response.forEach(r => {
+                    geocodeAddressList(r.recruitAddrass, r.recruitNo);
+                })
+            })
+    }
+
+
+    (()=>{
+        fetchGetRecuriteList();
+    })();
 </script>
 </body>
 </html>

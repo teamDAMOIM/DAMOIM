@@ -23,6 +23,15 @@ import java.util.stream.Collectors;
 public class RecuritService {
     private final RecruitMapper recruitMapper;
 
+
+    public List<Recruit> findAll(){
+
+        return recruitMapper.find().stream()
+                .collect(Collectors.toList())
+                ;
+    }
+
+
     public List<RecuritResponseDTO> getListRecurit(String type, String keyword, HttpSession session){
 
         return recruitMapper.findAll(type, keyword).stream()
