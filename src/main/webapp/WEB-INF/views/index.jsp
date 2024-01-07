@@ -20,7 +20,7 @@
     <%@ include file="include/footer.jsp"%>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7LCcErx4-uaTP0zFhBenCn9qwTsZsfmY&callback=initMap" async defer></script>
-    
+
 
 <script>
     var map

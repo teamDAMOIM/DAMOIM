@@ -34,12 +34,16 @@ public class MainController {
 
         List<PostSortRequestDTO> sortPostList = postService.getSortPostList();
 
+        List<RecuritResponseDTO> sortRecurit = recuritService.getSortRecurit(session);
+
 
         model.addAttribute("loginPost", loginPost);
         model.addAttribute("pList", sortPostList);
+        model.addAttribute("rList", sortRecurit);
 
         return "index";
     }
+
 
     @ResponseBody
     @GetMapping("/recruitList")
