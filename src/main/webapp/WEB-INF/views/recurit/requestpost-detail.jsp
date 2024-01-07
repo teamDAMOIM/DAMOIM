@@ -28,7 +28,7 @@
 --%>
 
 <div id="web-wrap" class="recruitment-detail-container">
-
+    <div class="blank-space-fill"></div>
     <div class="section-recruitment-board">
         <div class="top-detail-header">
 <%--            <div class="logo-img"></div>--%>

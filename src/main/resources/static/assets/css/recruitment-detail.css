@@ -2,22 +2,37 @@
 
 
 .recruitment-detail-container{
-    padding-top: 30vh;
-    background: #ffb09e;
+    padding-top: 25vh;
+    background: #ffd5d5;
     width: 100%;
-    display: flex; justify-content: center;
+    display: flex;
+    justify-content: center;
     flex-flow: row wrap;
+}
+
+.blank-space-fill{
+    background-image: url("../img/detail-blackSpaceFill.png");
+    background-position: top;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    width: 100%; height: 70vh;
 }
 
 .section-recruitment-board{
     /*width: 60%;*/
     margin-bottom: 5vh;
-    border: 5px solid #FFFFFF90;
+    /*border: 5px solid #FFFFFF90;*/
     border-radius: 20px;
     overflow: hidden;
-
 }
 
+@media (max-width: 1500px) {
+    .recruitment-detail-container {
+        width: 1500px;
+    }
+}
 
 
 /* board top title*/
@@ -87,7 +102,7 @@
 }
 
     .detail-endDate-item{
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -99,6 +114,11 @@
             padding: 10px;
             background: #4bceff;
             border-radius: 10px;
+        }
+
+        .detail-endDate-item label
+        , .detail-address-item label{
+            margin: 0 10px;
         }
 
     .detail-address-item{
