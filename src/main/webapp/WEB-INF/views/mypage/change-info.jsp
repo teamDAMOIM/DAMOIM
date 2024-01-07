@@ -26,52 +26,57 @@
         <div class="table-title">
             <h3>my정보 수정</h3>
         </div>
-<%--        <form action="/myPage/change-info" class="change-form" method="post" enctype="multipart/form-data">--%>
-            <table class="table-fill">
-                <tbody class="table-hover">
-                <tr>
-                    <td class="text-left">ID</td>
-                    <td class="text-left"><input type="text" id="userId" value="${m.memberId}" disabled></td>
-                    <td>
-                        <button class="not">변경불가</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-left">NAME</td>
-                    <td class="text-left"><input type="text" id="userName" value="${m.memberName}" disabled></td>
-                    <td>
-                        <button class="not">변경불가</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-left">닉네임</td>
-                    <td class="text-left">
-                        <input type="text" id="userNickname" value="${m.memberNickname}" disabled><label id="nickchk"></label></td>
-                    <td>
-                        <button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-left">PHONE</td>
-                    <td class="text-left"><input type="text" id="userPhone" value="${m.memberPhone}" disabled></td>
-                    <td>
-                        <button class="not">변경불가</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-left">ADDRESS</td>
-                    <td class="text-left">
-                        <input type="text" id="userAdd" value="${m.memberAddress}" disabled><label id="addchk"></label></td>
-                    <td>
-                        <button class="change" id="add-btn" onclick="toggleInput2()">변경하기</button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <div id="savediv">
-                <button id="save" onclick="onSave()">변경사항 저장하기</button>
-            </div>
-<%--        </form>--%>
+        <%--        <form action="/myPage/change-info" class="change-form" method="post" enctype="multipart/form-data">--%>
+        <table class="table-fill">
+            <tbody class="table-hover">
+            <tr>
+                <td class="text-left">ID</td>
+                <td class="text-left"><input type="text" id="userId" value="${m.memberId}" disabled></td>
+                <td>
+                    <button class="not">변경불가</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-left">NAME</td>
+                <td class="text-left"><input type="text" id="userName" value="${m.memberName}" disabled></td>
+                <td>
+                    <button class="not">변경불가</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-left">닉네임</td>
+                <td class="text-left">
+                    <input type="text" id="userNickname" value="${m.memberNickname}" disabled><label
+                        id="nickchk"></label></td>
+                <td>
+                    <button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-left">PHONE</td>
+                <td class="text-left"><input type="text" id="userPhone" value="${m.memberPhone}" disabled></td>
+                <td>
+                    <button class="not">변경불가</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-left">ADDRESS</td>
+                <td class="text-left">
+                    <%--                        <input type="text" id="userAdd" value="${m.memberAddress}" disabled>--%>
+                    <div id="userAdd">
+                        <%@ include file="../include/address.jsp" %>
+                    </div>
+                    <label id="addchk"></label></td>
+                <td>
+                    <button class="change" id="add-btn" onclick="toggleInput2()">변경하기</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="savediv">
+            <button id="save" onclick="onSave()">변경사항 저장하기</button>
+        </div>
+        <%--        </form>--%>
     </div>
 </div>
 </body>
@@ -121,12 +126,12 @@
             fetch("/members/check?type=memberNickname&keyword=" + $inputNickname.value)
                 .then(res => res.json())
                 .then(rep => {
-                    if(rep){ // 중복이 되면
+                    if (rep) { // 중복이 되면
                         document.getElementById('nickchk').innerHTML =
                             '<b style="color: red">[중복 값입니다.]</b>'
                         checkResultList[0] = false;
                         $button1.disabled = true;
-                    }else{
+                    } else {
                         document.getElementById('nickchk').innerHTML =
                             '<b style="color: skyblue">[사용 가능띠!!!]</b>'
                         checkResultList[0] = true;
@@ -156,52 +161,52 @@
     }
 
     const $inputAddress = document.getElementById('userAdd');
-    $inputAddress.onchange = e => {
-        console.log("ㅁㄴㅇ")
-        if ($inputAddress.value.trim() === '') {
-            document.getElementById('addchk').innerHTML =
-                '<b style="color: red">[주소를 넣어주세요]</b>'
-            checkResultList1[1] = false;
-            $button2.disabled = true;
-
-        } else if (!nickNamePattern.test($inputAddress.value)) {
-            document.getElementById('addchk').innerHTML =
-                '<b style="color: red">[한국어로 입력해주세요!!]</b>'
-            checkResultList1[1] = false;
-            $button2.disabled = true;
-
-        } else {
-            fetch("/members/check?type=memberAddress&keyword=" + $inputAddress.value)
-                .then(res => res.json())
-                .then(rep => {
-                    if(rep){ // 중복이 되면
-                        document.getElementById('addchk').innerHTML =
-                            '<b style="color: red">[중복 값입니다.]</b>'
-                        checkResultList1[1] = false;
-                        $button2.disabled = true;
-                    }else{
-                        document.getElementById('addchk').innerHTML =
-                            '<b style="color: skyblue">[사용 가능띠!!!]</b>'
-                        checkResultList1[1] = true;
-                        $button2.disabled = false;
-                    }
-                });
-        }
-    };
+    // $inputAddress.onchange = e => {
+    //     console.log("ㅁㄴㅇ")
+    //     if ($inputAddress.value.trim() === '') {
+    //         document.getElementById('addchk').innerHTML =
+    //             '<b style="color: red">[주소를 넣어주세요]</b>'
+    //         checkResultList1[1] = false;
+    //         $button2.disabled = true;
+    //
+    //     } else if (!nickNamePattern.test($inputAddress.value)) {
+    //         document.getElementById('addchk').innerHTML =
+    //             '<b style="color: red">[한국어로 입력해주세요!!]</b>'
+    //         checkResultList1[1] = false;
+    //         $button2.disabled = true;
+    //
+    //     } else {
+    //         fetch("/members/check?type=memberAddress&keyword=" + $inputAddress.value)
+    //             .then(res => res.json())
+    //             .then(rep => {
+    //                 if (rep) { // 중복이 되면
+    //                     document.getElementById('addchk').innerHTML =
+    //                         '<b style="color: red">[중복 값입니다.]</b>'
+    //                     checkResultList1[1] = false;
+    //                     $button2.disabled = true;
+    //                 } else {
+    //                     document.getElementById('addchk').innerHTML =
+    //                         '<b style="color: skyblue">[사용 가능띠!!!]</b>'
+    //                     checkResultList1[1] = true;
+    //                     $button2.disabled = false;
+    //                 }
+    //             });
+    //     }
+    // };
 
     const nickNamePattern = /^[가-힣]+$/;
-
+    console.log($addressPlace);
 
     function onSave() {
         console.log(checkList)
         if (!checkList.includes(true)) {
-            if(checkResultList.includes(true)&&(checkResultList1.includes(true))){
+            if (checkResultList.includes(true) && (checkResultList1.includes(true))) {
                 alert("회원님의 정보 수정이 완료되었습니다!")
-                window.location.href = "/members/update?type=all&nickName=" + $inputNickname.value + "&address=" + $inputAddress.value + "&memberId=" + "${login.id}";
-            }else if(checkResultList.includes(true)&&(checkResultList1.includes(false))){
+                window.location.href = "/members/update?type=all&nickName=" + $inputNickname.value + "&plaacename=" + $addressPlace.value + "&area" + $addressArea.value + "&memberId=" + "${login.id}";
+            } else if (checkResultList.includes(true) && (checkResultList1.includes(false))) {
                 alert("회원님의 정보 수정이 완료되었습니다!")
                 window.location.href = "/members/update?type=name&nickName=" + $inputNickname.value + "&memberId=" + "${login.id}";
-            }else{
+            } else {
                 window.location.href = "/members/update?type=address&address="
                     + $inputAddress.value + "&memberId=" + "${login.id}";
             }

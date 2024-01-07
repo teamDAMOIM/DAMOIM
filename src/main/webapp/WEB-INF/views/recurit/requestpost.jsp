@@ -10,7 +10,6 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp"%>
-
 <div class="recruitment-board">
     <div class="main-title-wrap">
         <h1 class="main-title">Recruitment</h1>
