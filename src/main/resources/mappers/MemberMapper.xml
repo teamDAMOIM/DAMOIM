@@ -69,7 +69,6 @@
             SET member_address = CONCAT(#{plaacename}, ' ', #{area}), member_nickname = #{nickName}
             WHERE member_id = #{memberId}
         </if>
-
     </update>
 
 </mapper>

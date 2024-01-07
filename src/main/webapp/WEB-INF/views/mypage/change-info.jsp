@@ -162,6 +162,7 @@
         }
     }
 
+<<<<<<< Updated upstream
     const $inputAddress = document.getElementById('userAdd');
 
     // $inputAddress.onchange = e => {
@@ -196,6 +197,8 @@
     //             });
     //     }
     // };
+=======
+>>>>>>> Stashed changes
 
     const nickNamePattern = /^[가-힣]+$/;
     console.log($addressPlace);
@@ -216,7 +219,6 @@
                 window.location.href = "/members/update?type=address&plaacename="
                     + $addressPlace.value + "&area=" + $id.value + "&memberId=" + "${login.id}";
             }
-
         } else {
             alert("회원님의 정보 수정이 실패했습니다!")
         }
