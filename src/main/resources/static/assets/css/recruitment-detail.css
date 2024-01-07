@@ -10,7 +10,7 @@
     flex-flow: row wrap;
 }
 
-.blank-space-fill{
+/*.blank-space-fill{
     background-image: url("../img/detail-blackSpaceFill.png");
     background-position: top;
     background-size: contain;
@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     opacity: 0.6;
     width: 100%; height: 70vh;
-}
+}*/
 
 .section-recruitment-board{
     /*width: 60%;*/
@@ -41,8 +41,10 @@
 
     font-size: 2.5em; font-weight: bold;
     display: flex; flex-flow: row nowrap;
-    justify-content: start;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 10%;
 }
 
     .top-detail-header .logo-img{
@@ -52,7 +54,9 @@
 
     /* 카테고리 아이콘*/
     .top-detail-header .detail-icon{
-        padding: 20px; background: #FFD98D;
+        padding: 20px;
+        padding: 0px ;
+        background: #FFD98D;
         border-radius: 10px;
     }
 
@@ -65,12 +69,12 @@
         display: flex;
         flex-flow: row wrap;
         align-content: space-between;
-        margin: 0 10vh;
+        /*margin: 0 10vh;*/
 
     }
     .board-write-info .board-title-topic{
         width: 100%;
-        /*text-align: center;*/
+        text-align: center;
     }
     .board-write-info .detail-startDate-item{
         width: 100%;
@@ -108,6 +112,8 @@
         align-items: center;
         padding: 0 20px;
 
+        font-size: 1.2em;
+
     }
 
         .detail-endDate-item .deadline-icon{
@@ -127,6 +133,8 @@
         flex-flow: row nowrap;
         align-items: center;
         padding: 0 20px;
+
+        font-size: 1.2em;
 
     }
 

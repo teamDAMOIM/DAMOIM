@@ -71,31 +71,65 @@
                 <div id="address-area" class="address-area-info-recruitment">${r.address}</div>
             </div>
         </div>
+
     </div>
 
 
     <%-- 버튼 contain --%>
     <div class="detail-buttons-item">
         <%-- 신청 버튼 --%>
-        <a class="check-person-number" type="button" onclick="window.location.href='/recruit/addRecruit?rno=${r.rno}'">
-            <label class="count-info">
-                <label class="count-check-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
-                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                    </svg>
+        <c:if test="${r.max == r.count}">
+            <a class="check-person-number" type="button" onclick="window.location.href='/recruit/addRecruit?rno=${r.rno}'">
+                <label class="count-info">
+                    <label class="count-check-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        </svg>
+                    </label>
+                    <label class="recruitment-max-count">${r.max}</label>
+                    <span>/</span>
+                    <label class="checkCount">${r.count}</label>
                 </label>
+
                 <label class="checkCount">${r.count}</label>
                 <span>/</span>
                 <label class="recruitment-max-count">${r.max}</label>
-            </label>
-            <c:if test="${r.check==0}">
-                <span>신청하기</span>
-            </c:if>
-            <c:if test="${r.check==1}">
-                <span>취소하기</span>
-            </c:if>
-        </a>
+
+                <c:if test="${r.check==0}">
+                    <span>신청하기</span>
+                </c:if>
+                <c:if test="${login.id == r.memberId}">
+                    <c:if test="${r.check==1}">
+                        <span>취소하기</span>
+                    </c:if>
+                </c:if>
+            </a>
+        </c:if>
+    <%--    max가 count보다 크다면 --%>
+        <c:if test="${r.max > r.count}">
+            <a class="check-person-number" type="button" onclick="window.location.href='/recruit/addRecruit?rno=${r.rno}'">
+                <label class="count-info">
+                    <label class="count-check-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        </svg>
+                    </label>
+                    <label class="recruitment-max-count">${r.max}</label>
+                    <span>/</span>
+                    <label class="checkCount">${r.count}</label>
+                </label>
+
+                <c:if test="${r.check==0}">
+                    <span>신청하기</span>
+                </c:if>
+                <c:if test="${r.check==1}">
+                    <span>취소하기</span>
+                </c:if>
+            </a>
+        </c:if>
+
         <%-- 목록 보기 --%>
         <button class="list-view" type="button" onclick="window.location.href='/recruit'">
             <label class="list-view-icon">
@@ -106,10 +140,41 @@
             <span>목록보기</span>
         </button>
     </div>
+
 </div>
+
 <%@ include file="../include/footer.jsp"%>
 
 <script>
+
+
+    // 모집 신청 인원이 다 차면 버튼을 막아
+    let $deadline = document.querySelector('.check-person-number');
+    let $maxCount = document.querySelector('.recruitment-max-count');
+    let $checkActivation = document.querySelector('.checkCount');
+
+    console.log($maxCount.textContent-$checkActivation.textContent);
+
+    /*if(){
+        $deadline.addEventListener('click', function (e) {
+            e.preventDefault();
+        })
+    }*/
+
+    /*if()login.id === memberid{
+        취소하기
+
+    }
+    if()login.id !== memberid{
+        마감하기
+
+    }*/
+
+    // title, content 길이 제한
+    let $title = document.querySelector('.board-title-topic');
+    console.log($title.textContent.length);
+
+
     // 카테고리에 따른 아이콘
     let $detailCategory = document.querySelector('.board-category-sub');
     let $detailIcon = document.querySelector('.detail-icon');

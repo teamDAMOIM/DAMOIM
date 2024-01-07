@@ -122,6 +122,14 @@
 
 <script>
 
+    // title 길이 제한
+    let $titleCount = document.querySelector('.rp-title');
+    document.querySelector('.rp-title').addEventListener('input', function() {
+        if (this.value.length > 20) {
+            this.value = this.value.slice(0, 20); // 길이가 20을 초과하면 20자까지만 유지
+            alert('20자 제한 입니다!!')
+        }
+    });
 
     // 인원 수 2명 이하 제한
     let $numCount = document.querySelector('.count-num');
