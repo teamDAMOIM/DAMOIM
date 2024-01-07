@@ -77,4 +77,7 @@ public class PostService {
         return mapper.postMaxCount(search);
     }
 
+    public boolean deletePost(int pno) {
+        return mapper.deleteByNo(pno);
+    }
 }

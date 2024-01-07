@@ -74,4 +74,10 @@ public class PostController {
 
         return "/post/post-detail";
     }
+
+    @GetMapping("/delete")
+    public String delete(int pno){
+        service.deletePost(pno);
+        return "redirect:/post/detail";
+    }
 }

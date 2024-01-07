@@ -55,7 +55,7 @@
         VALUES (#{postTitle}, #{postContent}, #{postViewCount}, #{memberId})
     </insert>
 
-    <delete id="delete">
+    <delete id="deleteByNo">
         DELETE FROM tb_post
         WHERE post_no = #{postNo}
     </delete>
