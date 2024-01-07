@@ -14,14 +14,43 @@
     <div class="form-container">
         <div class="title" id="title">${p.title}</div>
 
-        <div class="labelbox">
-            <div class="column">
-                <label for="writer">작성자: </label>
-                <div type="text" id="writer">${p.mid}</div>
+        <div class="userview">
+            <div class="labelbox">
+                <div class="column">
+                    <label for="writer">작성자: </label>
+                    <div type="text" id="writer">${p.mid}</div>
+                </div>
+                <div class="column">
+                    <label for="date">작성일자: </label>
+                    <div type="text" id="date">${p.date}</div>
+                </div>
             </div>
-            <div class="column">
-                <label for="date">작성일자: </label>
-                <div type="text" id="date">${p.date}</div>
+            <div class="editorbutton">
+                <div class="column">
+                    <a class="list-btn a" type="button" id="update" style="display: none">수정</a>
+                    <div id="updateModal" class="modal">
+                        <div class="modal-content">
+
+                            <h2>게시물 수정</h2>
+                            <form id="updateForm">
+
+                                <label for="updateTitle">제목</label>
+                                <input type="text" id="updateTitle" name="updateTitle" value="${p.title}" required>
+
+                                <label for="updateContent">내용</label>
+                                <input type="text" id="updateContent" name="updateContent" value="${p.content}" required>
+
+                                <div class="buttons">
+                                    <button type="button" id="confirmUpdate">수정</button>
+                                    <button type="button" id="closeUpdateModal" class="close">취소</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <a id="delete" class="list-btn a" type="button"  style="display: none">삭제</a>
+                </div>
             </div>
         </div>
 
@@ -45,7 +74,7 @@
             </select>
         </div>
         <%--    댓글    --%>
-        <div id="replyData">
+            <div id="replyData">
             <%--
                         댓글 창 입니다.
             --%>
@@ -60,9 +89,79 @@
 
     </div>
 </div>
+
+
 <%@ include file="../include/footer.jsp"%>
 
 <script>
+    // 수정 스크립트
+    const $updateBtn = document.getElementById('update');
+    const $updateModal = document.getElementById('updateModal');
+    const $closeUpdateModal = document.getElementById('closeUpdateModal');
+    const $confirmUpdateBtn = document.getElementById('confirmUpdate');
+    const $updateForm = document.getElementById('updateForm');
+
+    // 삭제 스크립트
+    const $del = document.getElementById('delete');
+
+    $updateModal.style.display = 'none';
+
+
+
+    const userid = '${login.id}';
+
+
+    if (userid === '${p.mid}' ) {
+
+
+        $updateBtn.style.display = 'block';
+        $del.style.display = 'block';
+    }
+
+
+
+
+
+    $del.addEventListener('click', e => {
+        // console.log("delete");
+
+        if (!confirm('정말 삭제하시겠습니까?')) return;
+
+        window.location.href = "/post/delete?pno=${p.pno}"
+    })
+
+
+
+
+    // $updateModal.style.display = 'none';
+
+    $updateBtn.addEventListener('click', () => {
+        $updateModal.style.display = 'block';
+    });
+
+    $closeUpdateModal.addEventListener('click', () => {
+        $updateModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === $updateModal) {
+            $updateModal.style.display = 'none';
+        }
+    });
+
+    $confirmUpdateBtn.addEventListener('click', () => {
+        $updateModal.style.display = 'none';
+    });
+
+
+
+
+
+
+</script>
+
+<script>
+
 
     let element = document.querySelector('.select-sorting');
 

@@ -1,6 +1,5 @@
 package com.project.damoim.post.repository;
 
-import com.project.damoim.post.common.Page;
 import com.project.damoim.post.common.Search;
 import com.project.damoim.post.entity.Post;
 import org.apache.ibatis.annotations.Mapper;
@@ -25,7 +24,7 @@ public interface PostMapper {
     boolean save(Post post);
 
     // 게시물 삭제
-    boolean deleteByNo(int postNo);
+    boolean deleteByNo(int pno);
 
     void updatePost(int postNo);
 
