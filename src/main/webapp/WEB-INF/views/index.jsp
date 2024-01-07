@@ -95,8 +95,8 @@
                         <div class="place-title pinfo">\${response.title}</div>
                         <img src="#" alt="첫화면, 검색한 장소가 없다면 현재 내위치">
                         <div class="place-address pinfo">\${response.address}</div>
-                        <input type="button" value="모집하기" name="recruitment">
-                            <div class="place-detail">
+                        <input class="button" type="button" value="모집하기" name="recruitment">
+                        <div class="place-detail">
                         </div>
                     </div>
                 `;
