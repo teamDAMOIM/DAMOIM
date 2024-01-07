@@ -88,7 +88,7 @@
                     <div class="address-sub-title">모임 장소</div>
                     <%--                        <input type="text" id="address-write-input" class="address-write-item" readonly>--%>
                     <div id="address-write-input" class="address-write-item">
-                        <input type="text" class="dtad" name="address">
+                        <input type="text" class="dtad" name="address" disabled>
                         <button type="button" class="detail-address">주소검색</button>
                     </div>
                 </label>

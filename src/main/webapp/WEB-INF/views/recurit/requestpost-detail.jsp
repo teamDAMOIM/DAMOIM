@@ -77,7 +77,7 @@
     <%-- 버튼 contain --%>
     <div class="detail-buttons-item">
         <%-- 신청 버튼 --%>
-        <button class="check-person-number" type="button" name="check">
+        <a class="check-person-number" type="button" onclick="window.location.href='/recruit/addRecruit?rno=${r.rno}'">
             <label class="count-info">
                 <label class="count-check-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
@@ -87,10 +87,15 @@
                 </label>
                 <label class="checkCount">신청 인원(checkCount)</label>
                 <span>/</span>
-                <label class="recruitment-max-count">모집 인원(maxCount)</label>
+                <label class="recruitment-max-count">${r.max}</label>
             </label>
-            <span>신청하기</span>
-        </button>
+            <c:if test="${r.check==0}">
+                <span>신청하기</span>
+            </c:if>
+            <c:if test="${r.check==1}">
+                <span>취소하기</span>
+            </c:if>
+        </a>
         <%-- 목록 보기 --%>
         <button class="list-view" type="button" onclick="window.location.href='/recruit'">
             <label class="list-view-icon">
