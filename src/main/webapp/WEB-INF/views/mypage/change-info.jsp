@@ -161,47 +161,7 @@
             console.log(checkList);
         }
     }
-
-<<<<<<< Updated upstream
-    const $inputAddress = document.getElementById('userAdd');
-
-    // $inputAddress.onchange = e => {
-    //     console.log("ㅁㄴㅇ")
-    //     if ($inputAddress.value.trim() === '') {
-    //         document.getElementById('addchk').innerHTML =
-    //             '<b style="color: red">[주소를 넣어주세요]</b>'
-    //         checkResultList1[1] = false;
-    //         $button2.disabled = true;
-    //
-    //     } else if (!nickNamePattern.test($inputAddress.value)) {
-    //         document.getElementById('addchk').innerHTML =
-    //             '<b style="color: red">[한국어로 입력해주세요!!]</b>'
-    //         checkResultList1[1] = false;
-    //         $button2.disabled = true;
-    //
-    //     } else {
-    //         fetch("/members/check?type=memberAddress&keyword=" + $inputAddress.value)
-    //             .then(res => res.json())
-    //             .then(rep => {
-    //                 if (rep) { // 중복이 되면
-    //                     document.getElementById('addchk').innerHTML =
-    //                         '<b style="color: red">[중복 값입니다.]</b>'
-    //                     checkResultList1[1] = false;
-    //                     $button2.disabled = true;
-    //                 } else {
-    //                     document.getElementById('addchk').innerHTML =
-    //                         '<b style="color: skyblue">[사용 가능띠!!!]</b>'
-    //                     checkResultList1[1] = true;
-    //                     $button2.disabled = false;
-    //                 }
-    //             });
-    //     }
-    // };
-=======
->>>>>>> Stashed changes
-
-    const nickNamePattern = /^[가-힣]+$/;
-    console.log($addressPlace);
+    
 
     function onSave() {
         console.log(checkList)
