@@ -85,8 +85,8 @@
 
     <update id="updatePost">
         update tb_post
-        SET post_title = #{title}, post_content_#{content}
-        WHERE post_no =#{pno}
+        SET post_title = #{title}, post_content = #{content}
+        WHERE post_no =#{postNo}
     </update>
 
 
