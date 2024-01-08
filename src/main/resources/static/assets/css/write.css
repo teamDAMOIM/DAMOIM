@@ -6,14 +6,17 @@
     font-family: 'IBM Plex Sans';
     font-weight: 400;
 }
+.write-section .form-container {
+    padding: 0;
+    background: url("/assets/img/paper.png");
+    background-size: 100% 100%;
+}
 .write-section .form-container form {
     width: 650px;
     height: 800px;
-    background: rgb(255, 255, 255);
     text-align: center;
     padding: 60px 45px;
     box-shadow: rgba(73, 73, 73, 0.68) 2px 3px 5px;
-    border-radius: 5px;
 
     display: flex;
     justify-content: space-between;
@@ -25,13 +28,14 @@
 .write-section .form-container .select {
     border: 1.5px solid rgba(19, 31, 51, 0.35);
     border-radius: 5px;
-    background: #fff;
+    /*background: #fff;*/
     margin: 0 10px;
     padding: 10px;
 }
 
-.write-section .form-container label {
-    font-size: 20px;
+.write-section .form-container .text {
+    font-weight: 600;
+    font-size: 25px;
 }
 .write-section .form-container .pd {
     margin: 10px 0;
@@ -39,16 +43,16 @@
 }
 .write-section .form-container .put {
     padding: 5px;
-    border: 1.5px solid rgba(19, 31, 51, 0.35);
+    border: 1.5px solid rgba(190, 78, 65, 0.5);;
     border-radius: 5px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0);
 }
 
 .write-section .form-container button {
     margin: 10px;
     height: 30px;
     width: 80px;
-    background: rgba(155, 47, 71, 0.9);
+    background: #be4e41;
     color: #fff;
     border-radius: 5px 5px;
 

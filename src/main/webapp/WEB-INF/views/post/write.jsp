@@ -11,11 +11,11 @@
 <body>
 <%@ include file="../include/header.jsp"%>
 <section class="write-section">
-    <div class="form-container">
-        <form action="/post/write" method="post">
-            <label for="title" class="pd">제목</label>
+    <div class="form-container animate__animated animate__bounceIn">
+        <form action="/post/write" method="post" >
+            <label for="title" class="pd text">제목</label>
             <input type="text" id="title" class="pd put" name="title" required>
-            <label for="content" class="pd">내용</label>
+            <label for="content" class="pd text">내용</label>
             <textarea id="content" class="pd put" name="content" maxlength="800" required style="resize: none;" rows="30" cols="80"></textarea>
             <div class="pd">
                 <button class="list-btn" type="button" onclick="window.location.href='/post'">목록</button>

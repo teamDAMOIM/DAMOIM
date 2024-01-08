@@ -374,15 +374,15 @@
         }
 
         function color(response) {
-            let element = document.querySelector('.comment' + response.commentNo);
+            let commentNo = document.querySelector('.comment' + response.commentNo);
             if (response.flag === true) {
-                element.classList.remove('animate__animated', 'animate__headShake');
-                element.classList.add('animate__animated', 'animate__rubberBand');
-                element.style.color = "#1f29ec"
+                commentNo.classList.remove('animate__animated', 'animate__headShake');
+                commentNo.classList.add('animate__animated', 'animate__rubberBand');
+                commentNo.style.color = "#1f29ec"
             } else {
-                element.classList.remove('animate__animated', 'animate__rubberBand');
-                element.classList.add('animate__animated', 'animate__headShake');
-                element.style.color = "#494949"
+                commentNo.classList.remove('animate__animated', 'animate__rubberBand');
+                commentNo.classList.add('animate__animated', 'animate__headShake');
+                commentNo.style.color = "#494949"
             }
         }
 
