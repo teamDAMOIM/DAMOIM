@@ -83,6 +83,7 @@
                                         <th class="text-center">번호</th>
                                         <th class="text-center">제목</th>
                                         <th class="text-center">모집일</th>
+                                        <th class="text-center">모집마감일</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -151,7 +152,6 @@
                                     <colgroup>
                                         <col style="width: 15%;" data-alias="number">
                                         <col style="width: 51%;" data-alias="title">
-                                        <col style="width: 17%;" data-alias="date">
                                         <col style="width: 17%;" data-alias="date">
                                     </colgroup>
                                     <thead>
