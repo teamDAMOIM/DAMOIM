@@ -162,6 +162,12 @@ footer {
     top: 0;
     z-index: 1000;
 }
+
+@media (max-width: 1500px) {
+    footer {
+        width: 1500px;
+    }
+}
 footer .inner-footer {
     /* background: orange; */
     width: 92%;

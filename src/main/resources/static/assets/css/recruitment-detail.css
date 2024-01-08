@@ -161,10 +161,11 @@
 
 /* 버튼 container*/
 .detail-buttons-item{
-    background: #FFFFFF;
+    background: #f2f6ff;
     width: 100%;
-    padding: 2vh 0;
+    padding: 0 0 30vh;
     display: flex; justify-content: center;
+
 }
 /* 신청 버튼 */
 .check-person-number{
