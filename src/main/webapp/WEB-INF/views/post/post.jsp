@@ -63,45 +63,45 @@
             </tbody>
         </table>
     </div>
-        <div class="board-bottom">
-            <%--      페이지 버튼 영역      --%>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination pagination-lg pagination-custom bbul">
-                        <c:if test="${maker.page.pageNo != null}">
-                            <c:if test="${maker.page.pageNo != 1}">
-                                <li class="page-item"><a class="page-link" href="/post?pageNo=1">
-                                    &lt;&lt;
-                                </a>
-                                </li>
-                            </c:if>
-
-                            <c:if test="${maker.prev}">
-                                <li class="page-item"><a class="page-link" href="/post?pageNo=${maker.begin - 1}">prev</a>
-                                </li>
-                            </c:if>
-
-                            <c:forEach var="i" begin="${maker.begin}" end="${maker.end}" step="1">
-                                <li data-page-num="${i}" class="page-item">
-                                    <a class="page-link" href="/post?pageNo=${i}">
-                                            ${i}
-                                    </a>
-                                </li>
-                            </c:forEach>
-
-
-                            <c:if test="${maker.next}">
-                                <li class="page-item"><a class="page-link" href="/post?pageNo=${maker.end + 1}">next</a></li>
-                            </c:if>
-
-                            <c:if test="${maker.page.pageNo != maker.finalPage}">
-                                <li class="page-item"><a class="page-link" href="/post?pageNo=${maker.finalPage}">
-                                    &gt;&gt;
-                                </a></li>
-                            </c:if>
+    <div class="board-bottom">
+        <%--      페이지 버튼 영역      --%>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-lg pagination-custom bbul">
+                    <c:if test="${maker.page.pageNo != null}">
+                        <c:if test="${maker.page.pageNo != 1}">
+                            <li class="page-item"><a class="page-link" href="/post?pageNo=1">
+                                &lt;&lt;
+                            </a>
+                            </li>
                         </c:if>
-                </ul>
-            </nav>
-        </div>
+
+                        <c:if test="${maker.prev}">
+                            <li class="page-item"><a class="page-link" href="/post?pageNo=${maker.begin - 1}">prev</a>
+                            </li>
+                        </c:if>
+
+                        <c:forEach var="i" begin="${maker.begin}" end="${maker.end}" step="1">
+                            <li data-page-num="${i}" class="page-item">
+                                <a class="page-link" href="/post?pageNo=${i}">
+                                        ${i}
+                                </a>
+                            </li>
+                        </c:forEach>
+
+
+                        <c:if test="${maker.next}">
+                            <li class="page-item"><a class="page-link" href="/post?pageNo=${maker.end + 1}">next</a></li>
+                        </c:if>
+
+                        <c:if test="${maker.page.pageNo != maker.finalPage}">
+                            <li class="page-item"><a class="page-link" href="/post?pageNo=${maker.finalPage}">
+                                &gt;&gt;
+                            </a></li>
+                        </c:if>
+                    </c:if>
+            </ul>
+        </nav>
+    </div>
 </div>
 <%@ include file="../include/footer.jsp" %>
 
