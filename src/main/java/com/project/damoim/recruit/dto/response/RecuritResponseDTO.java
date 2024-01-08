@@ -23,8 +23,8 @@ public class RecuritResponseDTO {
     private String title;
     private String content;
     private String category;
-    private LocalDateTime endDate;
-//    private String endDate;
+//    private LocalDateTime endDate;
+    private String endDate;
     private String addrass;
     private int checkCount;
     private int maxCount;
@@ -35,17 +35,11 @@ public class RecuritResponseDTO {
         this.title = recruit.getRecruitTitle();
         this.content = recruit.getRecruitContent();
         this.category = recruit.getRecruitCategory();
-        this.endDate = recruit.getRecruitEnddate();
-//        this.endDate = makePrettierDateString(recruit.getRecruitEnddate());
+        this.endDate = DateChange.postDateChang(recruit.getRecruitEnddate());
         this.addrass = recruit.getRecruitAddrass();
         this.checkCount = recruit.getRecruitCount();
         this.maxCount = recruit.getRecruitMax();
         this.memberId = LoginUtiles.LoginUserId(session);
     }
-
-//    static String makePrettierDateString(LocalDateTime endDate) {
-//        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-//        return pattern.format(endDate);
-//    }
 
 }

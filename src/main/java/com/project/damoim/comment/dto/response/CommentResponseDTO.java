@@ -13,6 +13,6 @@ import java.util.List;
 @Builder
 public class CommentResponseDTO {
     private int maxCount;
-    private List<Comment> commentList;
+    private List<CommentAllResponseDTO> commentList;
 
 }

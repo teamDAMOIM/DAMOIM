@@ -3,6 +3,7 @@ package com.project.damoim.comment.service;
 
 import com.project.damoim.Util.LoginUtiles;
 import com.project.damoim.comment.dto.request.CommentRequestDTO;
+import com.project.damoim.comment.dto.response.CommentAllResponseDTO;
 import com.project.damoim.comment.dto.response.CommentResponseDTO;
 import com.project.damoim.comment.entity.Comment;
 import com.project.damoim.comment.repository.CommentMapper;
@@ -21,7 +22,9 @@ public class CommentService {
     private final CommentMapper mapper;
 
     public CommentResponseDTO findComment(int pno, int amount, String sort){
-        List<Comment> commentList = mapper.findComment(pno, amount, sort).stream()
+        List<CommentAllResponseDTO> commentList = mapper.findComment(pno, amount, sort)
+                .stream()
+                .map(comment -> new CommentAllResponseDTO(comment))
                 .collect(Collectors.toList());
 
 

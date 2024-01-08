@@ -27,7 +27,6 @@ public class RecuritService {
 
 
     public List<Recruit> findAll(){
-
         return recruitMapper.find().stream()
                 .collect(Collectors.toList())
                 ;
