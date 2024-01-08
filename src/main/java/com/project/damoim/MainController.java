@@ -49,6 +49,7 @@ public class MainController {
     @GetMapping("/recruitList")
     public ResponseEntity<?> mapMarkList(){
         List<Recruit> recruitList = recuritService.findAll();
+        log.info("{}", recruitList);
         return ResponseEntity
                 .ok()
                 .body(

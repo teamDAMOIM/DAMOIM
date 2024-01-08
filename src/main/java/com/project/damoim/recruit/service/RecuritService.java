@@ -28,8 +28,6 @@ public class RecuritService {
 
     public List<Recruit> findAll(){
 
-        recruitMapper.deleteByDate();
-
         return recruitMapper.find().stream()
                 .collect(Collectors.toList())
                 ;
