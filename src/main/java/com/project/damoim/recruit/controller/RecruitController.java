@@ -51,7 +51,7 @@ public class RecruitController {
     public String detail(int rno, HttpSession session, Model model){
         RecuriitDetileResponseDTO r = service.detailRecurit(rno);
 
-
+//        model.addAttribute("rmList", recruit);
 
         model.addAttribute("r", r);
 
