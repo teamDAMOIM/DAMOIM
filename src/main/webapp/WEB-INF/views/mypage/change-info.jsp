@@ -134,7 +134,7 @@
                         $button1.disabled = true;
                     } else {
                         document.getElementById('nickchk').innerHTML =
-                            '<b style="color: skyblue">[사용 가능띠!!!]</b>'
+                            '<b style="color: skyblue">[사용 가능합니다]</b>'
                         checkResultList[0] = true;
                         $button1.disabled = false;
                     }
