@@ -57,10 +57,15 @@ header {
     top: 0;
     z-index: 1000;
 }
-header img{
+header .userInfo-profile{
     width: 70px;
     height: 70px;
+
     border-radius: 40%;
+}
+
+header .damoim-logo{
+    width: 200px;
 }
 
 

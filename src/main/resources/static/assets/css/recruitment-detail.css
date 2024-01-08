@@ -41,35 +41,36 @@
 
     font-size: 2.5em; font-weight: bold;
 
-    display: flex; flex-flow: row wrap;
-    /*justify-content: center;*/
-    align-items: center;
+    display: flex; flex-flow: column wrap;
+    justify-content: start;
+    /*align-items: center;*/
 
-    padding: 10px;
+    padding: 30px;
 }
 
-.top-detail-header .logo-img{
+/*.top-detail-header .logo-img{
     background: url("../img/backgroundimg.jpg");
     width: 100%;
     height: 10vh;
-}
+}*/
 
-/* 카테고리 아이콘*/
-.top-detail-header .detail-icon{
-    padding: 10px;
-    background: #a8b8ff;
-    border-radius: 10px;
+    /* 카테고리 아이콘*/
+    .top-detail-header .detail-icon{
+        padding: 10px;
+        background: #a8b8ff;
+        border-radius: 10px;
+        display: flex; align-items: center;
 
-    margin: 0 25px;
-}
+        /*margin: 0 25px;*/
+    }
 
-.top-detail-header .detail-icon svg{
-    width: 55px; height: 55px;
-    color: #696adf;
-}
+    .top-detail-header .detail-icon svg{
+        width: 60px; height: 60px;
+        color: #696adf;
+    }
 
 .board-write-info{
-    /*width: 100%;*/
+    width: 70%;
     display: flex;
     flex-flow: column wrap;
     align-content: space-between;
@@ -84,8 +85,8 @@
 }
 .board-write-info .board-write-Date-info{
     /*width: 100%;*/
-    font-size: 0.5em; font-weight: normal;
     /*text-align: end;*/
+    font-size: 0.5em; font-weight: normal;
     color: #545887;
 }
 
@@ -97,7 +98,7 @@
 }
 
 .detail-content-board{
-    border: 3px solid #ffcbb5;
+    /*border: 3px solid #ffcbb5;*/
     padding: 30px;
     font-size: 1.7em;
     overflow: scroll;
@@ -123,7 +124,7 @@
     padding: 0 20px;
 
     font-size: 1.2em;
-    color: #545887;
+    color: #696adf;
 
 }
 
@@ -146,7 +147,7 @@
     padding: 0 20px;
 
     font-size: 1.2em;
-    color: #545887;
+    color: #696adf;
 }
 
 .detail-address-item .detail-area-address-icon{
@@ -165,10 +166,10 @@
 }
 /* 신청 버튼 */
 .check-person-number{
-    font-weight: bold; color: #ff7b40;
+    font-weight: bold; color: #8c8df3;
     padding: 10px;
-    box-shadow: 5px 5px #ffa7a7;
-    background: #e8cbff;
+    box-shadow: 5px 5px #a1a2c8;
+    background: #d2daff;
 
     border-radius: 50px;
     font-size: 1.2em;
