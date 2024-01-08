@@ -38,6 +38,15 @@
     width: 30%;
 }
 
+.section .mapview .map .login {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    background: #fff;
+}
+
 /* 보드 */
 .section .boardview {
     width: 90%;
@@ -51,7 +60,7 @@
     width: 30%;
     text-align: center;
     padding: 30px;
-    background: #d5e5c3;
+    background: #79b45f;
 }
 .section .boardview .free .board-title-free {
     padding-bottom: 20px;
@@ -74,7 +83,7 @@
     width: 30%;
     text-align: center;
     padding: 30px;
-    background: #d5e5c3;
+    background: #79b45f;
 }
 
 .section .boardview .recruitment .board-title-recruitment {

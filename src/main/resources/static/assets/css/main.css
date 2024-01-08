@@ -51,16 +51,22 @@ a:hover
 /* header style */
 header {
     /* background: red; */
-    background: rgba(70, 70, 70, 0.7);
+    /*background: rgba(70, 70, 70, 0.7);*/
+    background: #22243690;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
-header img{
+header .userInfo-profile{
     width: 70px;
     height: 70px;
+
     border-radius: 40%;
+}
+
+header .damoim-logo{
+    width: 200px;
 }
 
 
