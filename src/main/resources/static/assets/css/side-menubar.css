@@ -1,20 +1,23 @@
 /* 사이드 메뉴 */
 .side-menu{
     display: flex;
+    justify-content: space-around;
     /*background: #aaa;*/
     /*background: rgba(255, 255, 255, 0.8);*/
-    height: 50vh; width: 250px;
+
     /* min-width: 200px; */
     /*font-family: 'IBM Plex Sans';*/
     /*font-weight: 700;*/
     /*border-radius: 0 5px 5px 0;*/
-    margin-left: 1%;
+    margin: 1%;
     position: fixed;
     left: 0; bottom: 20%;
 }
 
 .side-menu .img {
-    width: 100%;
+
+    height: 100vh; width: 250px;
+    padding-top: 50vh;
     object-fit: fill;
 }
 

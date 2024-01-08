@@ -117,7 +117,7 @@ header .inner-header .menu-open .lnr-menu {
 
 /* header gnb style */
 header .gnb {
-    background: #222;
+    background: rgb(75, 75, 75);
     color: #fff;
     height: 100vh;
     font-size: 35px;

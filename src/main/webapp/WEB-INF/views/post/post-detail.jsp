@@ -306,7 +306,7 @@
                         </div>
                     </div>
                     <div class="Recommendation">
-                        <span class="upCount lnr lnr-thumbs-up comment\${r.commentNo}" id="upbtn" name="\${r.commentNo}"><p>\${r.likeCount}</p></span>
+                        <span class="upCount lnr lnr-thumbs-up comment\${r.commentNo}" id="upbtn" name="\${r.commentNo}" style="color: #494949;"><p>\${r.likeCount}</p></span>
                     </div>
                 </div>
             `;
@@ -363,8 +363,8 @@
                         }
                     })
                     .then(response => {
-                        color(response);
                         let element = document.querySelector('.comment' + response.commentNo);
+                        color(response);
                         element.innerHTML = `
                         <p>
                         \${response.likeCount}
@@ -374,9 +374,15 @@
         }
 
         function color(response) {
-            const color = document.getElementById('upbtn');
+            let element = document.querySelector('.comment' + response.commentNo);
             if (response.flag === true) {
-                color.style.color = "#2c34c0"
+                element.classList.remove('animate__animated', 'animate__headShake');
+                element.classList.add('animate__animated', 'animate__rubberBand');
+                element.style.color = "#1f29ec"
+            } else {
+                element.classList.remove('animate__animated', 'animate__rubberBand');
+                element.classList.add('animate__animated', 'animate__headShake');
+                element.style.color = "#494949"
             }
         }
 
