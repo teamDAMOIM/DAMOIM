@@ -91,7 +91,7 @@
         }else if(!idPattern.test($inputId.value)){
             $inputId.style.borderColor = 'red';
             document.getElementById('idchk').innerHTML =
-                '<b style="color: red">[4 ~ 15글자, 영어, 숫자로 입력!!]</b>';
+                '<b style="color: red">[4 ~ 15글자, 영어, 숫자로 입력해주세요]</b>';
             checkResultList[0] = false;
         } else{
             fetch('/members/check?type=memberId&keyword=' + $inputId.value)
@@ -100,12 +100,12 @@
                     if(rep) { // 중복
                         $inputId.style.borderColor = 'red';
                         document.getElementById('idchk').innerHTML =
-                            '<b style="color: red">[아이디가 중복됨!!]</b>'
+                            '<b style="color: red">[중복 값입니다]</b>'
                         checkResultList[0] = false;
                     }else{
                         $inputId.style.borderColor = 'skyblue';
                         document.getElementById('idchk').innerHTML
-                            = '<b style="color: skyblue">[사용가능띠!!!]</b>'
+                            = '<b style="color: skyblue">[사용 가능합니다]</b>'
                         checkResultList[0] = true;
                     }
                 });
@@ -124,12 +124,12 @@
         } else if(!passwordPattern.test($inputPw.value)){
             $inputPw.style.borderColor = 'red';
             document.getElementById('pwchk').innerHTML =
-                '<b style="color: red">[특수기호와 8글자 이상!!]</b>';
+                '<b style="color: red">[특수기호와 8글자 이상으로 설정해주세요]</b>';
             checkResultList[1] = false;
         } else{
             $inputPw.style.borderColor = 'skyblue';
             document.getElementById('pwchk').innerHTML =
-                '<b style="color: skyblue">[사용가능띠!!]</b>'
+                '<b style="color: skyblue">[사용 가능합니다]</b>'
             checkResultList[1] = true;
         }
     };
@@ -153,7 +153,7 @@
        } else{
            $inputName.style.borderColor = 'skyblue';
            document.getElementById('namechk').innerHTML =
-               '<b style="color: skyblue">[사용 가능띠!!]</b>';
+               '<b style="color: skyblue">[사용 가능합니다]</b>';
            checkResultList[2] = true;
        };
 
@@ -185,7 +185,7 @@
                        }else{
                            $inputNickname.style.borderColor = 'skyblue';
                            document.getElementById('nickchk').innerHTML =
-                               '<b style="color: skyblue">[사용 가능띠!!!]</b>'
+                               '<b style="color: skyblue">[사용 가능합니다]</b>'
                            checkResultList[3] = true;
                        }
                    });
