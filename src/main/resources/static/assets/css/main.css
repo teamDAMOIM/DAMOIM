@@ -51,7 +51,8 @@ a:hover
 /* header style */
 header {
     /* background: red; */
-    background: rgba(70, 70, 70, 0.7);
+    /*background: rgba(70, 70, 70, 0.7);*/
+    background: #22243690;
     position: fixed;
     width: 100%;
     top: 0;
