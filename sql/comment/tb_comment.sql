@@ -7,6 +7,7 @@ CREATE TABLE tb_comment(
     comment_username VARCHAR(10) NOT NULL,
     post_no INT,
     member_id VARCHAR(255),
+    like_count int not null,
 
     CONSTRAINT pk_no
             PRIMARY KEY (comment_no),
@@ -20,13 +21,3 @@ CREATE TABLE tb_comment(
             FOREIGN KEY (member_id)
                 REFERENCES tb_member (member_id)
 );
-
-INSERT into tb_comment
-    (comment_content, comment_username, post_no, member_id)
-values
-    ('DLDLDLDLDL', '정범준', 2, 'shubom0115')
-;
-
-ALTER TABLE tb_comment
-    ADD like_count int not null
-;

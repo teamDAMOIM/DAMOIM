@@ -174,7 +174,7 @@
 
 
     function fetchGetList(b){
-        fetch("/recruit/detail/rno/${r.rno}/memberId/${login.id}")
+        fetch("/recruit/detail/rno/${r.rno}")
             .then(re => re.json())
             .then(response => {
                 const elementById = document.getElementById('cc');

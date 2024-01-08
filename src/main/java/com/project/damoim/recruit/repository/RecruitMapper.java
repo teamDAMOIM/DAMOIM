@@ -35,4 +35,6 @@ public interface RecruitMapper {
 
     RecruitandMember selectCheckCount(int rno, String memberId);
 
+    void deleteByDate();
+
 }

@@ -62,16 +62,11 @@ public class RecruitController {
 
 
     @ResponseBody
-    @GetMapping("/detail/rno/{rno}/memberId/{memberId}")
+    @GetMapping("/detail/rno/{rno}")
     public ResponseEntity<?> detail(
-            @PathVariable RecuriteSendDTO dto
+            @PathVariable int rno
     ){
-        RecuriitDetileResponseDTO recuriitDetileResponseDTO = service.detailRecurit(dto.getRno());
-
-        boolean b = service.upCount(dto);
-
-        recuriitDetileResponseDTO.setB(b);
-
+        RecuriitDetileResponseDTO recuriitDetileResponseDTO = service.detailRecurit(rno);
         return ResponseEntity
                 .ok()
                 .body(

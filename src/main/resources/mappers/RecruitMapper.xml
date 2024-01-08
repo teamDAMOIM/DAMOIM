@@ -38,7 +38,7 @@
             AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
         </if>
         <if test="type == 'FREEDOM'">
-            WHERE recruit_title LIKE CONCAT ('%', #{keyword})
+            WHERE recruit_title LIKE CONCAT ('%', #{keyword}, '%')
         </if>
 
     </select>
@@ -117,5 +117,11 @@
         WHERE member_id = #{memberId}
         AND recruit_no = #{rno}
     </select>
+
+    <delete id="deleteByDate">
+        delete
+        from tb_recruit
+        where recruit_startdate = recruite_enddate
+    </delete>
 
 </mapper>
