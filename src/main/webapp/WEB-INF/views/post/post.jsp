@@ -51,11 +51,11 @@
 
                 <tr id="table">
 
-                    <td class="num">${p.pno}</td>
-                    <td class="tit"><a href="/post/detail?pno=${p.pno}&type=${ps.type}&keyword=${ps.keyword}">${p.title}</a></td>
-                    <td class="nm">${p.name}</td>
-                    <td class="dt">${p.date}</td>
-                    <td class="vc">${p.view}</td>
+                    <td class="num fontc">${p.pno}</td>
+                    <td class="tit fontc"><a href="/post/detail?pno=${p.pno}&type=${ps.type}&keyword=${ps.keyword}">${p.title}</a></td>
+                    <td class="nm fontc">${p.name}</td>
+                    <td class="dt fontc">${p.date}</td>
+                    <td class="vc fontc">${p.view}</td>
 
                 </tr>
 

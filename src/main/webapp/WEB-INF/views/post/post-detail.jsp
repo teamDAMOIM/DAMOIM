@@ -35,7 +35,7 @@
                             <form id="updateForm">
 
                                 <label for="updateTitle">제목</label>
-                                <textarea type="text" id="updateTitle" name="updateTitle" style="resize: none; height: 30px;"  required>${p.title}</textarea>
+                                <textarea type="text" id="updateTitle" name="updateTitle" style="resize: none; height: 30px;" required>${p.title}</textarea>
 
                                 <label for="updateContent">내용</label>
                                 <textarea type="text" id="updateContent" name="updateContent" style="resize: none; height: 380px;" required>${p.content}</textarea>
@@ -120,8 +120,6 @@
 
 
 
-
-
     $del.addEventListener('click', e => {
         // console.log("delete");
 
@@ -129,6 +127,8 @@
 
         window.location.href = "/post/delete?pno=${p.pno}"
     })
+
+
 
 
 
@@ -149,9 +149,20 @@
         }
     });
 
+    const updateTitle = document.getElementById('updateTitle');
+    const updateContent = document.getElementById('updateContent');
+
     $confirmUpdateBtn.addEventListener('click', () => {
         $updateModal.style.display = 'none';
+        console.log(updateTitle.value);
+        console.log(updateContent.value);
+
+        window.location.href = "/post/update?title=" + updateTitle.value + "&content=" + updateContent.value;
     });
+
+
+
+
 
 
 

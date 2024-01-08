@@ -9,12 +9,15 @@
     <div class="mapview">
         <div class="column">
             <label class="google-it-place">
-                <input class="form-control" type="text" name="searchPlace" id="inputAddress">
+                <span class="lnr lnr-magnifier"></span><input class="form-control" type="text" name="searchPlace" id="inputAddress" placeholder="ex)청양군">
             </label>
             <c:if test="${login == null}">
             <div class="detail-place">
-                <div class="view-place">로그인이 필요한 기능입니다.</div>
+                <div class="view-place login">로그인이 필요한 기능입니다.</div>
             </div>
+            </c:if>
+            <c:if test="${login != null}">
+                <div class="detail-place"></div>
             </c:if>
         </div>
         <div class="map">

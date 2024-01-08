@@ -200,13 +200,13 @@ footer .inner-footer img {
     align-content: center;
 }
 .sign-section .container .wrap .btn {
-    background: rgba(155, 47, 71, 0.9);
+    background: #475da8;
     color: #fff;
 }
 
 .sign-section .container .wrap .text-wrap {
     width: 50%;
-    background: rgb(229, 134, 151);
+    background: #7994F2;
     border-radius: 0 5px 5px 0;
 
 }
@@ -254,9 +254,21 @@ footer .inner-footer img {
     margin: 10px;
 }
 .view-place .button {
+    text-align: center;
     width: 80px;
-    background: rgba(75, 133, 87, 0.9);
+    height: 25px;
+    background: #ee951d;
+    color: #fff;
+    /*border: #4d4d4d 1px solid;*/
+    border-radius: 5px 5px;
+}
+
+.view-place .button:hover {
+    width: 80px;
+    height: 25px;
+    background: #ee951d;
     color: #fff;
     border: #4d4d4d 1px solid;
     border-radius: 5px 5px;
+    box-shadow: 1px 1px 2px #4d4d4d;
 }

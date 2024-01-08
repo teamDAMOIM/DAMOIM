@@ -1,7 +1,7 @@
 .newpost {
     width: 100%;
     padding: 200px 0;
-    background: #eee7e7;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
 }
@@ -47,12 +47,15 @@
 .newpost .main-title-wrap .button-wrap .search select {
     width: 100px;
     height: 37px;
+    border: 1px solid #FF6653;
+    border-radius: 5px;
 }
 
 .newpost .main-title-wrap .button-wrap .search .sc-kw {
     width: 50%;
     height: 37px;
-
+    border: 1px solid #FF6653;
+    border-radius: 5px;
 }
 
 .newpost .main-title-wrap .button-wrap .add-btn {
@@ -60,13 +63,23 @@
 
 }
 .newpost .main-title-wrap .button-wrap .add-btn:hover {
-    background: rgb(229, 134, 151);
+    background: #FF6653;
 }
 .newpost .main-title-wrap .button-wrap .btn {
     width: 80px;
-    background: rgba(155, 47, 71, 0.9);
+    background: #be4e41;
     color: #fff;
     border-radius: 5px 5px;
+}
+
+.newpost .table thead,
+.newpost .table tbody {
+    color: #be4e41;
+}
+.newpost .table thead .text-center,
+.newpost .table tbody .fontc {
+    color: #494949;
+    border-color: #be4e41;
 }
 
 .newpost .board-bottom {
