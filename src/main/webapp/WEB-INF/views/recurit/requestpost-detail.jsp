@@ -46,7 +46,7 @@
         <div class="center-detail-items">
             <div class="detail-content-item">
                 <%--                <label for="content">내용</label>--%>
-                <div class="detail-content-board">${r.content}</div>
+                <div class="detail-content-board" style="white-space:pre;">${r.content}</div>
             </div>
         </div>
 
