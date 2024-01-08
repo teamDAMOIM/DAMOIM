@@ -41,7 +41,7 @@
 
     font-size: 2.5em; font-weight: bold;
 
-    display: flex; flex-flow: column wrap;
+    display: flex; flex-flow: row wrap;
     justify-content: start;
     /*align-items: center;*/
 
@@ -61,7 +61,7 @@
         border-radius: 10px;
         display: flex; align-items: center;
 
-        /*margin: 0 25px;*/
+        margin-right: 30px;
     }
 
     .top-detail-header .detail-icon svg{
@@ -70,7 +70,7 @@
     }
 
 .board-write-info{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
     align-content: space-between;
@@ -84,8 +84,8 @@
     color: #5c65c8;
 }
 .board-write-info .board-write-Date-info{
-    /*width: 100%;*/
-    /*text-align: end;*/
+    width: 100%;
+    display: flex; justify-content: end;
     font-size: 0.5em; font-weight: normal;
     color: #545887;
 }
@@ -101,6 +101,7 @@
     /*border: 3px solid #ffcbb5;*/
     padding: 30px;
     font-size: 1.7em;
+    color: #545887;
     overflow: scroll;
 
     word-wrap: break-word;
