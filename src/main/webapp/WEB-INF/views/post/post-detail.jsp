@@ -153,11 +153,18 @@
     const updateContent = document.getElementById('updateContent');
 
     $confirmUpdateBtn.addEventListener('click', () => {
+
+        if (updateTitle.value === '${p.title}') {
+                if ( updateContent.value === '${p.content}') {
+                alert("둘중 하나라도 수정하세요");
+                return;
+            }
+        }
         $updateModal.style.display = 'none';
         console.log(updateTitle.value);
         console.log(updateContent.value);
 
-        window.location.href = "/post/update?title=" + updateTitle.value + "&content=" + updateContent.value;
+        window.location.href = "/post/update?pno=${p.pno}&title=" + updateTitle.value + "&content=" + updateContent.value;
     });
 
 
