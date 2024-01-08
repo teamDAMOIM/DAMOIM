@@ -244,13 +244,11 @@ footer .inner-footer img {
 
 .view-place {
     text-align: center;
-    padding: 30px;
+    padding-top: 30px;
+
 }
 
-.view-place .place-title {
-    margin: 10px;
-}
-.view-place .place-address {
+.view-place .pinfo {
     margin: 10px;
 }
 .view-place .button {

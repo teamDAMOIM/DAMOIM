@@ -3,12 +3,6 @@
 
 
 <div class="side-menu">
-    <c:forEach var="p" items="${loginPost}">
-        <ul class="my-activities">
-                <li class="activity-title">${p.memberId}</li>
-                <li class="one-activity"> <div class="activity-img"></div> <div class="activity-name">
-                    ${p.postTitle}
-                </div></li>
-        </ul>
-    </c:forEach>
+    <img class="img" src="/assets/img/bannercover.png" alt="">
+    <img class="animate__animated animate__zoomOutDown" src="/assets/img/banner.png" alt="">
 </div>

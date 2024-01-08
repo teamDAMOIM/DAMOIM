@@ -91,12 +91,17 @@
             .then(response => {
                 console.log(response)
                 let tag = `
-                     <div class="view-place">
-                        <div class="place-title pinfo">\${response.title}</div>
-                        <img src="#" alt="첫화면, 검색한 장소가 없다면 현재 내위치">
-                        <div class="place-address pinfo">\${response.address}</div>
-                        <a href="/recruit" class="button" type="button" name="recruitment">모집하기</a>
-                        <div class="place-detail">
+                    <div class="ani animate__animated animate__zoomIn" data-animate="pulse">
+                         <div class="view-place">
+                            <div class="place-title pinfo">제목: \${response.title}</div>
+                            <div class="place-address pinfo">주소: \${response.address}</div>
+                            <div class="place-startdate pinfo">시작일: \${response.startDate}</div>
+                            <div class="place-enddate pinfo">마감일: \${response.endDate}</div>
+                            <div class="place-recuritcount pinfo">신청수: \${response.count} / \${response.max}</div>
+                            <div class="place-recuritcount pinfo"></div>
+                            <a href="/recruit/detail?rno=\${rno}" class="  button" type="button" name="recruitment">보러가기</a>
+                            <div class="place-detail">
+                            </div>
                         </div>
                     </div>
                 `;
@@ -104,6 +109,10 @@
                 document.querySelector('.detail-place').innerHTML = tag;
             })
     }
+
+    
+
+
 
 
 
