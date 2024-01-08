@@ -129,7 +129,6 @@
 
 <script>
     let $titleElements = document.querySelector(".title");
-    console.log($titleElements.innerText)
 
     document.addEventListener("DOMContentLoaded", function() {
 

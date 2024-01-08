@@ -5,6 +5,7 @@ import com.project.damoim.member.dto.response.LoginSessionDTO;
 import com.project.damoim.post.common.Search;
 import com.project.damoim.recruit.common.RecruitSearch;
 import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
+import com.project.damoim.recruit.dto.request.RecuriteSendDTO;
 import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Recruit;
@@ -60,25 +61,24 @@ public class RecuritService {
                 ;
     }
 
-    public boolean upCount(int rno, HttpSession session){
-        String loginUserId = LoginUtiles.LoginUserId(session);
+    public boolean upCount(RecuriteSendDTO dto){
 
-        boolean check = recruitMapper.check(rno, loginUserId);
+        boolean check = recruitMapper.check(dto.getRno(), dto.getMemberId());
 
 
         if (!check){
-            recruitMapper.upCount(rno);
-            recruitMapper.upPerson(rno, loginUserId);
+            recruitMapper.upCount(dto.getRno());
+            recruitMapper.upPerson(dto.getRno(), dto.getMemberId());
             return true;
         }else{
-            recruitMapper.downCount(rno);
-            recruitMapper.deleteRecurite(rno, loginUserId);
+            recruitMapper.downCount(dto.getRno());
+            recruitMapper.deleteRecurite(dto.getRno(), dto.getMemberId());
             return false;
         }
     }
 
-    public RecruitandMember getRecruit(int rno, HttpSession session){
-        String loginUserId = LoginUtiles.LoginUserId(session);
-        return recruitMapper.selectCheckCount(rno, loginUserId);
+    public RecruitandMember getRecruit(RecuriteSendDTO dto){
+
+        return recruitMapper.selectCheckCount(dto.getRno(), dto.getMemberId());
     }
 }

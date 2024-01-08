@@ -24,6 +24,7 @@ public class RecuriitDetileResponseDTO {
     private int count;
     private int max;
     private String memberId;
+    private boolean b;
 
     public RecuriitDetileResponseDTO(Recruit r) {
         this.rno = r.getRecruitNo();

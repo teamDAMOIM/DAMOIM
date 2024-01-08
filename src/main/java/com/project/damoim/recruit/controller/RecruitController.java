@@ -3,6 +3,8 @@ package com.project.damoim.recruit.controller;
 import com.project.damoim.post.common.Search;
 import com.project.damoim.recruit.common.RecruitSearch;
 import com.project.damoim.recruit.dto.request.RecuritRequestDTO;
+import com.project.damoim.recruit.dto.request.RecuriteSendDTO;
+import com.project.damoim.recruit.dto.response.RecrioteRespondeSendDTO;
 import com.project.damoim.recruit.dto.response.RecuriitDetileResponseDTO;
 import com.project.damoim.recruit.dto.response.RecuritResponseDTO;
 import com.project.damoim.recruit.entity.Category;
@@ -55,9 +57,28 @@ public class RecruitController {
 
         model.addAttribute("r", r);
 
-
         return "/recurit/requestpost-detail";
     }
+
+
+    @ResponseBody
+    @GetMapping("/detail/rno/{rno}/memberId/{memberId}")
+    public ResponseEntity<?> detail(
+            @PathVariable RecuriteSendDTO dto
+    ){
+        RecuriitDetileResponseDTO recuriitDetileResponseDTO = service.detailRecurit(dto.getRno());
+
+        boolean b = service.upCount(dto);
+
+        recuriitDetileResponseDTO.setB(b);
+
+        return ResponseEntity
+                .ok()
+                .body(
+                        recuriitDetileResponseDTO
+                );
+    }
+
 
     @ResponseBody
     @GetMapping("/type/{type}/keyword/{keyword}")
@@ -76,16 +97,24 @@ public class RecruitController {
     }
 
 
-    @GetMapping("/addRecruit")
-    public String addRecruit(int rno, HttpSession session, RedirectAttributes ra){
-        boolean b = service.upCount(rno, session);
+    @ResponseBody
+    @PatchMapping("/addRecruit")
+    public ResponseEntity<?> addRecruit(
+            @RequestBody RecuriteSendDTO dto
+            ){
+        boolean b = service.upCount(dto);
 
-        RecruitandMember recruit = service.getRecruit(rno, session);
+        RecruitandMember recruit = service.getRecruit(dto);
 
-        ra.addFlashAttribute("rm", recruit);
-        ra.addFlashAttribute("b", b);
+        RecrioteRespondeSendDTO response = new RecrioteRespondeSendDTO();
 
+        response.setB(b);
+        response.setRecruit(recruit);
 
-        return "redirect:/recruit/detail?rno=" + rno;
+        return ResponseEntity
+                .ok()
+                .body(
+                        response
+                );
     }
 }

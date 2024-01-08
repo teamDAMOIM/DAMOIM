@@ -30,7 +30,6 @@ public interface RecruitMapper {
     boolean check(int rno, String memberId);
 
     boolean deleteRecurite(int rno, String memberId);
-
     // 다운 카운트
     void downCount(int rno);
 
