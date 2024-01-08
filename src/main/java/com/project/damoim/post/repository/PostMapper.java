@@ -26,7 +26,7 @@ public interface PostMapper {
     // 게시물 삭제
     boolean deleteByNo(int pno);
 
-    void updatePost(int postNo);
+    void updatePost(int postNo, String title, String content);
 
     // 조회수 상승
     void updateViewCount(int postNo);

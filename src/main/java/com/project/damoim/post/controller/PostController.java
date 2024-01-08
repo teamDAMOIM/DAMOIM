@@ -76,4 +76,11 @@ public class PostController {
         service.deletePost(pno);
         return "redirect:/post";
     }
+
+    @GetMapping("/update")
+    public String update(int pno, String title, String content){
+        log.info("welcome to update");
+        service.update(pno, title, content);
+        return "redirect:/post/detail?pno="+pno;
+    }
 }

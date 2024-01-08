@@ -83,9 +83,12 @@
         </if>
     </select>
 
-    <select id="likeUpCount" resultType="int">
+    <update id="updatePost">
+        update tb_post
+        SET post_title = #{title}, post_content_#{content}
+        WHERE post_no =#{pno}
+    </update>
 
-    </select>
 
 
 </mapper>

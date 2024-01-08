@@ -79,4 +79,8 @@ public class PostService {
     public boolean deletePost(int pno) {
         return mapper.deleteByNo(pno);
     }
+
+    public void update(int pno, String title, String content){
+        mapper.updatePost(pno, title, content);
+    }
 }
