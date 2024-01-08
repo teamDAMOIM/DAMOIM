@@ -1,5 +1,6 @@
--- tb_comment
 
+
+-- tb_comment
 CREATE TABLE tb_comment(
     comment_no INT auto_increment,
     comment_content VARCHAR(255) NOT NULL,

@@ -18,7 +18,7 @@ class PostMapperTest {
     @DisplayName("게시물 300개 저장하기")
     void bulkInsertTest() {
         //given
-        for (int i = 1; i <= 300; i++) {
+        for (int i = 11; i <= 300; i++) {
             Post p = Post.builder()
                     .postTitle("이ㅏㅏ" + i)
                     .postContent("이이이" + i)
