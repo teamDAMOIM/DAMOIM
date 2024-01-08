@@ -144,7 +144,7 @@
                 </svg>`
     }
     if ($detailCategory.textContent === 'EXERCISE') {
-        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: #ff601a;" fill="currentColor" className="bi bi-heart-pulse" viewBox="0 0 16 16">
+        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  fill="currentColor" className="bi bi-heart-pulse" viewBox="0 0 16 16">
                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"/>
                     <path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"/>
                 </svg>`
@@ -155,19 +155,19 @@
                     </svg>`
     }
     if ($detailCategory.textContent === 'HOBBY') {
-        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: #ff601a;" fill="currentColor" class="bi bi-music-note-beamed" viewBox="0 0 16 16">
+        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  fill="currentColor" class="bi bi-music-note-beamed" viewBox="0 0 16 16">
                                 <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13s1.12-2 2.5-2 2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"/>
                                 <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"/>
                                 <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"/>
                             </svg>`
     }
     if ($detailCategory.textContent === 'BEAUTY') {
-        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: #ff601a;" fill="currentColor" class="bi bi-hearts" viewBox="0 0 16 16">
+        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  fill="currentColor" class="bi bi-hearts" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015m6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343M7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358"/>
                             </svg>`
     }
     if ($detailCategory.textContent === 'STUDY') {
-        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: #ff601a;" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+        $detailIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
                                 <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
                             </svg>`
     }
