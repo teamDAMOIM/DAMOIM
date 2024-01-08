@@ -1,10 +1,9 @@
-.newpost, .requestpost {
+.newpost {
     width: 100%;
-    height: 1248px;
+    padding: 200px 0;
     background: #eee7e7;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .newpost .main-title-wrap,
@@ -63,28 +62,40 @@
 .newpost .main-title-wrap .button-wrap .add-btn:hover {
     background: rgb(229, 134, 151);
 }
-.newpost .main-title-wrap .button-wrap .btn,
-.requestpost .main-title-wrap .button-wrap .btn {
+.newpost .main-title-wrap .button-wrap .btn {
     width: 80px;
     background: rgba(155, 47, 71, 0.9);
     color: #fff;
     border-radius: 5px 5px;
 }
 
-.newpost .board-bottom,
-.requestpost .board-bottom {
+.newpost .board-bottom {
     padding: 30px 0;
 }
 
-.newpost .board-bottom .bbul,
-.requestpost .board-bottom .bbul {
+.newpost .board-bottom .bbul {
     display: flex;
     justify-content: center;
     align-content: center;
 }
-.newpost .board-bottom .bbul .page-link,
-.requestpost .board-bottom .bbul .page-link {
+.newpost .board-bottom .bbul .page-link {
     padding: 6px 18px;
     color: #000;
+}
+
+.newpost .board-bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+}
+
+.newpost .board-bottom .Page {
+    width: 40%;
+}
+
+@media screen and (max-width: 800px) {
+
+    height:  1500px;
 }
 

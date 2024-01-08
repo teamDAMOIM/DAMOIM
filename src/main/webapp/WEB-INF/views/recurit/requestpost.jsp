@@ -129,6 +129,10 @@
 
 <script>
     let $titleElements = document.querySelector(".title");
+<<<<<<< HEAD
+=======
+    // console.log($titleElements.innerText)
+>>>>>>> e4986c8d2efe9e9df8f8862e70bf88a96cdc4165
 
     document.addEventListener("DOMContentLoaded", function() {
 

@@ -11,14 +11,15 @@
             <label class="google-it-place">
                 <input class="form-control" type="text" name="searchPlace" id="inputAddress">
             </label>
+            <c:if test="${login == null}">
             <div class="detail-place">
-                <div class="view-place">
-                </div>
+                <div class="view-place">로그인이 필요한 기능입니다.</div>
             </div>
+            </c:if>
         </div>
         <div class="map">
             <c:if test="${login == null}">
-                <div>로그인해라</div>
+                <div class="login">로그인이 필요한 기능입니다.</div>
             </c:if>
             <c:if test="${login != null}">
                 <div id="map" style="border-radius: 15px; height: 500px; width: 500px; box-shadow: #666666 3px 3px 5px;"></div>
@@ -35,7 +36,7 @@
                     <a href="/post/detail?pno=${p.pno}">
                         <li class="one-board of">
                             <div class="board-title sub-free">${p.title}</div>
-                            <div class="best-user-count"><img src="/assets/img/hit-count.png" alt="조회수">${p.viewCount}</div>
+                            <div class="best-user-count"><span class="lnr lnr-user" style="padding: 0 5px;"></span>${p.viewCount}</div>
                         </li>
                     </a>
                 </c:forEach>
