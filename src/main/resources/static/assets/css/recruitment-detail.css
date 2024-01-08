@@ -1,0 +1,220 @@
+
+
+
+.recruitment-detail-container{
+    padding-top: 25vh;
+    background: #f2f6ff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+/*.blank-space-fill{
+    background-image: url("../img/detail-blackSpaceFill.png");
+    background-position: top;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    width: 100%; height: 70vh;
+}*/
+
+.section-recruitment-board{
+    width: 50%;
+    margin-bottom: 5vh;
+    /*border: 5px solid #FFFFFF90;*/
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+@media (max-width: 1500px) {
+    .recruitment-detail-container {
+        width: 1500px;
+    }
+}
+
+
+/* board top title*/
+.top-detail-header{
+    background: #d2daff;
+
+    font-size: 2.5em; font-weight: bold;
+
+    display: flex; flex-flow: row wrap;
+    justify-content: start;
+    /*align-items: center;*/
+
+    padding: 30px;
+}
+
+/*.top-detail-header .logo-img{
+    background: url("../img/backgroundimg.jpg");
+    width: 100%;
+    height: 10vh;
+}*/
+
+    /* 카테고리 아이콘*/
+    .top-detail-header .detail-icon{
+        padding: 10px;
+        background: #a8b8ff;
+        border-radius: 10px;
+        display: flex; align-items: center;
+
+        margin-right: 30px;
+    }
+
+    .top-detail-header .detail-icon svg{
+        width: 60px; height: 60px;
+        color: #696adf;
+    }
+
+.board-write-info{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    justify-content: center;
+    /*margin: 0 10vh;*/
+
+}
+.board-write-info .board-title-topic{
+    /*width: 100%;*/
+    /*text-align: center;*/
+    color: #5c65c8;
+}
+.board-write-info .board-write-Date-info{
+    width: 100%;
+    display: flex; justify-content: end;
+    font-size: 0.5em; font-weight: normal;
+    color: #545887;
+}
+
+/* content container*/
+.center-detail-items{
+    background: #FFFFFF;
+    width: 100%;
+    padding: 0 10vh;
+}
+
+.detail-content-board{
+    /*border: 3px solid #ffcbb5;*/
+    padding: 30px;
+    font-size: 1.7em;
+    color: #545887;
+    overflow: scroll;
+
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* recruitment info*/
+.detail-recruitment-info{
+    background: #d2daff;
+    display: flex; flex-flow: row wrap;
+    align-content: space-around;
+    /*padding: 15px;*/
+    height: 18vh;
+}
+
+.detail-endDate-item{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 20px;
+
+    font-size: 1.2em;
+    color: #696adf;
+
+}
+
+.detail-endDate-item .deadline-icon{
+    padding: 10px;
+    background: #a8b8ff;
+    border-radius: 10px;
+}
+
+.detail-endDate-item label
+, .detail-address-item label{
+    margin: 0 10px;
+}
+
+.detail-address-item{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 20px;
+
+    font-size: 1.2em;
+    color: #696adf;
+}
+
+.detail-address-item .detail-area-address-icon{
+    padding: 10px;
+    background: #a8b8ff;
+    border-radius: 10px;
+}
+
+
+/* 버튼 container*/
+.detail-buttons-item{
+    background: #FFFFFF;
+    width: 100%;
+    padding: 2vh 0;
+    display: flex; justify-content: center;
+}
+/* 신청 버튼 */
+.check-person-number{
+    font-weight: bold; color: #8c8df3;
+    padding: 10px;
+    box-shadow: 5px 5px #a1a2c8;
+    background: #d2daff;
+
+    border-radius: 50px;
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+.count-info{
+    /*background: #d2daff;*/
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+.count-info .count-check-icon{
+    color: #696adf;
+    background: #a8b8ff;
+    border-radius: 50%;
+    padding: 10px;
+}
+.count-info .checkCount{
+
+}
+.count-info .recruitment-max-count{
+
+}
+
+/* 신청 버튼 */
+.list-view{
+    font-weight: bold; color: #8c8df3;
+    padding: 10px;
+    box-shadow: 5px 5px #a1a2c8;
+    background: #d2daff;
+    /*border: #eef1ff;*/
+
+    /*#b1b2ff
+    #aac4ff
+    #d2daff
+    #eef1ff*/
+
+    border-radius: 50px;
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+.list-view .list-view-icon{
+    background: #a8b8ff;
+    color: #696adf;
+    padding: 10px;
+    border-radius: 50%;
+}
+

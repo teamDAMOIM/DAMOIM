@@ -1,0 +1,258 @@
+
+
+.recruitment-write-section input,
+.recruitment-write-section textarea{
+    outline: none;
+}
+
+.recruitment-write-section{
+    width: 100%;
+    padding-top: 30vh;
+    display: flex; justify-content: center;
+}
+
+.recruitment-write-section .recruitment-form-container{
+    width: 60%;
+    /*margin: 30vh 30vh;*/
+    /*margin-top: 30vh;*/
+    padding: 1.2em;
+    border: 3px solid #ff7b40;
+    border-radius: 10px;
+    background: #FFD98D;
+    margin-bottom: 20vh;
+
+    /*display: flex;
+    flex-flow: row wrap;
+    justify-content: start; align-content: center;*/
+}
+
+/*@media (max-width: 1500px) {
+    .recruitment-write-section {
+        width: 1500px;
+    }
+}*/
+
+.rp-write-board-contain{
+    display: flex;
+    flex-flow:  column wrap;
+    justify-content: start;
+}
+textarea{
+    width: 100%;
+}
+
+    /* 게시판 제목 */
+    .rp-type-item{
+        width: 60%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start;
+        padding: 10px;
+    }
+
+        .rp-type-item .icon-type {
+            /*width: 60px; height: 60px;*/
+            border-radius: 60%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+            /*display: flex; align-items: center;*/
+        }
+        /* title - input */
+        .rp-type-item .rp-title{
+            border: 0;
+            font-size: 1.5em; font-weight: bold;
+            width: 50%;
+        }
+
+        .rp-type-item .rp-title:hover
+        , .rp-type-item .rp-title:focus{
+            border: #ffffff00;
+            /*outline: none;*/
+        }
+
+        .rp-type-item .form-select{
+            border: 0;
+            margin: 0 10px;
+            font-size: 1.5em; font-weight: bold;
+        }
+
+    /* 게시판 내용 */
+    .rp-board-content{
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 15px 0;
+    }
+    .rp-sub-title-content{
+        width: 25%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        /*justify-content: start;*/
+        padding: 10px;
+        border: 3px solid #ff7b40;
+    }
+        .rp-sub-title-content .content-icon{
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+        }
+
+        .rp-sub-title-content .rp-content-sub-item{
+            font-size: 1.5em; font-weight: bold;
+            padding: 10px;
+            margin: 0 10px;
+            /*background: #18c722;*/
+        }
+
+        .rp-content-write{
+            border: 0;
+            padding-top: 20px;
+            font-size: 1.3em; font-weight: bold;
+        }
+
+    /* 모집 인원수*/
+    .rp-count-item{
+        width: 50%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start; align-items: center;
+        padding: 10px;
+    }
+
+        .rp-count-item .count-icon{
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+        }
+
+        .rp-count-item .rp-count-sub-item{
+            font-size: 1.2em; font-weight: bold;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        .rp-count-item .count-num{
+            border: 0;
+            font-size: 1.2em; font-weight: bold;
+        }
+
+    /* 모집 기간 */
+    .rp-end-date-item{
+        width: 70%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start; align-items: center;
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+        .rp-end-date-item .date-icon{
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+        }
+
+        .rp-end-date-item .rp-date-item{
+            font-size: 1.2em; font-weight: bold;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        .rp-end-date-item .end-date-calendar ,
+        .rp-end-date-item .end-time-clock{
+            border: 0;
+            font-size: 1.2em;
+        }
+
+    .buttons-item {
+        /*background: #ff8f61;*/
+        width: 100%;
+        /*height: 10vh;*/
+
+        display: flex; flex-flow: row nowrap;
+        justify-content: end;
+
+        padding: 20px;
+    }
+
+    .list-item
+    , .put-up-item
+    {
+        display: flex; flex-flow: row nowrap;
+        justify-content: center; align-items: center;
+        padding: 10px;
+        background: #FFFFFF;
+        margin: 0 15px;
+        border-radius: 40px;
+
+    }
+
+    .list-item .list-icon
+    , .put-up-item .put-up-icon
+    {
+        padding: 10px;
+        border-radius: 50%;
+        background: #FFD98D;
+        color: #ff7b40;
+        margin-right: 10px;
+
+    }
+
+    .list-item .list-btn
+    , .put-up-item .put-btn
+    {
+        font-size: 1.7em; font-weight: bold;
+        background: #FFFFFF;
+    }
+
+    /* 모임 장소 */
+    .address-info-item{
+        width: 70%;
+        background: #FFFFFF;
+        border-radius: 60px;
+        display: flex; flex-flow: row nowrap;
+        justify-content: start; align-items: center;
+        padding: 10px;
+    }
+        /* 모임 장소 아이콘*/
+        .address-info-item .address-icon{
+            border-radius: 50%;
+            background: #FFD98D;
+            color: #ff7b40;
+            padding: 10px;
+        }
+        /* 서브 타이틀*/
+        .address-info-item .address-sub-title{
+            font-size: 1.2em; font-weight: bold;
+            padding: 10px;
+            margin: 0 10px;
+        }
+        /*  모임 장소 입력창 */
+        .address-info-item .address-write-item{
+            /*display: flex; flex-flow: row nowrap;*/
+            border: 0;
+            font-size: 1.5em; font-weight: bold;
+            /*text-align: center;*/
+            display: flex; align-content: center;
+        }
+
+        .dtad{
+            border: 0;
+        }
+
+            .address-write-item .row-ph{
+                display: flex; flex-flow: row nowrap;
+            }
+
+            .address-write-item .detail-address{
+                background: #FFFFFF;
+                margin-left: 25px;
+            }

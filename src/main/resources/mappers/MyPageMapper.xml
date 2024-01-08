@@ -1,0 +1,75 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.damoim.myPage.repository.MyPageMapper">
+
+    <select id="myRecruiteCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_recruit
+        WHERE member_id = #{memberId}
+    </select>
+
+
+    <select id="myPostCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_post
+        WHERE member_id = #{memberId}
+    </select>
+
+
+    <select id="myCommentCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_comment
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="myRecruiteAndMember" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_member_recruit
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findByIdRecruit" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+            recruit_no, recruit_title, recruit_startdate, recruit_enddate
+        FROM
+            tb_recruit
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findByIdPost" resultType="com.project.damoim.post.entity.Post">
+        SELECT
+            post_no, post_title, post_date
+        FROM
+            tb_post
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findByIdComment" resultType="com.project.damoim.comment.entity.Comment">
+        SELECT
+            comment_no, comment_content, comment_date, post_no
+        FROM
+            tb_comment
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findByIdRecruitAndMember" resultType="com.project.damoim.recruit.entity.RecruitandMember">
+        select
+        a.recruit_no, b.recruit_title, b.recruit_startdate, b.recruit_enddate
+        from tb_member_recruit as a
+        join tb_recruit as b on b.recruit_no = a.recruit_no
+        where a.member_id = #{memberId}
+    </select>
+
+
+</mapper>

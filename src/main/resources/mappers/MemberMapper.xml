@@ -1,0 +1,74 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.damoim.member.repository.MemberMapper">
+    <insert id="save">
+        INSERT INTO tb_member
+            (member_id, member_password, member_name,
+        member_phone, member_nickname, member_address, profile_image)
+        VALUES
+            (#{memberId}, #{memberPassword}, #{memberName}, #{memberPhone}, #{memberNickname}, #{memberAddress}, #{profileImage})
+    </insert>
+
+    <delete id="delete">
+        DELETE
+        FROM tb_member
+        WHERE member_id = #{memberId}
+    </delete>
+
+    <select id="findOne" resultType="com.project.damoim.member.entity.Member">
+        SELECT
+            member_id, member_password, member_name,
+            member_phone, member_nickname, member_address, profile_image
+        FROM tb_member
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="isDuplicate" resultType="boolean">
+        SELECT COUNT(*)
+        FROM tb_member
+        <if test="type == 'memberId'">
+            WHERE member_id = #{keyword}
+        </if>
+        <if test="type == 'memberNickname'">
+            WHERE member_nickname = #{keyword}
+        </if>
+        <if test="type == 'memberAddress'">
+            WHERE member_address = #{keyword}
+        </if>
+
+    </select>
+
+    <update id="madeSessionAutoLogin">
+        UPDATE tb_member
+        SET session_id = #{sessionId}, auto_date = #{autoDate}
+        WHERE member_id = #{memberId}
+    </update>
+
+    <select id="findMemberByCookie" resultType="com.project.damoim.member.entity.Member">
+        SELECT
+            member_id, member_name, auto_date
+        FROM tb_member
+        WHERE session_id = #{sessionId}
+    </select>
+
+    <update id="update">
+        UPDATE tb_member
+        <if test="type == 'name'">
+            SET member_nickname = #{nickName}
+            WHERE member_id = #{memberId}
+        </if>
+
+        <if test="type == 'address'">
+            SET member_address = CONCAT(#{plaacename}, ' ', #{area})
+            WHERE member_id = #{memberId}
+        </if>
+
+        <if test="type == 'all'">
+            SET member_address = CONCAT(#{plaacename}, ' ', #{area}), member_nickname = #{nickName}
+            WHERE member_id = #{memberId}
+        </if>
+    </update>
+
+</mapper>

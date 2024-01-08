@@ -1,0 +1,120 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.damoim.recruit.repository.RecruitMapper">
+
+    <select id="find" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+        recruit_no, recruit_title, recruit_content,
+        recruit_category, recruit_startdate
+        , recruit_enddate, recruit_addrass, recruit_count,
+        recruit_max, member_id
+        FROM tb_recruit
+    </select>
+
+
+    <select id="findAll" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+                recruit_no, recruit_title, recruit_content,
+            recruit_category, recruit_startdate
+                , recruit_enddate, recruit_addrass, recruit_count,
+            recruit_max, member_id
+        FROM tb_recruit
+        <if test="type == 'EXERCISE'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'WINE'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'HOBBY'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'STUDY'">
+            WHERE recruit_category = #{type}
+            AND recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+        <if test="type == 'FREEDOM'">
+            WHERE recruit_title LIKE CONCAT ('%', #{keyword}, '%')
+        </if>
+
+    </select>
+
+    <select id="findSortRecruit" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+            recruit_no, recruit_title, recruit_content,
+            recruit_category, recruit_startdate ,
+            recruit_enddate, recruit_addrass,
+            recruit_count, recruit_max, member_id
+        FROM tb_recruit
+        WHERE recruit_addrass LIKE CONCAT('%', #{address}, '%')
+        ORDER BY recruit_count DESC
+        LIMIT 0, 5
+    </select>
+
+    <insert id="save">
+        INSERT INTO tb_recruit
+            (recruit_title, recruit_content, recruit_category, recruit_count, recruit_enddate, recruit_addrass, recruit_max, member_id)
+        VALUES
+            (#{recruitTitle}, #{recruitContent}, #{recruitCategory}, #{recruitCount}, #{recruitEnddate}, #{recruitAddrass}, #{recruitMax}, #{memberId})
+    </insert>
+
+    <select id="findOne" resultType="com.project.damoim.recruit.entity.Recruit">
+        SELECT
+        recruit_no, recruit_title, recruit_content, recruit_category, recruit_startdate
+        , recruit_enddate, recruit_addrass, recruit_count, recruit_max, member_id
+        FROM tb_recruit
+        WHERE recruit_no = #{rno}
+    </select>
+
+
+
+    <update id="upCount">
+        UPDATE tb_recruit
+        SET recruit_count = recruit_count + 1
+        WHERE recruit_no = #{rno}
+    </update>
+
+    <insert id="upPerson">
+        insert into tb_member_recruit
+            (member_id, recruit_no)
+        VALUE
+            (#{memberId}, #{rno})
+    </insert>
+    
+    <select id="check" resultType="boolean">
+        SELECT
+            COUNT(*)
+        FROM tb_member_recruit
+        WHERE
+            member_id = #{memberId}
+        AND recruit_no = #{rno}
+    </select>
+
+    <update id="downCount">
+        UPDATE tb_recruit
+        SET recruit_count = recruit_count - 1
+        WHERE recruit_no = #{rno}
+    </update>
+
+    <delete id="deleteRecurite">
+        DELETE
+        FROM
+            tb_member_recruit
+        WHERE
+            recruit_no = #{rno}
+        AND member_id = #{memberId}
+    </delete>
+
+    <select id="selectCheckCount" resultType="com.project.damoim.recruit.entity.RecruitandMember">
+        select
+            *
+        from
+            tb_member_recruit
+        WHERE member_id = #{memberId}
+        AND recruit_no = #{rno}
+    </select>
+</mapper>

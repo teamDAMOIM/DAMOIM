@@ -1,0 +1,114 @@
+.newpost {
+    width: 100%;
+    padding: 200px 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.newpost .main-title-wrap,
+.requestpost .main-title-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+}
+.newpost .main-title-wrap .main-title,
+.requestpost .main-title-wrap .main-title {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.newpost .main-title-wrap .button-wrap{
+    width: 60%;
+    display: flex;
+    justify-content: right;
+    padding: 20px;
+}
+.requestpost .main-title-wrap .button-wrap,
+.newpost .main-title-wrap .button-wrap{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+
+}
+
+.requestpost .main-title-wrap .button-wrap .form-select {
+    width: 70%;
+}
+
+.newpost .main-title-wrap .button-wrap .search {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    background: none;
+}
+.newpost .main-title-wrap .button-wrap .search select {
+    width: 100px;
+    height: 37px;
+    border: 1px solid #FF6653;
+    border-radius: 5px;
+}
+
+.newpost .main-title-wrap .button-wrap .search .sc-kw {
+    width: 50%;
+    height: 37px;
+    border: 1px solid #FF6653;
+    border-radius: 5px;
+}
+
+.newpost .main-title-wrap .button-wrap .add-btn {
+    width: fit-content;
+
+}
+.newpost .main-title-wrap .button-wrap .add-btn:hover {
+    background: #FF6653;
+}
+.newpost .main-title-wrap .button-wrap .btn {
+    width: 80px;
+    background: #be4e41;
+    color: #fff;
+    border-radius: 5px 5px;
+}
+
+.newpost .table thead,
+.newpost .table tbody {
+    color: #be4e41;
+}
+.newpost .table thead .text-center,
+.newpost .table tbody .fontc {
+    color: #494949;
+    border-color: #be4e41;
+}
+
+.newpost .board-bottom {
+    padding: 30px 0;
+}
+
+.newpost .board-bottom .bbul {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.newpost .board-bottom .bbul .page-link {
+    padding: 6px 18px;
+    color: #000;
+}
+
+.newpost .board-bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+}
+
+.newpost .board-bottom .Page {
+    width: 40%;
+}
+
+@media screen and (max-width: 800px) {
+
+    height:  1500px;
+}
+

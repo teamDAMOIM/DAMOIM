@@ -1,0 +1,83 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.damoim.comment.repository.CommentMapper">
+    <select id="findComment" resultType="com.project.damoim.comment.entity.Comment">
+        SELECT
+            comment_no, comment_content, comment_date,
+            comment_username, post_no, member_id, like_count
+        FROM tb_comment
+        WHERE post_no = #{pno}
+        <if test="sort == 'dateasc'">
+            ORDER BY comment_date
+        </if>
+        <if test="sort == 'datedesc'">
+            ORDER BY comment_date DESC
+        </if>
+        <if test="sort == 'like'">
+            ORDER BY like_count DESC
+        </if>
+
+        LIMIT 0, #{amount}
+    </select>
+
+    <select id="findOne" resultType="com.project.damoim.comment.entity.Comment">
+        SELECT
+            comment_no, comment_content, comment_date,
+            comment_username, post_no, member_id, like_count
+        FROM tb_comment
+        WHERE comment_no = #{cno}
+    </select>
+
+    <insert id="save">
+        INSERT INTO tb_comment
+            (comment_content, comment_username, post_no, member_id, like_count)
+        VALUES
+            (#{commentContent}, #{commentUsername}, #{postNo}, #{memberId}, #{likeCount})
+    </insert>
+
+
+    <select id="commentMaxCount" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_comment
+        WHERE post_no = #{pno}
+    </select>
+
+    <update id="upLikeCount">
+        UPDATE tb_comment
+        SET like_count = like_count + 1
+        WHERE comment_no = #{cno}
+    </update>
+
+    <insert id="upLikeMember">
+        insert into tb_like
+            (comment_no, member_id)
+        VALUES
+            (#{cno}, #{memberId})
+    </insert>
+
+    <select id="upLikeCheck" resultType="boolean">
+        SELECT
+            COUNT(*)
+        FROM tb_like
+        WHERE member_id = #{memberId}
+            AND comment_no = #{cno}
+    </select>
+
+    <update id="minusCount">
+        UPDATE tb_comment
+        SET like_count = like_count - 1
+        WHERE comment_no = #{cno}
+    </update>
+
+    <delete id="deleteLikeMember">
+        DELETE
+        FROM tb_like
+        WHERE comment_no = #{cno}
+        AND member_id = #{memberId}
+    </delete>
+
+
+
+</mapper>

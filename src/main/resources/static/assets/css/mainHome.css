@@ -1,0 +1,122 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    padding: 200px 0;
+;
+}
+.section .mapview {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-end;
+
+    width: 90%;
+    padding-top: 100px;
+}
+.section .mapview .column {
+    width: 30%;
+}
+.section .mapview .column .google-it-place {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    background: #fff;
+}
+.section .mapview .column .google-it-place .lnr {
+    text-align: center;
+    font-size: 30px;
+}
+.section .mapview .column .google-it-place .form-control {
+    width: 80%;
+    padding: 5px;
+}
+.section .mapview .column .detail-place {
+    width: 100%;
+    height: 280px;
+    margin: 2% 0;
+
+
+
+}
+.section .mapview .column .detail-place .ani {
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.section .mapview .map {
+    width: 30%;
+}
+
+.section .mapview .login {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    background: #fff;
+}
+
+/* 보드 */
+.section .boardview {
+    width: 90%;
+    height: 1000px;
+    padding-top: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-end;
+}
+.section .boardview .free {
+    width: 30%;
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border: 2.5px solid #FFC270D8;
+    border-radius: 10px;
+}
+.section .boardview .free .board-title-free {
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 2em;
+}
+.section .boardview .free .of {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 15px;
+    border-bottom: #494949 1px solid;
+}
+.section .boardview .free .of div {
+    width: 100px;
+}
+
+
+.section .boardview .recruitment {
+    width: 30%;
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border: 2.5px solid #FFC270D8;
+    border-radius: 10px;
+}
+
+.section .boardview .recruitment .board-title-recruitment {
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 2em;
+    text-align: center;
+}
+
+.section .boardview .recruitment .or {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 15px;
+    border-bottom: #494949 1px solid;
+}

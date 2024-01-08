@@ -1,0 +1,186 @@
+.detail-wrap {
+    background: #ffffff;
+    font-weight: 600;
+}
+
+
+.detail-wrap .form-container {
+    text-align: center;
+    padding: 200px;
+
+}
+
+.form-container .title {
+    font-size: 2.1rem;
+    padding-bottom: 50px;
+}
+.form-container .userview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid #be4e41;
+}
+
+.form-container .labelbox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+.form-container .labelbox .column {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.form-container .labelbox .column label {
+    padding-right: 5px;
+}
+.editorbutton .column {
+    padding: 5px;
+}
+.editorbutton .column .a {
+    width: 80px;
+    background: #be4e41;
+    color: #fff;
+    border-radius: 5px 5px;
+}
+
+.content {
+    padding-top: 100px;
+}
+.form-container .buttons {
+    padding: 60px;
+    border-bottom: 2px solid #be4e41;
+}
+.buttons .list-btn {
+    width: 80px;
+    background: #be4e41;
+    color: #fff;
+    border-radius: 5px 5px;
+}
+.comment-add {
+    padding: 50px;
+}
+
+.comment-add #addBtn {
+    width: 80px;
+    background: #be4e41;
+    color: #fff;
+    border-radius: 5px 5px;
+}
+
+
+#replyData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*background: #ffffff;*/
+    padding: 10px;
+    margin: 20px;
+
+}
+
+
+#replyData .bgc {
+    width: 60%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    border: 2px solid #be4e41;
+    border-radius: 3px;
+}
+
+#replyData .commentbox {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 60%;
+    margin: 20px;
+    text-align: left;
+}
+
+
+#replyData .commentbox .column {
+
+    display: flex;
+    gap: 5px;
+}
+#replyData .Recommendation {
+    width: 40%;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 20px 10px 0;
+    gap: 10px;
+    text-align: center;
+}
+#replyData .lnr-thumbs-up,
+#replyData .lnr-thumbs-down {
+    background: none;
+    font-size: 30px;
+}
+
+#replyData .upCount,
+#replyData .downCount {
+    display: flex;
+    margin: 0;
+}
+
+#replyData .upCount p,
+#replyData .downCount p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #494949;
+    text-align: center;
+    margin: 3px 3px 0 8px;
+}
+
+.c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c .add-btn {
+    width: 80px;
+    background: #be4e41;
+    color: #fff;
+    border-radius: 5px 5px;
+}
+.modal {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.2);
+    padding-top: 200px;
+}
+.modal-content {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    align-content: center;
+    background: #fff;
+    color: #494949;
+    padding: 20px;
+}
+#updateForm {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#updateForm .editorbuttons{
+    padding: 20px;
+}
+
+
+
+
+
