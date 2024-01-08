@@ -88,7 +88,7 @@
                     <div class="address-sub-title">모임 장소</div>
                     <%--                        <input type="text" id="address-write-input" class="address-write-item" readonly>--%>
                     <div id="address-write-input" class="address-write-item">
-                        <input type="text" class="dtad" name="address" disabled>
+                        <input type="text" class="dtad" name="address" readonly>
                         <button type="button" class="detail-address">주소검색</button>
                     </div>
                 </label>
@@ -262,16 +262,20 @@
 
 
     // 상세주소
-
     document.querySelector('.detail-address').addEventListener('click', e => {
         const ad = document.querySelector('.dtad');
-
         new daum.Postcode({
             oncomplete: function(data) {
                 ad.value = data.address;
             }
         }).open();
     })
+
+    // let element = document.querySelector('.dtad');
+    //
+    // element.addEventListener('click', e => {
+    //     alert('입력하지마세요');
+    // })
 
 </script>
 </body>
