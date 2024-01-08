@@ -12,21 +12,44 @@
 <%@ include file="../include/header.jsp" %>
 <div id="box">
     <div id="background-box">
-        <div style="display: flex; flex-direction: row; justify-content: center">
-            <img id="profile" src="/local${login.profile}" alt="프사">
-            <div style="display: flex; flex-direction: column">
-                <h1 id="nickName">${login.nickName}님
-                    반갑습니다!</h1>
-                <div id="header-link" style="display: flex; flex-direction: row; margin-top: 50px ">
-                    <a href="/myPage/changeInfo" style=" background: #FFFFFF; width: 420px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">my정보 수정하기</a>
-                    <a href="/members/sign-out" style="background: #FFFFFF;width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">로그아웃</a>
+        <div class="myPage-section">
+            <div id="myProfile-info" style="background-image: url('/local${login.profile}')"></div>
+            <div class="userInfo-box-container">
+                <div id="nickName"> NicName: <span>${login.nickName}</span></div>
+                <div id="user-info-correct-link"
+                <%--style="display: flex; flex-direction: row; margin-top: 50px "--%>
+                >
+                    <a href="/myPage/changeInfo">
+                        <div class="myInfo-fix-btn">
+                            <div class="myInfo-fix-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                </svg>
+                            </div>my정보 수정하기
+                        </div>
+                    </a>
+                    <%--                       style=" background: #FFFFFF; width: 420px; height: 80px; border-radius:20px;display: flex;justify-content: center; "--%>
+                    <div class="page-logout-btn">
+                        <div class="page-logout-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
+                                <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z"/>
+                                <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0"/>
+                            </svg>
+                        </div>
+                        <a href="/members/sign-out"
+    <%--                       style="background: #FFFFFF;width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; "--%>
+                        >로그아웃</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="main-box">
-            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
-                <p>my 모집</p>
-                <a href="#" id="modalOpen1">${rcount} 건</a>
+            <div class="myPage-Info-activities-item"
+            <%--                    style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;"--%>
+            >
+
+                <a href="#" id="modalOpen1"><p>my 모집</p>${rcount} 건</a>
                 <div id="modalContainer1" class="hidden">
                     <div id="modalContent1">
                         <p>my 모집</p>
@@ -64,9 +87,11 @@
                     </div>
                 </div>
             </div>
-            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
-                <p>my 참여모임 list</p>
-                <a href="#" id="modalOpen2">${rmcount} 건</a>
+            <div class="myPage-Info-activities-item"
+            <%--                    style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;"--%>
+            >
+
+                <a href="#" id="modalOpen2"><p>my 참여모임 list</p>${rmcount} 건</a>
                 <div id="modalContainer2" class="hidden">
                     <div id="modalContent2">
                         <p>my 참여모임 list</p>
@@ -103,9 +128,10 @@
                     </div>
                 </div>
             </div>
-            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
-                <p>작성한 게시판글 목록</p>
-                <a href="#" id="modalOpen3">${pcount} 건</a>
+            <div class="myPage-Info-activities-item"
+            <%--                    style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;"--%>
+            >
+                <a href="#" id="modalOpen3"><p>작성한 게시판글 목록</p>${pcount} 건</a>
                 <div id="modalContainer3" class="hidden">
                     <div id="modalContent3">
                         <p>작성한 게시판글 목록</p>
@@ -140,9 +166,11 @@
                     </div>
                 </div>
             </div>
-            <div style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;">
-                <p>작성한 댓글 목록</p>
-                <a href="#" id="modalOpen4">${ccount} 건</a>
+            <div class="myPage-Info-activities-item"
+            <%--                    style="background: #B1B2FF; width: 300px; height: 300px; border-radius: 100%; display: flex; justify-content:center;"--%>
+            >
+
+                <a href="#" id="modalOpen4"><p>작성한 댓글 목록</p>${ccount} 건</a>
                 <div id="modalContainer4" class="hidden">
                     <div id="modalContent4">
                         <p>작성한 댓글 목록</p>
@@ -180,6 +208,7 @@
         </div>
     </div>
 </div>
+<%@ include file="../include/footer.jsp"%>
 </body>
 <script>
 
