@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>web study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap" rel="stylesheet">
+
     <%@ include file="../include/static-head.jsp" %>
 </head>
 <body>
