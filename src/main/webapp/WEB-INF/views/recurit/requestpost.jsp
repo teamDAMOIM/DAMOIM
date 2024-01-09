@@ -132,6 +132,7 @@
 <script>
     let $titleElements = document.querySelector(".title");
 
+
     document.addEventListener("DOMContentLoaded", function() {
 
         function truncateText(element, maxLength) {
@@ -177,6 +178,7 @@
     let $inputKeyword = document.getElementById('inputKeyword');
 
     $inputKeyword.onkeydown = e => {
+<<<<<<< Updated upstream
         fetch("/recruit/type/FREEDOM/keyword/"+$inputKeyword.value)
             .then(res =>
                 res.json()
@@ -188,12 +190,25 @@
                     renderView(response);
                 }
             })
+=======
+        if ($inputKeyword.value === ''){
+
+        }
+        else{
+            fetch("/recruit/type/FREEDOM/keyword/"+$inputKeyword.value)
+                .then(res =>
+                    res.json()
+                )
+                .then(response => {
+                    renderView(response);
+                })
+        }
+
+>>>>>>> Stashed changes
     }
 
     function renderView(response) {
         let tag = '';
-
-        let match = true;
 
         for (let r of response) {
             if (r.title === $inputKeyword.value) {
