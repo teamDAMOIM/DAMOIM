@@ -12,7 +12,7 @@
 <%@ include file="../include/header.jsp" %>
 <div id="box">
     <div id="background-box">
-        <div style="display: flex; flex-direction: row; justify-content: center">
+        <div class="change-info-top" style="display: flex; flex-direction: row; justify-content: center">
             <img id="profile" src="/local${login.profile}" alt="프사">
             <div style="display: flex; flex-direction: column">
                 <h1 id="nickName">${login.nickName}님
@@ -80,6 +80,7 @@
             <%--        </form>--%>
         </div>
     </div>
+</div>
 </body>
 <script>
     let checkList = [false, false] // onSave
@@ -188,4 +189,4 @@
     }
 
 </script>
-</html>\
+</html>
