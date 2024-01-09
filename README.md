@@ -40,10 +40,4 @@
 - **Spring Boot 2.7.17**
 - **MariaDB**
 - **IntelliJ IDEA**
->>>>>>> main
-> 
-> 
-> 
-
-- ㅋㅋ
 
