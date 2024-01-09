@@ -1,6 +1,7 @@
 -- 테이블 전체 삭제
 
 
+
 -- tb_member 테이블 생성
 
 CREATE TABLE tb_member(

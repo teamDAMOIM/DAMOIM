@@ -60,7 +60,7 @@
         <option value="아산시">아산시</option>
         <option value="예산군">예산군</option>
         <option value="천안시">천안시</option>
-        <option value="천안시">청양군</option>
+        <option value="청양군">청양군</option>
         <option value="태안군">태안군</option>
         <option value="홍성군">홍성군</option>
     </select>
