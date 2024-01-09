@@ -7,17 +7,12 @@
 
 ## 개발 멤버
 
-- **오영석 (PM & Back-end 개발자)**
-  - GitHub: [oyg9731](https://github.com/oyg9731)
+|박소영|오영석|유가령|정범준|
+|:---:|:---:|:---:|:---:|
+|[![텍스트](https://github.com/teamDAMOIM/DAMOIM/assets/138635849/1458efe3-eef8-44a2-a9e9-6f068d7537fb)](https://github.com/YoungHeeSo)|[![텍스트](https://github.com/teamDAMOIM/DAMOIM/assets/138635849/fed9962d-b627-48e2-b363-06f0786fc7d1)](github.com/oyg9731)|[![텍스트](https://github.com/teamDAMOIM/DAMOIM/assets/138635849/1901ef43-7511-4d5e-afbf-265639199fb9)](https://github.com/YOOGARYUNG)|[![텍스트](https://github.com/teamDAMOIM/DAMOIM/assets/138635849/e844894a-8d75-42c1-a5c8-5ddc6484dfb7)]((https://github.com/bumjun2))|
+|Front-end 개발자|PM & Back-end 개발자|Front-end 개발자|Back-end 개발자|
 
-- **정범준 (Back-end 개발자)**
-  - GitHub: [bumjun2](https://github.com/bumjun2)
-
-- **유가령 (Front-end 개발자)**
-  - GitHub: [YOOGARYUNG](https://github.com/YOOGARYUNG)
-
-- **박소영 (Front-end 개발자)**
-  - GitHub: [YoungHeeSo](https://github.com/YoungHeeSo)
+  
 
 ## 개발 기간
 
