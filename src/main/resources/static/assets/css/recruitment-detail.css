@@ -171,16 +171,39 @@
 
 }
 /* 신청 버튼 */
+#cc{
+    /*width: 95%; */
+    /*height: 10vh;*/
+
+}
+
 .check-person-number{
     font-weight: bold; color: #8c8df3;
     padding: 10px;
-    box-shadow: 5px 5px #a1a2c8;
     background: #d2daff;
 
     border-radius: 50px;
     font-size: 1.2em;
     margin: 0 10px;
 }
+
+.check-person-number:hover{
+    /*box-shadow: 5px 5px #a1a2c8;*/
+    animation: shadowSlowMotion 0.5s linear 1 both;
+
+}
+
+@keyframes shadowSlowMotion {
+    0%{
+        box-shadow: 1px 1px #a1a2c8;
+        /*box-shadow: 3px 3px #ff7b40;
+        text-shadow: 3px 3px #494949;*/
+    }
+    50%{ box-shadow: 3px 3px #a1a2c8; }
+    100%{ box-shadow: 6px 6px #a1a2c8; }
+}
+
+
 .count-info{
     /*background: #d2daff;*/
     padding: 10px 20px;
@@ -203,7 +226,7 @@
 .list-view{
     font-weight: bold; color: #8c8df3;
     padding: 10px;
-    box-shadow: 5px 5px #a1a2c8;
+    /*box-shadow: 5px 5px #a1a2c8;*/
     background: #d2daff;
     /*border: #eef1ff;*/
 
@@ -215,6 +238,12 @@
     border-radius: 50px;
     font-size: 1.2em;
     margin: 0 10px;
+}
+
+.list-view:hover{
+    /*box-shadow: 5px 5px #a1a2c8;*/
+    animation: shadowSlowMotion 0.5s linear 1 both;
+
 }
 .list-view .list-view-icon{
     background: #a8b8ff;

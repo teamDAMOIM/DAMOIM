@@ -22,10 +22,10 @@
 }
 .main-title{
     text-align: center;
-    font-weight: 700; font-size: 3em;
+    font-weight: 600; font-size: 4em;
     /*text-transform: uppercase; */
     font-family: 'Noto Sans KR', sans-serif;
-    color: #383838;
+    color: #4a3833;
 }
 .button-wrap{
     width: 100%;
@@ -99,7 +99,18 @@
 }
 
 .rp-one:hover{
-    box-shadow: 7px 7px #ffd3be;
+    /*box-shadow: 7px 7px #ffd3be;*/
+    animation: shadowSlowMotion 0.5s linear 1 both;
+}
+
+@keyframes shadowSlowMotion {
+    0%{
+        box-shadow: 1px 1px #ffd3be;
+        /*box-shadow: 3px 3px #ff7b40;
+        text-shadow: 3px 3px #494949;*/
+    }
+    50%{ box-shadow: 8px 8px #ffd3be; }
+    100%{ box-shadow: 15px 15px #ffd3be; }
 }
 
 .category{
@@ -129,6 +140,9 @@
     font-size: 1.8em; font-weight: bold; text-align: center; color: #383838;
     /*margin: 0 auto;*/
 }
+
+
+
 .rp-content .user-count{
     display: flex;
     align-items: center;
