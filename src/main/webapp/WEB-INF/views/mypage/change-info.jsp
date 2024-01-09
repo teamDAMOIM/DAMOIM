@@ -12,14 +12,22 @@
 <%@ include file="../include/header.jsp" %>
 <div id="box">
     <div id="background-box">
-        <div style="display: flex; flex-direction: row; justify-content: center">
+        <div class="change-info-top"
+<%--                style="display: flex; flex-direction: row; justify-content: center"--%>
+        >
             <img id="profile" src="/local${login.profile}" alt="프사">
-            <div style="display: flex; flex-direction: column">
+            <div class="info-change-item">
                 <h1 id="nickName">${login.nickName}님
                     반갑습니다!</h1>
-                <div id="header-link" style="display: flex; flex-direction: row; margin-top: 50px ">
-                    <a href="/myPage" style=" background: #FFFFFF; width: 420px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">my정보 보러가기</a>
-                    <a href="/members/sign-out" style="background: #FFFFFF;width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">로그아웃</a>
+                <div id="header-link"
+<%--                     style="display: flex; flex-direction: row; margin-top: 50px "--%>
+                >
+                    <a href="/myPage" class="myInfo-view"
+<%--                       style=" background: #FFFFFF; width: 420px; height: 80px; border-radius:20px;display: flex;justify-content: center; "--%>
+                    >my정보 보러가기</a>
+                    <a href="/members/sign-out" class="Id-logout"
+<%--                       style="background: #FFFFFF;width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; "--%>
+                    >로그아웃</a>
                 </div>
             </div>
         </div>
@@ -28,59 +36,62 @@
         </div>
         <%--        <form action="/myPage/change-info" class="change-form" method="post" enctype="multipart/form-data">--%>
         <div>
-        <table class="table-fill">
-            <tbody class="table-hover">
-            <tr>
-                <td>ID</td>
-                <td><input type="text" id="userId" value="${m.memberId}" disabled></td>
-                <td>
-                    <button class="not">변경불가</button>
-                </td>
-            </tr>
-            <tr>
-                <td>NAME</td>
-                <td><input type="text" id="userName" value="${m.memberName}" disabled></td>
-                <td>
-                    <button class="not">변경불가</button>
-                </td>
-            </tr>
-            <tr>
-                <td>닉네임</td>
-                <td>
-                    <input type="text" id="userNickname" value="${m.memberNickname}" disabled><label
-                        id="nickchk"></label></td>
-                <td>
-                    <button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button>
-                </td>
-            </tr>
-            <tr>
-                <td>PHONE</td>
-                <td><input type="text" id="userPhone" value="${m.memberPhone}" disabled></td>
-                <td>
-                    <button class="not">변경불가</button>
-                </td>
-            </tr>
-            <tr>
-                <td>ADDRESS</td>
-                <td>
-                    <%--                        <input type="text" id="userAdd" value="${m.memberAddress}" disabled>--%>
-                    <div id="userAdd" style="display: none">
-                        <%@ include file="../include/address.jsp" %>
-                    </div>
-                    <label id="addchk"></label></td>
-                <td>
-                    <button class="change" id="add-btn" onclick="toggleInput2()">변경하기</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <div id="savediv" style="margin-top: 20px">
-            <button id="save" onclick="onSave()">변경사항 저장하기</button>
-        </div>
+            <table class="table-fill">
+                <tbody class="table-hover">
+                <tr>
+                    <td>ID</td>
+                    <td><input type="text" id="userId" value="${m.memberId}" disabled></td>
+                    <td>
+                        <button class="not">변경불가</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>NAME</td>
+                    <td><input type="text" id="userName" value="${m.memberName}" disabled></td>
+                    <td>
+                        <button class="not">변경불가</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>닉네임</td>
+                    <td>
+                        <input type="text" id="userNickname" value="${m.memberNickname}" disabled><label
+                            id="nickchk"></label></td>
+                    <td>
+                        <button class="change" id="nn-btn" onclick="toggleInput1()">변경하기</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PHONE</td>
+                    <td><input type="text" id="userPhone" value="${m.memberPhone}" disabled></td>
+                    <td>
+                        <button class="not">변경불가</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ADDRESS</td>
+                    <td>
+                        <%--                        <input type="text" id="userAdd" value="${m.memberAddress}" disabled>--%>
+                        <div id="userAdd" style="display: none">
+                            <%@ include file="../include/address.jsp" %>
+                        </div>
+                        <label id="addchk"></label></td>
+                    <td>
+                        <button class="change" id="add-btn" onclick="toggleInput2()">변경하기</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div id="savediv" style="margin-top: 20px">
+                <button id="save" onclick="onSave()">변경사항 저장하기</button>
+            </div>
         <%--        </form>--%>
+        </div>
     </div>
 </div>
+
 </body>
+
 <script>
     let checkList = [false, false] // onSave
     const checkResultList = [false];
