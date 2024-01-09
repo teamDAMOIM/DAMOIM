@@ -92,6 +92,8 @@
 
     let type = '';
 
+    const nickNamePattern = /^[가-힣]+$/;
+
     $button1.onclick = e => {
         var inputField = document.getElementById('userNickname');
         if (inputField.disabled) {
