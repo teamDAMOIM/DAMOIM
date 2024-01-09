@@ -6,5 +6,6 @@ create table tb_like
     constraint foreign key
         fk_cm
                 (comment_no) references tb_comment (comment_no)
+                on delete cascade
 )
 ;

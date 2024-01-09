@@ -17,7 +17,9 @@ CREATE TABLE tb_post(
                     FOREIGN KEY  (member_id)
                     REFERENCES tb_member (member_id)
                     ON DELETE CASCADE
-);
+)
+;
+
 
 
 

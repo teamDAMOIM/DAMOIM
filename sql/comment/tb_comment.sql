@@ -1,5 +1,7 @@
 
 
+
+
 -- tb_comment
 CREATE TABLE tb_comment(
     comment_no INT auto_increment,
