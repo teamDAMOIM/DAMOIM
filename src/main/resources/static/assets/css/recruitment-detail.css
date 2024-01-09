@@ -79,9 +79,11 @@
 
 }
 .board-write-info .board-title-topic{
-    /*width: 100%;*/
+    width: 100%;
     /*text-align: center;*/
     color: #5c65c8;
+    padding: 10px 0;
+    display: flex; justify-content: start;
 }
 .board-write-info .board-write-Date-info{
     width: 100%;
@@ -113,7 +115,7 @@
 .detail-recruitment-info{
     background: #d2daff;
     display: flex; flex-flow: row wrap;
-    align-content: space-around;
+    /*align-content: space-around;*/
     /*padding: 15px;*/
     height: 18vh;
 }
@@ -123,10 +125,11 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    padding: 0 20px;
+    padding: 10px 20px;
 
     font-size: 1.2em;
     color: #696adf;
+    border-bottom: 2px solid #abb9fa;
 
 }
 
@@ -146,7 +149,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    padding: 0 20px;
+    padding: 10px 20px;
 
     font-size: 1.2em;
     color: #696adf;

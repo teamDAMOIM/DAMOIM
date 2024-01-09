@@ -180,7 +180,11 @@
                 res.json()
             )
             .then(response => {
-                renderView(response);
+                if ($inputKeyword.value === ''){
+
+                }else{
+                    renderView(response);
+                }
             })
     }
 
