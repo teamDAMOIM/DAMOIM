@@ -4,15 +4,15 @@
 <div class="row-ph">
     <select class="form-control" name="placename" id="placename" style="appearance: auto">
         <option value="select">도를 선택하세요</option>
-        <option value="경상남도">경상남도</option>
-        <option value="대전광역시">대전광역시</option>
-        <option value="충청남도">충청남도</option>
-        <option value="서울특별시">서울특별시</option>
+        <option value="경남">경상남도</option>
+        <option value="대전">대전광역시</option>
+        <option value="충남">충청남도</option>
+        <option value="서울">서울특별시</option>
     </select>
     <select class="form-control placearea"
             name="gnarea"
     <%--                name="area"--%>
-            id="경상남도area" value="gn" style="appearance: auto;" >
+            id="경남area" value="gn" style="appearance: auto;" >
         <option value="select">시/군을 선택하세요</option>
         <option value="거제시">거제시</option>
         <option value="거창군">거창군</option>
@@ -36,7 +36,7 @@
     <select class="form-control placearea"
             name="daejeonarea"
     <%--                name="area"--%>
-            id="대전광역시area" value="daejeon" style="appearance: auto; display: none;" >
+            id="대전area" value="daejeon" style="appearance: auto; display: none;" >
         <option value="select">시/군을 선택하세요</option>
         <option value="대덕구">대덕구</option>
         <option value="동구">동구</option>
@@ -47,7 +47,7 @@
     <select class="form-control placearea"
             name="cnarea"
     <%--                name="area"--%>
-            id="충청남도area" value="cn" style="appearance: auto;  display: none;">
+            id="충남area" value="cn" style="appearance: auto;  display: none;">
         <option value="select">시/군을 선택하세요</option>
         <option value="계룡시">계룡시</option>
         <option value="공주시">공주시</option>
@@ -67,7 +67,7 @@
     <select class="form-control placearea"
             name="seoularea"
     <%--                name="area"--%>
-            id="서울특별시area" value="seoul" style="appearance: auto; display: none;" >
+            id="서울area" value="seoul" style="appearance: auto; display: none;" >
         <option value="select">시/군을 선택하세요</option>
         <option value="강남구">강남구</option>
         <option value="강동구">강동구</option>
@@ -132,7 +132,7 @@
     // 주소 넣기
 
 
-    let $id=document.getElementById('경상남도area');
+    let $id=document.getElementById('경남area');
     let $newId = '';
 
     // place 저장 값
@@ -144,28 +144,28 @@
 
 
     $addressPlace.onchange = function (){
-        if($addressPlace.value==='경상남도'){
-            console.log(document.getElementById('경상남도area'));
-            $id = document.getElementById('경상남도area');
-            p = '경상남도';
+        if($addressPlace.value==='경남'){
+            console.log(document.getElementById('경남area'));
+            $id = document.getElementById('경남area');
+            p = '경남';
             att='gnarea'
         }
-        if($addressPlace.value==='대전광역시'){
-            console.log(document.getElementById('대전광역시area'))
-            $id = document.getElementById('대전광역시area')
-            p = '대전광역시';
+        if($addressPlace.value==='대전'){
+            console.log(document.getElementById('대전area'))
+            $id = document.getElementById('대전area')
+            p = '대전';
             att='daejeonarea';
         }
-        if($addressPlace.value==='충청남도'){
-            console.log(document.getElementById('충청남도area'))
-            $id = document.getElementById('충청남도area')
-            p = '충청남도';
+        if($addressPlace.value==='충남'){
+            console.log(document.getElementById('충남area'))
+            $id = document.getElementById('충남area')
+            p = '충남';
             att='cnarea';
         }
-        if($addressPlace.value==='서울특별시'){
-            console.log(document.getElementById('서울특별시area'))
-            $id = document.getElementById('서울특별시area')
-            p = '서울특별시';
+        if($addressPlace.value==='서울'){
+            console.log(document.getElementById('서울area'))
+            $id = document.getElementById('서울area')
+            p = '서울';
             att='seoularea';
         }
 

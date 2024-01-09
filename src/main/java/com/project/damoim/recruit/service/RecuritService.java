@@ -52,9 +52,9 @@ public class RecuritService {
     }
 
     public List<RecuritResponseDTO> getSortRecurit(HttpSession session){
-        String addreass = LoginUtiles.LoginUserAddress(session);
+        String address = LoginUtiles.LoginUserAddress(session);
 
-        return recruitMapper.findSortRecruit(addreass).stream()
+        return recruitMapper.findSortRecruit(address).stream()
                 .map(recruit -> new RecuritResponseDTO(recruit, session))
                 .collect(Collectors.toList())
                 ;
