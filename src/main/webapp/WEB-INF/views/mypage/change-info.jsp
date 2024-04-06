@@ -18,13 +18,8 @@
                 <h1 id="nickName">${login.nickName}님
                     반갑습니다!</h1>
                 <div id="header-link" style="display: flex; flex-direction: row; margin-top: 50px ">
-<<<<<<< HEAD
-                    <a href="/myPage" style="font-size: 40px; background: #FFFFFF; width: 420px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">my정보 보러가기</a>
-                    <a href="/members/sign-out" style=" font-size: 40px; background: #FFFFFF;width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">로그아웃</a>
-=======
                     <a href="/myPage" class="myInfo-view" style=" background: #FFFFFF; width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; margin-right: 20px">my정보 보러가기</a>
                     <a href="/members/sign-out" class="Id-logout" style="background: #FFFFFF;width: 220px; height: 80px; border-radius:20px;display: flex;justify-content: center; ">로그아웃</a>
->>>>>>> 941de99d64fa023f7e540d6907a4aa1e790b58e3
                 </div>
             </div>
         </div>
